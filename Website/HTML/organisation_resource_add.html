@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+
+    <title>Add Resource | Astrobase</title>
+
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- Navigation Bar -->
+
+    <header>
+
+        <h2>
+            Astrobase
+        </h2>
+
+
+        <nav>
+
+            <a
+                href="http://127.0.0.1:5500/Website/HTML/index.html"
+            >
+                Home
+            </a>
+
+
+            <a
+                href="http://127.0.0.1:5500/Website/HTML/explore.html"
+            >
+                Explore
+            </a>
+
+
+            <a
+                href="http://127.0.0.1:5500/Website/HTML/community.html"
+            >
+                Community
+            </a>
+
+
+            <a
+                href="http://127.0.0.1:5500/Website/HTML/about.html"
+            >
+                About
+            </a>
+
+
+            <a href="/organisation/profile">
+                Organisation Profile
+            </a>
+
+
+            <a href="/logout">
+                Logout
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+
+        <a
+            class="back-link"
+            href="/organisation/dashboard"
+        >
+            ← Back to Organisation Dashboard
+        </a>
+
+
+        <!-- Page Header -->
+
+        <section class="explore-header">
+
+
+            <p class="explore-label">
+                RESOURCE MANAGEMENT
+            </p>
+
+
+            <h1>
+                Add Resource
+            </h1>
+
+
+            <p>
+
+                Add a learning resource to the Astrobase library.
+                You can save it as a draft or submit it for review.
+
+            </p>
+
+
+        </section>
+
+
+        <!-- Resource Form -->
+
+        <section class="organisation-edit-section">
+
+
+            <form
+                class="profile-edit-form"
+                method="POST"
+                action="/organisation/resources/add"
+            >
+
+
+                {% if error %}
+
+                    <p class="form-error">
+                        {{ error }}
+                    </p>
+
+                {% endif %}
+
+
+                <!-- Resource Name -->
+
+                <label>
+
+                    <span>
+                        Resource Name *
+                    </span>
+
+
+                    <input
+                        type="text"
+                        name="resource_name"
+                        value="{{ form_data.get('resource_name', '') if form_data else '' }}"
+                        required
+                    >
+
+                </label>
+
+
+                <!-- Resource Type -->
+
+                <label>
+
+                    <span>
+                        Resource Type *
+                    </span>
+
+
+                    <select
+                        name="resource_type"
+                        required
+                    >
+
+                        <option value="">
+                            Select a resource type
+                        </option>
+
+
+                        <option value="Books">
+                            Books
+                        </option>
+
+
+                        <option value="Courses">
+                            Courses
+                        </option>
+
+
+                        <option value="Research Papers">
+                            Research Papers
+                        </option>
+
+
+                        <option value="Websites">
+                            Websites
+                        </option>
+
+
+                        <option value="Videos">
+                            Videos
+                        </option>
+
+
+                        <option value="Tools">
+                            Tools
+                        </option>
+
+
+                        <option value="Articles">
+                            Articles
+                        </option>
+
+
+                        <option value="Notes">
+                            Notes
+                        </option>
+
+
+                        <option value="Podcasts">
+                            Podcasts
+                        </option>
+
+                    </select>
+
+                </label>
+
+
+                <!-- Description -->
+
+                <label>
+
+                    <span>
+                        Description *
+                    </span>
+
+
+                    <textarea
+                        name="description"
+                        rows="6"
+                        required
+                    >{{ form_data.get('description', '') if form_data else '' }}</textarea>
+
+                </label>
+
+
+                <!-- Recommended For -->
+
+                <label>
+
+                    <span>
+                        Recommended For
+                    </span>
+
+
+                    <textarea
+                        name="recommended_for"
+                        rows="3"
+                        placeholder="Example: Class 11–12 students interested in astrophysics."
+                    >{{ form_data.get('recommended_for', '') if form_data else '' }}</textarea>
+
+                </label>
+
+
+                <!-- Official Website -->
+
+                <label>
+
+                    <span>
+                        Official Website
+                    </span>
+
+
+                    <input
+                        type="url"
+                        name="official_website"
+                        value="{{ form_data.get('official_website', '') if form_data else '' }}"
+                        placeholder="https://example.com"
+                    >
+
+                </label>
+
+
+                <!-- Actions -->
+
+                <div class="profile-edit-actions">
+
+
+                    <button
+                        type="submit"
+                        name="action"
+                        value="draft"
+                    >
+                        Save Draft
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        name="action"
+                        value="submit"
+                    >
+                        Submit for Review
+                    </button>
+
+
+                    <a
+                        href="/organisation/dashboard"
+                    >
+                        Cancel
+                    </a>
+
+
+                </div>
+
+
+            </form>
+
+
+        </section>
+
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 Astrobase
+        </p>
+
+    </footer>
+
+
+    <script
+        src="{{ url_for('static', filename='script.js') }}"
+    ></script>
+
+
+</body>
+
+
+</html>

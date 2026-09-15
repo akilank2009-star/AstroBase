@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Edit Resource | Astrobase</title>
+
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+    <header>
+
+        <h2>
+            Astrobase
+        </h2>
+
+
+        <nav>
+
+            <a
+                href="http://127.0.0.1:5500/Website/HTML/index.html"
+            >
+                Home
+            </a>
+
+
+            <a
+                href="http://127.0.0.1:5500/Website/HTML/explore.html"
+            >
+                Explore
+            </a>
+
+
+            <a
+                href="http://127.0.0.1:5500/Website/HTML/community.html"
+            >
+                Community
+            </a>
+
+
+            <a
+                href="http://127.0.0.1:5500/Website/HTML/about.html"
+            >
+                About
+            </a>
+
+
+            <a href="/admin/dashboard">
+                Admin Dashboard
+            </a>
+
+
+            <a href="/logout">
+                Logout
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+
+        <a
+            class="back-link"
+            href="/admin/resources/{{ resource['resource_id'] }}"
+        >
+            ← Back to Resource
+        </a>
+
+
+        <section class="explore-header">
+
+            <p class="explore-label">
+                ADMINISTRATION
+            </p>
+
+
+            <h1>
+                Edit Resource
+            </h1>
+
+
+            <p>
+                Update resource information as an Astrobase
+                administrator.
+            </p>
+
+        </section>
+
+
+        <section class="admin-resource-edit-section">
+
+
+            {% if error %}
+
+                <p class="form-error">
+                    {{ error }}
+                </p>
+
+            {% endif %}
+
+
+            <form
+                method="POST"
+                class="admin-resource-edit-form"
+            >
+
+
+                <label>
+
+                    <span>
+                        Resource Name
+                    </span>
+
+
+                    <input
+                        type="text"
+                        name="resource_name"
+                        value="{{ resource['resource_name'] }}"
+                        required
+                    >
+
+                </label>
+
+
+                <label>
+
+                    <span>
+                        Resource Type
+                    </span>
+
+
+                    <select
+                        name="resource_type"
+                        required
+                    >
+
+                        <option
+                            value="Books"
+                            {% if resource['resource_type'] == 'Books' %}selected{% endif %}
+                        >
+                            Books
+                        </option>
+
+
+                        <option
+                            value="Courses"
+                            {% if resource['resource_type'] == 'Courses' %}selected{% endif %}
+                        >
+                            Courses
+                        </option>
+
+
+                        <option
+                            value="Research Papers"
+                            {% if resource['resource_type'] == 'Research Papers' %}selected{% endif %}
+                        >
+                            Research Papers
+                        </option>
+
+
+                        <option
+                            value="Websites"
+                            {% if resource['resource_type'] == 'Websites' %}selected{% endif %}
+                        >
+                            Websites
+                        </option>
+
+
+                        <option
+                            value="Videos"
+                            {% if resource['resource_type'] == 'Videos' %}selected{% endif %}
+                        >
+                            Videos
+                        </option>
+
+
+                        <option
+                            value="Tools"
+                            {% if resource['resource_type'] == 'Tools' %}selected{% endif %}
+                        >
+                            Tools
+                        </option>
+
+
+                        <option
+                            value="Articles"
+                            {% if resource['resource_type'] == 'Articles' %}selected{% endif %}
+                        >
+                            Articles
+                        </option>
+
+
+                        <option
+                            value="Notes"
+                            {% if resource['resource_type'] == 'Notes' %}selected{% endif %}
+                        >
+                            Notes
+                        </option>
+
+
+                        <option
+                            value="Podcasts"
+                            {% if resource['resource_type'] == 'Podcasts' %}selected{% endif %}
+                        >
+                            Podcasts
+                        </option>
+
+                    </select>
+
+                </label>
+
+
+                <label>
+
+                    <span>
+                        Description
+                    </span>
+
+
+                    <textarea
+                        name="description"
+                        rows="7"
+                        required
+                    >{{ resource['description'] }}</textarea>
+
+                </label>
+
+
+                <label>
+
+                    <span>
+                        Recommended For
+                    </span>
+
+
+                    <textarea
+                        name="recommended_for"
+                        rows="4"
+                    >{{ resource['recommended_for'] or '' }}</textarea>
+
+                </label>
+
+
+                <label>
+
+                    <span>
+                        Official Website
+                    </span>
+
+
+                    <input
+                        type="url"
+                        name="official_website"
+                        value="{{ resource['official_website'] or '' }}"
+                    >
+
+                </label>
+
+
+                <div class="admin-resource-edit-actions">
+
+
+                    <button
+                        type="submit"
+                    >
+                        Save Changes
+                    </button>
+
+
+                    <a
+                        href="/admin/resources/{{ resource['resource_id'] }}"
+                    >
+                        Cancel
+                    </a>
+
+
+                </div>
+
+
+            </form>
+
+
+        </section>
+
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 Astrobase
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

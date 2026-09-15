@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Opportunities | Astrobase</title>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- Navigation Bar -->
+
+    <header>
+
+        <h2>Astrobase</h2>
+
+        <nav>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/index.html">
+                Home
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/explore.html">
+                Explore
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/community.html">
+                Community
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/about.html">
+                About
+            </a>
+
+            <a href="http://127.0.0.1:5000/login">
+                Login
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/join.html">
+                Join Astrobase
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+
+        <a
+            class="back-link"
+            href="http://127.0.0.1:5500/Website/HTML/explore.html"
+        >
+            ← Back to Explore
+        </a>
+
+
+        <!-- Opportunities Header -->
+
+        <section class="explore-header">
+
+            <h1>
+                Opportunities
+            </h1>
+
+            <p>
+
+                Discover competitions, internships, research programmes,
+                scholarships and other opportunities in space science.
+
+            </p>
+
+        </section>
+
+
+        <!-- Opportunity Library -->
+
+        <section class="opportunity-library">
+
+
+            <div class="opportunity-intro">
+
+                <p class="explore-label">
+                    OPPORTUNITY LIBRARY
+                </p>
+
+                <h2>
+                    Find Your Next Opportunity
+                </h2>
+
+                <p>
+
+                    Explore opportunities for students interested in
+                    astronomy, astrophysics, physics and space science.
+
+                </p>
+
+            </div>
+
+
+            <!-- Organisation / Admin Add Button -->
+
+            {% if role == "Organisation" %}
+
+                <div class="opportunity-create">
+
+                    <a href="/organisation/opportunities/add">
+                        <button type="button">
+                            + Add Opportunity
+                        </button>
+                    </a>
+
+                </div>
+
+            {% endif %}
+
+
+            <!-- Search -->
+
+            <div class="opportunity-search">
+
+                <input
+                    type="text"
+                    id="opportunitySearch"
+                    placeholder="Search opportunities..."
+                >
+
+                <button
+                    type="button"
+                    id="searchOpportunityButton"
+                >
+                    Search
+                </button>
+
+            </div>
+
+
+            <!-- Categories -->
+
+            <div class="opportunity-categories">
+
+                <button
+                    type="button"
+                    class="active"
+                    data-category="All"
+                >
+                    All
+                </button>
+
+                <button
+                    type="button"
+                    data-category="Competition"
+                >
+                    Competitions
+                </button>
+
+                <button
+                    type="button"
+                    data-category="Internship"
+                >
+                    Internships
+                </button>
+
+                <button
+                    type="button"
+                    data-category="Research Program"
+                >
+                    Research Programmes
+                </button>
+
+                <button
+                    type="button"
+                    data-category="Scholarship"
+                >
+                    Scholarships
+                </button>
+
+                <button
+                    type="button"
+                    data-category="Summer Program"
+                >
+                    Summer Programmes
+                </button>
+
+                <button
+                    type="button"
+                    data-category="Workshop"
+                >
+                    Workshops
+                </button>
+
+                <button
+                    type="button"
+                    data-category="Citizen Science"
+                >
+                    Citizen Science
+                </button>
+
+            </div>
+
+
+            <!-- Opportunity Cards -->
+
+            <div
+                class="opportunity-grid"
+                id="opportunityGrid"
+            >
+
+
+                {% if opportunities %}
+
+
+                    {% for opportunity in opportunities %}
+
+
+                        <article
+                            class="opportunity-card"
+                            data-category="{{ opportunity['category'] }}"
+                            data-name="{{ opportunity['opportunity_name'] | lower }}"
+                        >
+
+
+                            <!-- Opportunity Type -->
+
+                            <p class="opportunity-type">
+
+                                {{ opportunity['category'] }}
+
+                            </p>
+
+
+                            <!-- Status -->
+
+                            {% if role == "Admin" %}
+
+                                <p class="opportunity-status">
+
+                                    Status:
+                                    {{ opportunity['status'] }}
+
+                                </p>
+
+
+                            {% elif role == "Organisation"
+                                  and opportunity['organisation_id'] == organisation_id %}
+
+                                <p class="opportunity-status">
+
+                                    Status:
+                                    {{ opportunity['status'] }}
+
+                                </p>
+
+                            {% endif %}
+
+
+                            <!-- Opportunity Name -->
+
+                            <h3>
+
+                                {{ opportunity['opportunity_name'] }}
+
+                            </h3>
+
+
+                            <!-- Description -->
+
+                            <p>
+
+                                {{ opportunity['description'] }}
+
+                            </p>
+
+
+                            <!-- Opportunity Details -->
+
+                            <div class="opportunity-details">
+
+
+                                {% if opportunity['eligibility'] %}
+
+                                    <span>
+
+                                        {{ opportunity['eligibility'] }}
+
+                                    </span>
+
+                                {% else %}
+
+                                    <span>
+
+                                        Eligibility information unavailable
+
+                                    </span>
+
+                                {% endif %}
+
+
+                                {% if opportunity['deadline'] %}
+
+                                    <span>
+
+                                        Deadline:
+                                        {{ opportunity['deadline'] }}
+
+                                    </span>
+
+                                {% else %}
+
+                                    <span>
+
+                                        No deadline specified
+
+                                    </span>
+
+                                {% endif %}
+
+
+                            </div>
+
+
+                            <!-- Organisation -->
+
+                            {% if opportunity['organisation_name'] %}
+
+                                <p class="opportunity-organisation">
+
+                                    Provided by:
+
+                                    <strong>
+                                        {{ opportunity['organisation_name'] }}
+                                    </strong>
+
+                                </p>
+
+                            {% endif %}
+
+
+                            <!-- Actions -->
+
+                            <div class="opportunity-actions">
+
+
+                                <!-- PUBLIC / STUDENT -->
+
+                                {% if role != "Organisation"
+                                      and role != "Admin" %}
+
+
+                                    {% if opportunity['official_website'] %}
+
+                                        <a
+                                            href="{{ opportunity['official_website'] }}"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            View Opportunity →
+                                        </a>
+
+                                    {% else %}
+
+                                        <span>
+                                            Official website unavailable
+                                        </span>
+
+                                    {% endif %}
+
+
+                                    <!-- STUDENT SAVE -->
+
+                                    {% if role == "Student" %}
+
+                                        {% if opportunity['is_saved'] %}
+
+                                            <form
+                                                method="POST"
+                                                action="/opportunities/{{ opportunity['opportunity_id'] }}/save"
+                                            >
+
+                                                <button
+                                                    type="submit"
+                                                    class="saved-opportunity-button"
+                                                >
+                                                    ✓ Saved
+                                                </button>
+
+                                            </form>
+
+                                        {% else %}
+
+                                            <form
+                                                method="POST"
+                                                action="/opportunities/{{ opportunity['opportunity_id'] }}/save"
+                                            >
+
+                                                <button
+                                                    type="submit"
+                                                    class="save-opportunity-button"
+                                                >
+                                                    ☆ Save
+                                                </button>
+
+                                            </form>
+
+                                        {% endif %}
+
+                                    {% endif %}
+
+
+                                <!-- ORGANISATION -->
+
+                                {% elif role == "Organisation" %}
+
+
+                                    {% if opportunity['official_website'] %}
+
+                                        <a
+                                            href="{{ opportunity['official_website'] }}"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            View Opportunity →
+                                        </a>
+
+                                    {% endif %}
+
+
+                                    {% if opportunity['organisation_id'] == organisation_id %}
+
+                                        <div class="opportunity-owner-controls">
+
+                                            <a
+                                                href="/organisation/opportunities/{{ opportunity['opportunity_id'] }}/edit"
+                                            >
+                                                Edit
+                                            </a>
+
+                                        </div>
+
+                                    {% endif %}
+
+
+                                <!-- ADMIN -->
+
+                                {% elif role == "Admin" %}
+
+
+                                    {% if opportunity['official_website'] %}
+
+                                        <a
+                                            href="{{ opportunity['official_website'] }}"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            View Opportunity →
+                                        </a>
+
+                                    {% endif %}
+
+
+                                    <div class="opportunity-admin-controls">
+
+
+                                        <a
+                                            href="/admin/opportunities/{{ opportunity['opportunity_id'] }}/edit"
+                                        >
+                                            Edit
+                                        </a>
+
+
+                                        {% if opportunity['status'] == "Pending" %}
+
+
+                                            <form
+                                                action="/admin/opportunities/{{ opportunity['opportunity_id'] }}/approve"
+                                                method="POST"
+                                            >
+
+                                                <button type="submit">
+                                                    Approve
+                                                </button>
+
+                                            </form>
+
+
+                                            <form
+                                                action="/admin/opportunities/{{ opportunity['opportunity_id'] }}/reject"
+                                                method="POST"
+                                            >
+
+                                                <button type="submit">
+                                                    Reject
+                                                </button>
+
+                                            </form>
+
+
+                                        {% endif %}
+
+
+                                        {% if opportunity['status'] != "Archived" %}
+
+
+                                            <form
+                                                action="/admin/opportunities/{{ opportunity['opportunity_id'] }}/archive"
+                                                method="POST"
+                                            >
+
+                                                <button type="submit">
+                                                    Archive
+                                                </button>
+
+                                            </form>
+
+                                        {% endif %}
+
+
+                                    </div>
+
+
+                                {% endif %}
+
+
+                            </div>
+
+
+                        </article>
+
+
+                    {% endfor %}
+
+
+                {% else %}
+
+
+                    <div class="no-opportunities">
+
+                        <h3>
+                            No Opportunities Yet
+                        </h3>
+
+                        <p>
+
+                            There are currently no published opportunities
+                            in the Astrobase library.
+
+                        </p>
+
+                    </div>
+
+
+                {% endif %}
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 Astrobase
+        </p>
+
+    </footer>
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+
+    <script>
+
+
+        /* Opportunity Search */
+
+        const opportunitySearch =
+            document.getElementById("opportunitySearch");
+
+
+        const searchOpportunityButton =
+            document.getElementById(
+                "searchOpportunityButton"
+            );
+
+
+        const opportunityCards =
+            document.querySelectorAll(
+                ".opportunity-card"
+            );
+
+
+        function filterOpportunities() {
+
+            const searchTerm =
+                opportunitySearch.value
+                    .toLowerCase()
+                    .trim();
+
+
+            const activeCategory =
+                document.querySelector(
+                    ".opportunity-categories button.active"
+                );
+
+
+            const selectedCategory =
+                activeCategory
+                    ? activeCategory.dataset.category
+                    : "All";
+
+
+            opportunityCards.forEach(card => {
+
+
+                const name =
+                    card.dataset.name || "";
+
+
+                const category =
+                    card.dataset.category || "";
+
+
+                const matchesSearch =
+                    name.includes(searchTerm);
+
+
+                const matchesCategory =
+                    selectedCategory === "All" ||
+                    category === selectedCategory;
+
+
+                if (
+                    matchesSearch &&
+                    matchesCategory
+                ) {
+
+                    card.style.display = "";
+
+                } else {
+
+                    card.style.display = "none";
+
+                }
+
+            });
+
+        }
+
+
+        searchOpportunityButton.addEventListener(
+            "click",
+            filterOpportunities
+        );
+
+
+        opportunitySearch.addEventListener(
+            "input",
+            filterOpportunities
+        );
+
+
+        /* Category Filters */
+
+        const categoryButtons =
+            document.querySelectorAll(
+                ".opportunity-categories button"
+            );
+
+
+        categoryButtons.forEach(button => {
+
+
+            button.addEventListener(
+                "click",
+                () => {
+
+
+                    categoryButtons.forEach(
+                        categoryButton => {
+
+                            categoryButton.classList.remove(
+                                "active"
+                            );
+
+                        }
+                    );
+
+
+                    button.classList.add(
+                        "active"
+                    );
+
+
+                    filterOpportunities();
+
+                }
+            );
+
+        });
+
+
+    </script>
+
+
+</body>
+
+</html>

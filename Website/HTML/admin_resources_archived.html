@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Archived Resources | Astrobase</title>
+
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+    <header>
+
+        <h2>
+            Astrobase
+        </h2>
+
+
+        <nav>
+
+            <a
+                href="http://127.0.0.1:5500/Website/HTML/index.html"
+            >
+                Home
+            </a>
+
+
+            <a
+                href="http://127.0.0.1:5500/Website/HTML/explore.html"
+            >
+                Explore
+            </a>
+
+
+            <a
+                href="http://127.0.0.1:5500/Website/HTML/community.html"
+            >
+                Community
+            </a>
+
+
+            <a
+                href="http://127.0.0.1:5500/Website/HTML/about.html"
+            >
+                About
+            </a>
+
+
+            <a href="/admin/dashboard">
+                Admin Dashboard
+            </a>
+
+
+            <a href="/logout">
+                Logout
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+
+        <a
+            class="back-link"
+            href="/admin/resources"
+        >
+            ← Back to Resources
+        </a>
+
+
+        <section class="explore-header">
+
+            <p class="explore-label">
+                ADMINISTRATION
+            </p>
+
+
+            <h1>
+                Archived Resources
+            </h1>
+
+
+            <p>
+                Previously published or submitted resources
+                that are no longer active on Astrobase.
+            </p>
+
+        </section>
+
+
+        <section class="resource-library admin-resource-archive">
+
+
+            <div class="resource-library-header">
+
+                <p class="explore-label">
+                    RESOURCE ARCHIVE
+                </p>
+
+
+                <h2>
+                    Archived Resources
+                </h2>
+
+
+                <p>
+                    Archived resources are retained for
+                    administrative records and can be restored.
+                </p>
+
+            </div>
+
+
+            <div class="resource-grid">
+
+
+                {% if resources %}
+
+
+                    {% for resource in resources %}
+
+
+                        <article class="resource-card">
+
+
+                            <p class="resource-type">
+                                {{ resource["resource_type"] }}
+                            </p>
+
+
+                            <p class="resource-status">
+
+                                Status:
+
+                                <strong>
+                                    Archived
+                                </strong>
+
+                            </p>
+
+
+                            <h3>
+                                {{ resource["resource_name"] }}
+                            </h3>
+
+
+                            <p>
+                                {{ resource["description"] }}
+                            </p>
+
+
+                            {% if resource["recommended_for"] %}
+
+                                <p>
+
+                                    <strong>
+                                        Recommended for:
+                                    </strong>
+
+                                    {{ resource["recommended_for"] }}
+
+                                </p>
+
+                            {% endif %}
+
+
+                            <p>
+
+                                Provided by:
+
+                                <strong>
+
+                                    {% if resource["organisation_name"] %}
+
+                                        {{ resource["organisation_name"] }}
+
+                                    {% else %}
+
+                                        Astrobase
+
+                                    {% endif %}
+
+                                </strong>
+
+                            </p>
+
+
+                            <div class="admin-resource-actions">
+
+
+                                <a
+                                    href="/admin/resources/{{ resource['resource_id'] }}"
+                                >
+                                    View Resource →
+                                </a>
+
+
+                                <form
+                                    method="POST"
+                                    action="/admin/resources/{{ resource['resource_id'] }}/unarchive"
+                                >
+
+                                    <button
+                                        type="submit"
+                                    >
+                                        Restore
+                                    </button>
+
+                                </form>
+
+
+                            </div>
+
+
+                        </article>
+
+
+                    {% endfor %}
+
+
+                {% else %}
+
+
+                    <div class="empty-state">
+
+                        <h3>
+                            No Archived Resources
+                        </h3>
+
+
+                        <p>
+                            There are currently no resources
+                            in the archive.
+                        </p>
+
+                    </div>
+
+
+                {% endif %}
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 Astrobase
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

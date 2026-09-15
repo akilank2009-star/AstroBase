@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Edit Opportunity | Astrobase</title>
+
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- Navigation Bar -->
+
+    <header>
+
+        <h2>Astrobase</h2>
+
+        <nav>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/index.html">
+                Home
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/explore.html">
+                Explore
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/community.html">
+                Community
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/about.html">
+                About
+            </a>
+
+            <a href="/admin/dashboard">
+                Admin Dashboard
+            </a>
+
+            <a href="/logout">
+                Logout
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- Back Link -->
+
+        <a
+            class="back-link"
+            href="/admin/opportunities"
+        >
+            ← Back to Opportunities
+        </a>
+
+        <!-- Page Header -->
+
+        <section class="explore-header">
+
+            <p class="explore-label">
+                ADMINISTRATION
+            </p>
+
+            <h1>
+                Edit Opportunity
+            </h1>
+
+            <p>
+                Update the opportunity information before
+                continuing its publication workflow.
+            </p>
+
+        </section>
+
+
+        <!-- Edit Opportunity -->
+
+        <section class="opportunity-form-section">
+
+
+            <div class="opportunity-form-intro">
+
+                <p class="explore-label">
+                    OPPORTUNITY MANAGEMENT
+                </p>
+
+                <h2>
+                    Update Opportunity
+                </h2>
+
+                <p>
+                    Provided by:
+
+                    <strong>
+
+                        {% if opportunity['organisation_name'] %}
+
+                            {{ opportunity['organisation_name'] }}
+
+                        {% else %}
+
+                            Astrobase
+
+                        {% endif %}
+
+                    </strong>
+                </p>
+
+            </div>
+
+
+            {% if error %}
+
+                <div class="form-error">
+
+                    {{ error }}
+
+                </div>
+
+            {% endif %}
+
+
+            <form
+                class="opportunity-form"
+                method="POST"
+                action="/admin/opportunities/{{ opportunity['opportunity_id'] }}/edit"
+            >
+
+
+                <!-- Opportunity Name -->
+
+                <div class="form-group">
+
+                    <label for="opportunity_name">
+                        Opportunity Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="opportunity_name"
+                        name="opportunity_name"
+                        value="{{ form_data['opportunity_name'] if form_data else opportunity['opportunity_name'] }}"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Category -->
+
+                <div class="form-group">
+
+                    <label for="category">
+                        Category
+                    </label>
+
+                    <select
+                        id="category"
+                        name="category"
+                        required
+                    >
+
+                        <option
+                            value="Competition"
+                            {% if (form_data and form_data['category'] == 'Competition') or (not form_data and opportunity['category'] == 'Competition') %}
+                                selected
+                            {% endif %}
+                        >
+                            Competition
+                        </option>
+
+                        <option
+                            value="Internship"
+                            {% if (form_data and form_data['category'] == 'Internship') or (not form_data and opportunity['category'] == 'Internship') %}
+                                selected
+                            {% endif %}
+                        >
+                            Internship
+                        </option>
+
+                        <option
+                            value="Research Program"
+                            {% if (form_data and form_data['category'] == 'Research Program') or (not form_data and opportunity['category'] == 'Research Program') %}
+                                selected
+                            {% endif %}
+                        >
+                            Research Program
+                        </option>
+
+                        <option
+                            value="Scholarship"
+                            {% if (form_data and form_data['category'] == 'Scholarship') or (not form_data and opportunity['category'] == 'Scholarship') %}
+                                selected
+                            {% endif %}
+                        >
+                            Scholarship
+                        </option>
+
+                        <option
+                            value="Summer Program"
+                            {% if (form_data and form_data['category'] == 'Summer Program') or (not form_data and opportunity['category'] == 'Summer Program') %}
+                                selected
+                            {% endif %}
+                        >
+                            Summer Program
+                        </option>
+
+                        <option
+                            value="Workshop"
+                            {% if (form_data and form_data['category'] == 'Workshop') or (not form_data and opportunity['category'] == 'Workshop') %}
+                                selected
+                            {% endif %}
+                        >
+                            Workshop
+                        </option>
+
+                        <option
+                            value="Citizen Science"
+                            {% if (form_data and form_data['category'] == 'Citizen Science') or (not form_data and opportunity['category'] == 'Citizen Science') %}
+                                selected
+                            {% endif %}
+                        >
+                            Citizen Science
+                        </option>
+
+                        <option
+                            value="Other"
+                            {% if (form_data and form_data['category'] == 'Other') or (not form_data and opportunity['category'] == 'Other') %}
+                                selected
+                            {% endif %}
+                        >
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Description -->
+
+                <div class="form-group">
+
+                    <label for="description">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="description"
+                        name="description"
+                        rows="7"
+                        required
+                    >{{ form_data['description'] if form_data else opportunity['description'] }}</textarea>
+
+                </div>
+
+
+                <!-- Eligibility -->
+
+                <div class="form-group">
+
+                    <label for="eligibility">
+                        Eligibility
+                    </label>
+
+                    <textarea
+                        id="eligibility"
+                        name="eligibility"
+                        rows="5"
+                    >{{ form_data['eligibility'] if form_data else opportunity['eligibility'] or '' }}</textarea>
+
+                </div>
+
+
+                <!-- Deadline -->
+
+                <div class="form-group">
+
+                    <label for="deadline">
+                        Deadline
+                    </label>
+
+                    <input
+                        type="date"
+                        id="deadline"
+                        name="deadline"
+                        value="{{ form_data['deadline'] if form_data else opportunity['deadline'] or '' }}"
+                    >
+
+                </div>
+
+
+                <!-- Official Website -->
+
+                <div class="form-group">
+
+                    <label for="official_website">
+                        Official Website
+                    </label>
+
+                    <input
+                        type="url"
+                        id="official_website"
+                        name="official_website"
+                        placeholder="https://example.com"
+                        value="{{ form_data['official_website'] if form_data else opportunity['official_website'] or '' }}"
+                    >
+
+                </div>
+
+
+                <!-- Current Status -->
+
+                <div class="form-group">
+
+                    <label>
+                        Current Status
+                    </label>
+
+                    <p>
+                        {{ opportunity['status'] }}
+                    </p>
+
+                </div>
+
+
+                <!-- Actions -->
+
+                <div class="opportunity-form-actions">
+
+
+                    <button
+                        type="submit"
+                    >
+                        Save Changes
+                    </button>
+
+
+                    <a
+                        href="/admin/opportunities"
+                    >
+                        Cancel
+                    </a>
+
+
+                </div>
+
+
+            </form>
+
+
+        </section>
+
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 Astrobase
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Organisation Check-In | Astrobase</title>
+
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+    <header>
+
+        <h2>
+            Astrobase
+        </h2>
+
+
+        <nav>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/index.html">
+                Home
+            </a>
+
+
+            <a href="http://127.0.0.1:5500/Website/HTML/explore.html">
+                Explore
+            </a>
+
+
+            <a href="http://127.0.0.1:5500/Website/HTML/community.html">
+                Community
+            </a>
+
+
+            <a href="http://127.0.0.1:5500/Website/HTML/about.html">
+                About
+            </a>
+
+
+            <a href="/login">
+                Login
+            </a>
+
+
+            <a href="http://127.0.0.1:5500/Website/HTML/join.html">
+                Join Astrobase
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+
+        <section class="organisation-check-in">
+
+
+            <p class="explore-label">
+                ORGANISATION
+            </p>
+
+
+            <h1>
+                Check Your Application
+            </h1>
+
+
+            <p class="organisation-check-in-intro">
+
+                Enter the email address you used when applying
+                to become an Astrobase organisation.
+
+            </p>
+
+
+            {% if error %}
+
+                <div class="check-in-message check-in-error">
+
+                    {{ error }}
+
+                </div>
+
+            {% endif %}
+
+
+            <div class="check-in-card">
+
+
+                <form
+                    action="/organisation/check-in"
+                    method="POST"
+                >
+
+
+                    <label for="email">
+                        Application Email
+                    </label>
+
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your application email"
+                        required
+                    >
+
+
+                    <button type="submit">
+                        Check Application
+                    </button>
+
+
+                </form>
+
+
+            </div>
+
+
+            {% if application %}
+
+                <div class="check-in-result">
+
+
+                    <p class="explore-label">
+                        APPLICATION STATUS
+                    </p>
+
+
+                    <h2>
+                        {{ application["organisation_name"] }}
+                    </h2>
+
+
+                    <div class="check-in-status">
+
+                        <span>
+                            Status
+                        </span>
+
+
+                        <strong>
+                            {{ application["application_status"] }}
+                        </strong>
+
+                    </div>
+
+
+                    <p>
+
+                        Application submitted on
+                        {{ application["submitted_at"] }}
+
+                    </p>
+
+
+                    {% if application["application_status"] == "Approved" %}
+
+                        <div class="check-in-approved">
+
+                            <h3>
+                                Your organisation has been approved.
+                            </h3>
+
+
+                            <p>
+                                Your organisation is now verified by Astrobase.
+                            </p>
+
+
+                            <p>
+                                You can now create your organisation account
+                                and access the organisation dashboard.
+                            </p>
+
+
+                            <a
+                                href="/organisation/register"
+                                class="check-in-register-button"
+                            >
+                                Create Organisation Account
+                            </a>
+
+                        </div>
+
+                    {% elif application["application_status"] == "Rejected" %}
+
+                        <div class="check-in-rejected">
+
+                            <h3>
+                                Your application was not approved.
+                            </h3>
+
+
+                            <p>
+                                Please review your application status
+                                and any available review information.
+                            </p>
+
+                        </div>
+
+                    {% else %}
+
+                        <div class="check-in-pending">
+
+                            <h3>
+                                Your application is still under review.
+                            </h3>
+
+
+                            <p>
+                                Please check again later for an update.
+                            </p>
+
+                        </div>
+
+                    {% endif %}
+
+
+                </div>
+
+            {% endif %}
+
+
+        </section>
+
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 Astrobase
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

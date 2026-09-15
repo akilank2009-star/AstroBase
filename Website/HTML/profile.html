@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Profile | Astrobase</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+
+        <h2>Astrobase</h2>
+
+        <nav>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/index.html">
+                Home
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/explore.html">
+                Explore
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/community.html">
+                Community
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/about.html">
+                About
+            </a>
+
+            <a href="/logout">
+                Logout
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/join.html">Join Astrobase</a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <a class="back-link" href="http://127.0.0.1:5500/Website/HTML/index.html">← Back to Astrobase</a>
+
+        <!-- Profile -->
+        <section class="profile-section">
+
+            <p class="explore-label">
+                MY ASTROBASE
+            </p>
+
+            <h1>
+                My Profile
+            </h1>
+
+            <p class="profile-intro">
+                Your personal information and identity on Astrobase.
+            </p>
+
+
+            <div class="profile-card">
+
+                <!-- Name -->
+                <div class="profile-row">
+
+                    <span>
+                        Name
+                    </span>
+
+                    <strong>
+                        {{ user["name"] }}
+                    </strong>
+
+                </div>
+
+
+                <!-- Username -->
+                <div class="profile-row">
+
+                    <span>
+                        Username
+                    </span>
+
+                    <strong>
+                        {{ user["username"] }}
+                    </strong>
+
+                </div>
+
+
+                <!-- Email -->
+                <div class="profile-row">
+
+                    <span>
+                        Email
+                    </span>
+
+                    <strong>
+                        {{ user["email"] }}
+                    </strong>
+
+                </div>
+
+
+                <!-- Role -->
+                <div class="profile-row">
+
+                    <span>
+                        Account Type
+                    </span>
+
+                    <strong>
+                        {{ user["role"] }}
+                    </strong>
+
+                </div>
+
+
+                <!-- Grade -->
+                <div class="profile-row">
+
+                    <span>
+                        Grade
+                    </span>
+
+                    <strong>
+                        {{ user["grade"] or "Not set" }}
+                    </strong>
+
+                </div>
+
+
+                <!-- Country -->
+                <div class="profile-row">
+
+                    <span>
+                        Country
+                    </span>
+
+                    <strong>
+                        {{ user["country"] or "Not set" }}
+                    </strong>
+
+                </div>
+
+
+                <!-- Interests -->
+                <div class="profile-row">
+
+                    <span>
+                        Interests
+                    </span>
+
+                    <strong>
+                        {{ user["interests"] or "Not set" }}
+                    </strong>
+
+                </div>
+
+
+                <!-- Career Goals -->
+                <div class="profile-row">
+
+                    <span>
+                        Career Goals
+                    </span>
+
+                    <strong>
+                        {{ user["career_goals"] or "Not set" }}
+                    </strong>
+
+                </div>
+
+
+                <!-- Bio -->
+                <div class="profile-row">
+
+                    <span>
+                        Bio
+                    </span>
+
+                    <strong>
+                        {{ user["bio"] or "No bio added yet." }}
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="profile-actions">
+
+                <a href="http://127.0.0.1:5000/myastrobase/profile/edit">
+                    <button type="button">
+                        Edit Profile
+                    </button>
+                </a>
+
+                <a
+                    href="http://127.0.0.1:5000/myastrobase/profile/delete"
+                    class="delete-profile-link"
+                >
+                    Delete Account
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 Astrobase
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Add University | Astrobase</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+<body>
+
+    <header>
+
+        <h2>
+            Astrobase
+        </h2>
+
+        <nav>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/index.html">
+                Home
+            </a>
+
+            <a href="/organisation/dashboard">
+                Dashboard
+            </a>
+
+            <a href="/organisation/profile">
+                Profile
+            </a>
+
+            <a href="/logout">
+                Logout
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <a
+            class="back-link"
+            href="/organisation/universities"
+        >
+            ← Back to Universities
+        </a>
+
+
+        <section class="feature-page-header">
+
+            <p class="feature-page-label">
+                ORGANISATION
+            </p>
+
+            <h1>
+                Add University
+            </h1>
+
+            <p>
+                Add a university to your organisation's Astrobase
+                contributions.
+            </p>
+
+        </section>
+
+
+        <section class="profile-edit-section">
+
+            {% if error %}
+
+                <div class="form-error">
+
+                    {{ error }}
+
+                </div>
+
+            {% endif %}
+
+
+            <form
+                method="POST"
+                class="profile-edit-form"
+            >
+
+                <!-- University Name -->
+
+                <label>
+
+                    <span>
+                        University Name
+                    </span>
+
+                    <input
+                        type="text"
+                        name="university_name"
+                        value="{{ form_data.get('university_name', '') if form_data else '' }}"
+                        placeholder="e.g. Imperial College London"
+                        required
+                    >
+
+                </label>
+
+
+                <!-- Country -->
+
+                <label>
+
+                    <span>
+                        Country
+                    </span>
+
+                    <input
+                        type="text"
+                        name="country"
+                        value="{{ form_data.get('country', '') if form_data else '' }}"
+                        placeholder="e.g. United Kingdom"
+                        required
+                    >
+
+                </label>
+
+
+                <!-- City -->
+
+                <label>
+
+                    <span>
+                        City
+                    </span>
+
+                    <input
+                        type="text"
+                        name="city"
+                        value="{{ form_data.get('city', '') if form_data else '' }}"
+                        placeholder="e.g. London"
+                        required
+                    >
+
+                </label>
+
+
+                <!-- University Type -->
+
+                <label>
+
+                    <span>
+                        University Type
+                    </span>
+
+                    <select
+                        name="university_type"
+                        required
+                    >
+
+                        <option value="">
+                            Select a university type
+                        </option>
+
+                        <option value="Public Research University">
+                            Public Research University
+                        </option>
+
+                        <option value="Private Research University">
+                            Private Research University
+                        </option>
+
+                        <option value="Public University">
+                            Public University
+                        </option>
+
+                        <option value="Private University">
+                            Private University
+                        </option>
+
+                        <option value="Institute of Technology">
+                            Institute of Technology
+                        </option>
+
+                        <option value="Specialised University">
+                            Specialised University
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </label>
+
+
+                <!-- Description -->
+
+                <label>
+
+                    <span>
+                        Description
+                    </span>
+
+                    <textarea
+                        name="description"
+                        rows="7"
+                        placeholder="Describe the university and its academic focus."
+                        required
+                    >{{ form_data.get('description', '') if form_data else '' }}</textarea>
+
+                </label>
+
+
+                <!-- Official Website -->
+
+                <label>
+
+                    <span>
+                        Official Website
+                    </span>
+
+                    <input
+                        type="url"
+                        name="official_website"
+                        value="{{ form_data.get('official_website', '') if form_data else '' }}"
+                        placeholder="https://..."
+                    >
+
+                </label>
+
+
+                <!-- Admissions Website -->
+
+                <label>
+
+                    <span>
+                        Admissions Website
+                    </span>
+
+                    <input
+                        type="url"
+                        name="admissions_website"
+                        value="{{ form_data.get('admissions_website', '') if form_data else '' }}"
+                        placeholder="https://..."
+                    >
+
+                </label>
+
+
+                <!-- International Students -->
+
+                <label>
+
+                    <span>
+                        International Students Information
+                    </span>
+
+                    <textarea
+                        name="international_students_info"
+                        rows="5"
+                        placeholder="Information useful to international applicants."
+                    >{{ form_data.get('international_students_info', '') if form_data else '' }}</textarea>
+
+                </label>
+
+
+                <!-- Additional Notes -->
+
+                <label>
+
+                    <span>
+                        Additional Notes
+                    </span>
+
+                    <textarea
+                        name="additional_notes"
+                        rows="5"
+                        placeholder="Any additional information about the university."
+                    >{{ form_data.get('additional_notes', '') if form_data else '' }}</textarea>
+
+                </label>
+
+
+                <!-- Actions -->
+
+                <div class="profile-edit-actions">
+
+                    <button
+                        type="submit"
+                        name="action"
+                        value="draft"
+                        class="admin-create-button"
+                    >
+                        Save Draft
+                    </button>
+
+                    <button
+                        type="submit"
+                        name="action"
+                        value="submit"
+                        class="admin-create-button"
+                    >
+                        Submit for Review
+                    </button>
+
+                    <a
+                        href="/organisation/universities"
+                        class="back-link"
+                    >
+                        Cancel
+                    </a>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 Astrobase
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

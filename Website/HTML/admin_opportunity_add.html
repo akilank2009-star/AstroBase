@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Add Opportunity | Astrobase</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+<body>
+
+    <header>
+
+        <h2>
+            Astrobase
+        </h2>
+
+        <nav>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/index.html">
+                Home
+            </a>
+
+            <a href="/opportunities">
+                Opportunities
+            </a>
+
+            <a href="/resources">
+                Resources
+            </a>
+
+            <a href="/admin/dashboard">
+                Admin Dashboard
+            </a>
+
+            <a href="/logout">
+                Logout
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <a
+            class="back-link"
+            href="/admin/opportunities"
+        >
+            ← Back to Opportunities
+        </a>
+
+
+        <section class="feature-page-header">
+
+            <p class="feature-page-label">
+                ADMINISTRATION
+            </p>
+
+            <h1>
+                Add Opportunity
+            </h1>
+
+            <p>
+                Create an opportunity and assign it to an
+                Astrobase organisation or contributor.
+            </p>
+
+        </section>
+
+
+        <section class="profile-edit-section">
+
+            {% if error %}
+
+                <div class="form-error">
+
+                    {{ error }}
+
+                </div>
+
+            {% endif %}
+
+
+            <form
+                method="POST"
+                class="profile-edit-form"
+            >
+
+                <!-- Organisation -->
+
+                <label>
+
+                    <span>
+                        Organisation
+                    </span>
+
+                    <select
+                        name="organisation_id"
+                        required
+                    >
+
+                        <option value="">
+                            Select an organisation
+                        </option>
+
+                        {% for organisation in organisations %}
+
+                            <option
+                                value="{{ organisation['organisation_id'] }}"
+                                {% if form_data and form_data.get('organisation_id') == organisation['organisation_id']|string %}
+                                    selected
+                                {% endif %}
+                            >
+
+                                {{ organisation['organisation_name'] }}
+
+                                {% if organisation['organisation_type'] %}
+
+                                    · {{ organisation['organisation_type'] }}
+
+                                {% endif %}
+
+                            </option>
+
+                        {% endfor %}
+
+                    </select>
+
+                </label>
+
+
+                <!-- Opportunity Name -->
+
+                <label>
+
+                    <span>
+                        Opportunity Name
+                    </span>
+
+                    <input
+                        type="text"
+                        name="opportunity_name"
+                        value="{{ form_data.get('opportunity_name', '') if form_data else '' }}"
+                        required
+                    >
+
+                </label>
+
+
+                <!-- Category -->
+
+                <label>
+
+                    <span>
+                        Category
+                    </span>
+
+                    <select
+                        name="category"
+                        required
+                    >
+
+                        <option value="">
+                            Select a category
+                        </option>
+
+                        <option value="Competition">
+                            Competition
+                        </option>
+
+                        <option value="Internship">
+                            Internship
+                        </option>
+
+                        <option value="Summer Program">
+                            Summer Program
+                        </option>
+
+                        <option value="Scholarship">
+                            Scholarship
+                        </option>
+
+                        <option value="Research Program">
+                            Research Program
+                        </option>
+
+                        <option value="Citizen Science">
+                            Citizen Science
+                        </option>
+
+                        <option value="Workshop">
+                            Workshop
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </label>
+
+
+                <!-- Description -->
+
+                <label>
+
+                    <span>
+                        Description
+                    </span>
+
+                    <textarea
+                        name="description"
+                        rows="6"
+                        required
+                    >{{ form_data.get('description', '') if form_data else '' }}</textarea>
+
+                </label>
+
+
+                <!-- Eligibility -->
+
+                <label>
+
+                    <span>
+                        Eligibility
+                    </span>
+
+                    <textarea
+                        name="eligibility"
+                        rows="4"
+                    >{{ form_data.get('eligibility', '') if form_data else '' }}</textarea>
+
+                </label>
+
+
+                <!-- Deadline -->
+
+                <label>
+
+                    <span>
+                        Deadline
+                    </span>
+
+                    <input
+                        type="date"
+                        name="deadline"
+                        value="{{ form_data.get('deadline', '') if form_data else '' }}"
+                    >
+
+                </label>
+
+
+                <!-- Official Website -->
+
+                <label>
+
+                    <span>
+                        Official Website
+                    </span>
+
+                    <input
+                        type="url"
+                        name="official_website"
+                        value="{{ form_data.get('official_website', '') if form_data else '' }}"
+                        placeholder="https://..."
+                    >
+
+                </label>
+
+
+                <!-- Status -->
+
+                <label>
+
+                    <span>
+                        Status
+                    </span>
+
+                    <select
+                        name="status"
+                    >
+
+                        <option value="Draft">
+                            Draft
+                        </option>
+
+                        <option value="Pending">
+                            Pending
+                        </option>
+
+                        <option value="Published">
+                            Published
+                        </option>
+
+                    </select>
+
+                </label>
+
+
+                <div class="profile-edit-actions">
+
+                    <button
+                        type="submit"
+                        class="admin-create-button"
+                    >
+                        Create Opportunity
+                    </button>
+
+                    <a
+                        href="/admin/opportunities"
+                        class="back-link"
+                    >
+                        Cancel
+                    </a>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 Astrobase
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

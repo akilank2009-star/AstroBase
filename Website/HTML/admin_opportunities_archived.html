@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Archived Opportunities | Astrobase</title>
+
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- Navigation Bar -->
+
+    <header>
+
+        <h2>
+            Astrobase
+        </h2>
+
+        <nav>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/index.html">
+                Home
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/explore.html">
+                Explore
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/community.html">
+                Community
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/about.html">
+                About
+            </a>
+
+            <a href="http://127.0.0.1:5000/admin/opportunities">
+                Opportunities
+            </a>
+
+            <a href="http://127.0.0.1:5000/logout">
+                Logout
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- Back Link -->
+
+        <a
+            class="back-link"
+            href="/admin/opportunities"
+        >
+            ← Back to Opportunities
+        </a>
+
+
+        <!-- Page Header -->
+
+        <section class="explore-header">
+
+            <p class="explore-label">
+                ADMINISTRATION
+            </p>
+
+            <h1>
+                Archived Opportunities
+            </h1>
+
+            <p>
+                View and manage opportunities that have been archived
+                from the active Astrobase catalogue.
+            </p>
+
+        </section>
+
+
+        <!-- Archived Opportunities -->
+
+        <section class="opportunities-section">
+
+
+            {% if opportunities %}
+
+
+                <div class="opportunities-grid">
+
+
+                    {% for opportunity in opportunities %}
+
+
+                        <article class="opportunity-card">
+
+
+                            <p class="opportunity-category">
+                                {{ opportunity['category'] }}
+                            </p>
+
+
+                            <p class="opportunity-status">
+                                Status: {{ opportunity['status'] }}
+                            </p>
+
+
+                            <h2>
+                                {{ opportunity['opportunity_name'] }}
+                            </h2>
+
+
+                            <p>
+                                {{ opportunity['description'] }}
+                            </p>
+
+
+                            {% if opportunity['deadline'] %}
+
+                                <p class="opportunity-deadline">
+                                    Deadline:
+                                    {{ opportunity['deadline'] }}
+                                </p>
+
+                            {% endif %}
+
+
+                            {% if opportunity['organisation_name'] %}
+
+                                <p class="opportunity-provider">
+                                    Provided by:
+                                    <strong>
+                                        {{ opportunity['organisation_name'] }}
+                                    </strong>
+                                </p>
+
+                            {% else %}
+
+                                <p class="opportunity-provider">
+                                    Provided by:
+                                    <strong>
+                                        Astrobase
+                                    </strong>
+                                </p>
+
+                            {% endif %}
+
+
+                            <!-- Actions -->
+
+                            <div class="opportunity-actions">
+
+
+                                <a
+                                    href="/admin/opportunities/{{ opportunity['opportunity_id'] }}"
+                                >
+                                    View Opportunity →
+                                </a>
+
+
+                                <a
+                                    href="/admin/opportunities/{{ opportunity['opportunity_id'] }}/edit"
+                                >
+                                    Edit
+                                </a>
+
+
+                                <form
+                                    method="POST"
+                                    action="/admin/opportunities/{{ opportunity['opportunity_id'] }}/unarchive"
+                                >
+
+                                    <button
+                                        type="submit"
+                                    >
+                                        Unarchive
+                                    </button>
+
+                                </form>
+
+
+                            </div>
+
+
+                        </article>
+
+
+                    {% endfor %}
+
+
+                </div>
+
+
+            {% else %}
+
+
+                <div class="empty-state">
+
+                    <p class="explore-label">
+                        ARCHIVE EMPTY
+                    </p>
+
+                    <h2>
+                        No Archived Opportunities
+                    </h2>
+
+                    <p>
+                        Opportunities archived from the active catalogue
+                        will appear here.
+                    </p>
+
+                </div>
+
+
+            {% endif %}
+
+
+        </section>
+
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 Astrobase
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

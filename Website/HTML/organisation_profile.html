@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Organisation Profile | Astrobase</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+<body>
+
+
+    <header>
+
+        <h2>Astrobase</h2>
+
+        <nav>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/index.html">
+                Home
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/explore.html">
+                Explore
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/community.html">
+                Community
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/about.html">
+                About
+            </a>
+
+            <a href="/logout">
+                Logout
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/join.html">
+                Join Astrobase
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <a class="back-link" href="http://127.0.0.1:5500/Website/HTML/index.html">← Back to Astrobase</a>
+        
+        <section class="organisation-profile-section">
+
+            <p class="explore-label">
+                ORGANISATION
+            </p>
+
+            <h1>
+                {{ organisation['organisation_name'] }}
+            </h1>
+
+            <p class="organisation-profile-intro">
+                Organisation profile and information on Astrobase.
+            </p>
+
+
+            <div class="organisation-profile-card">
+
+
+                <div class="organisation-profile-row">
+
+                    <span>
+                        Organisation Name
+                    </span>
+
+                    <strong>
+                        {{ organisation['organisation_name'] }}
+                    </strong>
+
+                </div>
+
+
+                <div class="organisation-profile-row">
+
+                    <span>
+                        Organisation Type
+                    </span>
+
+                    <strong>
+                        {{ organisation['organisation_type'] or 'Not set' }}
+                    </strong>
+
+                </div>
+
+
+                <div class="organisation-profile-row">
+
+                    <span>
+                        Website
+                    </span>
+
+                    <strong>
+                        {{ organisation['website'] or 'Not set' }}
+                    </strong>
+
+                </div>
+
+
+                <div class="organisation-profile-row">
+
+                    <span>
+                        Contact Email
+                    </span>
+
+                    <strong>
+                        {{ organisation['contact_email'] or 'Not set' }}
+                    </strong>
+
+                </div>
+
+
+                <div class="organisation-profile-row">
+
+                    <span>
+                        Description
+                    </span>
+
+                    <strong>
+                        {{ organisation['description'] or 'No description added yet.' }}
+                    </strong>
+
+                </div>
+
+
+                <div class="organisation-profile-row">
+
+                    <span>
+                        Status
+                    </span>
+
+                    <strong>
+                        {{ organisation['status'] }}
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="organisation-profile-actions">
+
+                <a href="/organisation/profile/edit">
+                    <button type="button">
+                        Edit Organisation
+                    </button>
+                </a>
+
+                <a href="/organisation/profile/delete">
+                    Delete Organisation
+                </a>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 Astrobase
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Universities | Astrobase</title>
+
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- Navigation Bar -->
+
+    <header>
+
+        <h2>Astrobase</h2>
+
+        <nav>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/index.html">
+                Home
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/explore.html">
+                Explore
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/community.html">
+                Community
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/about.html">
+                About
+            </a>
+
+            <a href="http://127.0.0.1:5000/login">
+                Login
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/join.html">
+                Join Astrobase
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <a
+        class="back-link"href="http://127.0.0.1:5500/Website/HTML/explore.html">
+                ← Back to Explore
+        </a>
+
+
+        <!-- University Library -->
+
+        <section class="universities-section">
+
+
+            <div class="universities-header">
+
+                <p class="explore-label">
+                    UNIVERSITY LIBRARY
+                </p>
+
+                <h1>
+                    Universities
+                </h1>
+
+                <p class="universities-intro">
+                    Explore universities and discover programmes
+                    for your academic journey.
+                </p>
+
+                {% if role == "Organisation" %}
+
+                    <a
+                        href="/organisation/universities/add"
+                        class="university-add-button"
+                    >
+                        + Add University
+                    </a>
+
+                {% endif %}
+
+            </div>
+
+
+            <!-- Search and Filters -->
+
+            <form
+                class="university-filters"
+                method="GET"
+                action="/universities"
+            >
+
+
+                <div class="university-search">
+
+                    <label for="university-search">
+                        Search
+                    </label>
+
+                    <input
+                        type="text"
+                        id="university-search"
+                        name="search"
+                        placeholder="Search universities, programmes, countries or cities..."
+                        value="{{ search }}"
+                    >
+
+                </div>
+
+
+                <div class="university-filter">
+
+                    <label for="university-country">
+                        Country
+                    </label>
+
+                    <select
+                        id="university-country"
+                        name="country"
+                    >
+
+                        <option value="">
+                            All Countries
+                        </option>
+
+                        {% for item in countries %}
+
+                            <option
+                                value="{{ item.country }}"
+                                {% if selected_country == item.country %}
+                                    selected
+                                {% endif %}
+                            >
+                                {{ item.country }}
+                            </option>
+
+                        {% endfor %}
+
+                    </select>
+
+                </div>
+
+
+                <div class="university-filter">
+
+                    <label for="university-type">
+                        University Type
+                    </label>
+
+                    <select
+                        id="university-type"
+                        name="type"
+                    >
+
+                        <option value="">
+                            All Types
+                        </option>
+
+                        {% for item in university_types %}
+
+                            <option
+                                value="{{ item.university_type }}"
+                                {% if selected_type == item.university_type %}
+                                    selected
+                                {% endif %}
+                            >
+                                {{ item.university_type }}
+                            </option>
+
+                        {% endfor %}
+
+                    </select>
+
+                </div>
+
+
+                <div class="university-filter">
+
+                    <label for="university-programme">
+                        Programme
+                    </label>
+
+                    <select
+                        id="university-programme"
+                        name="programme"
+                    >
+
+                        <option value="">
+                            All Programmes
+                        </option>
+
+                        {% for item in programmes %}
+
+                            <option
+                                value="{{ item.programme_name }}"
+                                {% if selected_programme == item.programme_name %}
+                                    selected
+                                {% endif %}
+                            >
+                                {{ item.programme_name }}
+                            </option>
+
+                        {% endfor %}
+
+                    </select>
+
+                </div>
+
+
+                <div class="university-filter-actions">
+
+                    <button type="submit">
+                        Search
+                    </button>
+
+                    <a href="/universities">
+                        Clear
+                    </a>
+
+                </div>
+
+
+            </form>
+
+
+            <!-- University Results -->
+
+            <div class="universities-results">
+
+
+                {% if universities %}
+
+
+                    <div class="universities-grid">
+
+
+                        {% for university in universities %}
+
+
+                            <article class="university-card">
+
+
+                                <p class="university-card-type">
+                                    {{ university.university_type }}
+                                </p>
+
+
+                                <h2>
+                                    {{ university.university_name }}
+                                </h2>
+
+
+                                <p class="university-card-location">
+                                    {{ university.city }},
+                                    {{ university.country }}
+                                </p>
+
+
+                                <p class="university-card-description">
+                                    {{ university.description }}
+                                </p>
+
+
+                                <div class="university-card-meta">
+
+                                    <span>
+
+                                        {{ university.programme_count }}
+
+                                        {% if university.programme_count == 1 %}
+
+                                            Programme
+
+                                        {% else %}
+
+                                            Programmes
+
+                                        {% endif %}
+
+                                    </span>
+
+                                </div>
+
+
+                                <a
+                                    class="university-card-link"
+                                    href="/universities/{{ university.university_id }}"
+                                >
+                                    View University →
+                                </a>
+
+
+                            </article>
+
+
+                        {% endfor %}
+
+
+                    </div>
+
+
+                {% else %}
+
+
+                    <div class="university-empty-state">
+
+                        <h2>
+                            No universities found
+                        </h2>
+
+                        <p>
+                            Try changing your search or filters.
+                        </p>
+
+                    </div>
+
+
+                {% endif %}
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <footer class="site-footer">
+
+        <p>
+            © Astrobase
+        </p>
+
+    </footer>
+
+
+    <script
+        src="{{ url_for('static', filename='script.js') }}"
+    ></script>
+
+
+</body>
+
+</html>

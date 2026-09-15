@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account | Astrobase</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+
+        <h2>Astrobase</h2>
+
+        <nav>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/index.html">
+                Home
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/explore.html">
+                Explore
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/community.html">
+                Community
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/about.html">
+                About
+            </a>
+
+            <a href="http://127.0.0.1:5000/login">
+                Login
+            </a>
+
+            <a href="join.html">Join Astrobase</a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <section class="register-section">
+
+            <p class="explore-label">
+                JOIN ASTROBASE
+            </p>
+
+            <h1>
+                Create Your Account
+            </h1>
+
+            <p class="register-intro">
+                Create your Astrobase account and begin your journey
+                through space science.
+            </p>
+
+
+            <form
+                action="http://127.0.0.1:5000/register"
+                method="POST"
+            >
+
+                <!-- =========================
+                     ACCOUNT INFORMATION
+                     ========================= -->
+
+                <h2>
+                    Account Information
+                </h2>
+
+
+                <!-- Name -->
+                <label for="name">
+                    Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                >
+
+
+                <!-- Username -->
+                <label for="username">
+                    Username
+                </label>
+
+                <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    required
+                >
+
+
+                <!-- Email -->
+                <label for="email">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                >
+
+
+                <!-- Password -->
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    required
+                >
+
+
+                <!-- Confirm Password -->
+                <label for="confirm_password">
+                    Confirm Password
+                </label>
+
+                <input
+                    type="password"
+                    id="confirm_password"
+                    name="confirm_password"
+                    required
+                >
+
+
+                <!-- =========================
+                     PROFILE INFORMATION
+                     ========================= -->
+
+                <h2>
+                    Your Astrobase Profile
+                </h2>
+
+
+                <!-- Grade -->
+                <label for="grade">
+                    Grade
+                </label>
+
+                <input
+                    type="text"
+                    id="grade"
+                    name="grade"
+                    placeholder="e.g. 11"
+                    required
+                >
+
+
+                <!-- Country -->
+                <label for="country">
+                    Country
+                </label>
+
+                <input
+                    type="text"
+                    id="country"
+                    name="country"
+                    required
+                >
+
+
+                <!-- Interests -->
+                <label for="interests">
+                    Interests
+                </label>
+
+                <input
+                    type="text"
+                    id="interests"
+                    name="interests"
+                    placeholder="e.g. Astronomy, Cosmology, Physics"
+                    required
+                >
+
+
+                <!-- Career Goals -->
+                <label for="career_goals">
+                    Career Goals
+                </label>
+
+                <input
+                    type="text"
+                    id="career_goals"
+                    name="career_goals"
+                    placeholder="e.g. Astrophysicist"
+                    required
+                >
+
+
+                <!-- Bio -->
+                <label for="bio">
+                    Bio
+                    <span>(optional)</span>
+                </label>
+
+                <textarea
+                    id="bio"
+                    name="bio"
+                    rows="5"
+                    placeholder="Tell Astrobase a little about yourself..."
+                ></textarea>
+
+
+                <!-- Submit -->
+                <button type="submit">
+                    Create Account
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 Astrobase
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

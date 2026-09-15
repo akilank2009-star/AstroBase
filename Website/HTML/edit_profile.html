@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Edit Profile | Astrobase</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+
+        <h2>Astrobase</h2>
+
+        <nav>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/index.html">
+                Home
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/explore.html">
+                Explore
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/community.html">
+                Community
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/about.html">
+                About
+            </a>
+
+            <a href="/logout">
+                Logout
+            </a>
+
+            <a href="join.html">Join Astrobase</a>
+            
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <section class="profile-section">
+
+            <p class="explore-label">
+                MY ASTROBASE
+            </p>
+
+            <h1>
+                Edit Profile
+            </h1>
+
+            <p class="profile-intro">
+                Update your personal information on Astrobase.
+            </p>
+
+
+            <form
+                class="profile-edit-form"
+                action="/myastrobase/profile/edit"
+                method="POST"
+            >
+
+                <!-- Name -->
+                <label for="name">
+                    Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value="{{ user['name'] }}"
+                    required
+                >
+
+
+                <!-- Username -->
+                <label for="username">
+                    Username
+                </label>
+
+                <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    value="{{ user['username'] }}"
+                    required
+                >
+
+
+                <!-- Email -->
+                <label for="email">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value="{{ user['email'] }}"
+                    required
+                >
+
+
+                <!-- Grade -->
+                <label for="grade">
+                    Grade
+                </label>
+
+                <input
+                    type="text"
+                    id="grade"
+                    name="grade"
+                    value="{{ user['grade'] or '' }}"
+                    required
+                >
+
+
+                <!-- Country -->
+                <label for="country">
+                    Country
+                </label>
+
+                <input
+                    type="text"
+                    id="country"
+                    name="country"
+                    value="{{ user['country'] or '' }}"
+                    required
+                >
+
+
+                <!-- Interests -->
+                <label for="interests">
+                    Interests
+                </label>
+
+                <input
+                    type="text"
+                    id="interests"
+                    name="interests"
+                    value="{{ user['interests'] or '' }}"
+                    required
+                >
+
+
+                <!-- Career Goals -->
+                <label for="career_goals">
+                    Career Goals
+                </label>
+
+                <input
+                    type="text"
+                    id="career_goals"
+                    name="career_goals"
+                    value="{{ user['career_goals'] or '' }}"
+                    required
+                >
+
+
+                <!-- Bio -->
+                <label for="bio">
+                    Bio
+                    <span>(optional)</span>
+                </label>
+
+                <textarea
+                    id="bio"
+                    name="bio"
+                    rows="5"
+                    placeholder="Tell Astrobase a little about yourself..."
+                >{{ user['bio'] or '' }}</textarea>
+
+
+                <div class="profile-edit-actions">
+
+                    <button type="submit">
+                        Save Changes
+                    </button>
+
+                    <a href="/myastrobase/profile">
+                        Cancel
+                    </a>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 Astrobase
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

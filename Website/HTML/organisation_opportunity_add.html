@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Add Opportunity | Astrobase</title>
+
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- Navigation Bar -->
+
+    <header>
+
+        <h2>Astrobase</h2>
+
+        <nav>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/index.html">
+                Home
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/explore.html">
+                Explore
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/community.html">
+                Community
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/about.html">
+                About
+            </a>
+
+            <a href="http://127.0.0.1:5000/opportunities">
+                Opportunities
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+
+        <a
+            class="back-link"
+            href="/opportunities"
+        >
+            ← Back to Opportunities
+        </a>
+
+
+        <!-- Page Header -->
+
+        <section class="explore-header">
+
+            <h1>
+                Add Opportunity
+            </h1>
+
+            <p>
+
+                Share an opportunity with the Astrobase community.
+
+                Your submission can be saved as a draft or sent
+                to the Astrobase team for review.
+
+            </p>
+
+        </section>
+
+
+        <!-- Add Opportunity Form -->
+
+        <section class="opportunity-form-section">
+
+
+            <div class="opportunity-form-intro">
+
+                <p class="explore-label">
+                    ORGANISATION SUBMISSION
+                </p>
+
+                <h2>
+                    Create an Opportunity
+                </h2>
+
+                <p>
+
+                    Submitting as:
+
+                    <strong>
+                        {{ organisation['organisation_name'] }}
+                    </strong>
+
+                </p>
+
+            </div>
+
+
+            {% if error %}
+
+                <div class="form-error">
+
+                    {{ error }}
+
+                </div>
+
+            {% endif %}
+
+
+            <form
+                class="opportunity-form"
+                method="POST"
+                action="/organisation/opportunities/add"
+            >
+
+
+                <!-- Opportunity Name -->
+
+                <div class="form-group">
+
+                    <label for="opportunity_name">
+                        Opportunity Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="opportunity_name"
+                        name="opportunity_name"
+                        placeholder="Enter the opportunity name"
+                        value="{{ form_data['opportunity_name'] if form_data else '' }}"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Category -->
+
+                <div class="form-group">
+
+                    <label for="category">
+                        Category
+                    </label>
+
+
+                    <select
+                        id="category"
+                        name="category"
+                        required
+                    >
+
+                        <option value="">
+                            Select a category
+                        </option>
+
+
+                        <option
+                            value="Competition"
+                            {% if form_data and form_data['category'] == 'Competition' %}selected{% endif %}
+                        >
+                            Competition
+                        </option>
+
+
+                        <option
+                            value="Internship"
+                            {% if form_data and form_data['category'] == 'Internship' %}selected{% endif %}
+                        >
+                            Internship
+                        </option>
+
+
+                        <option
+                            value="Research Program"
+                            {% if form_data and form_data['category'] == 'Research Program' %}selected{% endif %}
+                        >
+                            Research Program
+                        </option>
+
+
+                        <option
+                            value="Scholarship"
+                            {% if form_data and form_data['category'] == 'Scholarship' %}selected{% endif %}
+                        >
+                            Scholarship
+                        </option>
+
+
+                        <option
+                            value="Summer Program"
+                            {% if form_data and form_data['category'] == 'Summer Program' %}selected{% endif %}
+                        >
+                            Summer Program
+                        </option>
+
+
+                        <option
+                            value="Workshop"
+                            {% if form_data and form_data['category'] == 'Workshop' %}selected{% endif %}
+                        >
+                            Workshop
+                        </option>
+
+
+                        <option
+                            value="Citizen Science"
+                            {% if form_data and form_data['category'] == 'Citizen Science' %}selected{% endif %}
+                        >
+                            Citizen Science
+                        </option>
+
+
+                        <option
+                            value="Other"
+                            {% if form_data and form_data['category'] == 'Other' %}selected{% endif %}
+                        >
+                            Other
+                        </option>
+
+
+                    </select>
+
+                </div>
+
+
+                <!-- Description -->
+
+                <div class="form-group">
+
+                    <label for="description">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="description"
+                        name="description"
+                        rows="7"
+                        placeholder="Describe the opportunity..."
+                        required
+                    >{{ form_data['description'] if form_data else '' }}</textarea>
+
+                </div>
+
+
+                <!-- Eligibility -->
+
+                <div class="form-group">
+
+                    <label for="eligibility">
+                        Eligibility
+                    </label>
+
+                    <textarea
+                        id="eligibility"
+                        name="eligibility"
+                        rows="5"
+                        placeholder="Who is eligible to apply?"
+                    >{{ form_data['eligibility'] if form_data else '' }}</textarea>
+
+                </div>
+
+
+                <!-- Deadline -->
+
+                <div class="form-group">
+
+                    <label for="deadline">
+                        Deadline
+                    </label>
+
+                    <input
+                        type="date"
+                        id="deadline"
+                        name="deadline"
+                        value="{{ form_data['deadline'] if form_data else '' }}"
+                    >
+
+                </div>
+
+
+                <!-- Official Website -->
+
+                <div class="form-group">
+
+                    <label for="official_website">
+                        Official Website
+                    </label>
+
+                    <input
+                        type="url"
+                        id="official_website"
+                        name="official_website"
+                        placeholder="https://example.com"
+                        value="{{ form_data['official_website'] if form_data else '' }}"
+                    >
+
+                </div>
+
+
+                <!-- Form Actions -->
+
+                <div class="opportunity-form-actions">
+
+
+                    <button
+                        type="submit"
+                        name="action"
+                        value="draft"
+                    >
+                        Save Draft
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        name="action"
+                        value="submit"
+                    >
+                        Submit for Review
+                    </button>
+
+
+                </div>
+
+
+            </form>
+
+
+        </section>
+
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 Astrobase
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

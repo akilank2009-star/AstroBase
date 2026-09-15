@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>My Opportunities | Astrobase</title>
+
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+    <header>
+
+        <h2>
+            Astrobase
+        </h2>
+
+
+        <nav>
+
+            <a
+                href="http://127.0.0.1:5500/Website/HTML/index.html"
+            >
+                Public Site
+            </a>
+
+
+            <a href="/organisation/dashboard">
+                Dashboard
+            </a>
+
+
+            <a href="/logout">
+                Logout
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+
+            <a
+                class="back-link"
+                href="/organisation/dashboard"
+            >
+                ← Back to Dashboard
+            </a>
+
+
+        <section class="organisation-opportunities-section">
+
+
+
+            <div class="organisation-opportunities-header">
+
+
+                <p class="explore-label">
+                    ORGANISATION
+                </p>
+
+
+                <h1>
+                    Added Opportunities
+                </h1>
+
+
+                <p>
+                    View and manage the opportunities your organisation
+                    has contributed to Astrobase.
+                </p>
+
+
+            </div>
+
+
+            <div class="organisation-opportunities-content">
+
+
+                <p class="explore-label">
+                    YOUR CONTRIBUTIONS
+                </p>
+
+
+                <h2>
+                    Opportunities
+                </h2>
+
+
+                <p>
+                    Drafts, submissions and published opportunities
+                    belonging to your organisation are shown here.
+                </p>
+
+
+                <div class="organisation-opportunity-add">
+
+                    <a href="/organisation/opportunities/add">
+                        + Add Opportunity
+                    </a>
+
+                </div>
+
+
+                {% if opportunities %}
+
+
+                    <div class="opportunity-grid">
+
+
+                        {% for opportunity in opportunities %}
+
+
+                            <article class="opportunity-card">
+
+
+                                <div class="opportunity-card-header">
+
+                                    <p class="opportunity-category">
+                                        {{ opportunity["category"] }}
+                                    </p>
+
+
+                                    <span class="opportunity-status">
+                                        {{ opportunity["status"] }}
+                                    </span>
+
+                                </div>
+
+
+                                <h3>
+                                    {{ opportunity["opportunity_name"] }}
+                                </h3>
+
+
+                                {% if opportunity["description"] %}
+
+                                    <p>
+                                        {{ opportunity["description"] }}
+                                    </p>
+
+                                {% endif %}
+
+
+                                {% if opportunity["eligibility"] %}
+
+                                    <p>
+
+                                        <strong>
+                                            Eligibility:
+                                        </strong>
+
+                                        {{ opportunity["eligibility"] }}
+
+                                    </p>
+
+                                {% endif %}
+
+
+                                {% if opportunity["deadline"] %}
+
+                                    <p>
+
+                                        <strong>
+                                            Deadline:
+                                        </strong>
+
+                                        {{ opportunity["deadline"] }}
+
+                                    </p>
+
+                                {% endif %}
+
+
+                                {% if opportunity["official_website"] %}
+
+                                    <p>
+
+                                        <a
+                                            href="{{ opportunity['official_website'] }}"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            Official Website
+                                        </a>
+
+                                    </p>
+
+                                {% endif %}
+
+
+                                <div class="opportunity-actions">
+
+
+                                    {% if opportunity["status"] != "Archived" %}
+
+                                        <a
+                                            href="/organisation/opportunities/{{ opportunity['opportunity_id'] }}/edit"
+                                        >
+                                            Edit
+                                        </a>
+
+                                    {% endif %}
+
+
+                                </div>
+
+
+                            </article>
+
+
+                        {% endfor %}
+
+
+                    </div>
+
+
+                {% else %}
+
+
+                    <div class="organisation-empty-state">
+
+
+                        <h3>
+                            No Opportunities Yet
+                        </h3>
+
+
+                        <p>
+                            Your organisation has not added any
+                            opportunities to Astrobase yet.
+                        </p>
+
+
+                        <a href="/organisation/opportunities/add">
+                            + Add Your First Opportunity
+                        </a>
+
+
+                    </div>
+
+
+                {% endif %}
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 Astrobase
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

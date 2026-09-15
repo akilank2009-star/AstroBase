@@ -1,0 +1,13316 @@
+* {
+
+    box-sizing: border-box;
+
+}
+
+
+/* =========================================================
+   GLOBAL FOUNDATION
+   ========================================================= */
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    font-family: 'Space Grotesk', sans-serif;
+
+    margin: 0;
+
+    background-color: #05070D;
+
+    color: #F9FAFB;
+
+}
+
+
+main {
+
+    padding: 0;
+
+}
+
+
+/* =========================================================
+   HOMEPAGE HERO
+   ========================================================= */
+
+.intro {
+
+    background-image: linear-gradient(
+        rgba(5, 7, 13, 0.45),
+        rgba(5, 7, 13, 0.80)
+    ), url("images/Stars.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    color: white;
+
+}
+
+
+.hero {
+
+    padding: 120px 40px 110px;
+
+    text-align: center;
+
+    min-height: 620px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.hero h1 {
+
+    font-size: 64px;
+
+    margin: 0 0 20px;
+
+    letter-spacing: 7px;
+
+    font-weight: 700;
+
+}
+
+
+.hero h2 {
+
+    font-family: 'Times New Roman', Times, serif;
+
+    font-size: 48px;
+
+    font-weight: normal;
+
+    line-height: 1.15;
+
+    margin: 0 0 25px;
+
+}
+
+
+.hero p {
+
+    max-width: 650px;
+
+    line-height: 1.7;
+
+    font-size: 17px;
+
+    color: #D1D5DB;
+
+    margin: 0 0 35px;
+
+}
+
+
+.hero button {
+
+    padding: 14px 32px;
+
+    font-family: 'Space Grotesk', sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    border: 1px solid #22D3EE;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    background-color: #22D3EE;
+
+    color: #05070D;
+
+    transition: 0.2s;
+
+}
+
+
+.hero button:hover {
+
+    background-color: #67E8F9;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* =========================================================
+   HOMEPAGE ABOUT
+   ========================================================= */
+
+.about {
+
+    padding: 100px 40px;
+
+    background-color: #05070D;
+
+    text-align: center;
+
+}
+
+
+.about h2 {
+
+    font-family: 'Times New Roman', Times, serif;
+
+    font-size: 42px;
+
+    font-weight: normal;
+
+    margin: 0 0 30px;
+
+    color: #F9FAFB;
+
+}
+
+
+.about p {
+
+    max-width: 720px;
+
+    margin: 0 auto 18px;
+
+    line-height: 1.7;
+
+    font-size: 17px;
+
+    color: #9CA3AF;
+
+}
+
+
+/* =========================================================
+   HOMEPAGE EXPLORE
+   ========================================================= */
+
+.explore {
+
+    padding: 100px 40px;
+
+    background-color: #0B1120;
+
+    text-align: center;
+
+}
+
+
+.explore h2 {
+
+    font-family: 'Times New Roman', Times, serif;
+
+    font-size: 42px;
+
+    font-weight: normal;
+
+    margin: 0 0 55px;
+
+    color: #F9FAFB;
+
+}
+
+
+.explore-card {
+
+    display: inline-block;
+
+    vertical-align: top;
+
+    width: 22%;
+
+    min-height: 220px;
+
+    margin: 10px;
+
+    padding: 30px;
+
+    background-color: #05070D;
+
+    border: 1px solid #1E293B;
+
+    text-align: left;
+
+    transition: 0.2s;
+
+}
+
+
+.explore-card:hover {
+
+    border-color: #22D3EE;
+
+    transform: translateY(-4px);
+
+}
+
+
+.explore-card h3 {
+
+    font-family: 'Space Grotesk', sans-serif;
+
+    font-size: 22px;
+
+    margin: 0 0 18px;
+
+    color: #F9FAFB;
+
+}
+
+
+.explore-card p {
+
+    color: #9CA3AF;
+
+    line-height: 1.6;
+
+    margin: 0;
+
+}
+
+.explore p {
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================================================
+   HOMEPAGE CONTENT
+   ========================================================= */
+
+.content {
+
+    padding: 50px 40px;
+
+}
+
+
+.content p {
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================================================
+   HOMEPAGE ASSESSMENT
+   ========================================================= */
+
+.assessment {
+
+    padding: 110px 40px;
+
+    background-color: #05070D;
+
+    text-align: center;
+
+    border-top: 1px solid #111827;
+
+    border-bottom: 1px solid #111827;
+
+}
+
+
+.assessment h2 {
+
+    font-family: 'Times New Roman', Times, serif;
+
+    font-size: 44px;
+
+    font-weight: normal;
+
+    margin: 0 0 25px;
+
+    color: #F9FAFB;
+
+}
+
+
+.assessment p {
+
+    max-width: 700px;
+
+    margin: 0 auto 35px;
+
+    line-height: 1.7;
+
+    font-size: 17px;
+
+    color: #9CA3AF;
+
+}
+
+
+.assessment button {
+
+    padding: 14px 32px;
+
+    font-family: 'Space Grotesk', sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    border: 1px solid #FBBF24;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    background-color: #FBBF24;
+
+    color: #05070D;
+
+    transition: 0.2s;
+
+}
+
+
+.assessment button:hover {
+
+    background-color: #FCD34D;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* =========================================================
+   HOMEPAGE CALL TO ACTION
+   ========================================================= */
+
+.cta {
+
+    padding: 100px 40px;
+
+    background-color: #0B1120;
+
+    text-align: center;
+
+}
+
+
+.cta h2 {
+
+    font-family: 'Times New Roman', Times, serif;
+
+    font-size: 44px;
+
+    font-weight: normal;
+
+    margin: 0 0 20px;
+
+    color: #F9FAFB;
+
+}
+
+
+.cta p {
+
+    max-width: 650px;
+
+    margin: 0 auto 30px;
+
+    line-height: 1.7;
+
+    font-size: 17px;
+
+    color: #9CA3AF;
+
+}
+
+
+.cta button {
+
+    padding: 14px 32px;
+
+    font-family: 'Space Grotesk', sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    border: 1px solid #22D3EE;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    background-color: #22D3EE;
+
+    color: #05070D;
+
+    transition: 0.2s;
+
+}
+
+
+.cta button:hover {
+
+    background-color: #67E8F9;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+
+    background-color: #05070D;
+
+    color: #9CA3AF;
+
+    padding: 25px 40px;
+
+    border-top: 1px solid #1E293B;
+
+    text-align: center;
+
+}
+
+
+footer p {
+
+    margin: 0;
+
+    font-size: 14px;
+
+}
+
+
+@media (max-width: 900px) {
+
+    .explore-card {
+
+        width: 44%;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+/* =========================================================
+   SHARED HEADER & NAVIGATION
+   ========================================================= */
+
+    header {
+
+        padding: 15px 20px;
+
+    }
+
+
+    nav a {
+
+        margin-right: 12px;
+
+        font-size: 13px;
+
+    }
+
+
+    .hero {
+
+        padding: 90px 25px;
+
+        min-height: 550px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 42px;
+
+        letter-spacing: 4px;
+
+    }
+
+
+    .hero h2 {
+
+        font-size: 34px;
+
+    }
+
+
+    .about,
+    .explore,
+    .assessment,
+    .cta {
+
+        padding: 75px 25px;
+
+    }
+
+
+    .explore-card {
+
+        width: 100%;
+
+        margin: 10px 0;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+/* =========================================================
+   RESOURCE CATEGORY CARDS
+   ========================================================= */
+
+    .resource-categories {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+.card-icon {
+
+    width: 32px;
+
+    height: 32px;
+
+    margin-bottom: 18px;
+
+}
+
+
+.card-icon svg {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    fill: none;
+
+    stroke: #22D3EE;
+
+    stroke-width: 1.5;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+
+}
+
+
+.explore-card:hover .card-icon svg {
+
+    stroke: #67E8F9;
+
+}
+
+
+/* =========================================================
+   ASTROBASE AI POPUP
+   ========================================================= */
+
+.ai-button {
+
+    position: fixed;
+
+    bottom: 25px;
+
+    right: 25px;
+
+    width: 55px;
+
+    height: 55px;
+
+    border: 1px solid #22D3EE;
+
+    border-radius: 50%;
+
+    background-color: #0B1120;
+
+    color: #22D3EE;
+
+    font-family: 'Space Grotesk', sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    z-index: 1000;
+
+    transition: 0.2s;
+
+}
+
+
+.ai-button:hover {
+
+    background-color: #22D3EE;
+
+    color: #05070D;
+
+    transform: translateY(-3px);
+
+}
+
+
+.ai-popup {
+
+    position: fixed;
+
+    bottom: 95px;
+
+    right: 25px;
+
+    width: 320px;
+
+    padding: 30px;
+
+    background-color: #0B1120;
+
+    border: 1px solid #22D3EE;
+
+    border-radius: 8px;
+
+    z-index: 999;
+
+    display: none;
+
+}
+
+
+.ai-popup h2 {
+
+    font-family: 'Times New Roman', Times, serif;
+
+    font-size: 28px;
+
+    font-weight: normal;
+
+    color: #F9FAFB;
+
+}
+
+
+.ai-popup p {
+
+    color: #9CA3AF;
+
+    line-height: 1.6;
+
+}
+
+
+.ai-close {
+
+    position: absolute;
+
+    top: 10px;
+
+    right: 15px;
+
+    background: none;
+
+    border: none;
+
+    color: #9CA3AF;
+
+    font-size: 24px;
+
+    cursor: pointer;
+
+}
+
+
+.ai-close:hover {
+
+    color: #22D3EE;
+
+}
+
+
+/* =========================================================
+   ASSESSMENT POPUP
+   ========================================================= */
+
+.assessment-popup {
+
+    position: fixed;
+
+    top: 50%;
+
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 420px;
+
+    padding: 35px;
+
+    background-color: #0B1120;
+
+    border: 1px solid #FBBF24;
+
+    border-radius: 8px;
+
+    z-index: 1001;
+
+    display: none;
+
+}
+
+
+.assessment-popup h2 {
+
+    font-family: 'Times New Roman', Times, serif;
+
+    font-size: 30px;
+
+    font-weight: normal;
+
+    color: #F9FAFB;
+
+}
+
+
+.assessment-popup p {
+
+    color: #9CA3AF;
+
+    line-height: 1.6;
+
+}
+
+
+.assessment-close {
+
+    position: absolute;
+
+    top: 10px;
+
+    right: 15px;
+
+    background: none;
+
+    border: none;
+
+    color: #9CA3AF;
+
+    font-size: 24px;
+
+    cursor: pointer;
+
+}
+
+
+.assessment-close:hover {
+
+    color: #FBBF24;
+
+}
+
+
+/* =========================================================
+   EXPLORE PAGE
+   ========================================================= */
+
+.explore-header {
+
+    padding: 80px 40px 50px;
+
+    background-color: #05070D;
+
+    text-align: center;
+
+}
+
+
+.explore-header h1 {
+
+    font-family: 'Times New Roman', Times, serif;
+
+    font-size: 48px;
+
+    font-weight: normal;
+
+    margin: 0 0 20px;
+
+    color: #F9FAFB;
+
+}
+
+
+.explore-header p {
+
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    line-height: 1.7;
+
+    font-size: 17px;
+
+    color: #9CA3AF;
+
+}
+
+
+.explore-hub {
+
+    display: grid;
+
+    grid-template-columns: 220px 1fr 260px;
+
+    gap: 30px;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 50px 40px 100px;
+
+}
+
+
+.explore-categories {
+
+    padding: 20px;
+
+    background-color: #0B1120;
+
+    border: 1px solid #1E293B;
+
+}
+
+
+.explore-categories h2 {
+
+    font-family: 'Times New Roman', Times, serif;
+
+    font-size: 28px;
+
+    font-weight: normal;
+
+    margin-top: 0;
+
+    margin-bottom: 25px;
+
+    color: #F9FAFB;
+
+}
+
+
+.explore-categories button,
+.explore-categories a {
+
+    display: block;
+
+    width: 100%;
+
+    padding: 15px;
+
+    margin-top: 10px;
+
+    border: 1px solid transparent;
+
+    background-color: #05070D;
+
+    color: #D1D5DB;
+
+    font-family: 'Space Grotesk', sans-serif;
+
+    font-size: 15px;
+
+    text-align: left;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+
+.explore-categories button:hover,
+.explore-categories a:hover {
+
+    border-color: #22D3EE;
+
+    color: #22D3EE;
+
+}
+
+
+.explore-content {
+
+    padding: 20px;
+
+}
+
+
+.explore-content h2 {
+
+    font-family: 'Times New Roman', Times, serif;
+
+    font-size: 36px;
+
+    font-weight: normal;
+
+    margin-top: 30px;
+
+    margin-bottom: 10px;
+
+    color: #F9FAFB;
+
+}
+
+
+.explore-content p + h2 {
+
+    margin-top: 35px;
+
+}
+
+
+.explore-content p {
+
+    max-width: 650px;
+
+    line-height: 1.7;
+
+    color: #9CA3AF;
+
+}
+
+
+.explore-links {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+
+    margin-top: 35px;
+
+}
+
+
+.explore-links a {
+
+    display: block;
+
+    padding: 22px;
+
+    background-color: #05070D;
+
+    border: 1px solid #1E293B;
+
+    color: #F9FAFB;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    transition: 0.2s;
+
+}
+
+
+.explore-links a:hover {
+
+    border-color: #22D3EE;
+
+    color: #22D3EE;
+
+    transform: translateY(-2px);
+
+}
+
+
+.explore-featured {
+
+    padding: 25px;
+
+    background-color: #0B1120;
+
+    border: 1px solid #1E293B;
+
+    align-self: start;
+
+}
+
+
+.explore-featured h2 {
+
+    font-family: 'Times New Roman', Times, serif;
+
+    font-size: 28px;
+
+    font-weight: normal;
+
+    margin-top: 0;
+
+    color: #F9FAFB;
+
+}
+
+
+.explore-featured h3 {
+
+    color: #22D3EE;
+
+    font-size: 18px;
+
+}
+
+
+.explore-featured p {
+
+    color: #9CA3AF;
+
+    line-height: 1.6;
+
+}
+
+
+.explore-label {
+
+    font-family: 'Space Grotesk', sans-serif;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    color: #22D3EE;
+
+    margin-bottom: 15px;
+
+}
+
+
+.explore-categories a.active {
+
+    border-color: #22D3EE;
+
+    color: #22D3EE;
+
+    background-color: #0B1120;
+
+}
+
+
+.explore-main-link {
+
+    display: inline-block;
+
+    margin-top: 30px;
+
+    color: #22D3EE;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition: 0.2s;
+
+}
+
+
+.explore-main-link:hover {
+
+    color: #67E8F9;
+
+}
+
+
+/* =========================================================
+   RESOURCE LIBRARY
+   ========================================================= */
+
+.resource-library {
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 80px 40px 100px;
+
+}
+
+
+.resource-intro {
+
+    max-width: 700px;
+
+    margin-bottom: 50px;
+
+}
+
+
+.resource-intro h2 {
+
+    font-family: 'Times New Roman', Times, serif;
+
+    font-size: 42px;
+
+    font-weight: normal;
+
+    margin: 0 0 20px;
+
+    color: #F9FAFB;
+
+}
+
+
+.resource-intro p {
+
+    line-height: 1.7;
+
+    color: #9CA3AF;
+
+}
+
+
+.resource-categories {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+
+}
+
+
+.resource-categories a {
+
+    padding: 30px;
+
+    background-color: #0B1120;
+
+    border: 1px solid #1E293B;
+
+    color: #F9FAFB;
+
+    text-decoration: none;
+
+    transition: 0.2s;
+
+}
+
+
+.resource-categories a:hover {
+
+    border-color: #22D3EE;
+
+    transform: translateY(-3px);
+
+}
+
+
+.resource-categories h3 {
+
+    margin: 0 0 12px;
+
+    font-size: 21px;
+
+}
+
+
+.resource-categories p {
+
+    margin: 0;
+
+    color: #9CA3AF;
+
+    line-height: 1.6;
+
+}
+
+
+.resource-search {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-bottom: 50px;
+
+}
+
+
+.resource-search input {
+
+    flex: 1;
+
+    padding: 15px;
+
+    background-color: #0B1120;
+
+    border: 1px solid #1E293B;
+
+    color: #F9FAFB;
+
+    font-family: 'Space Grotesk', sans-serif;
+
+    font-size: 15px;
+
+}
+
+
+.resource-search button {
+
+    padding: 15px 25px;
+
+    border: 1px solid #22D3EE;
+
+    background-color: #22D3EE;
+
+    color: #05070D;
+
+    font-family: 'Space Grotesk', sans-serif;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================================
+   SHARED BACK LINK
+   ========================================================= */
+
+.back-link {
+
+    display: inline-block;
+
+    margin: 30px 40px 0;
+
+    color: #9CA3AF;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: 0.2s;
+
+}
+
+
+.back-link:hover {
+
+    color: #22D3EE;
+
+}
+
+
+/* =========================================================
+   OPPORTUNITY LIBRARY
+   ========================================================= */
+
+.opportunity-library {
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 80px 40px 100px;
+
+}
+
+
+.opportunity-intro {
+
+    max-width: 700px;
+
+    margin-bottom: 40px;
+
+}
+
+
+.opportunity-intro h2 {
+
+    font-family: 'Times New Roman', Times, serif;
+
+    font-size: 42px;
+
+    font-weight: normal;
+
+    margin: 0 0 20px;
+
+    color: #F9FAFB;
+
+}
+
+
+.opportunity-intro p {
+
+    line-height: 1.7;
+
+    color: #9CA3AF;
+
+}
+
+
+.opportunity-search {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.opportunity-search input {
+
+    flex: 1;
+
+    padding: 15px;
+
+    background-color: #0B1120;
+
+    border: 1px solid #1E293B;
+
+    color: #F9FAFB;
+
+    font-family: 'Space Grotesk', sans-serif;
+
+    font-size: 15px;
+
+}
+
+
+.opportunity-search button {
+
+    padding: 15px 25px;
+
+    border: 1px solid #22D3EE;
+
+    background-color: #22D3EE;
+
+    color: #05070D;
+
+    font-family: 'Space Grotesk', sans-serif;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+}
+
+
+.opportunity-categories {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-bottom: 40px;
+
+}
+
+
+.opportunity-categories button {
+
+    padding: 10px 16px;
+
+    background-color: #0B1120;
+
+    border: 1px solid #1E293B;
+
+    color: #D1D5DB;
+
+    font-family: 'Space Grotesk', sans-serif;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+
+.opportunity-categories button:hover {
+
+    border-color: #22D3EE;
+
+    color: #22D3EE;
+
+}
+
+
+.opportunity-categories button.active {
+
+    border-color: #22D3EE;
+
+    background-color: #22D3EE;
+
+    color: #05070D;
+
+}
+
+
+.opportunity-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+
+}
+
+
+.opportunity-card {
+
+    padding: 30px;
+
+    background-color: #0B1120;
+
+    border: 1px solid #1E293B;
+
+    transition: 0.2s;
+
+}
+
+
+.opportunity-card:hover {
+
+    border-color: #22D3EE;
+
+    transform: translateY(-3px);
+
+}
+
+
+.opportunity-type {
+
+    font-size: 12px;
+
+    letter-spacing: 1.5px;
+
+    color: #22D3EE;
+
+    margin: 0 0 12px;
+
+}
+
+
+.opportunity-card h3 {
+
+    font-size: 22px;
+
+    margin: 0 0 15px;
+
+    color: #F9FAFB;
+
+}
+
+
+.opportunity-card > p {
+
+    color: #9CA3AF;
+
+    line-height: 1.6;
+
+}
+
+
+.opportunity-details {
+
+    display: flex;
+
+    gap: 25px;
+
+    margin: 25px 0;
+
+    color: #9CA3AF;
+
+    font-size: 14px;
+
+}
+
+
+.opportunity-card > a {
+
+    color: #22D3EE;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+}
+
+
+.opportunity-card > a:hover {
+
+    color: #67E8F9;
+
+}
+
+
+@media (max-width: 600px) {
+
+    .opportunity-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .opportunity-search {
+
+        flex-direction: column;
+
+    }
+
+}
+
+
+/* =========================================================
+   LOGIN PAGE
+   ========================================================= */
+
+.login-section {
+
+    width: min(500px, calc(100% - 40px));
+
+    margin: 80px auto;
+
+    padding: 50px;
+
+    box-sizing: border-box;
+
+    background: #0B1120;
+
+    border: 1px solid #172554;
+
+    border-radius: 12px;
+
+    text-align: left;
+
+}
+
+
+.login-section .explore-label {
+
+    margin-bottom: 12px;
+
+}
+
+
+.login-section h2 {
+
+    margin: 0 0 15px;
+
+    color: #F9FAFB;
+
+    font-family: "Times New Roman", serif;
+
+    font-size: 42px;
+
+    font-weight: 600;
+
+}
+
+
+.login-section > p:not(.explore-label) {
+
+    margin-bottom: 35px;
+
+    color: #9CA3AF;
+
+    line-height: 1.6;
+
+}
+
+
+.login-section form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+}
+
+
+.login-section label {
+
+    margin-top: 10px;
+
+    color: #F9FAFB;
+
+    font-size: 14px;
+
+}
+
+
+.login-section input {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 13px 14px;
+
+    background: #05070D;
+
+    border: 1px solid #172554;
+
+    border-radius: 6px;
+
+    color: #F9FAFB;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: 0.2s;
+
+}
+
+
+.login-section input:focus {
+
+    border-color: #22D3EE;
+
+}
+
+
+.login-section button {
+
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 13px 20px;
+
+    background: #22D3EE;
+
+    color: #05070D;
+
+    border: none;
+
+    border-radius: 6px;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+
+.login-section button:hover {
+
+    background: #67E8F9;
+
+}
+
+header {
+
+    background-color: #172554;
+
+    color: white;
+
+    padding: 18px 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-bottom: 1px solid #1E3A5F;
+
+    font-family: 'Space Grotesk', sans-serif;
+
+}
+
+
+header h2 {
+
+    margin: 0;
+
+    letter-spacing: 2px;
+
+    font-family: 'Space Grotesk', sans-serif;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+}
+
+
+header nav {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+}
+
+
+header nav a {
+
+    color: #F9FAFB;
+
+    margin-left: 0;
+
+    text-decoration: none;
+
+    font-family: 'Space Grotesk', sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 400;
+
+    transition: 0.2s;
+
+}
+
+
+header nav a:hover {
+
+    color: #22D3EE;
+
+}
+
+
+/* =========================================================
+   PERSONALIZED HOMEPAGE
+   ========================================================= */
+
+.personalized {
+
+    max-width: 1100px;
+
+    margin: 80px auto;
+
+    padding: 50px;
+
+    border: 1px solid rgba(103, 232, 249, 0.2);
+
+    background: #0B1120;
+
+}
+
+
+.personalized h2 {
+
+    margin-bottom: 15px;
+
+}
+
+
+.personalized-info {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+
+    margin: 35px 0;
+
+}
+
+
+.personalized-info div {
+
+    padding: 20px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+}
+
+
+.personalized-info span {
+
+    display: block;
+
+    color: #9CA3AF;
+
+    margin-bottom: 8px;
+
+}
+
+
+.personalized-info strong {
+
+    display: block;
+
+    color: #F9FAFB;
+
+}
+
+
+/* =========================================================
+   PROFILE PAGE
+   ========================================================= */
+
+.profile-section {
+
+    max-width: 900px;
+
+    margin: 80px auto;
+
+    padding: 0 30px;
+
+}
+
+
+.profile-section h1 {
+
+    margin-bottom: 12px;
+
+}
+
+
+.profile-intro {
+
+    color: #9CA3AF;
+
+    margin-bottom: 45px;
+
+}
+
+
+.profile-card {
+
+    background: #0B1120;
+
+    border: 1px solid rgba(103, 232, 249, 0.15);
+
+}
+
+
+.profile-row {
+
+    display: grid;
+
+    grid-template-columns: 180px 1fr;
+
+    gap: 30px;
+
+    padding: 24px 28px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+
+}
+
+
+.profile-row:last-child {
+
+    border-bottom: none;
+
+}
+
+
+.profile-row span {
+
+    color: #9CA3AF;
+
+}
+
+
+.profile-row strong {
+
+    color: #F9FAFB;
+
+    font-weight: 500;
+
+}
+
+
+.profile-actions {
+
+    margin-top: 30px;
+
+}
+
+
+.profile-actions button {
+
+
+    opacity: 0.5;
+
+    cursor: not-allowed;
+
+}
+
+
+.profile-actions p {
+
+    color: #9CA3AF;
+
+    font-size: 0.9rem;
+
+    margin-top: 12px;
+
+}
+
+
+/* =========================================================
+   STUDENT REGISTRATION
+   ========================================================= */
+
+.register-section {
+
+    max-width: 850px;
+
+    margin: 80px auto;
+
+    padding: 0 30px;
+
+}
+
+
+.register-section h1 {
+
+    margin-bottom: 15px;
+
+}
+
+
+.register-intro {
+
+    color: #9CA3AF;
+
+    margin-bottom: 45px;
+
+}
+
+
+.register-section form {
+
+    background: #0B1120;
+
+    border: 1px solid rgba(103, 232, 249, 0.15);
+
+    padding: 40px;
+
+}
+
+
+.register-section form h2 {
+
+    margin-top: 0;
+
+    margin-bottom: 30px;
+
+}
+
+
+.register-section form h2:not(:first-child) {
+
+    margin-top: 50px;
+
+}
+
+
+.register-section form label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #F9FAFB;
+
+}
+
+
+.register-section form label span {
+
+    color: #9CA3AF;
+
+    font-size: 0.9rem;
+
+}
+
+
+.register-section form input,
+.register-section form textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 13px 14px;
+
+    margin-bottom: 25px;
+
+    background: #05070D;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    color: #F9FAFB;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 1rem;
+
+    outline: none;
+
+}
+
+
+.register-section form input:focus,
+.register-section form textarea:focus {
+
+    border-color: #22D3EE;
+
+}
+
+
+.register-section form textarea {
+
+    resize: vertical;
+
+    min-height: 120px;
+
+}
+
+
+.register-section form button {
+
+    margin-top: 10px;
+
+}
+
+
+/* =========================================================
+   EDIT PROFILE
+   ========================================================= */
+
+.profile-edit-form {
+
+    max-width: 900px;
+
+    background: #0B1120;
+
+    border: 1px solid rgba(103, 232, 249, 0.15);
+
+    padding: 40px;
+
+    box-sizing: border-box;
+
+}
+
+
+.profile-edit-form label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #9CA3AF;
+
+    font-size: 0.95rem;
+
+}
+
+
+.profile-edit-form label span {
+
+    color: #6B7280;
+
+    font-size: 0.85rem;
+
+}
+
+.profile-edit-form input,
+.profile-edit-form textarea {
+
+    display: block;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 13px 14px;
+
+    margin-bottom: 25px;
+
+    background: #05070D;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    color: #F9FAFB;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 1rem;
+
+    outline: none;
+
+}
+
+.profile-edit-form input:focus,
+.profile-edit-form textarea:focus {
+
+    border-color: #22D3EE;
+
+}
+
+
+.profile-edit-form textarea {
+
+    resize: vertical;
+
+    min-height: 130px;
+
+}
+
+
+.profile-edit-form h2 {
+
+    margin-bottom: 30px;
+
+}
+
+
+.profile-edit-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-top: 10px;
+
+}
+
+
+.profile-edit-actions a {
+
+    color: #67E8F9;
+
+    text-decoration: none;
+
+}
+
+
+.profile-edit-actions a:hover {
+
+    text-decoration: underline;
+
+}
+
+
+/* =========================================================
+   DELETE PROFILE
+   ========================================================= */
+
+.delete-profile-section {
+
+    max-width: 800px;
+
+    margin: 100px auto;
+
+    padding: 0 30px;
+
+}
+
+
+.delete-profile-section h1 {
+
+    margin-bottom: 20px;
+
+}
+
+
+.delete-profile-section > p {
+
+    color: #9CA3AF;
+
+    line-height: 1.7;
+
+}
+
+
+.delete-warning {
+
+    margin-top: 35px;
+
+    padding: 20px 24px;
+
+    background: rgba(127, 29, 29, 0.15);
+
+    border: 1px solid rgba(248, 113, 113, 0.25);
+
+    color: #FCA5A5;
+
+}
+
+
+.delete-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin-top: 35px;
+
+}
+
+
+.delete-actions form {
+
+    margin: 0;
+
+}
+
+
+.delete-actions a {
+
+    text-decoration: none;
+
+}
+
+
+.delete-confirm-button {
+
+    border: 1px solid rgba(248, 113, 113, 0.4);
+
+}
+
+
+.delete-confirm-button:hover {
+
+    border-color: rgba(248, 113, 113, 0.8);
+
+}
+
+
+/* =========================================================
+   JOIN ASTROBASE
+   ========================================================= */
+
+.join-section {
+
+    max-width: 1100px;
+
+    margin: 80px auto;
+
+    padding: 0 30px;
+
+}
+
+
+.join-section h1 {
+
+    margin-bottom: 15px;
+
+}
+
+
+.join-intro {
+
+    color: #9CA3AF;
+
+    margin-bottom: 50px;
+
+}
+
+
+.role-selection {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+}
+
+
+.role-card {
+
+    background: #0B1120;
+
+    border: 1px solid rgba(103, 232, 249, 0.15);
+
+    padding: 35px;
+
+    min-height: 330px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    box-sizing: border-box;
+
+}
+
+
+.role-card:hover {
+
+    border-color: rgba(103, 232, 249, 0.45);
+
+}
+
+
+.role-label {
+
+    color: #22D3EE;
+
+    font-size: 0.8rem;
+
+    letter-spacing: 0.12em;
+
+    margin-bottom: 20px;
+
+}
+
+
+.role-card h2 {
+
+    margin-bottom: 15px;
+
+}
+
+
+.role-card p:not(.role-label) {
+
+    color: #9CA3AF;
+
+    line-height: 1.7;
+
+    margin-bottom: 30px;
+
+}
+
+
+.role-card a {
+
+    margin-top: auto;
+
+    text-decoration: none;
+
+}
+
+
+.role-card button {
+
+    width: 100%;
+
+}
+
+
+/* =========================================================
+   ORGANISATION APPLICATION
+   ========================================================= */
+
+.organisation-apply-section {
+
+    max-width: 900px;
+
+    margin: 80px auto;
+
+    padding: 0 30px;
+
+}
+
+.organisation-apply-section h1 {
+
+    margin-bottom: 15px;
+
+}
+
+.organisation-apply-intro {
+
+    color: #9CA3AF;
+
+    line-height: 1.7;
+
+    margin-bottom: 45px;
+
+}
+
+.organisation-apply-form {
+
+    background: #0B1120;
+
+    border: 1px solid rgba(103, 232, 249, 0.15);
+
+    padding: 40px;
+
+}
+
+.organisation-apply-form h2 {
+
+    margin-top: 0;
+
+    margin-bottom: 30px;
+
+}
+
+.organisation-apply-form h2:not(:first-child) {
+
+    margin-top: 50px;
+
+}
+
+.organisation-apply-form label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #F9FAFB;
+
+}
+
+.organisation-apply-form input[type="text"],
+.organisation-apply-form input[type="url"],
+.organisation-apply-form input[type="email"],
+.organisation-apply-form textarea {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 13px 14px;
+
+    margin-bottom: 25px;
+
+    background: #05070D;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    color: #F9FAFB;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 1rem;
+
+    outline: none;
+
+}
+
+.organisation-apply-form input:focus,
+.organisation-apply-form textarea:focus {
+
+    border-color: #22D3EE;
+
+}
+
+.organisation-apply-form textarea {
+
+    resize: vertical;
+
+    min-height: 130px;
+
+}
+
+.organisation-area-options {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+    margin-bottom: 30px;
+
+}
+
+.organisation-area-options label {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #9CA3AF;
+
+    margin-bottom: 0;
+
+}
+
+.organisation-area-options input {
+
+    accent-color: #22D3EE;
+
+}
+
+.organisation-apply-form button {
+
+    margin-top: 10px;
+
+}
+
+
+/* =========================================================
+   ABOUT PAGE
+   ========================================================= */
+
+.about-header {
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    padding: 100px 40px 80px;
+
+}
+
+
+.about-header h1 {
+
+    max-width: 850px;
+
+    margin: 0 0 25px;
+
+    font-family: "Times New Roman", Times, serif;
+
+    font-size: 52px;
+
+    font-weight: normal;
+
+    line-height: 1.15;
+
+    color: #F9FAFB;
+
+}
+
+
+.about-header > p:last-child {
+
+    max-width: 720px;
+
+    margin: 0;
+
+    color: #9CA3AF;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+}
+
+
+.about-block {
+
+    padding: 100px 40px;
+
+    background-color: #05070D;
+
+    border-top: 1px solid #111827;
+
+}
+
+
+.about-block-dark {
+
+    background-color: #0B1120;
+
+}
+
+
+.about-block-content {
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+}
+
+
+.about-block-content h2 {
+
+    margin: 0 0 25px;
+
+    font-family: "Times New Roman", Times, serif;
+
+    font-size: 42px;
+
+    font-weight: normal;
+
+    color: #F9FAFB;
+
+}
+
+
+.about-block-content p:not(.explore-label) {
+
+    max-width: 720px;
+
+    margin: 0 0 20px;
+
+    color: #9CA3AF;
+
+    line-height: 1.8;
+
+    font-size: 17px;
+
+}
+
+
+.about-ecosystem {
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 100px 40px;
+
+}
+
+
+.about-ecosystem > h2 {
+
+    margin: 0 0 50px;
+
+    font-family: "Times New Roman", Times, serif;
+
+    font-size: 42px;
+
+    font-weight: normal;
+
+    color: #F9FAFB;
+
+}
+
+
+.about-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+
+}
+
+
+.about-card {
+
+    padding: 30px;
+
+    background-color: #0B1120;
+
+    border: 1px solid #1E293B;
+
+    transition: 0.2s;
+
+}
+
+
+.about-card:hover {
+
+    border-color: #22D3EE;
+
+    transform: translateY(-3px);
+
+}
+
+
+.about-card h3 {
+
+    margin: 0 0 15px;
+
+    color: #F9FAFB;
+
+    font-size: 22px;
+
+}
+
+
+.about-card p {
+
+    margin: 0;
+
+    color: #9CA3AF;
+
+    line-height: 1.7;
+
+}
+
+
+.about-vision {
+
+    padding: 110px 40px;
+
+    background-color: #0B1120;
+
+    border-top: 1px solid #111827;
+
+    text-align: center;
+
+}
+
+
+.about-vision h2 {
+
+    max-width: 800px;
+
+    margin: 0 auto 25px;
+
+    font-family: "Times New Roman", Times, serif;
+
+    font-size: 46px;
+
+    font-weight: normal;
+
+    color: #F9FAFB;
+
+}
+
+
+.about-vision > p:last-child {
+
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    color: #9CA3AF;
+
+    line-height: 1.8;
+
+    font-size: 17px;
+
+}
+
+
+@media (max-width: 700px) {
+
+    .about-header {
+
+        padding: 80px 25px 60px;
+
+    }
+
+
+    .about-header h1 {
+
+        font-size: 40px;
+
+    }
+
+
+    .about-block {
+
+        padding: 75px 25px;
+
+    }
+
+
+    .about-block-content h2 {
+
+        font-size: 36px;
+
+    }
+
+
+    .about-ecosystem {
+
+        padding: 75px 25px;
+
+    }
+
+
+    .about-ecosystem > h2 {
+
+        font-size: 36px;
+
+    }
+
+
+    .about-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .about-vision {
+
+        padding: 80px 25px;
+
+    }
+
+
+    .about-vision h2 {
+
+        font-size: 38px;
+
+    }
+
+}
+
+
+/* =========================================================
+   ORGANISATION APPLICATION SUBMITTED
+   ========================================================= */
+
+.organisation-submitted-section {
+
+    max-width: 700px;
+
+    margin: 120px auto;
+
+    padding: 0 30px;
+
+}
+
+
+.organisation-submitted-section h1 {
+
+    margin-bottom: 25px;
+
+    font-family: "Times New Roman", Times, serif;
+
+    font-size: 48px;
+
+    font-weight: normal;
+
+}
+
+
+.organisation-submitted-section > p:not(.explore-label) {
+
+    color: #9CA3AF;
+
+    line-height: 1.8;
+
+    font-size: 17px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.organisation-submitted-section strong {
+
+    color: #22D3EE;
+
+}
+
+
+.organisation-submitted-section button {
+
+    margin-top: 20px;
+
+}
+
+
+/* =========================================================
+   ADMIN LOGIN
+   ========================================================= */
+
+.admin-login-section {
+
+    width: min(500px, calc(100% - 40px));
+
+    margin: 100px auto;
+
+    padding: 50px;
+
+    box-sizing: border-box;
+
+    background: #0B1120;
+
+    border: 1px solid #172554;
+
+}
+
+
+.admin-login-section h1 {
+
+    margin: 0 0 20px;
+
+    font-family: "Times New Roman", Times, serif;
+
+    font-size: 42px;
+
+    font-weight: normal;
+
+}
+
+
+.admin-login-section > p:not(.explore-label) {
+
+    color: #9CA3AF;
+
+    line-height: 1.7;
+
+    margin-bottom: 35px;
+
+}
+
+
+.admin-login-section form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+}
+
+
+.admin-login-section label {
+
+    margin-top: 10px;
+
+    color: #F9FAFB;
+
+}
+
+
+.admin-login-section input {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 13px 14px;
+
+    background: #05070D;
+
+    border: 1px solid #172554;
+
+    color: #F9FAFB;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 15px;
+
+    outline: none;
+
+}
+
+
+.admin-login-section input:focus {
+
+    border-color: #22D3EE;
+
+}
+
+
+.admin-login-section button {
+
+    margin-top: 20px;
+
+}
+
+
+/* =========================================================
+   ADMIN DASHBOARD
+   ========================================================= */
+
+.admin-dashboard-section {
+
+    max-width: 1100px;
+
+    margin: 80px auto;
+
+    padding: 0 30px;
+
+}
+
+
+.admin-dashboard-section h1 {
+
+    margin-bottom: 15px;
+
+    font-family: "Times New Roman", Times, serif;
+
+    font-size: 48px;
+
+    font-weight: normal;
+
+}
+
+
+.admin-intro {
+
+    color: #9CA3AF;
+
+    line-height: 1.7;
+
+    margin-bottom: 50px;
+
+}
+
+
+.admin-attention {
+
+    margin-bottom: 50px;
+
+}
+
+
+.admin-attention h2 {
+
+    margin-bottom: 25px;
+
+}
+
+
+.admin-stats {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.admin-stat {
+
+    padding: 25px;
+
+    background: #0B1120;
+
+    border: 1px solid #1E293B;
+
+}
+
+
+.admin-stat span {
+
+    display: block;
+
+    color: #9CA3AF;
+
+    margin-bottom: 12px;
+
+}
+
+
+.admin-stat strong {
+
+    display: block;
+
+    color: #F9FAFB;
+
+    font-size: 30px;
+
+}
+
+
+.admin-dashboard-card {
+
+    padding: 30px;
+
+    background: #0B1120;
+
+    border: 1px solid #1E293B;
+
+    margin-bottom: 25px;
+
+}
+
+
+.admin-dashboard-card h2 {
+
+    margin-top: 0;
+
+    margin-bottom: 12px;
+
+}
+
+
+.admin-dashboard-card p {
+
+    color: #9CA3AF;
+
+    line-height: 1.7;
+
+}
+
+
+.admin-dashboard-card a,
+.admin-application-card a {
+
+    color: #22D3EE;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+}
+
+
+.admin-dashboard-card a:hover,
+.admin-application-card a:hover {
+
+    color: #67E8F9;
+
+}
+
+
+.admin-application-list {
+
+    display: grid;
+
+    gap: 20px;
+
+}
+
+
+.admin-application-card {
+
+    padding: 30px;
+
+    background: #0B1120;
+
+    border: 1px solid #1E293B;
+
+}
+
+
+.admin-application-card:hover {
+
+    border-color: rgba(103, 232, 249, 0.45);
+
+}
+
+
+.admin-application-card h2 {
+
+    margin: 0 0 12px;
+
+}
+
+
+.admin-application-card p:not(.role-label) {
+
+    color: #9CA3AF;
+
+    margin-bottom: 10px;
+
+}
+
+
+.admin-application-card .role-label {
+
+    margin-bottom: 15px;
+
+}
+
+
+@media (max-width: 700px) {
+
+    .admin-stats {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .admin-dashboard-section {
+
+        margin: 60px auto;
+
+    }
+
+}
+
+
+/* =========================================================
+   ORGANISATION APPLICATION VIEW
+   ========================================================= */
+
+.organisation-application-view {
+
+    max-width: 900px;
+
+    margin: 80px auto;
+
+    padding: 0 30px;
+
+}
+
+
+.organisation-application-view h1 {
+
+    margin-bottom: 30px;
+
+    font-family: "Times New Roman", Times, serif;
+
+    font-size: 48px;
+
+    font-weight: normal;
+
+}
+
+
+.organisation-status {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 20px 25px;
+
+    margin-bottom: 40px;
+
+    background: #0B1120;
+
+    border: 1px solid #1E293B;
+
+}
+
+
+.organisation-status span {
+
+    color: #9CA3AF;
+
+}
+
+
+.organisation-status strong {
+
+    color: #22D3EE;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.08em;
+
+}
+
+
+.organisation-application-details {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+
+}
+
+
+.organisation-application-details > div {
+
+    padding: 30px;
+
+    background: #0B1120;
+
+    border: 1px solid #1E293B;
+
+}
+
+
+.organisation-application-details h2 {
+
+    margin-top: 0;
+
+    margin-bottom: 30px;
+
+}
+
+
+.organisation-application-details p {
+
+    color: #9CA3AF;
+
+    line-height: 1.7;
+
+    margin-bottom: 20px;
+
+}
+
+
+.organisation-application-details p strong {
+
+    color: #F9FAFB;
+
+}
+
+
+.organisation-application-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin-top: 30px;
+
+}
+
+
+.organisation-application-actions form {
+
+    margin: 0;
+
+}
+
+
+@media (max-width: 700px) {
+
+    .organisation-application-details {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .organisation-application-actions {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+}
+
+
+/* =========================================================
+   ADMIN ORGANISATION REVIEW
+   ========================================================= */
+
+.admin-review-section {
+
+    max-width: 1100px;
+
+    margin: 80px auto;
+
+    padding: 0 30px;
+
+}
+
+
+.admin-review-section h1 {
+
+    margin-bottom: 30px;
+
+    font-family: "Times New Roman", Times, serif;
+
+    font-size: 48px;
+
+    font-weight: normal;
+
+}
+
+
+.admin-review-status {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 20px 25px;
+
+    margin-bottom: 30px;
+
+    background: #0B1120;
+
+    border: 1px solid #1E293B;
+
+}
+
+
+.admin-review-status span {
+
+    color: #9CA3AF;
+
+}
+
+
+.admin-review-status strong {
+
+    color: #22D3EE;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+
+}
+
+
+.admin-review-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+
+}
+
+
+.admin-review-card {
+
+    padding: 30px;
+
+    background: #0B1120;
+
+    border: 1px solid #1E293B;
+
+}
+
+
+.admin-review-card h2 {
+
+    margin-top: 0;
+
+    margin-bottom: 30px;
+
+}
+
+
+.admin-review-field {
+
+    margin-bottom: 25px;
+
+}
+
+
+.admin-review-field span {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #67E8F9;
+
+    font-size: 0.85rem;
+
+    letter-spacing: 0.04em;
+
+}
+
+
+.admin-review-field p {
+
+    margin: 0;
+
+    color: #9CA3AF;
+
+    line-height: 1.7;
+
+}
+
+
+.admin-review-actions {
+
+    display: flex;
+
+    gap: 20px;
+
+    margin-top: 30px;
+
+}
+
+
+.admin-review-actions button {
+
+    min-width: 180px;
+
+}
+
+
+@media (max-width: 700px) {
+
+    .admin-review-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .admin-review-actions {
+
+        flex-direction: column;
+
+    }
+
+
+    .admin-review-actions button {
+
+        width: 100%;
+
+    }
+
+}
+
+
+.admin-review-actions form {
+
+    margin: 0;
+
+}
+
+
+.admin-review-actions form button {
+
+    min-width: 180px;
+
+}
+
+
+/* =========================================================
+   ORGANISATION ACCOUNT REGISTRATION
+   ========================================================= */
+
+.organisation-register-section {
+
+    max-width: 850px;
+
+    margin: 80px auto;
+
+    padding: 0 30px;
+
+}
+
+
+.organisation-register-section h1 {
+
+    margin-bottom: 15px;
+
+    font-family: "Times New Roman", Times, serif;
+
+    font-size: 48px;
+
+    font-weight: normal;
+
+}
+
+
+.organisation-register-intro {
+
+    color: #9CA3AF;
+
+    line-height: 1.7;
+
+    margin-bottom: 45px;
+
+}
+
+
+.organisation-register-section form {
+
+    background: #0B1120;
+
+    border: 1px solid rgba(103, 232, 249, 0.15);
+
+    padding: 40px;
+
+    box-sizing: border-box;
+
+}
+
+
+.organisation-register-section form h2 {
+
+    margin-top: 0;
+
+    margin-bottom: 30px;
+
+}
+
+
+.organisation-register-section form label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #F9FAFB;
+
+}
+
+
+.organisation-register-section form input {
+
+    display: block;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 13px 14px;
+
+    margin-bottom: 25px;
+
+    background: #05070D;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    color: #F9FAFB;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 1rem;
+
+    outline: none;
+
+}
+
+
+.organisation-register-section form input:focus {
+
+    border-color: #22D3EE;
+
+}
+
+
+.organisation-register-section form button {
+
+    margin-top: 10px;
+
+}
+
+
+/* =========================================================
+   ORGANISATION PROFILE
+   ========================================================= */
+
+.organisation-profile-section {
+
+    max-width: 850px;
+
+    margin: 80px auto;
+
+    padding: 0 30px;
+
+}
+
+
+.organisation-profile-section h1 {
+
+    margin-bottom: 15px;
+
+}
+
+
+.organisation-profile-intro {
+
+    color: #9CA3AF;
+
+    margin-bottom: 45px;
+
+}
+
+
+.organisation-profile-card {
+
+    background: #0B1120;
+
+    border: 1px solid rgba(103, 232, 249, 0.15);
+
+}
+
+
+.organisation-profile-row {
+
+    display: grid;
+
+    grid-template-columns: 210px 1fr;
+
+    gap: 30px;
+
+    padding: 25px 28px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+}
+
+
+.organisation-profile-row:last-child {
+
+    border-bottom: none;
+
+}
+
+
+.organisation-profile-row span {
+
+    color: #9CA3AF;
+
+}
+
+
+.organisation-profile-row strong {
+
+    color: #F9FAFB;
+
+    font-weight: 500;
+
+    line-height: 1.6;
+
+}
+
+
+.organisation-profile-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin-top: 25px;
+
+}
+
+
+.organisation-profile-actions a {
+
+    color: #67E8F9;
+
+    text-decoration: none;
+
+}
+
+
+.organisation-profile-actions a:hover {
+
+    text-decoration: underline;
+
+}
+
+
+/* =========================================================
+   OPPORTUNITY CREATION
+   ========================================================= */
+
+.opportunity-create {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    margin-bottom: 30px;
+
+}
+
+
+.opportunity-create button {
+
+    padding: 12px 22px;
+
+    border: none;
+
+    background: #22D3EE;
+
+    color: #05070D;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================================
+   OPPORTUNITY FORM
+   ========================================================= */
+
+.opportunity-form-section {
+
+    max-width: 850px;
+
+    margin: 80px auto;
+
+}
+
+
+.opportunity-form-intro {
+
+    margin-bottom: 40px;
+
+}
+
+
+.opportunity-form-intro h2 {
+
+    margin-bottom: 15px;
+
+}
+
+
+.opportunity-form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 28px;
+
+}
+
+
+.form-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+}
+
+
+.form-group label {
+
+    color: #F9FAFB;
+
+    font-size: 0.95rem;
+
+    font-weight: 500;
+
+}
+
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 14px 16px;
+
+    border: 1px solid #172554;
+
+    background: #0B1120;
+
+    color: #F9FAFB;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.95rem;
+
+}
+
+
+.form-group textarea {
+
+    resize: vertical;
+
+}
+
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+
+    outline: none;
+
+    border-color: #22D3EE;
+
+}
+
+
+.opportunity-form-actions {
+
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 10px;
+
+}
+
+
+.opportunity-form-actions button {
+
+    padding: 13px 24px;
+
+    border: 1px solid #22D3EE;
+
+    background: #22D3EE;
+
+    color: #05070D;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+}
+
+
+.opportunity-form-actions button[value="draft"] {
+
+    background: transparent;
+
+    color: #22D3EE;
+
+}
+
+
+.form-error {
+
+    margin-bottom: 25px;
+
+    padding: 15px 18px;
+
+    border: 1px solid #7F1D1D;
+
+    background: #1C0B0B;
+
+    color: #FCA5A5;
+
+}
+
+
+.organisation-edit-section {
+
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+}
+
+
+.organisation-edit-intro {
+
+    margin-bottom: 40px;
+
+}
+
+
+.organisation-edit-form {
+
+    width: 100%;
+
+}
+
+
+.organisation-edit-form .form-group {
+
+    margin-bottom: 28px;
+
+}
+
+
+.organisation-edit-form label {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #9CA3AF;
+
+    font-size: 0.95rem;
+
+}
+
+
+.organisation-edit-form input,
+.organisation-edit-form textarea {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 15px 18px;
+
+    background: #0B1120;
+
+    border: 1px solid #1E3A5F;
+
+    color: #F9FAFB;
+
+    font-family: 'Space Grotesk', sans-serif;
+
+    font-size: 0.95rem;
+
+}
+
+
+.organisation-edit-form textarea {
+
+    resize: vertical;
+
+}
+
+
+.organisation-edit-form input:focus,
+.organisation-edit-form textarea:focus {
+
+    outline: none;
+
+    border-color: #22D3EE;
+
+}
+
+
+.organisation-edit-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin-top: 35px;
+
+}
+
+
+.organisation-edit-actions button {
+
+    padding: 14px 24px;
+
+    border: none;
+
+    background: #22D3EE;
+
+    color: #05070D;
+
+    font-family: 'Space Grotesk', sans-serif;
+
+    font-size: 0.95rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+}
+
+
+.organisation-edit-actions a {
+
+    color: #9CA3AF;
+
+    text-decoration: none;
+
+    font-family: 'Space Grotesk', sans-serif;
+
+}
+
+
+.organisation-edit-actions a:hover {
+
+    color: #22D3EE;
+
+}
+
+
+.delete-profile-section {
+
+    width: 100%;
+
+    max-width: 800px;
+
+    margin: 0 auto;
+
+    padding: 0 30px;
+
+    box-sizing: border-box;
+
+}
+
+
+.delete-profile-content {
+
+    padding: 40px;
+
+    background: #0B1120;
+
+    border: 1px solid #1E3A5F;
+
+}
+
+
+.delete-profile-content h2 {
+
+    margin-bottom: 20px;
+
+}
+
+
+.delete-profile-content p {
+
+    color: #9CA3AF;
+
+    line-height: 1.7;
+
+}
+
+
+.delete-profile-content strong {
+
+    color: #F9FAFB;
+
+}
+
+
+.delete-profile-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    margin-top: 35px;
+
+}
+
+
+.delete-profile-actions a {
+
+    color: #9CA3AF;
+
+    text-decoration: none;
+
+}
+
+
+.delete-profile-actions a:hover {
+
+    color: #22D3EE;
+
+}
+
+
+.delete-profile-actions button {
+
+    padding: 14px 24px;
+
+    border: 1px solid #7F1D1D;
+
+    background: #450A0A;
+
+    color: #FCA5A5;
+
+    font-family: 'Space Grotesk', sans-serif;
+
+    font-size: 0.95rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+}
+
+
+.delete-profile-actions button:hover {
+
+    background: #7F1D1D;
+
+    color: #F9FAFB;
+
+}
+
+
+.opportunity-library {
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 0 30px;
+
+    box-sizing: border-box;
+
+}
+
+
+.opportunity-library-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    gap: 40px;
+
+    margin-bottom: 35px;
+
+}
+
+
+.opportunity-library-header > div:last-child a {
+
+    display: inline-block;
+
+    padding: 12px 20px;
+
+    border: 1px solid #22D3EE;
+
+    border-radius: 6px;
+
+    color: #67E8F9;
+
+    text-decoration: none;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.9rem;
+
+    transition: 0.2s ease;
+
+}
+
+
+.opportunity-library-header > div:last-child a:hover {
+
+    background: #22D3EE;
+
+    color: #05070D;
+
+}
+
+
+.opportunity-library-header h2 {
+
+    margin-bottom: 10px;
+
+}
+
+
+.opportunity-library-header p {
+
+    margin-bottom: 0;
+
+}
+
+
+.opportunity-filters {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 35px;
+
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid rgba(156, 163, 175, 0.15);
+
+}
+
+
+.opportunity-filters a {
+
+    display: inline-block;
+
+    padding: 9px 17px;
+
+    border: 1px solid rgba(156, 163, 175, 0.25);
+
+    border-radius: 5px;
+
+    color: #9CA3AF;
+
+    background: #0B1120;
+
+    text-decoration: none;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.85rem;
+
+    transition: 0.2s ease;
+
+}
+
+
+.opportunity-filters a:hover {
+
+    border-color: #22D3EE;
+
+    color: #67E8F9;
+
+}
+
+
+.opportunity-filters a.active {
+
+    border-color: #22D3EE;
+
+    background: #172554;
+
+    color: #67E8F9;
+
+}
+
+
+.opportunity-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 24px;
+
+}
+
+
+.opportunity-card {
+
+    padding: 28px;
+
+    background: #0B1120;
+
+    border: 1px solid rgba(156, 163, 175, 0.18);
+
+    border-radius: 8px;
+
+    transition: 0.2s ease;
+
+}
+
+
+.opportunity-card:hover {
+
+    border-color: rgba(34, 211, 238, 0.45);
+
+    transform: translateY(-2px);
+
+}
+
+
+.opportunity-category {
+
+    margin-bottom: 10px;
+
+    color: #67E8F9;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.78rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
+
+}
+
+
+.opportunity-status {
+
+    margin-bottom: 18px;
+
+    color: #FBBF24;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.82rem;
+
+}
+
+
+.opportunity-card h3 {
+
+    margin-bottom: 15px;
+
+    color: #F9FAFB;
+
+    font-family: "Times New Roman", serif;
+
+    font-size: 1.65rem;
+
+    font-weight: 500;
+
+}
+
+
+.opportunity-card > p {
+
+    margin-bottom: 14px;
+
+    color: #9CA3AF;
+
+    line-height: 1.7;
+
+}
+
+
+.opportunity-card strong {
+
+    color: #F9FAFB;
+
+    font-weight: 500;
+
+}
+
+
+.admin-opportunity-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(156, 163, 175, 0.12);
+
+}
+
+
+.admin-opportunity-actions a {
+
+    display: inline-block;
+
+    padding: 8px 14px;
+
+    border: 1px solid rgba(156, 163, 175, 0.25);
+
+    border-radius: 5px;
+
+    color: #9CA3AF;
+
+    text-decoration: none;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.82rem;
+
+    transition: 0.2s ease;
+
+}
+
+
+.admin-opportunity-actions a:hover {
+
+    border-color: #22D3EE;
+
+    color: #67E8F9;
+
+}
+
+
+.admin-opportunity-actions form {
+
+    margin: 0;
+
+}
+
+
+.admin-opportunity-actions button {
+
+    padding: 8px 14px;
+
+    border: 1px solid rgba(156, 163, 175, 0.25);
+
+    border-radius: 5px;
+
+    background: transparent;
+
+    color: #9CA3AF;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.82rem;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+
+}
+
+
+.admin-opportunity-actions button:hover {
+
+    border-color: #22D3EE;
+
+    color: #67E8F9;
+
+}
+
+
+.empty-state {
+
+    width: 100%;
+
+    padding: 60px 30px;
+
+    box-sizing: border-box;
+
+    text-align: center;
+
+    background: #0B1120;
+
+    border: 1px solid rgba(156, 163, 175, 0.15);
+
+    border-radius: 8px;
+
+}
+
+
+.empty-state h3 {
+
+    margin-bottom: 12px;
+
+    color: #F9FAFB;
+
+    font-family: "Times New Roman", serif;
+
+    font-size: 1.7rem;
+
+    font-weight: 500;
+
+}
+
+
+.empty-state p {
+
+    color: #9CA3AF;
+
+}
+
+
+@media (max-width: 800px) {
+
+    .opportunity-library-header {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+    }
+
+
+    .opportunity-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .opportunity-library {
+
+        padding: 0 20px;
+
+    }
+
+
+    .opportunity-card {
+
+        padding: 22px;
+
+    }
+
+}
+
+
+.archive-opportunities-section {
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 0 30px;
+
+    box-sizing: border-box;
+
+}
+
+
+.archive-opportunity-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 24px;
+
+}
+
+
+.archive-opportunity-card {
+
+    padding: 28px;
+
+    background: #0B1120;
+
+    border: 1px solid rgba(156, 163, 175, 0.18);
+
+    border-radius: 8px;
+
+    transition: 0.2s ease;
+
+}
+
+
+.archive-opportunity-card:hover {
+
+    border-color: rgba(34, 211, 238, 0.45);
+
+    transform: translateY(-2px);
+
+}
+
+
+.archive-opportunity-card .opportunity-category {
+
+    margin-bottom: 10px;
+
+    color: #67E8F9;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.78rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
+
+}
+
+
+.archive-opportunity-card .opportunity-status {
+
+    margin-bottom: 18px;
+
+    color: #9CA3AF;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.82rem;
+
+}
+
+
+.archive-opportunity-card h2 {
+
+    margin-bottom: 15px;
+
+    color: #F9FAFB;
+
+    font-family: "Times New Roman", serif;
+
+    font-size: 1.65rem;
+
+    font-weight: 500;
+
+}
+
+
+.archive-opportunity-card > p {
+
+    margin-bottom: 14px;
+
+    color: #9CA3AF;
+
+    line-height: 1.7;
+
+}
+
+
+.archive-opportunity-card strong {
+
+    color: #F9FAFB;
+
+    font-weight: 500;
+
+}
+
+
+.archive-opportunity-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(156, 163, 175, 0.12);
+
+}
+
+
+.archive-opportunity-actions a {
+
+    display: inline-block;
+
+    padding: 8px 14px;
+
+    border: 1px solid rgba(156, 163, 175, 0.25);
+
+    border-radius: 5px;
+
+    color: #9CA3AF;
+
+    text-decoration: none;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.82rem;
+
+    transition: 0.2s ease;
+
+}
+
+
+.archive-opportunity-actions a:hover {
+
+    border-color: #22D3EE;
+
+    color: #67E8F9;
+
+}
+
+
+.archive-opportunity-actions form {
+
+    margin: 0;
+
+}
+
+
+.archive-opportunity-actions button {
+
+    display: inline-block;
+
+    padding: 8px 14px;
+
+    border: 1px solid #22D3EE;
+
+    border-radius: 5px;
+
+    background: transparent;
+
+    color: #67E8F9;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.82rem;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+
+}
+
+
+.archive-opportunity-actions button:hover {
+
+    background: #22D3EE;
+
+    color: #05070D;
+
+}
+
+
+.archive-empty-state {
+
+    width: 100%;
+
+    padding: 60px 30px;
+
+    box-sizing: border-box;
+
+    text-align: center;
+
+    background: #0B1120;
+
+    border: 1px solid rgba(156, 163, 175, 0.15);
+
+    border-radius: 8px;
+
+}
+
+
+.archive-empty-state h2 {
+
+    margin-bottom: 12px;
+
+    color: #F9FAFB;
+
+    font-family: "Times New Roman", serif;
+
+    font-size: 1.7rem;
+
+    font-weight: 500;
+
+}
+
+
+.archive-empty-state p {
+
+    color: #9CA3AF;
+
+}
+
+
+@media (max-width: 800px) {
+
+    .archive-opportunity-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .archive-opportunities-section {
+
+        padding: 0 20px;
+
+    }
+
+
+    .archive-opportunity-card {
+
+        padding: 22px;
+
+    }
+
+}
+
+
+/* =========================================================
+   OPPORTUNITY RESULTS
+   ========================================================= */
+
+.opportunities-section {
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 0 30px;
+
+    box-sizing: border-box;
+
+}
+
+
+.opportunities-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 24px;
+
+}
+
+
+.opportunity-card {
+
+    padding: 28px;
+
+    background: #0B1120;
+
+    border: 1px solid rgba(156, 163, 175, 0.18);
+
+    border-radius: 8px;
+
+    transition: 0.2s ease;
+
+}
+
+
+.opportunity-card:hover {
+
+    border-color: rgba(34, 211, 238, 0.45);
+
+    transform: translateY(-2px);
+
+}
+
+
+.opportunity-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(156, 163, 175, 0.12);
+
+}
+
+
+.opportunity-actions a {
+
+    display: inline-block;
+
+    padding: 8px 14px;
+
+    border: 1px solid rgba(156, 163, 175, 0.25);
+
+    border-radius: 5px;
+
+    color: #9CA3AF;
+
+    text-decoration: none;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.82rem;
+
+    transition: 0.2s ease;
+
+}
+
+
+.opportunity-actions a:hover {
+
+    border-color: #22D3EE;
+
+    color: #67E8F9;
+
+}
+
+
+.opportunity-actions form {
+
+    margin: 0;
+
+}
+
+
+.opportunity-actions button {
+
+    padding: 8px 14px;
+
+    border: 1px solid #22D3EE;
+
+    border-radius: 5px;
+
+    background: transparent;
+
+    color: #67E8F9;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.82rem;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+
+}
+
+
+.opportunity-actions button:hover {
+
+    background: #22D3EE;
+
+    color: #05070D;
+
+}
+
+
+@media (max-width: 800px) {
+
+    .opportunities-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .opportunities-section {
+
+        padding: 0 20px;
+
+    }
+
+
+    .opportunity-card {
+
+        padding: 22px;
+
+    }
+
+}
+
+
+.resource-results {
+
+    width: 100%;
+
+    margin-top: 40px;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 24px;
+
+}
+
+
+.resource-card {
+
+    padding: 28px;
+
+    background: #0B1120;
+
+    border: 1px solid rgba(156, 163, 175, 0.18);
+
+    border-radius: 8px;
+
+    transition: 0.2s ease;
+
+}
+
+
+.resource-card:hover {
+
+    border-color: rgba(34, 211, 238, 0.45);
+
+    transform: translateY(-2px);
+
+}
+
+
+.resource-type {
+
+    color: #67E8F9;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.8rem;
+
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
+
+}
+
+
+.resource-card h3 {
+
+    margin-top: 12px;
+
+    margin-bottom: 14px;
+
+}
+
+
+.resource-card p {
+
+    color: #9CA3AF;
+
+    line-height: 1.7;
+
+}
+
+
+.resource-recommended {
+
+    margin-top: 18px;
+
+}
+
+
+.resource-provider {
+
+    margin-top: 12px;
+
+}
+
+
+.resource-provider strong {
+
+    color: #F9FAFB;
+
+}
+
+
+.resource-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 24px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(156, 163, 175, 0.12);
+
+}
+
+
+.resource-actions a {
+
+    display: inline-block;
+
+    padding: 8px 14px;
+
+    border: 1px solid rgba(156, 163, 175, 0.25);
+
+    border-radius: 5px;
+
+    color: #9CA3AF;
+
+    text-decoration: none;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.82rem;
+
+    transition: 0.2s ease;
+
+}
+
+
+.resource-actions a:hover {
+
+    border-color: #22D3EE;
+
+    color: #67E8F9;
+
+}
+
+
+.no-resources {
+
+    grid-column: 1 / -1;
+
+    padding: 50px 30px;
+
+    text-align: center;
+
+    border: 1px solid rgba(156, 163, 175, 0.18);
+
+    border-radius: 8px;
+
+}
+
+
+.no-resources p {
+
+    color: #9CA3AF;
+
+}
+
+
+@media (max-width: 800px) {
+
+    .resource-results {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+.featured-resources {
+
+    width: 100%;
+
+    margin-top: 70px;
+
+}
+
+
+.featured-resources-header {
+
+    margin-bottom: 30px;
+
+}
+
+
+.featured-resources-header h2 {
+
+    margin-bottom: 12px;
+
+}
+
+
+.featured-resources-header p {
+
+    color: #9CA3AF;
+
+    line-height: 1.7;
+
+}
+
+
+.featured-resources .resource-results {
+
+    margin-top: 0;
+
+}
+
+
+.resource-management {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    margin-bottom: 30px;
+
+}
+
+
+.resource-management a {
+
+    display: inline-block;
+
+    padding: 12px 20px;
+
+    border: 1px solid #22D3EE;
+
+    border-radius: 6px;
+
+    color: #67E8F9;
+
+    text-decoration: none;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    transition: 0.2s ease;
+
+}
+
+
+.resource-management a:hover {
+
+    background: #22D3EE;
+
+    color: #05070D;
+
+}
+
+
+.organisation-dashboard-section {
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: 80px 40px;
+
+}
+
+
+.organisation-dashboard-section .explore-label {
+
+    margin-bottom: 14px;
+
+}
+
+
+.organisation-dashboard-section h1 {
+
+    margin: 0;
+
+    color: #F9FAFB;
+
+    font-family: "Times New Roman", serif;
+
+    font-size: 3rem;
+
+    font-weight: 500;
+
+}
+
+
+.organisation-dashboard-intro {
+
+    max-width: 650px;
+
+    margin-top: 18px;
+
+    margin-bottom: 50px;
+
+    color: #9CA3AF;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 1rem;
+
+    line-height: 1.7;
+
+}
+
+
+.organisation-dashboard-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 24px;
+
+}
+
+
+.organisation-dashboard-card {
+
+    min-height: 220px;
+
+    padding: 30px;
+
+    border: 1px solid #172554;
+
+    border-radius: 8px;
+
+    background: #0B1120;
+
+    display: flex;
+
+    flex-direction: column;
+
+    transition: 0.2s ease;
+
+}
+
+
+.organisation-dashboard-card:hover {
+
+    border-color: #22D3EE;
+
+    transform: translateY(-2px);
+
+}
+
+
+.organisation-dashboard-card h2 {
+
+    margin: 0 0 14px;
+
+    color: #F9FAFB;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 1.25rem;
+
+    font-weight: 600;
+
+}
+
+
+.organisation-dashboard-card p {
+
+    margin: 0 0 24px;
+
+    color: #9CA3AF;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.95rem;
+
+    line-height: 1.6;
+
+}
+
+
+.organisation-dashboard-card a {
+
+    align-self: flex-start;
+
+    margin-top: auto;
+
+    padding: 10px 16px;
+
+    border: 1px solid #22D3EE;
+
+    border-radius: 6px;
+
+    color: #67E8F9;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+
+}
+
+
+.organisation-dashboard-card a:hover {
+
+    background: #22D3EE;
+
+    color: #05070D;
+
+}
+
+
+.organisation-dashboard-card > p:last-child {
+
+    margin-top: auto;
+
+    margin-bottom: 0;
+
+    color: #6B7280;
+
+    font-size: 0.85rem;
+
+    font-style: italic;
+
+}
+
+
+@media (max-width: 750px) {
+
+    .organisation-dashboard-section {
+
+        padding: 60px 24px;
+
+    }
+
+
+    .organisation-dashboard-section h1 {
+
+        font-size: 2.3rem;
+
+    }
+
+
+    .organisation-dashboard-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+/* =========================================================
+   ADMIN OPPORTUNITY VIEW
+   ========================================================= */
+
+.admin-opportunity-view {
+
+    max-width: 1000px;
+
+    margin: 70px auto 100px;
+
+    padding: 40px;
+
+    border: 1px solid #172554;
+
+    border-radius: 8px;
+
+    background: #0B1120;
+
+}
+
+
+.admin-opportunity-intro {
+
+    padding-bottom: 30px;
+
+    border-bottom: 1px solid #172554;
+
+}
+
+
+.admin-opportunity-intro .explore-label {
+
+    margin-bottom: 14px;
+
+}
+
+
+.admin-opportunity-intro h2 {
+
+    margin: 0 0 18px;
+
+    color: #F9FAFB;
+
+    font-family: "Times New Roman", serif;
+
+    font-size: 2.2rem;
+
+    font-weight: 500;
+
+}
+
+
+.admin-opportunity-intro p:last-child {
+
+    margin: 0;
+
+    color: #9CA3AF;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.95rem;
+
+}
+
+
+.admin-opportunity-intro strong {
+
+    color: #67E8F9;
+
+    font-weight: 600;
+
+}
+
+
+.admin-opportunity-details {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 0;
+
+}
+
+
+.admin-opportunity-detail {
+
+    padding: 25px 25px 25px 0;
+
+    border-bottom: 1px solid #172554;
+
+}
+
+
+.admin-opportunity-detail:nth-child(even) {
+
+    padding-left: 25px;
+
+    border-left: 1px solid #172554;
+
+}
+
+
+.admin-opportunity-detail span {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #6B7280;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.8rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+
+}
+
+
+.admin-opportunity-detail p {
+
+    margin: 0;
+
+    color: #D1D5DB;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.95rem;
+
+    line-height: 1.7;
+
+}
+
+
+.admin-opportunity-detail a {
+
+    color: #67E8F9;
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+
+}
+
+
+.admin-opportunity-detail a:hover {
+
+    color: #22D3EE;
+
+}
+
+
+.admin-opportunity-actions {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 35px;
+
+    padding-top: 30px;
+
+}
+
+
+.admin-opportunity-actions a,
+.admin-opportunity-actions button {
+
+    padding: 11px 18px;
+
+    border: 1px solid #22D3EE;
+
+    border-radius: 6px;
+
+    background: transparent;
+
+    color: #67E8F9;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+
+}
+
+
+.admin-opportunity-actions a:hover,
+.admin-opportunity-actions button:hover {
+
+    background: #22D3EE;
+
+    color: #05070D;
+
+}
+
+
+.admin-opportunity-actions form {
+
+    margin: 0;
+
+}
+
+
+@media (max-width: 750px) {
+
+    .admin-opportunity-view {
+
+        margin: 50px 24px 70px;
+
+        padding: 25px;
+
+    }
+
+
+    .admin-opportunity-intro h2 {
+
+        font-size: 1.8rem;
+
+    }
+
+
+    .admin-opportunity-details {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .admin-opportunity-detail {
+
+        padding: 22px 0;
+
+    }
+
+
+    .admin-opportunity-detail:nth-child(even) {
+
+        padding-left: 0;
+
+        border-left: none;
+
+    }
+
+}
+
+
+.resource-library {
+
+    max-width: 1100px;
+
+    margin: 60px auto 100px;
+
+    padding: 0 40px;
+
+}
+
+
+.resource-library-header {
+
+    margin-bottom: 30px;
+
+}
+
+
+.resource-library-header .explore-label {
+
+    margin-bottom: 14px;
+
+}
+
+
+.resource-library-header h2 {
+
+    margin: 0 0 14px;
+
+    color: #F9FAFB;
+
+    font-family: "Times New Roman", serif;
+
+    font-size: 2.2rem;
+
+    font-weight: 500;
+
+}
+
+
+.resource-library-header p:last-child {
+
+    margin: 0;
+
+    color: #9CA3AF;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.95rem;
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================================================
+   RESOURCE FILTERS
+   ========================================================= */
+
+.resource-filters {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-bottom: 35px;
+
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid #172554;
+
+}
+
+
+.resource-filters a {
+
+    display: inline-block;
+
+    padding: 9px 15px;
+
+    border: 1px solid #172554;
+
+    border-radius: 6px;
+
+    color: #9CA3AF;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.85rem;
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+
+}
+
+
+.resource-filters a:hover {
+
+    border-color: #22D3EE;
+
+    color: #67E8F9;
+
+}
+
+
+.resource-filters a.active {
+
+    border-color: #22D3EE;
+
+    background: #172554;
+
+    color: #67E8F9;
+
+}
+
+
+.resource-filters a:last-child {
+
+    margin-left: auto;
+
+    border-color: #374151;
+
+    color: #9CA3AF;
+
+}
+
+
+.resource-filters a:last-child:hover {
+
+    border-color: #22D3EE;
+
+    color: #67E8F9;
+
+}
+
+
+.resource-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 24px;
+
+}
+
+
+.resource-grid .resource-card {
+
+    min-height: 300px;
+
+    padding: 30px;
+
+    border: 1px solid #172554;
+
+    border-radius: 8px;
+
+    background: #0B1120;
+
+    display: flex;
+
+    flex-direction: column;
+
+    transition: 0.2s ease;
+
+}
+
+
+.resource-grid .resource-card:hover {
+
+    border-color: #22D3EE;
+
+    transform: translateY(-2px);
+
+}
+
+
+.resource-grid .resource-type {
+
+    margin: 0 0 14px;
+
+    color: #67E8F9;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.8rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+
+}
+
+
+.resource-status {
+
+    margin: 0 0 18px;
+
+    color: #9CA3AF;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.85rem;
+
+}
+
+
+.resource-status strong {
+
+    color: #67E8F9;
+
+    font-weight: 600;
+
+}
+
+
+.resource-grid .resource-card h3 {
+
+    margin: 0 0 16px;
+
+    color: #F9FAFB;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 1.3rem;
+
+    font-weight: 600;
+
+}
+
+
+.resource-grid .resource-card > p {
+
+    color: #9CA3AF;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.92rem;
+
+    line-height: 1.65;
+
+}
+
+
+.resource-grid .resource-card > p strong {
+
+    color: #D1D5DB;
+
+}
+
+
+.resource-grid .resource-card > p:last-of-type {
+
+    margin-top: auto;
+
+}
+
+
+.resource-grid .resource-card > p:has(+ .admin-resource-actions) {
+
+    margin-bottom: 20px;
+
+}
+
+
+.admin-resource-actions {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 20px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #172554;
+
+}
+
+
+.admin-resource-actions a {
+
+    display: inline-block;
+
+    padding: 10px 15px;
+
+    border: 1px solid #22D3EE;
+
+    border-radius: 6px;
+
+    color: #67E8F9;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.85rem;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+
+}
+
+
+.admin-resource-actions a:hover {
+
+    background: #22D3EE;
+
+    color: #05070D;
+
+}
+
+
+/* =========================================================
+   ADMIN RESOURCE VIEW
+   ========================================================= */
+
+.admin-resource-view {
+
+    max-width: 1000px;
+
+    margin: 70px auto 100px;
+
+    padding: 40px;
+
+    border: 1px solid #172554;
+
+    border-radius: 8px;
+
+    background: #0B1120;
+
+}
+
+
+.admin-resource-intro {
+
+    padding-bottom: 30px;
+
+    border-bottom: 1px solid #172554;
+
+}
+
+
+.admin-resource-intro .explore-label {
+
+    margin-bottom: 14px;
+
+}
+
+
+.admin-resource-intro h2 {
+
+    margin: 0 0 18px;
+
+    color: #F9FAFB;
+
+    font-family: "Times New Roman", serif;
+
+    font-size: 2.2rem;
+
+    font-weight: 500;
+
+}
+
+
+.admin-resource-intro p {
+
+    margin: 0;
+
+    color: #9CA3AF;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.95rem;
+
+}
+
+
+.admin-resource-intro strong {
+
+    color: #67E8F9;
+
+    font-weight: 600;
+
+}
+
+
+.admin-resource-details {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+}
+
+
+.admin-resource-detail {
+
+    min-height: 120px;
+
+    padding: 25px 25px 25px 0;
+
+    border-bottom: 1px solid #172554;
+
+}
+
+
+.admin-resource-detail:nth-child(even) {
+
+    padding-left: 25px;
+
+    border-left: 1px solid #172554;
+
+}
+
+
+.admin-resource-detail span {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #6B7280;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.8rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+
+}
+
+
+.admin-resource-detail p {
+
+    margin: 0;
+
+    color: #D1D5DB;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.95rem;
+
+    line-height: 1.7;
+
+}
+
+
+.admin-resource-detail a {
+
+    color: #67E8F9;
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+
+}
+
+
+.admin-resource-detail a:hover {
+
+    color: #22D3EE;
+
+}
+
+
+.admin-resource-view .admin-resource-actions {
+
+    margin-top: 30px;
+
+    padding-top: 30px;
+
+}
+
+
+.admin-resource-view .admin-resource-actions a,
+.admin-resource-view .admin-resource-actions button {
+
+    padding: 11px 18px;
+
+    border: 1px solid #22D3EE;
+
+    border-radius: 6px;
+
+    background: transparent;
+
+    color: #67E8F9;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+
+}
+
+
+.admin-resource-view .admin-resource-actions a:hover,
+.admin-resource-view .admin-resource-actions button:hover {
+
+    background: #22D3EE;
+
+    color: #05070D;
+
+}
+
+
+.admin-resource-view .admin-resource-actions form {
+
+    margin: 0;
+
+}
+
+
+@media (max-width: 750px) {
+
+    .resource-library {
+
+        padding: 0 24px;
+
+    }
+
+
+    .resource-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .resource-filters a:last-child {
+
+        margin-left: 0;
+
+    }
+
+
+    .admin-resource-view {
+
+        margin: 50px 24px 70px;
+
+        padding: 25px;
+
+    }
+
+
+    .admin-resource-intro h2 {
+
+        font-size: 1.8rem;
+
+    }
+
+
+    .admin-resource-details {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .admin-resource-detail {
+
+        padding: 22px 0;
+
+    }
+
+
+    .admin-resource-detail:nth-child(even) {
+
+        padding-left: 0;
+
+        border-left: none;
+
+    }
+
+}
+
+
+.admin-resource-actions form {
+
+    margin: 0;
+
+}
+
+
+.admin-resource-actions button {
+
+    display: inline-block;
+
+    padding: 10px 15px;
+
+    border: 1px solid #22D3EE;
+
+    border-radius: 6px;
+
+    background: transparent;
+
+    color: #67E8F9;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.85rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+
+}
+
+
+.admin-resource-actions button:hover {
+
+    background: #22D3EE;
+
+    color: #05070D;
+
+}
+
+
+/* =========================================================
+   ADMIN RESOURCE EDIT
+   ========================================================= */
+
+.admin-resource-edit-section {
+
+    max-width: 850px;
+
+    margin: 60px auto 100px;
+
+    padding: 40px;
+
+    border: 1px solid #172554;
+
+    border-radius: 8px;
+
+    background: #0B1120;
+
+}
+
+
+.admin-resource-edit-form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 28px;
+
+}
+
+
+.admin-resource-edit-form label {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+}
+
+
+.admin-resource-edit-form label span {
+
+    color: #6B7280;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.85rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.04em;
+
+}
+
+
+.admin-resource-edit-form input,
+.admin-resource-edit-form select,
+.admin-resource-edit-form textarea {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 13px 15px;
+
+    border: 1px solid #172554;
+
+    border-radius: 6px;
+
+    outline: none;
+
+    background: #05070D;
+
+    color: #F9FAFB;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.95rem;
+
+    transition: 0.2s ease;
+
+}
+
+
+.admin-resource-edit-form input:focus,
+.admin-resource-edit-form select:focus,
+.admin-resource-edit-form textarea:focus {
+
+    border-color: #22D3EE;
+
+}
+
+
+.admin-resource-edit-form textarea {
+
+    min-height: 120px;
+
+    resize: vertical;
+
+    line-height: 1.6;
+
+}
+
+
+.admin-resource-edit-form select {
+
+    cursor: pointer;
+
+}
+
+
+.admin-resource-edit-actions {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 10px;
+
+    padding-top: 30px;
+
+    border-top: 1px solid #172554;
+
+}
+
+
+.admin-resource-edit-actions button,
+.admin-resource-edit-actions a {
+
+    display: inline-block;
+
+    padding: 11px 18px;
+
+    border: 1px solid #22D3EE;
+
+    border-radius: 6px;
+
+    background: transparent;
+
+    color: #67E8F9;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+
+}
+
+
+.admin-resource-edit-actions button:hover,
+.admin-resource-edit-actions a:hover {
+
+    background: #22D3EE;
+
+    color: #05070D;
+
+}
+
+
+.admin-resource-edit-actions button {
+
+    margin: 0;
+
+}
+
+
+.form-error {
+
+    margin-bottom: 30px;
+
+    padding: 14px 16px;
+
+    border: 1px solid #7F1D1D;
+
+    border-radius: 6px;
+
+    background: #1C0B0B;
+
+    color: #FCA5A5;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.9rem;
+
+    line-height: 1.5;
+
+}
+
+
+@media (max-width: 750px) {
+
+    .admin-resource-edit-section {
+
+        margin: 50px 24px 70px;
+
+        padding: 25px;
+
+    }
+
+
+    .admin-resource-edit-form {
+
+        gap: 24px;
+
+    }
+
+}
+
+
+/* =========================================================
+   ADMIN ARCHIVED RESOURCES
+   ========================================================= */
+
+.admin-resource-archive {
+
+    max-width: 1100px;
+
+    margin: 60px auto 100px;
+
+    padding: 0 40px;
+
+}
+
+
+.admin-resource-archive .resource-library-header {
+
+    margin-bottom: 35px;
+
+}
+
+
+.admin-resource-archive .resource-card {
+
+    opacity: 0.88;
+
+}
+
+
+.admin-resource-archive .resource-card:hover {
+
+    opacity: 1;
+
+}
+
+
+.admin-resource-archive .resource-status strong {
+
+    color: #9CA3AF;
+
+}
+
+
+.admin-resource-archive .admin-resource-actions {
+
+    margin-top: auto;
+
+}
+
+
+.admin-resource-archive .admin-resource-actions button {
+
+    display: inline-block;
+
+    padding: 10px 15px;
+
+    border: 1px solid #22D3EE;
+
+    border-radius: 6px;
+
+    background: transparent;
+
+    color: #67E8F9;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.85rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+
+}
+
+
+.admin-resource-archive .admin-resource-actions button:hover {
+
+    background: #22D3EE;
+
+    color: #05070D;
+
+}
+
+
+@media (max-width: 750px) {
+
+    .admin-resource-archive {
+
+        padding: 0 24px;
+
+    }
+
+}
+
+
+/* =========================================================
+   ORGANISATION RESOURCE EDIT
+   ========================================================= */
+
+.organisation-resource-edit-section {
+
+    max-width: 850px;
+
+    margin: 60px auto 100px;
+
+    padding: 40px;
+
+    border: 1px solid #172554;
+
+    border-radius: 8px;
+
+    background: #0B1120;
+
+}
+
+.organisation-resource-edit-header {
+
+    margin-bottom: 35px;
+
+    padding-bottom: 30px;
+
+    border-bottom: 1px solid #172554;
+
+}
+
+.organisation-resource-edit-header .explore-label {
+
+    margin-bottom: 14px;
+
+}
+
+.organisation-resource-edit-header h1 {
+
+    margin: 0 0 14px;
+
+    color: #F9FAFB;
+
+    font-family: "Times New Roman", serif;
+
+    font-size: 2.5rem;
+
+    font-weight: 500;
+
+}
+
+.organisation-resource-edit-header p:last-child {
+
+    margin: 0;
+
+    color: #9CA3AF;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.95rem;
+
+    line-height: 1.6;
+
+}
+
+.organisation-resource-edit-form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 28px;
+
+}
+
+.organisation-resource-edit-form label {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+}
+
+.organisation-resource-edit-form label span {
+
+    color: #6B7280;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.85rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.04em;
+
+}
+
+.organisation-resource-edit-form input,
+.organisation-resource-edit-form select,
+.organisation-resource-edit-form textarea {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 13px 15px;
+
+    border: 1px solid #172554;
+
+    border-radius: 6px;
+
+    outline: none;
+
+    background: #05070D;
+
+    color: #F9FAFB;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.95rem;
+
+    transition: 0.2s ease;
+
+}
+
+.organisation-resource-edit-form input:focus,
+.organisation-resource-edit-form select:focus,
+.organisation-resource-edit-form textarea:focus {
+
+    border-color: #22D3EE;
+
+}
+
+.organisation-resource-edit-form textarea {
+
+    min-height: 120px;
+
+    resize: vertical;
+
+    line-height: 1.6;
+
+}
+
+.organisation-resource-edit-form select {
+
+    cursor: pointer;
+
+}
+
+.organisation-resource-edit-actions {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 10px;
+
+    padding-top: 30px;
+
+    border-top: 1px solid #172554;
+
+}
+
+.organisation-resource-edit-actions button,
+.organisation-resource-edit-actions a {
+
+    display: inline-block;
+
+    padding: 11px 18px;
+
+    border: 1px solid #22D3EE;
+
+    border-radius: 6px;
+
+    background: transparent;
+
+    color: #67E8F9;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+
+}
+
+.organisation-resource-edit-actions button:hover,
+.organisation-resource-edit-actions a:hover {
+
+    background: #22D3EE;
+
+    color: #05070D;
+
+}
+
+@media (max-width: 750px) {
+
+    .organisation-resource-edit-section {
+
+        margin: 40px 24px 80px;
+
+        padding: 28px 24px;
+
+    }
+
+    .organisation-resource-edit-header h1 {
+
+        font-size: 2.2rem;
+
+    }
+
+}
+
+
+/* =========================================================
+   ORGANISATION RESOURCES
+   ========================================================= */
+
+.organisation-resources-section {
+
+    max-width: 1250px;
+
+    margin: 80px auto 100px;
+
+    padding-top: 60px;
+
+    border-top: 1px solid #172554;
+
+}
+
+.organisation-resources-header {
+
+    margin-bottom: 40px;
+
+}
+
+.organisation-resources-header .explore-label {
+
+    margin-bottom: 14px;
+
+}
+
+.organisation-resources-header h2 {
+
+    margin: 0 0 14px;
+
+    color: #F9FAFB;
+
+    font-family: "Times New Roman", serif;
+
+    font-size: 2.2rem;
+
+    font-weight: 500;
+
+}
+
+.organisation-resources-header p:last-child {
+
+    margin: 0;
+
+    color: #9CA3AF;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.95rem;
+
+    line-height: 1.6;
+
+}
+
+.resource-card-actions {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #172554;
+
+}
+
+.resource-card-actions a,
+.resource-card-actions button {
+
+    display: inline-block;
+
+    padding: 9px 15px;
+
+    border: 1px solid #172554;
+
+    border-radius: 6px;
+
+    background: transparent;
+
+    color: #9CA3AF;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.85rem;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+
+}
+
+.resource-card-actions a:hover,
+.resource-card-actions button:hover {
+
+    border-color: #22D3EE;
+
+    color: #67E8F9;
+
+}
+
+.resource-card-actions form {
+
+    margin: 0;
+
+}
+
+.resource-card-actions form button {
+
+    border-color: #22D3EE;
+
+    color: #67E8F9;
+
+}
+
+.resource-card-actions form button:hover {
+
+    background: #22D3EE;
+
+    color: #05070D;
+
+}
+
+@media (max-width: 750px) {
+
+    .organisation-resources-section {
+
+        margin: 60px 24px 80px;
+
+        padding-top: 45px;
+
+    }
+
+    .organisation-resources-header h2 {
+
+        font-size: 2rem;
+
+    }
+
+    .resource-card-actions {
+
+        align-items: stretch;
+
+        flex-direction: column;
+
+    }
+
+    .resource-card-actions a,
+    .resource-card-actions button {
+
+        text-align: center;
+
+    }
+
+    .resource-card-actions .delete-resource-button {
+
+        border-color: #7F1D1D;
+
+        color: #FCA5A5;
+
+    }
+
+    .resource-card-actions .delete-resource-button:hover {
+
+        border-color: #EF4444;
+
+        background: #7F1D1D;
+
+        color: #F9FAFB;
+
+    }
+
+}
+
+
+/* =========================================================
+   ADMIN ORGANISATIONS
+   ========================================================= */
+
+.admin-organisations-section {
+
+    max-width: 1170px;
+
+    margin: 60px auto 100px;
+
+}
+
+
+.admin-organisations-header {
+
+    max-width: 850px;
+
+    margin: 70px auto 55px;
+
+    text-align: center;
+
+}
+
+
+.admin-organisations-header .explore-label {
+
+    margin-bottom: 16px;
+
+}
+
+
+.admin-organisations-header h1 {
+
+    margin: 0 0 18px;
+
+    color: #F9FAFB;
+
+    font-family: "Times New Roman", serif;
+
+    font-size: 3rem;
+
+    font-weight: 500;
+
+}
+
+
+.admin-organisations-header p:last-child {
+
+    margin: 0 auto;
+
+    color: #9CA3AF;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 1rem;
+
+    line-height: 1.7;
+
+}
+
+
+.admin-organisation-tabs {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-bottom: 60px;
+
+    padding-bottom: 25px;
+
+    border-bottom: 1px solid #172554;
+
+}
+
+
+.admin-organisation-tabs a {
+
+    display: inline-block;
+
+    padding: 11px 20px;
+
+    border: 1px solid #172554;
+
+    border-radius: 6px;
+
+    background: #0B1120;
+
+    color: #9CA3AF;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.9rem;
+
+    font-weight: 500;
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+
+}
+
+
+.admin-organisation-tabs a:hover {
+
+    border-color: #22D3EE;
+
+    color: #67E8F9;
+
+}
+
+
+.admin-organisation-tabs a.active {
+
+    border-color: #22D3EE;
+
+    background: #172554;
+
+    color: #67E8F9;
+
+}
+
+
+.admin-organisation-content {
+
+    margin-top: 0;
+
+}
+
+
+.admin-organisation-content-header {
+
+    margin-bottom: 30px;
+
+}
+
+
+.admin-organisation-content-header .explore-label {
+
+    margin-bottom: 14px;
+
+}
+
+
+.admin-organisation-content-header h2 {
+
+    margin: 0 0 12px;
+
+    color: #F9FAFB;
+
+    font-family: "Times New Roman", serif;
+
+    font-size: 2rem;
+
+    font-weight: 500;
+
+}
+
+
+.admin-organisation-content-header p:last-child {
+
+    margin: 0;
+
+    color: #9CA3AF;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.95rem;
+
+    line-height: 1.6;
+
+}
+
+
+.admin-organisation-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 24px;
+
+}
+
+
+.admin-organisation-card {
+
+    padding: 32px;
+
+    border: 1px solid #172554;
+
+    border-radius: 8px;
+
+    background: #0B1120;
+
+    transition: 0.2s ease;
+
+}
+
+
+.admin-organisation-card:hover {
+
+    border-color: #243B6B;
+
+    transform: translateY(-2px);
+
+}
+
+
+.admin-organisation-card .explore-label {
+
+    margin-bottom: 14px;
+
+    color: #22D3EE;
+
+}
+
+
+.admin-organisation-card h2 {
+
+    margin: 0 0 22px;
+
+    color: #F9FAFB;
+
+    font-family: "Times New Roman", serif;
+
+    font-size: 2rem;
+
+    font-weight: 500;
+
+}
+
+
+.admin-organisation-card > p {
+
+    margin: 0 0 22px;
+
+    color: #9CA3AF;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.95rem;
+
+    line-height: 1.7;
+
+}
+
+
+.admin-organisation-card-field {
+
+    margin-top: 20px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #172554;
+
+}
+
+
+.admin-organisation-card-field span {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #6B7280;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.78rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.06em;
+
+    text-transform: uppercase;
+
+}
+
+
+.admin-organisation-card-field p {
+
+    margin: 0;
+
+    color: #CBD5E1;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.9rem;
+
+    line-height: 1.6;
+
+    overflow-wrap: anywhere;
+
+}
+
+
+.admin-organisation-card-status {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-top: 24px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #172554;
+
+}
+
+
+.admin-organisation-card-status span {
+
+    color: #6B7280;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.78rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.06em;
+
+    text-transform: uppercase;
+
+}
+
+
+.admin-organisation-card-status strong {
+
+    color: #67E8F9;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.85rem;
+
+    font-weight: 600;
+
+}
+
+
+.admin-organisation-card-link {
+
+    display: inline-block;
+
+    margin-top: 25px;
+
+    padding: 10px 15px;
+
+    border: 1px solid #172554;
+
+    border-radius: 6px;
+
+    color: #9CA3AF;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.85rem;
+
+    font-weight: 500;
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+
+}
+
+
+.admin-organisation-card-link:hover {
+
+    border-color: #22D3EE;
+
+    background: #172554;
+
+    color: #67E8F9;
+
+}
+
+
+.admin-empty-state {
+
+    max-width: 900px;
+
+    margin: 70px auto 100px;
+
+    padding: 50px;
+
+    background: #0B1120;
+
+    border: 1px solid #1E293B;
+
+    border-radius: 6px;
+
+    text-align: center;
+
+}
+
+
+.admin-empty-state h2 {
+
+    margin-top: 0;
+
+    margin-bottom: 20px;
+
+}
+
+
+.admin-empty-state p {
+
+    color: #9CA3AF;
+
+    line-height: 1.7;
+
+    margin: 0;
+
+}
+
+
+.admin-empty-state h2 {
+
+    margin: 0 0 14px;
+
+    color: #F9FAFB;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 1.35rem;
+
+    font-weight: 600;
+
+}
+
+
+.admin-empty-state p {
+
+    margin: 0;
+
+    color: #9CA3AF;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.95rem;
+
+    line-height: 1.6;
+
+}
+
+
+@media (max-width: 800px) {
+
+    .admin-organisations-section {
+
+        margin: 40px 24px 80px;
+
+    }
+
+
+    .admin-organisations-header {
+
+        margin-top: 50px;
+
+    }
+
+
+    .admin-organisations-header h1 {
+
+        font-size: 2.4rem;
+
+    }
+
+
+    .admin-organisation-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .admin-organisation-tabs {
+
+        flex-direction: column;
+
+    }
+
+
+    .admin-organisation-tabs a {
+
+        width: 100%;
+
+        box-sizing: border-box;
+
+        text-align: center;
+
+    }
+
+
+    .admin-organisations-header h1 {
+
+        font-size: 2.1rem;
+
+    }
+
+}
+
+
+.admin-organisation-grid {
+
+    width: 100%;
+
+    max-width: 1170px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 24px;
+
+}
+
+
+.admin-organisation-card {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 32px;
+
+}
+
+
+.admin-organisations-section {
+
+    width: calc(100% - 48px);
+
+    max-width: 1170px;
+
+    margin: 60px auto 100px;
+
+    box-sizing: border-box;
+
+}
+
+
+.admin-organisations-header {
+
+    width: 100%;
+
+    max-width: 850px;
+
+    margin: 70px auto 55px;
+
+    text-align: center;
+
+}
+
+
+/* =========================================================
+   UNIVERSITIES
+   ========================================================= */
+
+.universities-section {
+
+    width: calc(100% - 48px);
+
+    max-width: 1170px;
+
+    margin: 60px auto 100px;
+
+    box-sizing: border-box;
+
+}
+
+
+.universities-header {
+
+    width: 100%;
+
+    max-width: 850px;
+
+    margin: 70px auto 55px;
+
+    text-align: center;
+
+}
+
+
+.universities-header h1 {
+
+    margin: 10px 0 18px;
+
+    font-family: "Times New Roman", serif;
+
+    font-size: 3.2rem;
+
+    font-weight: 500;
+
+    color: #F9FAFB;
+
+}
+
+
+.universities-intro {
+
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    color: #9CA3AF;
+
+    font-size: 1rem;
+
+    line-height: 1.7;
+
+}
+
+
+.university-filters {
+
+    width: 100%;
+
+    margin-bottom: 50px;
+
+    padding: 24px;
+
+    display: grid;
+
+    grid-template-columns: minmax(260px, 2fr) minmax(180px, 1fr) minmax(180px, 1fr) auto;
+
+    gap: 18px;
+
+    align-items: end;
+
+    background: #0B1120;
+
+    border: 1px solid rgba(103, 232, 249, 0.08);
+
+    border-radius: 14px;
+
+    box-sizing: border-box;
+
+}
+
+
+.university-search,
+.university-filter {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+
+.university-search label,
+.university-filter label {
+
+    color: #9CA3AF;
+
+    font-size: 0.8rem;
+
+}
+
+
+.university-search input,
+.university-filter select {
+
+    width: 100%;
+
+    min-height: 46px;
+
+    padding: 0 14px;
+
+    border: 1px solid rgba(156, 163, 175, 0.2);
+
+    border-radius: 8px;
+
+    background: #05070D;
+
+    color: #F9FAFB;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.9rem;
+
+    box-sizing: border-box;
+
+}
+
+
+.university-search input:focus,
+.university-filter select:focus {
+
+    outline: none;
+
+    border-color: #22D3EE;
+
+}
+
+
+.university-filter-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.university-filter-actions button {
+
+    min-height: 46px;
+
+    padding: 0 20px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #22D3EE;
+
+    color: #05070D;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+}
+
+
+.university-filter-actions button:hover {
+
+    background: #67E8F9;
+
+}
+
+
+.university-filter-actions a {
+
+    color: #9CA3AF;
+
+    font-size: 0.85rem;
+
+    text-decoration: none;
+
+}
+
+
+.university-filter-actions a:hover {
+
+    color: #F9FAFB;
+
+}
+
+
+.universities-grid {
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 24px;
+
+}
+
+
+.university-card {
+
+    width: 100%;
+
+    min-height: 330px;
+
+    padding: 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    box-sizing: border-box;
+
+    background: #0B1120;
+
+    border: 1px solid rgba(103, 232, 249, 0.08);
+
+    border-radius: 14px;
+
+    transition: border-color 0.2s ease,
+                transform 0.2s ease;
+
+}
+
+
+.university-card:hover {
+
+    border-color: rgba(34, 211, 238, 0.35);
+
+    transform: translateY(-3px);
+
+}
+
+
+.university-card-type {
+
+    margin: 0 0 14px;
+
+    color: #22D3EE;
+
+    font-size: 0.75rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+
+}
+
+
+.university-card h2 {
+
+    margin: 0;
+
+    color: #F9FAFB;
+
+    font-family: "Times New Roman", serif;
+
+    font-size: 1.7rem;
+
+    font-weight: 500;
+
+    line-height: 1.2;
+
+}
+
+
+.university-card-location {
+
+    margin: 10px 0 20px;
+
+    color: #9CA3AF;
+
+    font-size: 0.9rem;
+
+}
+
+
+.university-card-description {
+
+    margin: 0;
+
+    color: #9CA3AF;
+
+    font-size: 0.9rem;
+
+    line-height: 1.7;
+
+}
+
+
+.university-card-meta {
+
+    margin-top: auto;
+
+    padding-top: 24px;
+
+    color: #67E8F9;
+
+    font-size: 0.8rem;
+
+}
+
+
+.university-card-link {
+
+    display: inline-block;
+
+    margin-top: 18px;
+
+    color: #F9FAFB;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+}
+
+
+.university-card-link:hover {
+
+    color: #22D3EE;
+
+}
+
+
+.university-empty-state {
+
+    padding: 70px 30px;
+
+    text-align: center;
+
+    background: #0B1120;
+
+    border: 1px solid rgba(103, 232, 249, 0.08);
+
+    border-radius: 14px;
+
+}
+
+
+.university-empty-state h2 {
+
+    margin: 0 0 10px;
+
+    color: #F9FAFB;
+
+    font-family: "Times New Roman", serif;
+
+    font-size: 1.7rem;
+
+    font-weight: 500;
+
+}
+
+
+.university-empty-state p {
+
+    margin: 0;
+
+    color: #9CA3AF;
+
+    line-height: 1.6;
+
+}
+
+
+@media (max-width: 900px) {
+
+    .university-filters {
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+    .university-search {
+
+        grid-column: 1 / -1;
+
+    }
+
+    .university-filter-actions {
+
+        grid-column: 1 / -1;
+
+    }
+
+    .universities-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .universities-section {
+
+        width: calc(100% - 32px);
+
+        margin-top: 35px;
+
+    }
+
+    .universities-header {
+
+        margin: 45px auto 40px;
+
+    }
+
+    .universities-header h1 {
+
+        font-size: 2.4rem;
+
+    }
+
+    .university-filters {
+
+        grid-template-columns: 1fr;
+
+        padding: 18px;
+
+    }
+
+    .university-search {
+
+        grid-column: auto;
+
+    }
+
+    .university-filter-actions {
+
+        grid-column: auto;
+
+    }
+
+    .university-card {
+
+        padding: 24px;
+
+    }
+
+}
+
+
+/* =========================================================
+   UNIVERSITY PROFILE
+   ========================================================= */
+
+.university-profile-section {
+
+    width: calc(100% - 48px);
+
+    max-width: 1000px;
+
+    margin: 55px auto 100px;
+
+    box-sizing: border-box;
+
+}
+
+
+.university-profile-section .back-link {
+
+    display: inline-block;
+
+    margin-bottom: 55px;
+
+    color: #9CA3AF;
+
+    font-size: 0.85rem;
+
+    text-decoration: none;
+
+}
+
+
+.university-profile-section .back-link:hover {
+
+    color: #22D3EE;
+
+}
+
+
+.university-profile-header {
+
+    margin-bottom: 65px;
+
+}
+
+
+.university-profile-header h1 {
+
+    max-width: 850px;
+
+    margin: 10px 0 16px;
+
+    color: #F9FAFB;
+
+    font-family: "Times New Roman", serif;
+
+    font-size: 3.5rem;
+
+    font-weight: 500;
+
+    line-height: 1.1;
+
+}
+
+
+.university-profile-location {
+
+    margin: 0;
+
+    color: #9CA3AF;
+
+    font-size: 1rem;
+
+}
+
+
+.university-profile-block {
+
+    margin-bottom: 65px;
+
+    padding-bottom: 55px;
+
+    border-bottom: 1px solid rgba(156, 163, 175, 0.12);
+
+}
+
+
+.university-profile-block h2 {
+
+    margin: 10px 0 20px;
+
+    color: #F9FAFB;
+
+    font-family: "Times New Roman", serif;
+
+    font-size: 2rem;
+
+    font-weight: 500;
+
+}
+
+
+.university-profile-block > p:not(.explore-label) {
+
+    max-width: 850px;
+
+    margin: 0;
+
+    color: #9CA3AF;
+
+    font-size: 0.95rem;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   UNIVERSITY INFORMATION
+   ========================================================= */
+
+.university-information-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+
+    margin-bottom: 65px;
+
+}
+
+
+.university-information-card {
+
+    padding: 25px;
+
+    background: #0B1120;
+
+    border: 1px solid rgba(103, 232, 249, 0.08);
+
+    border-radius: 12px;
+
+}
+
+
+.university-information-label {
+
+    margin: 0 0 10px;
+
+    color: #6B7280;
+
+    font-size: 0.72rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.08em;
+
+}
+
+
+.university-information-value {
+
+    margin: 0;
+
+    color: #F9FAFB;
+
+    font-size: 0.95rem;
+
+}
+
+
+/* =========================================================
+   PROGRAMMES
+   ========================================================= */
+
+.university-section-heading {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.university-section-heading h2 {
+
+    margin-bottom: 0;
+
+}
+
+
+.university-programme-count {
+
+    min-width: 36px;
+
+    height: 36px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid rgba(34, 211, 238, 0.25);
+
+    border-radius: 50%;
+
+    color: #22D3EE;
+
+    font-size: 0.8rem;
+
+}
+
+
+.university-programmes-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+
+}
+
+
+.university-programme-card {
+
+    min-height: 250px;
+
+    padding: 28px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    box-sizing: border-box;
+
+    background: #0B1120;
+
+    border: 1px solid rgba(103, 232, 249, 0.08);
+
+    border-radius: 12px;
+
+    transition: border-color 0.2s ease,
+                transform 0.2s ease;
+
+}
+
+
+.university-programme-card:hover {
+
+    border-color: rgba(34, 211, 238, 0.3);
+
+    transform: translateY(-2px);
+
+}
+
+
+.university-programme-degree {
+
+    margin: 0 0 12px;
+
+    color: #22D3EE;
+
+    font-size: 0.72rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+
+}
+
+
+.university-programme-card h3 {
+
+    margin: 0;
+
+    color: #F9FAFB;
+
+    font-family: "Times New Roman", serif;
+
+    font-size: 1.45rem;
+
+    font-weight: 500;
+
+    line-height: 1.25;
+
+}
+
+
+.university-programme-field {
+
+    margin: 10px 0 0;
+
+    color: #9CA3AF;
+
+    font-size: 0.85rem;
+
+}
+
+
+.university-programme-description {
+
+    margin: 18px 0 0;
+
+    color: #9CA3AF;
+
+    font-size: 0.85rem;
+
+    line-height: 1.65;
+
+}
+
+
+.university-programme-link {
+
+    margin-top: auto;
+
+    padding-top: 22px;
+
+    color: #F9FAFB;
+
+    font-size: 0.85rem;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+}
+
+
+.university-programme-link:hover {
+
+    color: #22D3EE;
+
+}
+
+
+/* =========================================================
+   USEFUL LINKS
+   ========================================================= */
+
+.university-useful-links {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 14px;
+
+}
+
+
+.university-useful-links a {
+
+    display: inline-block;
+
+    padding: 12px 18px;
+
+    border: 1px solid rgba(34, 211, 238, 0.2);
+
+    border-radius: 8px;
+
+    color: #67E8F9;
+
+    font-size: 0.85rem;
+
+    text-decoration: none;
+
+}
+
+
+.university-useful-links a:hover {
+
+    border-color: #22D3EE;
+
+    color: #F9FAFB;
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 750px) {
+
+    .university-profile-header h1 {
+
+        font-size: 2.7rem;
+
+    }
+
+    .university-information-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .university-programmes-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .university-profile-section {
+
+        width: calc(100% - 32px);
+
+        margin-top: 35px;
+
+    }
+
+    .university-profile-header {
+
+        margin-bottom: 50px;
+
+    }
+
+    .university-profile-header h1 {
+
+        font-size: 2.3rem;
+
+    }
+
+    .university-profile-block {
+
+        margin-bottom: 50px;
+
+        padding-bottom: 40px;
+
+    }
+
+}
+
+
+/* =========================================================
+   PROGRAMME PROFILE
+   ========================================================= */
+
+.programme-profile-section {
+
+    width: calc(100% - 48px);
+
+    max-width: 1000px;
+
+    margin: 55px auto 100px;
+
+    box-sizing: border-box;
+
+}
+
+
+.programme-profile-section .back-link {
+
+    display: inline-block;
+
+    margin-bottom: 55px;
+
+    color: #9CA3AF;
+
+    font-size: 0.85rem;
+
+    text-decoration: none;
+
+}
+
+
+.programme-profile-section .back-link:hover {
+
+    color: #22D3EE;
+
+}
+
+
+.programme-profile-header {
+
+    margin-bottom: 65px;
+
+}
+
+
+.programme-profile-header h1 {
+
+    max-width: 850px;
+
+    margin: 10px 0 18px;
+
+    color: #F9FAFB;
+
+    font-family: "Times New Roman", serif;
+
+    font-size: 3.5rem;
+
+    font-weight: 500;
+
+    line-height: 1.1;
+
+}
+
+
+.programme-profile-university {
+
+    margin: 0 0 8px;
+
+    color: #67E8F9;
+
+    font-size: 1rem;
+
+    font-weight: 500;
+
+}
+
+
+.programme-profile-location {
+
+    margin: 0;
+
+    color: #9CA3AF;
+
+    font-size: 0.9rem;
+
+}
+
+
+.programme-profile-block {
+
+    margin-bottom: 65px;
+
+    padding-bottom: 55px;
+
+    border-bottom: 1px solid rgba(156, 163, 175, 0.12);
+
+}
+
+
+.programme-profile-block h2 {
+
+    margin: 10px 0 20px;
+
+    color: #F9FAFB;
+
+    font-family: "Times New Roman", serif;
+
+    font-size: 2rem;
+
+    font-weight: 500;
+
+}
+
+
+.programme-profile-block > p:not(.explore-label) {
+
+    max-width: 850px;
+
+    margin: 0;
+
+    color: #9CA3AF;
+
+    font-size: 0.95rem;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   PROGRAMME INFORMATION
+   ========================================================= */
+
+.programme-information-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 20px;
+
+    margin-bottom: 65px;
+
+}
+
+
+.programme-information-card {
+
+    min-height: 120px;
+
+    padding: 25px;
+
+    background: #0B1120;
+
+    border: 1px solid rgba(103, 232, 249, 0.08);
+
+    border-radius: 12px;
+
+    box-sizing: border-box;
+
+}
+
+
+.programme-information-label {
+
+    margin: 0 0 12px;
+
+    color: #6B7280;
+
+    font-size: 0.72rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.08em;
+
+}
+
+
+.programme-information-value {
+
+    margin: 0;
+
+    color: #F9FAFB;
+
+    font-size: 0.95rem;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   USEFUL LINKS
+   ========================================================= */
+
+.programme-useful-links {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 14px;
+
+}
+
+
+.programme-useful-links a {
+
+    display: inline-block;
+
+    padding: 12px 18px;
+
+    border: 1px solid rgba(34, 211, 238, 0.2);
+
+    border-radius: 8px;
+
+    color: #67E8F9;
+
+    font-size: 0.85rem;
+
+    text-decoration: none;
+
+}
+
+
+.programme-useful-links a:hover {
+
+    border-color: #22D3EE;
+
+    color: #F9FAFB;
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 750px) {
+
+    .programme-profile-header h1 {
+
+        font-size: 2.7rem;
+
+    }
+
+    .programme-information-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .programme-profile-section {
+
+        width: calc(100% - 32px);
+
+        margin-top: 35px;
+
+    }
+
+    .programme-profile-header {
+
+        margin-bottom: 50px;
+
+    }
+
+    .programme-profile-header h1 {
+
+        font-size: 2.3rem;
+
+    }
+
+    .programme-profile-block {
+
+        margin-bottom: 50px;
+
+        padding-bottom: 40px;
+
+    }
+
+}
+
+
+/* =========================================================
+   SAVE ITEMS
+   ========================================================= */
+
+.save-item-form {
+
+    margin-top: 25px;
+
+}
+
+
+.save-item-button {
+
+    padding: 11px 18px;
+
+    border: 1px solid rgba(34, 211, 238, 0.25);
+
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: #67E8F9;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.85rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+}
+
+
+.save-item-button:hover {
+
+    border-color: #22D3EE;
+
+    background: rgba(34, 211, 238, 0.06);
+
+    color: #F9FAFB;
+
+}
+
+/* =========================================================
+   SAVE / SAVED BUTTONS
+   ========================================================= */
+
+.save-resource-button,
+.saved-resource-button,
+.save-opportunity-button,
+.saved-opportunity-button {
+
+    display: inline-block;
+
+    padding: 9px 15px;
+
+    border: 1px solid #22D3EE;
+
+    border-radius: 6px;
+
+    background: transparent;
+
+    color: #67E8F9;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.85rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+
+}
+
+
+.save-resource-button:hover,
+.save-opportunity-button:hover {
+
+    background: #22D3EE;
+
+    color: #05070D;
+
+}
+
+
+.saved-resource-button,
+.saved-opportunity-button {
+
+    background: rgba(34, 211, 238, 0.08);
+
+}
+
+
+.saved-resource-button:hover,
+.saved-opportunity-button:hover {
+
+    background: rgba(34, 211, 238, 0.16);
+
+    color: #F9FAFB;
+
+}
+
+
+.resource-card-actions form,
+.opportunity-actions form {
+
+    margin: 0;
+
+}
+
+
+
+/* =========================================================
+   UNIVERSITY SEARCH BAR - SINGLE ROW
+   ========================================================= */
+
+.university-filters {
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.5fr)
+        minmax(0, 1fr)
+        minmax(0, 1fr)
+        minmax(0, 1.15fr)
+        auto
+        auto;
+
+    align-items: end;
+
+    gap: 20px;
+
+}
+
+
+.university-search,
+.university-filter {
+
+    min-width: 0;
+
+}
+
+
+.university-search input,
+.university-filter select {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+}
+
+
+.university-filter-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    white-space: nowrap;
+
+}
+
+
+.university-filter-actions button {
+
+    flex-shrink: 0;
+
+}
+
+
+.university-filter-actions a {
+
+    flex-shrink: 0;
+
+}
+
+
+
+@media (max-width: 600px) {
+
+    .resource-card-actions,
+    .opportunity-actions {
+
+        align-items: stretch;
+
+        flex-direction: column;
+
+    }
+
+
+    .resource-card-actions form,
+    .resource-card-actions a,
+    .opportunity-actions form,
+    .opportunity-actions a {
+
+        width: 100%;
+
+    }
+
+
+    .save-resource-button,
+    .saved-resource-button,
+    .save-opportunity-button,
+    .saved-opportunity-button {
+
+        width: 100%;
+
+        text-align: center;
+
+    }
+
+}
+
+
+/* =========================================================
+   SAVED ITEMS
+   ========================================================= */
+
+.saved-section {
+
+    width: calc(100% - 48px);
+
+    max-width: 1170px;
+
+    margin: 70px auto 100px;
+
+}
+
+
+.saved-header {
+
+    max-width: 800px;
+
+    margin: 0 auto 75px;
+
+    text-align: center;
+
+}
+
+
+.saved-header h1 {
+
+    margin: 10px 0 18px;
+
+    color: #F9FAFB;
+
+    font-family: "Times New Roman", serif;
+
+    font-size: 3.5rem;
+
+    font-weight: 500;
+
+}
+
+
+.saved-header > p:not(.explore-label) {
+
+    margin: 0;
+
+    color: #9CA3AF;
+
+    font-size: 0.95rem;
+
+    line-height: 1.7;
+
+}
+
+
+.saved-content {
+
+    margin-bottom: 75px;
+
+}
+
+
+.saved-section-heading {
+
+    margin-bottom: 28px;
+
+}
+
+
+.saved-section-heading h2 {
+
+    margin: 8px 0 0;
+
+    color: #F9FAFB;
+
+    font-family: "Times New Roman", serif;
+
+    font-size: 2rem;
+
+    font-weight: 500;
+
+}
+
+
+.saved-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 24px;
+
+}
+
+
+.saved-card {
+
+    padding: 30px;
+
+    background: #0B1120;
+
+    border: 1px solid rgba(103, 232, 249, 0.08);
+
+    border-radius: 12px;
+
+    box-sizing: border-box;
+
+}
+
+
+.saved-card-type {
+
+    margin: 0 0 12px;
+
+    color: #22D3EE;
+
+    font-size: 0.72rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+
+}
+
+
+.saved-card h3 {
+
+    margin: 0 0 12px;
+
+    color: #F9FAFB;
+
+    font-family: "Times New Roman", serif;
+
+    font-size: 1.7rem;
+
+    font-weight: 500;
+
+}
+
+
+.saved-card-location,
+.saved-card-university,
+.saved-card-field {
+
+    margin: 0 0 14px;
+
+    color: #9CA3AF;
+
+    font-size: 0.85rem;
+
+}
+
+
+.saved-card-description {
+
+    margin: 0 0 25px;
+
+    color: #9CA3AF;
+
+    font-size: 0.9rem;
+
+    line-height: 1.7;
+
+}
+
+
+.saved-card-link {
+
+    color: #67E8F9;
+
+    font-size: 0.85rem;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+}
+
+
+.saved-card-link:hover {
+
+    color: #F9FAFB;
+
+}
+
+
+.saved-empty-state {
+
+    padding: 45px 30px;
+
+    background: #0B1120;
+
+    border: 1px solid rgba(103, 232, 249, 0.08);
+
+    border-radius: 12px;
+
+    text-align: center;
+
+}
+
+
+.saved-empty-state h3 {
+
+    margin: 0 0 12px;
+
+    color: #F9FAFB;
+
+    font-family: "Times New Roman", serif;
+
+    font-size: 1.6rem;
+
+    font-weight: 500;
+
+}
+
+
+.saved-empty-state p {
+
+    margin: 0 0 22px;
+
+    color: #9CA3AF;
+
+    font-size: 0.9rem;
+
+}
+
+
+.saved-empty-state a {
+
+    color: #67E8F9;
+
+    font-size: 0.85rem;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+}
+
+
+.saved-empty-state a:hover {
+
+    color: #F9FAFB;
+
+}
+
+
+@media (max-width: 750px) {
+
+    .saved-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .saved-header h1 {
+
+        font-size: 2.7rem;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .saved-section {
+
+        width: calc(100% - 32px);
+
+        margin-top: 45px;
+
+    }
+
+    .saved-header {
+
+        margin-bottom: 55px;
+
+    }
+
+    .saved-header h1 {
+
+        font-size: 2.3rem;
+
+    }
+
+}
+
+/* =========================================================
+   HOMEPAGE CARD LINKS
+   ========================================================= */
+
+.explore-card-link {
+
+    display: inline-block;
+
+    vertical-align: top;
+
+    width: 22%;
+
+    margin: 10px;
+
+    color: inherit;
+
+    text-decoration: none;
+
+}
+
+
+.explore-card-link .explore-card {
+
+    display: block;
+
+    width: 100%;
+
+    margin: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+.explore-card-link:hover,
+.explore-card-link:focus,
+.explore-card-link:active {
+
+    color: inherit;
+
+    text-decoration: none;
+
+}
+
+
+@media (max-width: 900px) {
+
+    .explore-card-link {
+
+        width: 44%;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .explore-card-link {
+
+        display: block;
+
+        width: 100%;
+
+        margin: 10px 0;
+
+    }
+
+}
+
+
+
+/* =========================================================
+   ASTROBASE HOMEPAGE + FEATURE PAGE ADDITIONS PASTE THIS BLOCK AT THE VERY BOTTOM OF STYLE.CSS | ASTROBASE HOMEPAGE + FEATURE PAGE ADDITIONS | PASTE THIS BLOCK AT THE VERY BOTTOM OF STYLE.CSS
+   ========================================================= */
+
+
+
+
+
+/* =========================================================
+   HOMEPAGE CTA LINKS
+   ========================================================= */
+
+.assessment-button,
+.cta-button {
+
+    display: inline-block;
+
+    padding: 14px 32px;
+
+    border-radius: 4px;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+
+}
+
+
+.assessment-button {
+
+    border: 1px solid #FBBF24;
+
+    background-color: #FBBF24;
+
+    color: #05070D;
+
+}
+
+
+.assessment-button:hover {
+
+    background-color: #FCD34D;
+
+    color: #05070D;
+
+    transform: translateY(-2px);
+
+}
+
+
+.cta-button {
+
+    border: 1px solid #22D3EE;
+
+    background-color: #22D3EE;
+
+    color: #05070D;
+
+}
+
+
+.cta-button:hover {
+
+    background-color: #67E8F9;
+
+    color: #05070D;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* =========================================================
+   ASTROBASE AI / ASSESSMENT PAGES
+   ========================================================= */
+
+.feature-page {
+
+    min-height: calc(100vh - 165px);
+
+    padding: 90px 40px 100px;
+
+    background-color: #05070D;
+
+    box-sizing: border-box;
+
+}
+
+
+.feature-page-header {
+
+    max-width: 850px;
+
+    margin: 0 auto 65px;
+
+    text-align: center;
+
+}
+
+
+.feature-page-label {
+
+    margin: 0 0 18px;
+
+    color: #22D3EE;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.85rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.14em;
+
+}
+
+
+.feature-page-header h1 {
+
+    margin: 0 0 24px;
+
+    color: #F9FAFB;
+
+    font-family: "Times New Roman", Times, serif;
+
+    font-size: 52px;
+
+    font-weight: normal;
+
+    line-height: 1.15;
+
+}
+
+
+.feature-page-header p {
+
+    max-width: 760px;
+
+    margin: 0 auto;
+
+    color: #9CA3AF;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   FEATURE CARDS
+   ========================================================= */
+
+.feature-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 22px;
+
+    max-width: 1050px;
+
+    margin: 0 auto;
+
+}
+
+
+.feature-card {
+
+    padding: 30px;
+
+    border: 1px solid #1E293B;
+
+    background-color: #0B1120;
+
+    box-sizing: border-box;
+
+}
+
+
+.feature-card h2 {
+
+    margin: 0 0 14px;
+
+    color: #F9FAFB;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 21px;
+
+    line-height: 1.3;
+
+}
+
+
+.feature-card p {
+
+    margin: 0;
+
+    color: #9CA3AF;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.75;
+
+}
+
+
+/* =========================================================
+   FEATURE STATUS
+   ========================================================= */
+
+.feature-status {
+
+    max-width: 760px;
+
+    margin: 55px auto 0;
+
+    padding: 28px 32px;
+
+    border: 1px solid #1E293B;
+
+    background-color: #0B1120;
+
+    text-align: center;
+
+    box-sizing: border-box;
+
+}
+
+
+.feature-status strong {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #FBBF24;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.9rem;
+
+    letter-spacing: 0.08em;
+
+}
+
+
+.feature-status p {
+
+    margin: 0;
+
+    color: #9CA3AF;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   FEATURE PAGE ACTION
+   ========================================================= */
+
+.feature-page-actions {
+
+    margin-top: 40px;
+
+    text-align: center;
+
+}
+
+
+.feature-page-link {
+
+    display: inline-block;
+
+    padding: 12px 24px;
+
+    border: 1px solid #22D3EE;
+
+    border-radius: 4px;
+
+    color: #67E8F9;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+
+}
+
+
+.feature-page-link:hover {
+
+    background-color: #22D3EE;
+
+    color: #05070D;
+
+}
+
+
+/* =========================================================
+   FEATURE PAGE MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .feature-grid {
+
+        grid-template-columns: 1fr;
+
+        max-width: 650px;
+
+    }
+
+
+    .explore-card-link {
+
+        flex: 1 1 44%;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .feature-page {
+
+        padding: 70px 22px 80px;
+
+    }
+
+
+    .feature-page-header {
+
+        margin-bottom: 45px;
+
+    }
+
+
+    .feature-page-header h1 {
+
+        font-size: 40px;
+
+    }
+
+
+    .feature-page-header p {
+
+        font-size: 16px;
+
+    }
+
+
+    .feature-card {
+
+        padding: 24px;
+
+    }
+
+
+    .feature-status {
+
+        padding: 24px 20px;
+
+    }
+
+
+    .explore-card-link {
+
+        flex: 1 1 100%;
+
+        margin: 8px 0;
+
+    }
+
+}
+
+
+/* =========================================================
+   HERO BUTTON
+   ========================================================= */
+
+.hero-button {
+
+    display: inline-block;
+
+    padding: 16px 38px;
+
+    border-radius: 4px;
+
+    background: #22D3EE;
+
+    color: #05070D;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+
+}
+
+
+.hero-button:hover {
+
+    background: #67E8F9;
+
+    color: #05070D;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* =========================================================
+   ADMIN CREATE BUTTONS
+   ========================================================= */
+
+.admin-create-button {
+
+    margin-left: 10px !important;
+
+    border-color: #22D3EE !important;
+
+    background: rgba(34, 211, 238, 0.08);
+
+    color: #67E8F9 !important;
+
+}
+
+
+.admin-create-button:hover {
+
+    background: #22D3EE !important;
+
+    color: #05070D !important;
+
+}
+
+
+/* =========================================================
+   ADMIN CREATE BUTTONS
+   ========================================================= */
+
+.admin-create-button {
+
+    display: inline-block;
+
+    padding: 10px 16px;
+
+    border: 1px solid #22D3EE;
+
+    border-radius: 6px;
+
+    background: rgba(34, 211, 238, 0.08);
+
+    color: #67E8F9;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.85rem;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+
+}
+
+
+.admin-create-button:hover {
+
+    background: #22D3EE;
+
+    color: #05070D;
+
+}
+
+
+/* =========================================================
+   ADMIN CREATE BUTTONS
+   ========================================================= */
+
+.admin-create-button {
+
+    display: inline-block;
+
+    padding: 10px 16px;
+
+    border: 1px solid #22D3EE;
+
+    border-radius: 6px;
+
+    background: rgba(34, 211, 238, 0.08);
+
+    color: #67E8F9;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.85rem;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+
+}
+
+
+.admin-create-button:hover {
+
+    background: #22D3EE;
+
+    color: #05070D;
+
+}
+
+
+/* =========================================================
+   ADMIN OPPORTUNITY FORM
+   ========================================================= */
+
+.profile-edit-section {
+
+    width: min(900px, 90%);
+
+    margin: 70px auto 100px;
+
+}
+
+
+.profile-edit-form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 26px;
+
+    padding: 42px;
+
+    border: 1px solid #1E293B;
+
+    border-radius: 8px;
+
+    background: #0B1120;
+
+}
+
+
+.profile-edit-form label {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+
+}
+
+
+.profile-edit-form label span {
+
+    color: #9CA3AF;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.85rem;
+
+    font-weight: 500;
+
+}
+
+
+.profile-edit-form input,
+.profile-edit-form select,
+.profile-edit-form textarea {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 13px 15px;
+
+    border: 1px solid #263247;
+
+    border-radius: 5px;
+
+    outline: none;
+
+    background: #05070D;
+
+    color: #F9FAFB;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.95rem;
+
+    transition: 0.2s ease;
+
+}
+
+
+.profile-edit-form input:focus,
+.profile-edit-form select:focus,
+.profile-edit-form textarea:focus {
+
+    border-color: #22D3EE;
+
+    box-shadow: 0 0 0 2px rgba(34, 211, 238, 0.08);
+
+}
+
+
+.profile-edit-form textarea {
+
+    min-height: 140px;
+
+    resize: vertical;
+
+    line-height: 1.6;
+
+}
+
+
+.profile-edit-form select {
+
+    cursor: pointer;
+
+}
+
+
+.profile-edit-form input::placeholder,
+.profile-edit-form textarea::placeholder {
+
+    color: #4B5563;
+
+}
+
+
+/* =========================================================
+   ADMIN FORM ACTIONS
+   ========================================================= */
+
+.profile-edit-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    margin-top: 10px;
+
+}
+
+
+.profile-edit-actions button {
+
+    margin: 0 !important;
+
+    border: none;
+
+}
+
+
+.profile-edit-actions .admin-create-button {
+
+    margin: 0 !important;
+
+}
+
+
+.profile-edit-actions .back-link {
+
+    margin: 0 !important;
+
+    padding: 10px 16px;
+
+    border: 1px solid #263247;
+
+    border-radius: 6px;
+
+    color: #9CA3AF;
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+
+}
+
+
+.profile-edit-actions .back-link:hover {
+
+    border-color: #22D3EE;
+
+    color: #67E8F9;
+
+}
+
+
+/* =========================================================
+   FORM ERROR
+   ========================================================= */
+
+.form-error {
+
+    margin-bottom: 20px;
+
+    padding: 14px 18px;
+
+    border: 1px solid rgba(239, 68, 68, 0.4);
+
+    border-radius: 6px;
+
+    background: rgba(239, 68, 68, 0.08);
+
+    color: #FCA5A5;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.9rem;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   MOBILE ADMIN FORM
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .profile-edit-section {
+
+        width: 92%;
+
+        margin-top: 45px;
+
+    }
+
+
+    .profile-edit-form {
+
+        padding: 24px;
+
+    }
+
+
+    .profile-edit-actions {
+
+        align-items: stretch;
+
+        flex-direction: column;
+
+    }
+
+
+    .profile-edit-actions .admin-create-button,
+    .profile-edit-actions .back-link {
+
+        width: 100%;
+
+        box-sizing: border-box;
+
+        text-align: center;
+
+    }
+
+}
+
+
+/* =========================================================
+   ORGANISATION UNIVERSITIES
+   ========================================================= */
+
+.organisation-universities-section {
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 70px 40px 100px;
+
+}
+
+
+.organisation-universities-header {
+
+    text-align: center;
+
+    margin-bottom: 70px;
+
+}
+
+
+.organisation-universities-header .explore-label {
+
+    margin-bottom: 18px;
+
+}
+
+
+.organisation-universities-header h1 {
+
+    margin: 0;
+
+    color: #F9FAFB;
+
+    font-family: "Times New Roman", serif;
+
+    font-size: 3.4rem;
+
+    font-weight: 400;
+
+}
+
+
+.organisation-universities-intro {
+
+    max-width: 760px;
+
+    margin: 24px auto 0;
+
+    color: #9CA3AF;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 1.05rem;
+
+    line-height: 1.7;
+
+}
+
+
+.organisation-universities-actions {
+
+    display: flex;
+
+    justify-content: center;
+
+    margin-bottom: 45px;
+
+}
+
+
+.organisation-university-add-button {
+
+    display: inline-block;
+
+    padding: 13px 22px;
+
+    border: 1px solid #22D3EE;
+
+    border-radius: 6px;
+
+    background: rgba(34, 211, 238, 0.08);
+
+    color: #67E8F9;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+
+}
+
+
+.organisation-university-add-button:hover {
+
+    background: #22D3EE;
+
+    color: #05070D;
+
+    transform: translateY(-2px);
+
+}
+
+
+.organisation-universities-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 28px;
+
+}
+
+
+.organisation-university-card {
+
+    padding: 30px;
+
+    border: 1px solid #1F2937;
+
+    border-radius: 10px;
+
+    background: #0B1120;
+
+    transition: 0.2s ease;
+
+}
+
+
+.organisation-university-card:hover {
+
+    border-color: #22D3EE;
+
+    transform: translateY(-3px);
+
+}
+
+
+.organisation-university-type {
+
+    margin-bottom: 14px;
+
+    color: #22D3EE;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.78rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
+
+}
+
+
+.organisation-university-card h2 {
+
+    margin: 0 0 10px;
+
+    color: #F9FAFB;
+
+    font-family: "Times New Roman", serif;
+
+    font-size: 1.8rem;
+
+    font-weight: 400;
+
+}
+
+
+.organisation-university-location {
+
+    margin-bottom: 20px;
+
+    color: #9CA3AF;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.9rem;
+
+}
+
+
+.organisation-university-description {
+
+    margin-bottom: 24px;
+
+    color: #9CA3AF;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.95rem;
+
+    line-height: 1.7;
+
+}
+
+
+.organisation-university-meta {
+
+    display: flex;
+
+    gap: 20px;
+
+    margin-bottom: 25px;
+
+    color: #9CA3AF;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.85rem;
+
+}
+
+
+.organisation-university-actions {
+
+    display: flex;
+
+    gap: 12px;
+
+    align-items: center;
+
+}
+
+
+.organisation-university-actions a {
+
+    display: inline-block;
+
+    padding: 9px 15px;
+
+    border: 1px solid #334155;
+
+    border-radius: 5px;
+
+    color: #CBD5E1;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.85rem;
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+
+}
+
+
+.organisation-university-actions a:hover {
+
+    border-color: #22D3EE;
+
+    color: #67E8F9;
+
+}
+
+
+/* =========================================================
+   ORGANISATION UNIVERSITY EMPTY STATE
+   ========================================================= */
+
+.organisation-universities-empty {
+
+    max-width: 760px;
+
+    margin: 0 auto;
+
+    padding: 70px 40px;
+
+    border: 1px solid #1F2937;
+
+    border-radius: 10px;
+
+    background: #0B1120;
+
+    text-align: center;
+
+}
+
+
+.organisation-universities-empty h2 {
+
+    margin-bottom: 18px;
+
+    color: #F9FAFB;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 1.5rem;
+
+}
+
+
+.organisation-universities-empty p {
+
+    margin-bottom: 28px;
+
+    color: #9CA3AF;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   ORGANISATION UNIVERSITIES MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .organisation-universities-section {
+
+        padding: 50px 20px 80px;
+
+    }
+
+
+    .organisation-universities-header h1 {
+
+        font-size: 2.5rem;
+
+    }
+
+
+    .organisation-universities-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .organisation-university-actions {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+
+    .organisation-university-actions a {
+
+        text-align: center;
+
+    }
+
+
+    .organisation-universities-empty {
+
+        padding: 50px 25px;
+
+    }
+
+}
+
+
+/* =========================================================
+   ORGANISATION UNIVERSITY PAGE
+   ========================================================= */
+
+.organisation-universities-section {
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 70px 40px 100px;
+
+}
+
+
+.organisation-universities-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(
+        2,
+        minmax(0, 1fr)
+    );
+
+    gap: 24px;
+
+    margin-top: 50px;
+
+}
+
+
+.organisation-university-card {
+
+    padding: 30px;
+
+    border: 1px solid #1F2937;
+
+    border-radius: 10px;
+
+    background: #0B1120;
+
+}
+
+
+.organisation-university-card h2 {
+
+    margin-bottom: 12px;
+
+    color: #F9FAFB;
+
+    font-family: "Times New Roman", serif;
+
+    font-size: 1.6rem;
+
+}
+
+
+.organisation-university-card p {
+
+    margin-bottom: 10px;
+
+    color: #9CA3AF;
+
+    line-height: 1.6;
+
+}
+
+
+.organisation-university-card .university-meta {
+
+    margin-bottom: 18px;
+
+    color: #67E8F9;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.85rem;
+
+}
+
+
+.organisation-university-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 24px;
+
+}
+
+
+.organisation-university-actions a {
+
+    display: inline-block;
+
+    padding: 9px 15px;
+
+    border: 1px solid #22D3EE;
+
+    border-radius: 6px;
+
+    color: #67E8F9;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.85rem;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+
+}
+
+
+.organisation-university-actions a:hover {
+
+    background: #22D3EE;
+
+    color: #05070D;
+
+}
+
+
+.organisation-universities-empty {
+
+    width: 100%;
+
+    padding: 70px 40px;
+
+    border: 1px solid #1F2937;
+
+    border-radius: 10px;
+
+    background: #0B1120;
+
+    text-align: center;
+
+}
+
+
+.organisation-universities-empty h2 {
+
+    margin-bottom: 16px;
+
+    color: #F9FAFB;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 1.5rem;
+
+}
+
+
+.organisation-universities-empty p {
+
+    margin-bottom: 24px;
+
+    color: #9CA3AF;
+
+    line-height: 1.6;
+
+}
+
+
+.organisation-universities-empty a {
+
+    display: inline-block;
+
+    padding: 12px 20px;
+
+    border: 1px solid #22D3EE;
+
+    border-radius: 6px;
+
+    background: rgba(34, 211, 238, 0.08);
+
+    color: #67E8F9;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+
+}
+
+
+.organisation-universities-empty a:hover {
+
+    background: #22D3EE;
+
+    color: #05070D;
+
+}
+
+
+/* =========================================================
+   UNIVERSITY ADD BUTTON
+   ========================================================= */
+
+.university-add-button {
+
+    display: inline-block;
+
+    margin-top: 24px;
+
+    padding: 12px 22px;
+
+    border-radius: 6px;
+
+    background: #22D3EE;
+
+    color: #05070D;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+
+}
+
+
+.university-add-button:hover {
+
+    background: #67E8F9;
+
+    color: #05070D;
+
+    transform: translateY(-2px);
+
+}
+
+
+@media (max-width: 700px) {
+
+    .organisation-universities-section {
+
+        padding: 50px 20px 80px;
+
+    }
+
+
+    .organisation-universities-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .organisation-university-actions {
+
+        align-items: stretch;
+
+        flex-direction: column;
+
+    }
+
+
+    .organisation-university-actions a {
+
+        width: 100%;
+
+        text-align: center;
+
+    }
+
+}
+
+
+/* =========================================================
+   ORGANISATION UNIVERSITY EMPTY STATE
+   ========================================================= */
+
+.organisation-universities-empty {
+
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: 60px auto;
+
+    padding: 70px 40px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #1F2937;
+
+    border-radius: 10px;
+
+    background: #0B1120;
+
+    text-align: center;
+
+}
+
+
+/* =========================================================
+   ORGANISATION UNIVERSITY EMPTY STATE
+   ========================================================= */
+
+.organisation-universities-empty {
+
+    grid-column: 1 / -1;
+
+    width: min(900px, 100%);
+
+    margin: 60px auto;
+
+    padding: 70px 40px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #1F2937;
+
+    border-radius: 10px;
+
+    background: #0B1120;
+
+    text-align: center;
+
+}
+
+/* =========================================================
+   ADMIN UNIVERSITY FILTERS
+   ========================================================= */
+
+.admin-university-filters {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 32px;
+
+    margin-bottom: 40px;
+
+}
+
+
+.admin-university-filters a {
+
+    display: inline-block;
+
+    padding: 11px 18px;
+
+    border: 1px solid #172554;
+
+    border-radius: 6px;
+
+    background: transparent;
+
+    color: #9CA3AF;
+
+    text-decoration: none;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.9rem;
+
+    transition: 0.2s ease;
+
+}
+
+
+.admin-university-filters a:hover {
+
+    border-color: #22D3EE;
+
+    color: #67E8F9;
+
+}
+
+
+.admin-university-filters a.active {
+
+    border-color: #22D3EE;
+
+    background: #172554;
+
+    color: #67E8F9;
+
+}
+
+
+.university-add-filter-button {
+
+    margin-left: 0;
+
+}
+
+
+.university-archive-button {
+
+    margin-left: auto;
+
+}
+
+
+/* =========================================================
+   ADMIN UNIVERSITY FILTERS
+   ========================================================= */
+
+.admin-university-filters {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 32px;
+
+    margin-bottom: 40px;
+
+    padding: 0;
+
+    border: none !important;
+
+    outline: none;
+
+    box-shadow: none;
+
+}
+
+
+.admin-university-filters::before,
+.admin-university-filters::after {
+
+    display: none !important;
+
+    border: none !important;
+
+    content: none !important;
+
+}
+
+
+.admin-university-filters a {
+
+    display: inline-block;
+
+    padding: 11px 18px;
+
+    border: 1px solid #172554;
+
+    border-radius: 6px;
+
+    background: transparent;
+
+    color: #9CA3AF;
+
+    text-decoration: none;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.9rem;
+
+    transition: 0.2s ease;
+
+}
+
+
+.admin-university-filters a:hover {
+
+    border-color: #22D3EE;
+
+    color: #67E8F9;
+
+}
+
+
+.admin-university-filters a.active {
+
+    border-color: #22D3EE;
+
+    background: #172554;
+
+    color: #67E8F9;
+
+}
+
+
+.university-archive-button {
+
+    margin-left: auto;
+
+}
+
+
+/* =========================================================
+   ADMIN UNIVERSITY FILTERS
+   ========================================================= */
+
+.university-add-filter-button {
+
+    color: #67E8F9;
+
+    border-color: #22D3EE;
+
+}
+
+
+.university-add-filter-button:hover {
+
+    background: #22D3EE;
+
+    color: #05070D;
+
+}
+
+
+/* =========================================================
+   ADMIN UNIVERSITY PAGE
+   ========================================================= */
+
+.admin-university-library {
+
+    width: 100%;
+
+}
+
+
+.admin-university-filters {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    margin-top: 30px;
+
+}
+
+
+.admin-university-filters a {
+
+    display: inline-block;
+
+    padding: 10px 18px;
+
+    border: 1px solid #172554;
+
+    border-radius: 6px;
+
+    color: #9CA3AF;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.9rem;
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+
+}
+
+
+.admin-university-filters a:hover {
+
+    border-color: #22D3EE;
+
+    color: #67E8F9;
+
+}
+
+
+.admin-university-filters a.active {
+
+    border-color: #22D3EE;
+
+    background: rgba(34, 211, 238, 0.08);
+
+    color: #67E8F9;
+
+}
+
+
+/* =========================================================
+   ADMIN UNIVERSITY ADD BUTTON
+   ========================================================= */
+
+.university-add-filter-button {
+
+    margin-left: 0;
+
+}
+
+
+/* =========================================================
+   ADMIN UNIVERSITY ARCHIVE BUTTON
+   ========================================================= */
+
+.university-archive-filter-button {
+
+    margin-left: auto;
+
+}
+
+
+@media (max-width: 700px) {
+
+    .admin-university-filters {
+
+        align-items: stretch;
+
+        flex-direction: column;
+
+    }
+
+
+    .admin-university-filters a {
+
+        width: 100%;
+
+        text-align: center;
+
+    }
+
+
+    .university-archive-filter-button {
+
+        margin-left: 0;
+
+    }
+
+}
+
+
+/* =========================================================
+   ADMIN UNIVERSITY FORM
+   ========================================================= */
+
+.admin-form-section {
+
+    width: min(900px, 90%);
+
+    margin: 70px auto 100px;
+
+}
+
+
+.admin-form {
+
+    width: 100%;
+
+    padding: 40px;
+
+    border: 1px solid #172554;
+
+    border-radius: 8px;
+
+    background: #0B1120;
+
+    box-sizing: border-box;
+
+}
+
+
+.admin-form .form-group {
+
+    width: 100%;
+
+    margin-bottom: 26px;
+
+}
+
+
+.admin-form label {
+
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #F9FAFB;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.9rem;
+
+    font-weight: 500;
+
+}
+
+
+.admin-form input,
+.admin-form select,
+.admin-form textarea {
+
+    display: block;
+
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: 1px solid #172554;
+
+    border-radius: 6px;
+
+    background: #05070D;
+
+    color: #F9FAFB;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.95rem;
+
+    box-sizing: border-box;
+
+    outline: none;
+
+    transition: 0.2s ease;
+
+}
+
+
+.admin-form input:focus,
+.admin-form select:focus,
+.admin-form textarea:focus {
+
+    border-color: #22D3EE;
+
+}
+
+
+.admin-form textarea {
+
+    resize: vertical;
+
+    min-height: 120px;
+
+}
+
+
+.admin-form select {
+
+    cursor: pointer;
+
+}
+
+
+.admin-form input::placeholder,
+.admin-form textarea::placeholder {
+
+    color: #6B7280;
+
+}
+
+
+/* =========================================================
+   ADMIN UNIVERSITY FORM ACTIONS
+   ========================================================= */
+
+.admin-form-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-top: 35px;
+
+}
+
+
+.admin-form-actions button {
+
+    border: none;
+
+}
+
+
+.admin-cancel-button {
+
+    display: inline-block;
+
+    padding: 12px 22px;
+
+    border: 1px solid #172554;
+
+    border-radius: 6px;
+
+    color: #9CA3AF;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.9rem;
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+
+}
+
+
+.admin-cancel-button:hover {
+
+    border-color: #22D3EE;
+
+    color: #67E8F9;
+
+}
+
+
+@media (max-width: 700px) {
+
+    .admin-form-section {
+
+        width: 92%;
+
+        margin-top: 50px;
+
+    }
+
+
+    .admin-form {
+
+        padding: 25px;
+
+    }
+
+
+    .admin-form-actions {
+
+        align-items: stretch;
+
+        flex-direction: column;
+
+    }
+
+
+    .admin-form-actions button,
+    .admin-cancel-button {
+
+        width: 100%;
+
+        text-align: center;
+
+        box-sizing: border-box;
+
+    }
+
+}
+
+
+/* =========================================================
+   REPORT PAGE
+   ========================================================= */
+
+.report-section {
+
+    max-width: 900px;
+
+    margin: 70px auto 100px;
+
+    padding: 0 30px;
+
+}
+
+
+.report-intro {
+
+    margin-bottom: 45px;
+
+}
+
+
+.report-intro h2 {
+
+    margin-bottom: 15px;
+
+}
+
+
+.report-intro p {
+
+    color: #9CA3AF;
+
+    line-height: 1.7;
+
+}
+
+
+.report-intro ul {
+
+    margin-top: 25px;
+
+    padding-left: 22px;
+
+    color: #9CA3AF;
+
+    line-height: 1.9;
+
+}
+
+
+.report-intro li {
+
+    margin-bottom: 8px;
+
+}
+
+
+.report-form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+}
+
+
+.report-form label {
+
+    color: #F9FAFB;
+
+    font-size: 0.95rem;
+
+    font-weight: 600;
+
+}
+
+
+.report-form textarea {
+
+    width: 100%;
+
+    min-height: 280px;
+
+    padding: 18px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #1E293B;
+
+    border-radius: 6px;
+
+    background: #0B1120;
+
+    color: #F9FAFB;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.95rem;
+
+    line-height: 1.7;
+
+    resize: vertical;
+
+    outline: none;
+
+}
+
+
+.report-form textarea::placeholder {
+
+    color: #6B7280;
+
+}
+
+
+.report-form textarea:focus {
+
+    border-color: #22D3EE;
+
+}
+
+
+.report-submit-button {
+
+    align-self: flex-start;
+
+    padding: 12px 22px;
+
+    border: 1px solid #22D3EE;
+
+    border-radius: 6px;
+
+    background: #22D3EE;
+
+    color: #05070D;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+
+}
+
+
+.report-submit-button:hover {
+
+    background: #67E8F9;
+
+    transform: translateY(-2px);
+
+}
+
+
+.report-success {
+
+    margin-bottom: 30px;
+
+    padding: 15px 18px;
+
+    border: 1px solid rgba(34, 211, 238, 0.4);
+
+    border-radius: 6px;
+
+    background: rgba(34, 211, 238, 0.06);
+
+    color: #67E8F9;
+
+}
+
+
+@media (max-width: 600px) {
+
+    .report-section {
+
+        margin: 50px auto 80px;
+
+        padding: 0 20px;
+
+    }
+
+
+    .report-submit-button {
+
+        width: 100%;
+
+    }
+
+}
+
+
+/* =========================================================
+   ORGANISATION CONTRIBUTION PAGES
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   ORGANISATION OPPORTUNITIES
+   --------------------------------------------------------- */
+
+.organisation-opportunities-section {
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 70px 40px 100px;
+
+}
+
+
+.organisation-opportunities-header {
+
+    text-align: center;
+
+    margin-bottom: 70px;
+
+}
+
+
+.organisation-opportunities-header .explore-label {
+
+    margin-bottom: 15px;
+
+}
+
+
+.organisation-opportunities-header h1 {
+
+    margin: 0 0 25px;
+
+    color: #F9FAFB;
+
+    font-family: "Times New Roman", Times, serif;
+
+    font-size: 3.5rem;
+
+    font-weight: normal;
+
+}
+
+
+.organisation-opportunities-header p {
+
+    max-width: 800px;
+
+    margin: 0 auto;
+
+    color: #9CA3AF;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 1rem;
+
+    line-height: 1.7;
+
+}
+
+
+/* ---------------------------------------------------------
+   OPPORTUNITY CONTRIBUTIONS
+   --------------------------------------------------------- */
+
+.organisation-opportunities-content {
+
+    width: 100%;
+
+}
+
+
+.organisation-opportunities-content h2 {
+
+    margin-bottom: 15px;
+
+    color: #F9FAFB;
+
+    font-family: "Times New Roman", Times, serif;
+
+    font-size: 2.2rem;
+
+    font-weight: normal;
+
+}
+
+
+.organisation-opportunities-content > p {
+
+    margin-bottom: 40px;
+
+    color: #9CA3AF;
+
+    line-height: 1.7;
+
+}
+
+
+/* ---------------------------------------------------------
+   ADD OPPORTUNITY BUTTON
+   --------------------------------------------------------- */
+
+.organisation-opportunity-add {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    margin-bottom: 35px;
+
+}
+
+
+.organisation-opportunity-add a {
+
+    display: inline-block;
+
+    padding: 11px 20px;
+
+    border: 1px solid #22D3EE;
+
+    border-radius: 6px;
+
+    color: #67E8F9;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+
+}
+
+
+.organisation-opportunity-add a:hover {
+
+    background: #22D3EE;
+
+    color: #05070D;
+
+}
+
+
+/* ---------------------------------------------------------
+   OPPORTUNITY EMPTY STATE
+   --------------------------------------------------------- */
+
+.organisation-opportunities-content .no-opportunities {
+
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: 60px auto;
+
+    padding: 70px 40px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #1F2937;
+
+    border-radius: 10px;
+
+    background: #0B1120;
+
+    text-align: center;
+
+}
+
+
+.organisation-opportunities-content .no-opportunities h3 {
+
+    margin: 0 0 18px;
+
+    color: #F9FAFB;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 1.5rem;
+
+}
+
+
+.organisation-opportunities-content .no-opportunities p {
+
+    margin: 0 0 28px;
+
+    color: #9CA3AF;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    line-height: 1.7;
+
+}
+
+
+.organisation-opportunities-content .no-opportunities a {
+
+    color: #67E8F9;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-weight: 600;
+
+}
+
+
+/* ---------------------------------------------------------
+   ORGANISATION RESOURCES
+   --------------------------------------------------------- */
+
+.organisation-resources-section {
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 70px 40px 100px;
+
+}
+
+
+.organisation-resources-header {
+
+    text-align: center;
+
+    margin-bottom: 60px;
+
+}
+
+
+.organisation-resources-header .explore-label {
+
+    margin-bottom: 15px;
+
+}
+
+
+.organisation-resources-header h1,
+
+.organisation-resources-header h2 {
+
+    margin: 0 0 20px;
+
+    color: #F9FAFB;
+
+    font-family: "Times New Roman", Times, serif;
+
+    font-size: 3.5rem;
+
+    font-weight: normal;
+
+}
+
+
+.organisation-resources-header p {
+
+    max-width: 800px;
+
+    margin: 0 auto;
+
+    color: #9CA3AF;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    line-height: 1.7;
+
+}
+
+
+/* ---------------------------------------------------------
+   RESOURCE EMPTY STATE
+   --------------------------------------------------------- */
+
+.organisation-resources-section .no-resources {
+
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: 60px auto;
+
+    padding: 70px 40px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #1F2937;
+
+    border-radius: 10px;
+
+    background: #0B1120;
+
+    text-align: center;
+
+}
+
+
+.organisation-resources-section .no-resources h3 {
+
+    margin: 0 0 18px;
+
+    color: #F9FAFB;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 1.5rem;
+
+}
+
+
+.organisation-resources-section .no-resources p {
+
+    margin: 0 0 28px;
+
+    color: #9CA3AF;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    line-height: 1.7;
+
+}
+
+
+.organisation-resources-section .no-resources a {
+
+    color: #67E8F9;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-weight: 600;
+
+}
+
+
+/* ---------------------------------------------------------
+   ORGANISATION RESOURCE CARDS
+   --------------------------------------------------------- */
+
+.organisation-resources-section .resource-grid {
+
+    margin-top: 40px;
+
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+    .organisation-opportunities-section,
+
+    .organisation-resources-section {
+
+        padding: 50px 20px 80px;
+
+    }
+
+
+    .organisation-opportunities-header h1,
+
+    .organisation-resources-header h1,
+
+    .organisation-resources-header h2 {
+
+        font-size: 2.5rem;
+
+    }
+
+
+    .organisation-opportunity-add {
+
+        justify-content: stretch;
+
+    }
+
+
+    .organisation-opportunity-add a {
+
+        width: 100%;
+
+        text-align: center;
+
+    }
+
+
+    .organisation-opportunities-content .no-opportunities,
+
+    .organisation-resources-section .no-resources {
+
+        padding: 50px 25px;
+
+    }
+
+}
+
+
+/* =========================================================
+   ORGANISATION EMPTY STATES
+   ========================================================= */
+
+.organisation-empty-state {
+
+    width: 100%;
+
+    max-width: 900px;
+
+    min-height: 280px;
+
+    margin: 60px auto;
+
+    padding: 70px 40px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #1E293B;
+
+    border-radius: 10px;
+
+    background: #0B1120;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+}
+
+
+.organisation-empty-state h3 {
+
+    margin: 0 0 22px;
+
+    color: #F9FAFB;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 1.5rem;
+
+    font-weight: 600;
+
+}
+
+
+.organisation-empty-state p {
+
+    margin: 0 0 32px;
+
+    color: #9CA3AF;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 1rem;
+
+    line-height: 1.7;
+
+}
+
+
+.organisation-empty-state a {
+
+    display: inline-block;
+
+    padding: 12px 25px;
+
+    border: 1px solid #22D3EE;
+
+    border-radius: 6px;
+
+    color: #67E8F9;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+
+}
+
+
+.organisation-empty-state a:hover {
+
+    background: #22D3EE;
+
+    color: #05070D;
+
+}
+
+
+/* =========================================================
+   ORGANISATION ADD BUTTONS
+   ========================================================= */
+
+.organisation-opportunity-add,
+
+.organisation-resource-add {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    margin-bottom: 35px;
+
+}
+
+
+.organisation-opportunity-add a,
+
+.organisation-resource-add a {
+
+    display: inline-block;
+
+    padding: 12px 25px;
+
+    border: 1px solid #22D3EE;
+
+    border-radius: 6px;
+
+    color: #67E8F9;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+
+}
+
+
+.organisation-opportunity-add a:hover,
+
+.organisation-resource-add a:hover {
+
+    background: #22D3EE;
+
+    color: #05070D;
+
+}
+
+
+@media (max-width: 700px) {
+
+    .organisation-empty-state {
+
+        min-height: 240px;
+
+        padding: 50px 25px;
+
+    }
+
+
+    .organisation-opportunity-add,
+
+    .organisation-resource-add {
+
+        justify-content: stretch;
+
+    }
+
+
+    .organisation-opportunity-add a,
+
+    .organisation-resource-add a {
+
+        width: 100%;
+
+        text-align: center;
+
+    }
+
+}
+
+
+/* =========================================================
+   ORGANISATION UNIVERSITIES
+   ========================================================= */
+
+.organisation-universities-section {
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 0 40px 100px;
+
+}
+
+
+.organisation-universities-header {
+
+    margin-bottom: 35px;
+
+}
+
+
+.organisation-universities-header .explore-label {
+
+    margin-bottom: 15px;
+
+}
+
+
+.organisation-universities-header h2 {
+
+    margin: 0;
+
+    color: #F9FAFB;
+
+    font-family: "Times New Roman", Times, serif;
+
+    font-size: 2.2rem;
+
+    font-weight: normal;
+
+}
+
+
+/* ---------------------------------------------------------
+   ADD UNIVERSITY BUTTON ABOVE CARD
+   --------------------------------------------------------- */
+
+.organisation-university-add {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    margin-bottom: 35px;
+
+}
+
+
+.organisation-university-add a {
+
+    display: inline-block;
+
+    padding: 12px 25px;
+
+    border: 1px solid #22D3EE;
+
+    border-radius: 6px;
+
+    color: #67E8F9;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+
+}
+
+
+.organisation-university-add a:hover {
+
+    background: #22D3EE;
+
+    color: #05070D;
+
+}
+
+
+/* =========================================================
+   ORGANISATION RESOURCES - FINAL ALIGNMENT
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   REMOVE LINE UNDER BACK TO DASHBOARD
+   --------------------------------------------------------- */
+
+.organisation-resources-section .back-link {
+
+    border-bottom: none !important;
+
+}
+
+
+/* ---------------------------------------------------------
+   CENTRE PAGE DESCRIPTION
+   --------------------------------------------------------- */
+
+.organisation-resources-header {
+
+    text-align: center;
+
+}
+
+
+.organisation-resources-header p {
+
+    margin-left: auto;
+
+    margin-right: auto;
+
+}
+
+
+/* ---------------------------------------------------------
+   CENTRE YOUR CONTRIBUTIONS + RESOURCES
+   --------------------------------------------------------- */
+
+.organisation-resources-content {
+
+    text-align: center;
+
+}
+
+
+.organisation-resources-content .explore-label {
+
+    text-align: center;
+
+}
+
+
+.organisation-resources-content h2 {
+
+    text-align: center;
+
+}
+
+
+.organisation-resources-content > p:not(.explore-label) {
+
+    text-align: center;
+
+    margin-left: auto;
+
+    margin-right: auto;
+
+}
+
+
+/* =========================================================
+   ORGANISATION RESOURCES - FORCE CENTRED CONTENT
+   ========================================================= */
+
+.organisation-resources-section {
+
+    width: 100% !important;
+
+    max-width: 1200px !important;
+
+    margin-left: auto !important;
+
+    margin-right: auto !important;
+
+    text-align: center;
+
+}
+
+
+.organisation-resources-header {
+
+    width: 100% !important;
+
+    text-align: center !important;
+
+}
+
+
+.organisation-resources-header p {
+
+    width: 100% !important;
+
+    max-width: 900px !important;
+
+    margin-left: auto !important;
+
+    margin-right: auto !important;
+
+    text-align: center !important;
+
+}
+
+
+.organisation-resources-content {
+
+    width: 100% !important;
+
+    text-align: center !important;
+
+}
+
+
+.organisation-resources-content .explore-label {
+
+    width: 100% !important;
+
+    text-align: center !important;
+
+}
+
+
+.organisation-resources-content h2 {
+
+    width: 100% !important;
+
+    text-align: center !important;
+
+}
+
+
+.organisation-resources-content > p:not(.explore-label) {
+
+    width: 100% !important;
+
+    max-width: 900px !important;
+
+    margin-left: auto !important;
+
+    margin-right: auto !important;
+
+    text-align: center !important;
+
+}
+
+
+/* =========================================================
+   ORGANISATION UNIVERSITIES - HEADER SPACING
+   ========================================================= */
+
+.organisation-universities-page-header {
+
+    margin-top: 75px;
+
+}
+
+
+/* =========================================================
+   ORGANISATION LOGIN OPTIONS
+   ========================================================= */
+
+.organisation-login-options {
+
+    margin-top: 35px;
+
+    padding-top: 30px;
+
+    border-top: 1px solid #1E293B;
+
+    text-align: center;
+
+}
+
+
+.organisation-login-label {
+
+    margin-bottom: 18px;
+
+    color: #9CA3AF;
+
+    font-size: 0.9rem;
+
+}
+
+
+.organisation-login-link,
+
+.organisation-checkin-link {
+
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #67E8F9;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+}
+
+
+.organisation-login-link:hover,
+
+.organisation-checkin-link:hover {
+
+    color: #22D3EE;
+
+}
+
+
+/* =========================================================
+   LOGIN PAGE
+   ========================================================= */
+
+.login-page {
+
+    max-width: 1200px;
+
+    margin: 90px auto 110px;
+
+    padding: 0 30px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+    align-items: start;
+
+}
+
+
+.login-card {
+
+    padding: 45px 35px;
+
+    background: #0B1120;
+
+    border: 1px solid #1E293B;
+
+    border-radius: 8px;
+
+}
+
+
+.login-card:hover {
+
+    border-color: rgba(103, 232, 249, 0.45);
+
+}
+
+
+.login-card h2 {
+
+    margin-bottom: 15px;
+
+    font-family: "Times New Roman", Times, serif;
+
+    font-size: 40px;
+
+    font-weight: normal;
+
+}
+
+
+.login-card > p:not(.explore-label) {
+
+    color: #9CA3AF;
+
+    line-height: 1.7;
+
+    margin-bottom: 35px;
+
+}
+
+
+.login-card form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+}
+
+
+.login-card label {
+
+    color: #F9FAFB;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+}
+
+
+.login-card input {
+
+    width: 100%;
+
+    padding: 14px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #1E293B;
+
+    border-radius: 6px;
+
+    background: #05070D;
+
+    color: #F9FAFB;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.95rem;
+
+    outline: none;
+
+}
+
+
+.login-card input:focus {
+
+    border-color: #22D3EE;
+
+}
+
+
+.login-card button {
+
+    margin-top: 12px;
+
+    padding: 14px;
+
+    border: 1px solid #22D3EE;
+
+    border-radius: 6px;
+
+    background: #22D3EE;
+
+    color: #05070D;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+
+}
+
+
+.login-card button:hover {
+
+    background: #67E8F9;
+
+}
+
+
+.login-card a {
+
+    color: #22D3EE;
+
+    text-decoration: none;
+
+}
+
+
+.login-card a:hover {
+
+    color: #67E8F9;
+
+}
+
+
+@media (max-width: 900px) {
+
+    .login-page {
+
+        grid-template-columns: 1fr;
+
+        max-width: 600px;
+
+    }
+
+}
+
+
+/* =========================================================
+   ORGANISATION CHECK-IN
+   ========================================================= */
+
+.organisation-check-in {
+
+    max-width: 650px;
+
+    margin: 100px auto 120px;
+
+    padding: 0 30px;
+
+}
+
+
+.organisation-check-in > .explore-label {
+
+    margin-bottom: 18px;
+
+}
+
+
+.organisation-check-in h1 {
+
+    margin-bottom: 18px;
+
+    font-family: "Times New Roman", Times, serif;
+
+    font-size: 48px;
+
+    font-weight: normal;
+
+}
+
+
+.organisation-check-in-intro {
+
+    margin-bottom: 45px;
+
+    color: #9CA3AF;
+
+    line-height: 1.7;
+
+}
+
+
+.check-in-card {
+
+    padding: 35px;
+
+    background: #0B1120;
+
+    border: 1px solid #1E293B;
+
+    border-radius: 8px;
+
+}
+
+
+.check-in-card form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+}
+
+
+.check-in-card label {
+
+    color: #F9FAFB;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+}
+
+
+.check-in-card input {
+
+    width: 100%;
+
+    padding: 14px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #1E293B;
+
+    border-radius: 6px;
+
+    background: #05070D;
+
+    color: #F9FAFB;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.95rem;
+
+    outline: none;
+
+}
+
+
+.check-in-card input:focus {
+
+    border-color: #22D3EE;
+
+}
+
+
+.check-in-card button {
+
+    margin-top: 10px;
+
+    padding: 14px 20px;
+
+    border: 1px solid #22D3EE;
+
+    border-radius: 6px;
+
+    background: #22D3EE;
+
+    color: #05070D;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+
+}
+
+
+.check-in-card button:hover {
+
+    background: #67E8F9;
+
+}
+
+
+.check-in-result {
+
+    margin-top: 30px;
+
+    padding: 35px;
+
+    background: #0B1120;
+
+    border: 1px solid #1E293B;
+
+    border-radius: 8px;
+
+}
+
+
+.check-in-result h2 {
+
+    margin: 10px 0 25px;
+
+    font-family: "Times New Roman", Times, serif;
+
+    font-size: 34px;
+
+    font-weight: normal;
+
+}
+
+
+.check-in-result > p:not(.explore-label) {
+
+    color: #9CA3AF;
+
+    line-height: 1.7;
+
+}
+
+
+.check-in-status {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 18px 0;
+
+    border-top: 1px solid #1E293B;
+
+    border-bottom: 1px solid #1E293B;
+
+}
+
+
+.check-in-status span {
+
+    color: #9CA3AF;
+
+}
+
+
+.check-in-status strong {
+
+    color: #22D3EE;
+
+    font-size: 0.9rem;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+}
+
+
+.check-in-message {
+
+    margin-bottom: 25px;
+
+    padding: 15px 18px;
+
+    border: 1px solid #1E293B;
+
+    border-radius: 6px;
+
+    color: #9CA3AF;
+
+}
+
+
+.check-in-error {
+
+    color: #F9FAFB;
+
+}
+
+
+.check-in-approved {
+
+    margin-top: 25px;
+
+    padding: 20px;
+
+    border-left: 2px solid #22D3EE;
+
+}
+
+
+.check-in-approved h3 {
+
+    margin: 0 0 10px;
+
+    color: #67E8F9;
+
+}
+
+
+.check-in-approved p {
+
+    margin: 0;
+
+    color: #9CA3AF;
+
+    line-height: 1.7;
+
+}
+
+
+.check-in-pending {
+
+    margin-top: 25px;
+
+    padding: 20px;
+
+    border-left: 2px solid #FBBF24;
+
+}
+
+
+.check-in-pending h3 {
+
+    margin: 0 0 10px;
+
+    color: #FBBF24;
+
+}
+
+
+.check-in-pending p {
+
+    margin: 0;
+
+    color: #9CA3AF;
+
+    line-height: 1.7;
+
+}
+
+
+.check-in-rejected {
+
+    margin-top: 25px;
+
+    padding: 20px;
+
+    border-left: 2px solid #EF4444;
+
+}
+
+
+.check-in-rejected h3 {
+
+    margin: 0 0 10px;
+
+    color: #F9FAFB;
+
+}
+
+
+.check-in-rejected p {
+
+    margin: 0;
+
+    color: #9CA3AF;
+
+    line-height: 1.7;
+
+}
+
+
+@media (max-width: 650px) {
+
+    .organisation-check-in {
+
+        margin: 70px auto 90px;
+
+        padding: 0 20px;
+
+    }
+
+
+    .organisation-check-in h1 {
+
+        font-size: 40px;
+
+    }
+
+
+    .check-in-card,
+
+    .check-in-result {
+
+        padding: 25px;
+
+    }
+
+}
+
+
+.check-in-register-button {
+
+    display: inline-block;
+
+    margin-top: 15px;
+
+    padding: 12px 20px;
+
+    border: 1px solid #22D3EE;
+
+    border-radius: 6px;
+
+    color: #67E8F9;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+
+}
+
+
+.check-in-register-button:hover {
+
+    background: #22D3EE;
+
+    color: #05070D;
+
+}

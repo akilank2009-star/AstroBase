@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Your Universities | Astrobase</title>
+
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+        crossorigin
+    >
+
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+    <header>
+
+        <h2>
+            Astrobase
+        </h2>
+
+
+        <nav>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/index.html">
+                Home
+            </a>
+
+
+            <a href="/organisation/dashboard">
+                Dashboard
+            </a>
+
+
+            <a href="/organisation/profile">
+                Profile
+            </a>
+
+
+            <a href="/logout">
+                Logout
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+
+        <a
+            class="back-link"
+            href="/organisation/dashboard"
+        >
+            ← Back to Dashboard
+        </a>
+
+
+        <section class="feature-page-header organisation-universities-page-header">
+
+
+            <p class="feature-page-label">
+                ORGANISATION
+            </p>
+
+
+            <h1>
+                Your Universities
+            </h1>
+
+
+            <p>
+                View and manage the universities your organisation
+                has contributed to Astrobase.
+            </p>
+
+
+        </section>
+
+
+        <section class="organisation-universities-section">
+
+
+            <div class="organisation-universities-header">
+
+                <p class="explore-label">
+                    YOUR CONTRIBUTIONS
+                </p>
+
+
+                <h2>
+                    Universities
+                </h2>
+
+            </div>
+
+
+            <div class="organisation-university-add">
+
+                <a href="/organisation/universities/add">
+                    + Add University
+                </a>
+
+            </div>
+
+
+            {% if universities %}
+
+
+                <div class="resource-grid">
+
+
+                    {% for university in universities %}
+
+
+                        <article class="resource-card">
+
+
+                            <p class="resource-type">
+                                {{ university["university_type"] }}
+                            </p>
+
+
+                            <p>
+
+                                Status:
+
+                                <strong>
+                                    {{ university["status"] }}
+                                </strong>
+
+                            </p>
+
+
+                            <h2>
+                                {{ university["university_name"] }}
+                            </h2>
+
+
+                            <p>
+
+                                {{ university["city"] }},
+                                {{ university["country"] }}
+
+                            </p>
+
+
+                            <p>
+                                {{ university["description"] }}
+                            </p>
+
+
+                            <p>
+
+                                Programmes:
+
+                                <strong>
+                                    {{ university["programme_count"] }}
+                                </strong>
+
+                            </p>
+
+
+                            <div class="resource-card-actions">
+
+
+                                <a
+                                    href="/universities/{{ university['university_id'] }}"
+                                >
+                                    View
+                                </a>
+
+
+                                <a
+                                    href="/organisation/universities/{{ university['university_id'] }}/edit"
+                                >
+                                    Edit
+                                </a>
+
+
+                            </div>
+
+
+                        </article>
+
+
+                    {% endfor %}
+
+
+                </div>
+
+
+            {% else %}
+
+
+                <div class="organisation-empty-state">
+
+
+                    <h3>
+                        No universities yet
+                    </h3>
+
+
+                    <p>
+                        Your organisation has not contributed any
+                        universities to Astrobase yet.
+                    </p>
+
+
+                    <a
+                        href="/organisation/universities/add"
+                        class="organisation-empty-add-link"
+                    >
+                        + Add University
+                    </a>
+
+
+                </div>
+
+
+            {% endif %}
+
+
+        </section>
+
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 Astrobase
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

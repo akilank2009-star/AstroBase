@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Review Resource | Astrobase</title>
+
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+    <header>
+
+        <h2>
+            Astrobase
+        </h2>
+
+
+        <nav>
+
+            <a
+                href="http://127.0.0.1:5500/Website/HTML/index.html"
+            >
+                Home
+            </a>
+
+
+            <a
+                href="http://127.0.0.1:5500/Website/HTML/explore.html"
+            >
+                Explore
+            </a>
+
+
+            <a
+                href="http://127.0.0.1:5500/Website/HTML/community.html"
+            >
+                Community
+            </a>
+
+
+            <a
+                href="http://127.0.0.1:5500/Website/HTML/about.html"
+            >
+                About
+            </a>
+
+
+            <a href="/admin/dashboard">
+                Admin Dashboard
+            </a>
+
+
+            <a href="/logout">
+                Logout
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+
+        <a
+            class="back-link"
+            href="/admin/resources"
+        >
+            ← Back to Resources
+        </a>
+
+
+        <section class="explore-header">
+
+            <p class="explore-label">
+                ADMINISTRATION
+            </p>
+
+
+            <h1>
+                Review Resource
+            </h1>
+
+
+            <p>
+                Review the submitted resource and manage
+                its status on Astrobase.
+            </p>
+
+        </section>
+
+
+        <section class="admin-resource-view">
+
+
+            <!-- Resource Introduction -->
+
+            <div class="admin-resource-intro">
+
+                <p class="explore-label">
+                    {{ resource["resource_type"] }}
+                </p>
+
+
+                <h2>
+                    {{ resource["resource_name"] }}
+                </h2>
+
+
+                <p>
+
+                    Status:
+
+                    <strong>
+                        {{ resource["status"] }}
+                    </strong>
+
+                </p>
+
+
+                {% if resource["is_featured"] %}
+
+                    <p>
+                        Featured Resource
+                    </p>
+
+                {% endif %}
+
+            </div>
+
+
+            <!-- Resource Details -->
+
+            <div class="admin-resource-details">
+
+
+                <div class="admin-resource-detail">
+
+                    <span>
+                        Description
+                    </span>
+
+
+                    <p>
+                        {{ resource["description"] }}
+                    </p>
+
+                </div>
+
+
+                {% if resource["recommended_for"] %}
+
+                    <div class="admin-resource-detail">
+
+                        <span>
+                            Recommended For
+                        </span>
+
+
+                        <p>
+                            {{ resource["recommended_for"] }}
+                        </p>
+
+                    </div>
+
+                {% endif %}
+
+
+                <div class="admin-resource-detail">
+
+                    <span>
+                        Official Website
+                    </span>
+
+
+                    <p>
+
+                        {% if resource["official_website"] %}
+
+                            <a
+                                href="{{ resource['official_website'] }}"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Visit Official Website →
+                            </a>
+
+                        {% else %}
+
+                            No official website provided.
+
+                        {% endif %}
+
+                    </p>
+
+                </div>
+
+
+                <div class="admin-resource-detail">
+
+                    <span>
+                        Provided By
+                    </span>
+
+
+                    <p>
+
+                        {% if resource["organisation_name"] %}
+
+                            {{ resource["organisation_name"] }}
+
+                        {% else %}
+
+                            Astrobase
+
+                        {% endif %}
+
+                    </p>
+
+                </div>
+
+
+                <div class="admin-resource-detail">
+
+                    <span>
+                        Resource ID
+                    </span>
+
+
+                    <p>
+                        {{ resource["resource_id"] }}
+                    </p>
+
+                </div>
+
+
+                {% if resource["review_reason"] %}
+
+                    <div class="admin-resource-detail">
+
+                        <span>
+                            Review Reason
+                        </span>
+
+
+                        <p>
+                            {{ resource["review_reason"] }}
+                        </p>
+
+                    </div>
+
+                {% endif %}
+
+
+            </div>
+
+
+            <!-- Admin Actions -->
+
+            <div class="admin-resource-actions">
+
+
+                {% if resource["status"] != "Archived" %}
+
+                    <a
+                        href="/admin/resources/{{ resource['resource_id'] }}/edit"
+                    >
+                        Edit Resource
+                    </a>
+
+                {% endif %}
+
+
+                {% if resource["status"] == "Pending" %}
+
+
+                    <form
+                        method="POST"
+                        action="/admin/resources/{{ resource['resource_id'] }}/approve"
+                    >
+
+                        <button
+                            type="submit"
+                        >
+                            Approve
+                        </button>
+
+                    </form>
+
+
+                    <form
+                        method="POST"
+                        action="/admin/resources/{{ resource['resource_id'] }}/reject"
+                    >
+
+                        <button
+                            type="submit"
+                        >
+                            Reject
+                        </button>
+
+                    </form>
+
+
+                {% endif %}
+
+
+                {% if resource["status"] == "Published" %}
+
+
+                    <form
+                        method="POST"
+                        action="/admin/resources/{{ resource['resource_id'] }}/feature"
+                    >
+
+                        <button
+                            type="submit"
+                        >
+
+                            {% if resource["is_featured"] %}
+
+                                Unfeature Resource
+
+                            {% else %}
+
+                                Feature Resource
+
+                            {% endif %}
+
+                        </button>
+
+                    </form>
+
+
+                {% endif %}
+
+
+                {% if resource["status"] != "Archived" %}
+
+
+                    <form
+                        method="POST"
+                        action="/admin/resources/{{ resource['resource_id'] }}/archive"
+                    >
+
+                        <button
+                            type="submit"
+                        >
+                            Archive
+                        </button>
+
+                    </form>
+
+
+                {% endif %}
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 Astrobase
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

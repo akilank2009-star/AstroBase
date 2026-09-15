@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Organisation Application | Astrobase</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <header>
+
+        <h2>Astrobase</h2>
+
+        <nav>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/index.html">
+                Home
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/explore.html">
+                Explore
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/community.html">
+                Community
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/about.html">
+                About
+            </a>
+
+            <a href="http://127.0.0.1:5000/login">
+                Login
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/join.html">
+                Join Astrobase
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <section class="organisation-application-view">
+
+            <p class="explore-label">
+                ORGANISATION APPLICATION
+            </p>
+
+            <h1>
+                {{ organisation["organisation_name"] }}
+            </h1>
+
+
+            <div class="organisation-status">
+
+                <span>
+                    Application Status
+                </span>
+
+                <strong>
+                    {{ organisation["application_status"] }}
+                </strong>
+
+            </div>
+
+
+            <div class="organisation-application-details">
+
+                <div>
+
+                    <h2>
+                        Organisation Details
+                    </h2>
+
+                    <p>
+                        <strong>Organisation Type</strong>
+                    </p>
+
+                    <p>
+                        {{ organisation["organisation_type"] or "Not provided" }}
+                    </p>
+
+
+                    <p>
+                        <strong>Website</strong>
+                    </p>
+
+                    <p>
+                        {{ organisation["website"] or "Not provided" }}
+                    </p>
+
+
+                    <p>
+                        <strong>Contact Email</strong>
+                    </p>
+
+                    <p>
+                        {{ organisation["contact_email"] }}
+                    </p>
+
+
+                    <p>
+                        <strong>Description</strong>
+                    </p>
+
+                    <p>
+                        {{ organisation["description"] }}
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <h2>
+                        Application
+                    </h2>
+
+                    <p>
+                        <strong>Reason for Joining</strong>
+                    </p>
+
+                    <p>
+                        {{ organisation["application_reason"] }}
+                    </p>
+
+
+                    <p>
+                        <strong>Requested Areas</strong>
+                    </p>
+
+                    <p>
+                        {{ organisation["requested_areas"] or "None selected" }}
+                    </p>
+
+
+                    <p>
+                        <strong>Submitted</strong>
+                    </p>
+
+                    <p>
+                        {{ organisation["submitted_at"] }}
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            {% if organisation["application_status"] == "Pending" %}
+
+                <div class="organisation-application-actions">
+
+                    <a href="/organisation/application/{{ organisation['organisation_id'] }}/edit">
+
+                        <button type="button">
+                            Edit Application
+                        </button>
+
+                    </a>
+
+
+                    <form
+                        action="/organisation/application/{{ organisation['organisation_id'] }}/withdraw"
+                        method="POST"
+                    >
+
+                        <button type="submit">
+                            Withdraw Application
+                        </button>
+
+                    </form>
+
+                </div>
+
+            {% endif %}
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 Astrobase
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

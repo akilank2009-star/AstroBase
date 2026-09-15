@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Review Opportunity | Astrobase</title>
+
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- Navigation Bar -->
+
+    <header>
+
+        <h2>Astrobase</h2>
+
+        <nav>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/index.html">
+                Home
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/explore.html">
+                Explore
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/community.html">
+                Community
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/about.html">
+                About
+            </a>
+
+            <a href="/admin/dashboard">
+                Admin Dashboard
+            </a>
+
+            <a href="/logout">
+                Logout
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- Back Link -->
+
+        <a
+            class="back-link"
+            href="/admin/opportunities"
+        >
+            ← Back to Opportunities
+        </a>
+
+
+        <!-- Page Header -->
+
+        <section class="explore-header">
+
+            <p class="explore-label">
+                ADMINISTRATION
+            </p>
+
+            <h1>
+                Review Opportunity
+            </h1>
+
+            <p>
+                Review the submitted opportunity and manage
+                its status on Astrobase.
+            </p>
+
+        </section>
+
+
+        <!-- Opportunity Details -->
+
+        <section class="admin-opportunity-view">
+
+
+            <div class="admin-opportunity-intro">
+
+                <p class="explore-label">
+                    {{ opportunity['category'] }}
+                </p>
+
+                <h2>
+                    {{ opportunity['opportunity_name'] }}
+                </h2>
+
+                <p>
+                    Status:
+                    <strong>
+                        {{ opportunity['status'] }}
+                    </strong>
+                </p>
+
+            </div>
+
+
+            <!-- Details -->
+
+            <div class="admin-opportunity-details">
+
+
+                <div class="admin-opportunity-detail">
+
+                    <span>
+                        Description
+                    </span>
+
+                    <p>
+                        {{ opportunity['description'] }}
+                    </p>
+
+                </div>
+
+
+                {% if opportunity['eligibility'] %}
+
+                    <div class="admin-opportunity-detail">
+
+                        <span>
+                            Eligibility
+                        </span>
+
+                        <p>
+                            {{ opportunity['eligibility'] }}
+                        </p>
+
+                    </div>
+
+                {% endif %}
+
+
+                <div class="admin-opportunity-detail">
+
+                    <span>
+                        Deadline
+                    </span>
+
+                    <p>
+
+                        {% if opportunity['deadline'] %}
+
+                            {{ opportunity['deadline'] }}
+
+                        {% else %}
+
+                            No deadline specified.
+
+                        {% endif %}
+
+                    </p>
+
+                </div>
+
+
+                <div class="admin-opportunity-detail">
+
+                    <span>
+                        Official Website
+                    </span>
+
+                    <p>
+
+                        {% if opportunity['official_website'] %}
+
+                            <a
+                                href="{{ opportunity['official_website'] }}"
+                                target="_blank"
+                            >
+                                Visit Official Website →
+                            </a>
+
+                        {% else %}
+
+                            No official website provided.
+
+                        {% endif %}
+
+                    </p>
+
+                </div>
+
+
+                <div class="admin-opportunity-detail">
+
+                    <span>
+                        Provided By
+                    </span>
+
+                    <p>
+
+                        {% if opportunity['organisation_name'] %}
+
+                            {{ opportunity['organisation_name'] }}
+
+                        {% else %}
+
+                            Astrobase
+
+                        {% endif %}
+
+                    </p>
+
+                </div>
+
+
+                <div class="admin-opportunity-detail">
+
+                    <span>
+                        Opportunity ID
+                    </span>
+
+                    <p>
+                        {{ opportunity['opportunity_id'] }}
+                    </p>
+
+                </div>
+
+
+                {% if opportunity['review_reason'] %}
+
+                    <div class="admin-opportunity-detail">
+
+                        <span>
+                            Review Reason
+                        </span>
+
+                        <p>
+                            {{ opportunity['review_reason'] }}
+                        </p>
+
+                    </div>
+
+                {% endif %}
+
+
+            </div>
+
+
+            <!-- Admin Actions -->
+
+            <div class="admin-opportunity-actions">
+
+
+                <a
+                    href="/admin/opportunities/{{ opportunity['opportunity_id'] }}/edit"
+                >
+                    Edit Opportunity
+                </a>
+
+
+                {% if opportunity['status'] == 'Pending' %}
+
+
+                    <form
+                        method="POST"
+                        action="/admin/opportunities/{{ opportunity['opportunity_id'] }}/approve"
+                    >
+
+                        <button
+                            type="submit"
+                        >
+                            Approve
+                        </button>
+
+                    </form>
+
+
+                    <form
+                        method="POST"
+                        action="/admin/opportunities/{{ opportunity['opportunity_id'] }}/reject"
+                    >
+
+                        <button
+                            type="submit"
+                        >
+                            Reject
+                        </button>
+
+                    </form>
+
+
+                {% endif %}
+
+
+                {% if opportunity['status'] != 'Archived' %}
+
+
+                    <form
+                        method="POST"
+                        action="/admin/opportunities/{{ opportunity['opportunity_id'] }}/archive"
+                    >
+
+                        <button
+                            type="submit"
+                        >
+                            Archive
+                        </button>
+
+                    </form>
+
+
+                {% endif %}
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 Astrobase
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

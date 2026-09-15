@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Organisation Resources | Astrobase</title>
+
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+    <header>
+
+        <h2>
+            Astrobase
+        </h2>
+
+
+        <nav>
+
+            <a
+                href="http://127.0.0.1:5500/Website/HTML/index.html"
+            >
+                Public Site
+            </a>
+
+
+            <a href="/organisation/dashboard">
+                Dashboard
+            </a>
+
+
+            <a href="/logout">
+                Logout
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+
+            <a
+                class="back-link"
+                href="/organisation/dashboard"
+            >
+                ← Back to Dashboard
+            </a>
+
+
+        <section class="organisation-resources-section">
+
+
+
+
+
+            <div class="organisation-resources-header">
+
+
+                <p class="explore-label">
+                    ORGANISATION
+                </p>
+
+
+                <h1>
+                    Your Resources
+                </h1>
+
+
+                <p>
+                    View and manage the resources your organisation
+                    has contributed to Astrobase.
+                </p>
+
+
+            </div>
+
+
+            <div class="organisation-resources-content">
+
+
+                <p class="explore-label">
+                    YOUR CONTRIBUTIONS
+                </p>
+
+
+                <h2>
+                    Resources
+                </h2>
+
+
+                <div class="organisation-resource-add">
+
+                    <a href="/organisation/resources/add">
+                        + Add Resource
+                    </a>
+
+                </div>
+
+
+                {% if resources %}
+
+
+                    <div class="resource-grid">
+
+
+                        {% for resource in resources %}
+
+
+                            <article class="resource-card">
+
+
+                                <p class="resource-type">
+                                    {{ resource["resource_type"] }}
+                                </p>
+
+
+                                <h3>
+                                    {{ resource["resource_name"] }}
+                                </h3>
+
+
+                                {% if resource["description"] %}
+
+                                    <p>
+                                        {{ resource["description"] }}
+                                    </p>
+
+                                {% endif %}
+
+
+                                {% if resource["recommended_for"] %}
+
+                                    <p class="resource-recommended">
+
+                                        <strong>
+                                            Recommended for:
+                                        </strong>
+
+                                        {{ resource["recommended_for"] }}
+
+                                    </p>
+
+                                {% endif %}
+
+
+                                <p>
+
+                                    <strong>
+                                        Status:
+                                    </strong>
+
+                                    {{ resource["status"] }}
+
+                                </p>
+
+
+                                {% if resource["official_website"] %}
+
+                                    <a
+                                        href="{{ resource['official_website'] }}"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        Official Website
+                                    </a>
+
+                                {% endif %}
+
+
+                                <div class="resource-card-actions">
+
+                                    <a
+                                        href="/organisation/resources/{{ resource['resource_id'] }}/edit"
+                                    >
+                                        Edit
+                                    </a>
+
+                                </div>
+
+
+                            </article>
+
+
+                        {% endfor %}
+
+
+                    </div>
+
+
+                {% else %}
+
+
+                    <div class="organisation-empty-state">
+
+
+                        <h3>
+                            No Resources Yet
+                        </h3>
+
+
+                        <p>
+                            Your organisation has not added any
+                            resources yet.
+                        </p>
+
+
+                        <a href="/organisation/resources/add">
+                            + Add Your First Resource
+                        </a>
+
+
+                    </div>
+
+
+                {% endif %}
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 Astrobase
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

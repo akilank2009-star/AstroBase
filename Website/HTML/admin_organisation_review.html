@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Review Organisation | Astrobase
+    </title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+<body>
+
+    <header>
+
+        <h2>
+            Astrobase
+        </h2>
+
+        <nav>
+
+            <a href="/admin/dashboard">
+                Dashboard
+            </a>
+
+            <a href="/admin/organisations">
+                Applications
+            </a>
+
+            <a href="/admin/organisations/verified">
+                Verified Organisations
+            </a>
+
+            <a href="/logout">
+                Logout
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <a
+            class="back-link"
+            href="/admin/organisations"
+        >
+            ← Back to Applications
+        </a>
+
+
+        <section class="admin-review-section">
+
+            <p class="explore-label">
+                ORGANISATION REVIEW
+            </p>
+
+            <h1>
+                {{ application["organisation_name"] }}
+            </h1>
+
+
+            <div class="admin-review-status">
+
+                <span>
+                    Application Status
+                </span>
+
+                <strong>
+                    {{ application["status"] }}
+                </strong>
+
+            </div>
+
+
+            <div class="admin-review-grid">
+
+
+                <!-- Organisation Details -->
+
+                <div class="admin-review-card">
+
+                    <h2>
+                        Organisation Details
+                    </h2>
+
+
+                    <div class="admin-review-field">
+
+                        <span>
+                            Organisation Name
+                        </span>
+
+                        <p>
+                            {{ application["organisation_name"] }}
+                        </p>
+
+                    </div>
+
+
+                    <div class="admin-review-field">
+
+                        <span>
+                            Organisation Type
+                        </span>
+
+                        <p>
+                            {{ application["organisation_type"] or "Not provided" }}
+                        </p>
+
+                    </div>
+
+
+                    <div class="admin-review-field">
+
+                        <span>
+                            Website
+                        </span>
+
+                        <p>
+                            {{ application["website"] or "Not provided" }}
+                        </p>
+
+                    </div>
+
+
+                    <div class="admin-review-field">
+
+                        <span>
+                            Contact Email
+                        </span>
+
+                        <p>
+                            {{ application["contact_email"] }}
+                        </p>
+
+                    </div>
+
+
+                    <div class="admin-review-field">
+
+                        <span>
+                            Description
+                        </span>
+
+                        <p>
+                            {{ application["description"] }}
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Application Details -->
+
+                <div class="admin-review-card">
+
+                    <h2>
+                        Application
+                    </h2>
+
+
+                    <div class="admin-review-field">
+
+                        <span>
+                            Reason for Joining
+                        </span>
+
+                        <p>
+                            {{ application["application_reason"] }}
+                        </p>
+
+                    </div>
+
+
+                    <div class="admin-review-field">
+
+                        <span>
+                            Requested Areas
+                        </span>
+
+                        <p>
+                            {{ application["requested_areas"] or "None selected" }}
+                        </p>
+
+                    </div>
+
+
+                    <div class="admin-review-field">
+
+                        <span>
+                            Submitted At
+                        </span>
+
+                        <p>
+                            {{ application["submitted_at"] }}
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            {% if application["status"] == "Pending" %}
+
+                <div class="admin-review-actions">
+
+                    <form
+                        action="/admin/organisations/{{ application['application_id'] }}/approve"
+                        method="POST"
+                    >
+
+                        <button type="submit">
+                            Approve Application
+                        </button>
+
+                    </form>
+
+
+                    <form
+                        action="/admin/organisations/{{ application['application_id'] }}/reject"
+                        method="POST"
+                    >
+
+                        <button type="submit">
+                            Reject Application
+                        </button>
+
+                    </form>
+
+                </div>
+
+            {% endif %}
+
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 Astrobase
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Add Resource | Astrobase</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+<body>
+
+    <header>
+
+        <h2>
+            Astrobase
+        </h2>
+
+        <nav>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/index.html">
+                Home
+            </a>
+
+            <a href="/opportunities">
+                Opportunities
+            </a>
+
+            <a href="/resources">
+                Resources
+            </a>
+
+            <a href="/admin/dashboard">
+                Admin Dashboard
+            </a>
+
+            <a href="/logout">
+                Logout
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <a
+            class="back-link"
+            href="/admin/resources"
+        >
+            ← Back to Resources
+        </a>
+
+
+        <section class="feature-page-header">
+
+            <p class="feature-page-label">
+                ADMINISTRATION
+            </p>
+
+            <h1>
+                Add Resource
+            </h1>
+
+            <p>
+                Create a resource and assign it to an Astrobase
+                organisation or contributor.
+            </p>
+
+        </section>
+
+
+        <section class="profile-edit-section">
+
+            {% if error %}
+
+                <div class="form-error">
+
+                    {{ error }}
+
+                </div>
+
+            {% endif %}
+
+
+            <form
+                method="POST"
+                class="profile-edit-form"
+            >
+
+                <!-- Organisation -->
+
+                <label>
+
+                    <span>
+                        Organisation
+                    </span>
+
+                    <select
+                        name="organisation_id"
+                        required
+                    >
+
+                        <option value="">
+                            Select an organisation
+                        </option>
+
+                        {% for organisation in organisations %}
+
+                            <option
+                                value="{{ organisation['organisation_id'] }}"
+                                {% if form_data and form_data.get('organisation_id') == organisation['organisation_id']|string %}
+                                    selected
+                                {% endif %}
+                            >
+
+                                {{ organisation['organisation_name'] }}
+
+                                {% if organisation['organisation_type'] %}
+
+                                    · {{ organisation['organisation_type'] }}
+
+                                {% endif %}
+
+                            </option>
+
+                        {% endfor %}
+
+                    </select>
+
+                </label>
+
+
+                <!-- Resource Name -->
+
+                <label>
+
+                    <span>
+                        Resource Name
+                    </span>
+
+                    <input
+                        type="text"
+                        name="resource_name"
+                        value="{{ form_data.get('resource_name', '') if form_data else '' }}"
+                        required
+                    >
+
+                </label>
+
+
+                <!-- Resource Type -->
+
+                <label>
+
+                    <span>
+                        Resource Type
+                    </span>
+
+                    <select
+                        name="resource_type"
+                        required
+                    >
+
+                        <option value="">
+                            Select a resource type
+                        </option>
+
+                        <option value="Books">
+                            Books
+                        </option>
+
+                        <option value="Research Papers">
+                            Research Papers
+                        </option>
+
+                        <option value="Courses">
+                            Courses
+                        </option>
+
+                        <option value="Websites">
+                            Websites
+                        </option>
+
+                        <option value="Tools">
+                            Tools
+                        </option>
+
+                        <option value="Videos">
+                            Videos
+                        </option>
+
+                        <option value="Notes">
+                            Notes
+                        </option>
+
+                        <option value="Datasets">
+                            Datasets
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </label>
+
+
+                <!-- Description -->
+
+                <label>
+
+                    <span>
+                        Description
+                    </span>
+
+                    <textarea
+                        name="description"
+                        rows="6"
+                        required
+                    >{{ form_data.get('description', '') if form_data else '' }}</textarea>
+
+                </label>
+
+
+                <!-- Recommended For -->
+
+                <label>
+
+                    <span>
+                        Recommended For
+                    </span>
+
+                    <input
+                        type="text"
+                        name="recommended_for"
+                        value="{{ form_data.get('recommended_for', '') if form_data else '' }}"
+                        placeholder="e.g. Class 11 Physics students"
+                    >
+
+                </label>
+
+
+                <!-- Official Website -->
+
+                <label>
+
+                    <span>
+                        Official Website
+                    </span>
+
+                    <input
+                        type="url"
+                        name="official_website"
+                        value="{{ form_data.get('official_website', '') if form_data else '' }}"
+                        placeholder="https://..."
+                    >
+
+                </label>
+
+
+                <!-- Status -->
+
+                <label>
+
+                    <span>
+                        Status
+                    </span>
+
+                    <select
+                        name="status"
+                    >
+
+                        <option value="Draft">
+                            Draft
+                        </option>
+
+                        <option value="Pending">
+                            Pending
+                        </option>
+
+                        <option value="Published">
+                            Published
+                        </option>
+
+                        <option value="Rejected">
+                            Rejected
+                        </option>
+
+                    </select>
+
+                </label>
+
+
+                <!-- Featured -->
+
+                <label>
+
+                    <span>
+                        Featured Resource
+                    </span>
+
+                    <select
+                        name="is_featured"
+                    >
+
+                        <option value="0">
+                            No
+                        </option>
+
+                        <option value="1">
+                            Yes
+                        </option>
+
+                    </select>
+
+                </label>
+
+
+                <div class="profile-edit-actions">
+
+                    <button
+                        type="submit"
+                        class="admin-create-button"
+                    >
+                        Create Resource
+                    </button>
+
+                    <a
+                        href="/admin/resources"
+                        class="back-link"
+                    >
+                        Cancel
+                    </a>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 Astrobase
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

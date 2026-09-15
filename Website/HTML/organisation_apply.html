@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Apply as an Organisation | Astrobase</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <header>
+
+        <h2>Astrobase</h2>
+
+        <nav>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/index.html">
+                Home
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/explore.html">
+                Explore
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/community.html">
+                Community
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/about.html">
+                About
+            </a>
+
+            <a href="http://127.0.0.1:5000/login">
+                Login
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/join.html">
+                Join Astrobase
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main class="organisation-apply-section">
+
+        <h1>Join Astrobase as an Organisation</h1>
+
+        <p class="organisation-apply-intro">
+
+            Apply to become an organisation on Astrobase and contribute
+            opportunities, resources, and university information to the
+            astronomy and space science community.
+
+        </p>
+
+
+        <form
+            class="organisation-apply-form"
+            action="/organisation/apply"
+            method="POST"
+        >
+
+            <h2>Organisation Details</h2>
+
+
+            <label for="organisation_name">
+
+                Organisation Name
+
+            </label>
+
+            <input
+                type="text"
+                id="organisation_name"
+                name="organisation_name"
+                maxlength="150"
+                required
+            >
+
+
+            <label for="organisation_type">
+
+                Organisation Type
+
+            </label>
+
+            <input
+                type="text"
+                id="organisation_type"
+                name="organisation_type"
+                placeholder="University, Research Institute, Company, Non-profit, etc."
+            >
+
+
+            <label for="website">
+
+                Website
+
+            </label>
+
+            <input
+                type="url"
+                id="website"
+                name="website"
+                placeholder="https://example.org"
+            >
+
+
+            <label for="contact_email">
+
+                Contact Email
+
+            </label>
+
+            <input
+                type="email"
+                id="contact_email"
+                name="contact_email"
+                required
+            >
+
+
+            <label for="description">
+
+                Organisation Description
+
+            </label>
+
+            <textarea
+                id="description"
+                name="description"
+                placeholder="Tell us about your organisation..."
+                required
+            ></textarea>
+
+
+            <h2>Application</h2>
+
+
+            <label for="application_reason">
+
+                Why do you want to join Astrobase?
+
+            </label>
+
+            <textarea
+                id="application_reason"
+                name="application_reason"
+                placeholder="Explain how your organisation would contribute to Astrobase..."
+                required
+            ></textarea>
+
+
+            <label for="requested_areas">
+
+                Areas you would like to contribute to
+
+            </label>
+
+            <div class="organisation-area-options">
+
+                <label>
+
+                    <input
+                        type="checkbox"
+                        name="requested_areas"
+                        value="Opportunities"
+                    >
+
+                    Opportunities
+
+                </label>
+
+
+                <label>
+
+                    <input
+                        type="checkbox"
+                        name="requested_areas"
+                        value="Resources"
+                    >
+
+                    Resources
+
+                </label>
+
+
+                <label>
+
+                    <input
+                        type="checkbox"
+                        name="requested_areas"
+                        value="Universities"
+                    >
+
+                    Universities
+
+                </label>
+
+            </div>
+
+
+            <button type="submit">
+
+                Submit Application
+
+            </button>
+
+        </form>
+
+    </main>
+
+</body>
+
+</html>

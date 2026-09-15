@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Manage Universities | Astrobase</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+<body>
+
+    <header>
+
+        <h2>
+            Astrobase
+        </h2>
+
+        <nav>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/index.html">
+                Home
+            </a>
+            <a href="/admin/dashboard">
+                Admin Dashboard
+            </a>
+
+            <a href="/logout">
+                Logout
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <a
+            class="back-link"
+            href="/admin/dashboard"
+        >
+            ← Back to Admin Dashboard
+        </a>
+
+
+        <section class="feature-page-header">
+
+            <p class="feature-page-label">
+                ADMINISTRATION
+            </p>
+
+            <h1>
+                Manage Universities
+            </h1>
+
+            <p>
+                Review, manage and moderate universities in the
+                Astrobase ecosystem.
+            </p>
+
+        </section>
+
+
+        <section class="resource-library">
+
+            <div class="admin-resource-intro">
+
+                <p class="explore-label">
+                    UNIVERSITY MANAGEMENT
+                </p>
+
+                <h2>
+                    University Library
+                </h2>
+
+                <p>
+                    Review universities and manage their
+                    publication status.
+                </p>
+
+            </div>
+
+
+            <div class="resource-filters">
+
+                <a
+                    href="/admin/universities"
+                    {% if not current_status %}
+                        class="active"
+                    {% endif %}
+                >
+                    All
+                </a>
+
+
+                <a
+                    href="/admin/universities?status=Pending"
+                    {% if current_status == "Pending" %}
+                        class="active"
+                    {% endif %}
+                >
+                    Pending
+                </a>
+
+
+                <a
+                    href="/admin/universities?status=Published"
+                    {% if current_status == "Published" %}
+                        class="active"
+                    {% endif %}
+                >
+                    Published
+                </a>
+
+
+                <a
+                    href="/admin/universities?status=Rejected"
+                    {% if current_status == "Rejected" %}
+                        class="active"
+                    {% endif %}
+                >
+                    Rejected
+                </a>
+
+
+                <a
+                    href="/admin/universities?status=Draft"
+                    {% if current_status == "Draft" %}
+                        class="active"
+                    {% endif %}
+                >
+                    Draft
+                </a>
+
+
+                <a
+                    href="/admin/universities?status=Archived"
+                >
+                    Archived Universities →
+                </a>
+
+
+                <a
+                    href="/admin/universities/add"
+                    class="admin-create-button"
+                >
+                    + Add University
+                </a>
+                            </div>
+
+
+            <div class="resource-grid">
+
+                {% if universities %}
+
+                    {% for university in universities %}
+
+                        <article class="resource-card">
+
+                            <p class="resource-type">
+                                {{ university["university_type"] }}
+                            </p>
+
+
+                            <p>
+
+                                Status:
+
+                                <strong>
+                                    {{ university["status"] }}
+                                </strong>
+
+                            </p>
+
+
+                            <h2>
+                                {{ university["university_name"] }}
+                            </h2>
+
+
+                            <p>
+                                {{ university["city"] }},
+                                {{ university["country"] }}
+                            </p>
+
+
+                            <p>
+                                {{ university["description"] }}
+                            </p>
+
+
+                            <p>
+
+                                Programmes:
+
+                                <strong>
+                                    {{ university["programme_count"] }}
+                                </strong>
+
+                            </p>
+
+
+                            <p>
+
+                                Provided by:
+
+                                <strong>
+
+                                    {% if university["organisation_name"] %}
+
+                                        {{ university["organisation_name"] }}
+
+                                    {% else %}
+
+                                        Astrobase
+
+                                    {% endif %}
+
+                                </strong>
+
+                            </p>
+
+
+                            <div class="resource-card-actions">
+
+                                <a
+                                    href="/admin/universities/{{ university['university_id'] }}"
+                                >
+                                    View
+                                </a>
+
+
+                                <a
+                                    href="/admin/universities/{{ university['university_id'] }}/edit"
+                                >
+                                    Edit
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                    {% endfor %}
+
+
+                {% else %}
+
+                    <div class="empty-state">
+
+                        <h2>
+                            No universities found
+                        </h2>
+
+                        <p>
+                            There are currently no universities
+                            matching this filter.
+                        </p>
+
+                    </div>
+
+                {% endif %}
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 Astrobase
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

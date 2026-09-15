@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+<head>
+    
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Manage Opportunities | Astrobase</title>
+
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+    
+</head>
+
+
+<body>
+    
+    <!-- Navigation Bar -->
+
+    <header>
+        
+        <h2>Astrobase</h2>
+
+        <nav>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/index.html">
+                Home
+            </a>
+
+            <a href="/admin/dashboard">
+                Admin Dashboard
+            </a>
+
+            <a href="/logout">
+                Logout
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <a
+            class="back-link"href="/admin/dashboard">
+            ← Back to Admin Dashboard
+        </a>
+
+
+        <!-- Page Header -->
+
+        <section class="explore-header">
+
+            <p class="explore-label">
+                ADMINISTRATION
+            </p>
+
+            <h1>
+                Manage Opportunities
+            </h1>
+
+            <p>
+                Review, manage and moderate opportunities submitted
+                to the Astrobase ecosystem.
+            </p>
+
+        </section>
+
+
+        <!-- Opportunity Management -->
+
+        <section class="opportunity-library">
+
+
+            <div class="opportunity-library-header">
+
+                <div>
+
+                    <p class="explore-label">
+                        OPPORTUNITY MANAGEMENT
+                    </p>
+
+                    <h2>
+                        Opportunity Library
+                    </h2>
+
+                    <p>
+                        Review opportunities and manage their
+                        publication status.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Filters -->
+
+            <div class="opportunity-filters">
+
+                <a
+                    href="/admin/opportunities"
+                    class="{% if not current_status %}active{% endif %}"
+                >
+                    All
+                </a>
+
+                <a
+                    href="/admin/opportunities?status=Pending"
+                    class="{% if current_status == 'Pending' %}active{% endif %}"
+                >
+                    Pending
+                </a>
+
+                <a
+                    href="/admin/opportunities?status=Published"
+                    class="{% if current_status == 'Published' %}active{% endif %}"
+                >
+                    Published
+                </a>
+
+                <a
+                    href="/admin/opportunities?status=Rejected"
+                    class="{% if current_status == 'Rejected' %}active{% endif %}"
+                >
+                    Rejected
+                </a>
+
+                <a
+                    href="/admin/opportunities/archived"
+                >
+                    Archived Opportunities →
+                </a>
+
+                <a
+                    href="/admin/opportunities/add"
+                    class="admin-create-button"
+                >
+                    + Add Opportunity
+                </a>
+
+
+            </div>
+
+
+            <!-- Opportunities -->
+
+            <div class="opportunity-grid">
+
+
+                {% if opportunities %}
+
+
+                    {% for opportunity in opportunities %}
+
+
+                        <article class="opportunity-card">
+
+
+                            <!-- Category -->
+
+                            <p class="opportunity-category">
+
+                                {{ opportunity['category'] }}
+
+                            </p>
+
+
+                            <!-- Status -->
+
+                            <p class="opportunity-status">
+
+                                Status:
+
+                                {{ opportunity['status'] }}
+
+                            </p>
+
+
+                            <!-- Name -->
+
+                            <h3>
+
+                                {{ opportunity['opportunity_name'] }}
+
+                            </h3>
+
+
+                            <!-- Description -->
+
+                            <p>
+
+                                {{ opportunity['description'] }}
+
+                            </p>
+
+
+                            <!-- Eligibility -->
+
+                            {% if opportunity['eligibility'] %}
+
+                                <p>
+
+                                    <strong>
+                                        Eligibility:
+                                    </strong>
+
+                                    {{ opportunity['eligibility'] }}
+
+                                </p>
+
+                            {% endif %}
+
+
+                            <!-- Deadline -->
+
+                            <p>
+
+                                {% if opportunity['deadline'] %}
+
+                                    <strong>
+                                        Deadline:
+                                    </strong>
+
+                                    {{ opportunity['deadline'] }}
+
+                                {% else %}
+
+                                    No deadline specified.
+
+                                {% endif %}
+
+                            </p>
+
+
+                            <!-- Organisation -->
+
+                            <p>
+
+                                Provided by:
+
+                                <strong>
+
+                                    {% if opportunity['organisation_name'] %}
+
+                                        {{ opportunity['organisation_name'] }}
+
+                                    {% else %}
+
+                                        Astrobase
+
+                                    {% endif %}
+
+                                </strong>
+
+                            </p>
+
+
+                            <!-- Actions -->
+
+                            <div class="admin-opportunity-actions">
+
+
+                                <!-- View -->
+
+                                <a
+                                    href="/admin/opportunities/{{ opportunity['opportunity_id'] }}"
+                                >
+                                    View Opportunity →
+                                </a>
+
+
+
+                                <!-- Edit -->
+
+                                <a
+                                    href="/admin/opportunities/{{ opportunity['opportunity_id'] }}/edit"
+                                >
+                                    Edit
+                                </a>
+
+
+                                <!-- Approve -->
+
+                                {% if opportunity['status'] == 'Pending' %}
+
+                                    <form
+                                        method="POST"
+                                        action="/admin/opportunities/{{ opportunity['opportunity_id'] }}/approve"
+                                    >
+
+                                        <button
+                                            type="submit"
+                                        >
+                                            Approve
+                                        </button>
+
+                                    </form>
+
+
+                                    <!-- Reject -->
+
+                                    <form
+                                        method="POST"
+                                        action="/admin/opportunities/{{ opportunity['opportunity_id'] }}/reject"
+                                    >
+
+                                        <button
+                                            type="submit"
+                                        >
+                                            Reject
+                                        </button>
+
+                                    </form>
+
+                                {% endif %}
+
+
+                                <!-- Archive -->
+
+                                {% if opportunity['status'] != 'Archived' %}
+
+                                    <form
+                                        method="POST"
+                                        action="/admin/opportunities/{{ opportunity['opportunity_id'] }}/archive"
+                                    >
+
+                                        <button
+                                            type="submit"
+                                        >
+                                            Archive
+                                        </button>
+
+                                    </form>
+
+                                {% endif %}
+
+
+                            </div>
+
+
+                        </article>
+
+
+                    {% endfor %}
+
+
+                {% else %}
+
+
+                    <div class="empty-state">
+
+                        <h3>
+                            No Opportunities Found
+                        </h3>
+
+                        <p>
+                            There are currently no opportunities
+                            matching this section.
+                        </p>
+
+                    </div>
+
+
+                {% endif %}
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 Astrobase
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html> 

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Manage Organisations | Astrobase
+    </title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+    <header>
+
+        <h2>
+            Astrobase
+        </h2>
+
+        <nav>
+
+            <a href="/admin/organisations">
+                Applications
+            </a>
+
+            <a href="/admin/organisations/verified">
+                Verified Organisations
+            </a>
+
+            <a href="/logout">
+                Logout
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <a
+            class="back-link"
+            href="/admin/dashboard"
+        >
+            ← Back to Admin Dashboard
+        </a>
+
+
+        <section class="admin-organisations-section">
+
+            <div class="admin-organisations-header">
+
+                <p class="explore-label">
+                    ORGANISATIONS
+                </p>
+
+                <h1>
+                    Manage Organisations
+                </h1>
+
+                <p>
+                    Review organisation applications and manage
+                    organisations that are part of the Astrobase
+                    ecosystem.
+                </p>
+
+            </div>
+
+
+            <div class="admin-organisation-tabs">
+
+                <a
+                    href="/admin/organisations"
+                    class="active"
+                >
+                    Applications
+                </a>
+
+                <a
+                    href="/admin/organisations/verified"
+                >
+                    Verified Organisations
+                </a>
+
+            </div>
+
+
+            <section class="admin-organisation-content">
+
+                <div class="admin-organisation-content-header">
+
+                    <p class="explore-label">
+                        APPLICATIONS
+                    </p>
+
+                    <h2>
+                        Pending Applications
+                    </h2>
+
+                    <p>
+                        Review organisations waiting for approval
+                        to join Astrobase.
+                    </p>
+
+                </div>
+
+
+                {% if applications %}
+
+                    <div class="admin-organisation-grid">
+
+                        {% for application in applications %}
+
+                            <article class="admin-organisation-card">
+
+                                <p class="explore-label">
+                                    {{ application["organisation_type"] or "ORGANISATION" }}
+                                </p>
+
+
+                                <h2>
+                                    {{ application["organisation_name"] }}
+                                </h2>
+
+
+                                <div class="admin-organisation-card-field">
+
+                                    <span>
+                                        Contact Email
+                                    </span>
+
+                                    <p>
+                                        {{ application["contact_email"] }}
+                                    </p>
+
+                                </div>
+
+
+                                <div class="admin-organisation-card-field">
+
+                                    <span>
+                                        Submitted
+                                    </span>
+
+                                    <p>
+                                        {{ application["submitted_at"] }}
+                                    </p>
+
+                                </div>
+
+
+                                <div class="admin-organisation-card-status">
+
+                                    <span>
+                                        Status
+                                    </span>
+
+                                    <strong>
+                                        {{ application["status"] }}
+                                    </strong>
+
+                                </div>
+
+
+                                <a
+                                    href="/admin/organisations/{{ application['application_id'] }}"
+                                    class="admin-organisation-card-link"
+                                >
+                                    Review Application →
+                                </a>
+
+                            </article>
+
+                        {% endfor %}
+
+                    </div>
+
+                {% else %}
+
+                    <div class="admin-empty-state">
+
+                        <h2>
+                            No Pending Applications
+                        </h2>
+
+                        <p>
+                            There are currently no organisation
+                            applications waiting for review.
+                        </p>
+
+                    </div>
+
+                {% endif %}
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 Astrobase
+        </p>
+
+    </footer>
+
+
+    <script
+        src="{{ url_for('static', filename='script.js') }}"
+    ></script>
+
+</body>
+
+</html>

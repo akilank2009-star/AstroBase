@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Verified Organisations | Astrobase
+    </title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+    <header>
+
+        <h2>
+            Astrobase
+        </h2>
+
+        <nav>
+
+            <a
+                href="http://127.0.0.1:5500/Website/HTML/index.html"
+            >
+                Home
+            </a>
+
+            <a
+                href="http://127.0.0.1:5500/Website/HTML/explore.html"
+            >
+                Explore
+            </a>
+
+            <a
+                href="http://127.0.0.1:5500/Website/HTML/community.html"
+            >
+                Community
+            </a>
+
+            <a
+                href="http://127.0.0.1:5500/Website/HTML/about.html"
+            >
+                About
+            </a>
+
+            <a href="/admin/dashboard">
+                Admin Dashboard
+            </a>
+
+            <a href="/logout">
+                Logout
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <a
+            class="back-link"
+            href="/admin/organisations"
+        >
+            ← Back to Organisations
+        </a>
+
+
+        <section class="explore-header">
+
+            <p class="explore-label">
+                ORGANISATIONS
+            </p>
+
+            <h1>
+                Verified Organisations
+            </h1>
+
+            <p>
+                View organisations that have been approved
+                to participate in the Astrobase ecosystem.
+            </p>
+
+        </section>
+
+
+        <section class="admin-organisation-library">
+
+            {% if organisations %}
+
+                <div class="admin-organisation-grid">
+
+                    {% for organisation in organisations %}
+
+                        <article class="admin-organisation-card">
+
+                            <p class="explore-label">
+                                {{ organisation['organisation_type'] or 'ORGANISATION' }}
+                            </p>
+
+                            <h2>
+                                {{ organisation['organisation_name'] }}
+                            </h2>
+
+                            <p>
+                                {{ organisation['description'] or 'No description provided.' }}
+                            </p>
+
+                            <p>
+                                <strong>
+                                    Contact:
+                                </strong>
+
+                                {{ organisation['contact_email'] }}
+                            </p>
+
+                            <p>
+                                <strong>
+                                    Status:
+                                </strong>
+
+                                {{ organisation['status'] }}
+                            </p>
+
+                            {% if organisation['website'] %}
+
+                                <a
+                                    href="{{ organisation['website'] }}"
+                                    target="_blank"
+                                >
+                                    Visit Website →
+                                </a>
+
+                            {% endif %}
+
+                        </article>
+
+                    {% endfor %}
+
+                </div>
+
+            {% else %}
+
+                <div class="admin-empty-state">
+
+                    <h2>
+                        No Verified Organisations
+                    </h2>
+
+                    <p>
+                        There are currently no verified organisations
+                        in the Astrobase ecosystem.
+                    </p>
+
+                </div>
+
+            {% endif %}
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 Astrobase
+        </p>
+
+    </footer>
+
+
+    <script
+        src="{{ url_for('static', filename='script.js') }}"
+    ></script>
+
+</body>
+
+</html>

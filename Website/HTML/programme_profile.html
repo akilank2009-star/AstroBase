@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        {{ programme.programme_name }} | Astrobase
+    </title>
+
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- Navigation Bar -->
+
+    <header>
+
+        <h2>Astrobase</h2>
+
+        <nav>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/index.html">
+                Home
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/explore.html">
+                Explore
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/community.html">
+                Community
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/about.html">
+                About
+            </a>
+
+            <a href="http://127.0.0.1:5000/login">
+                Login
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/join.html">
+                Join Astrobase
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- Back to University -->
+
+        <a
+            class="back-link"
+            href="/universities/{{ programme.university_id }}"
+        >
+            ← Back to {{ programme.university_name }}
+        </a>
+
+
+        <section class="programme-profile-section">
+
+            <!-- Programme Header -->
+
+            <div class="programme-profile-header">
+
+                <p class="explore-label">
+                    PROGRAMME
+                </p>
+
+                <h1>
+                    {{ programme.programme_name }}
+                </h1>
+
+                <p class="programme-profile-university">
+                    {{ programme.university_name }}
+                </p>
+
+                <p class="programme-profile-location">
+                    {{ programme.city }},
+                    {{ programme.country }}
+                </p>
+
+                {% if session.get("role") == "Student" %}
+
+                    <form
+                        class="save-item-form"
+                        method="POST"
+                        action="/universities/{{ programme.university_id }}/programmes/{{ programme.programme_id }}/save"
+                    >
+
+                        <button
+                            type="submit"
+                            class="save-item-button"
+                        >
+
+                            {% if saved_programme %}
+
+                                Saved ✓
+
+                            {% else %}
+
+                                Save Programme
+
+                            {% endif %}
+
+                        </button>
+
+                    </form>
+
+                {% endif %}
+
+
+            </div>
+
+
+            <!-- Overview -->
+
+            {% if programme.description %}
+
+                <section class="programme-profile-block">
+
+                    <p class="explore-label">
+                        OVERVIEW
+                    </p>
+
+                    <h2>
+                        About the Programme
+                    </h2>
+
+                    <p>
+                        {{ programme.description }}
+                    </p>
+
+                </section>
+
+            {% endif %}
+
+
+            <!-- Programme Information -->
+
+            <section class="programme-information-grid">
+
+
+                <div class="programme-information-card">
+
+                    <p class="programme-information-label">
+                        DEGREE LEVEL
+                    </p>
+
+                    <p class="programme-information-value">
+                        {{ programme.degree_level }}
+                    </p>
+
+                </div>
+
+
+                {% if programme.field %}
+
+                    <div class="programme-information-card">
+
+                        <p class="programme-information-label">
+                            FIELD
+                        </p>
+
+                        <p class="programme-information-value">
+                            {{ programme.field }}
+                        </p>
+
+                    </div>
+
+                {% endif %}
+
+
+                {% if programme.duration %}
+
+                    <div class="programme-information-card">
+
+                        <p class="programme-information-label">
+                            DURATION
+                        </p>
+
+                        <p class="programme-information-value">
+                            {{ programme.duration }}
+                        </p>
+
+                    </div>
+
+                {% endif %}
+
+
+            </section>
+
+
+            <!-- Eligibility -->
+
+            {% if programme.eligibility %}
+
+                <section class="programme-profile-block">
+
+                    <p class="explore-label">
+                        ELIGIBILITY
+                    </p>
+
+                    <h2>
+                        Entry Requirements
+                    </h2>
+
+                    <p>
+                        {{ programme.eligibility }}
+                    </p>
+
+                </section>
+
+            {% endif %}
+
+
+            <!-- Useful Links -->
+
+            <section class="programme-profile-block">
+
+
+                <p class="explore-label">
+                    USEFUL LINKS
+                </p>
+
+                <h2>
+                    Programme Links
+                </h2>
+
+
+                <div class="programme-useful-links">
+
+
+                    {% if programme.official_website %}
+
+                        <a
+                            href="{{ programme.official_website }}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Official Programme Website →
+                        </a>
+
+                    {% endif %}
+
+
+                    {% if programme.admissions_website %}
+
+                        <a
+                            href="{{ programme.admissions_website }}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Admissions →
+                        </a>
+
+                    {% endif %}
+
+
+                </div>
+
+
+            </section>
+
+
+        </section>
+
+
+    </main>
+
+
+    <footer class="site-footer">
+
+        <p>
+            © Astrobase
+        </p>
+
+    </footer>
+
+
+    <script
+        src="{{ url_for('static', filename='script.js') }}"
+    ></script>
+
+
+</body>
+
+</html>

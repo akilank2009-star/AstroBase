@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Admin Dashboard | Astrobase
+    </title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+<body>
+
+    <header>
+
+        <h2>
+            Astrobase
+        </h2>
+
+        <nav>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/index.html">
+                Public Site
+            </a>
+
+            <a href="/logout">
+                Logout
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <a class="back-link" href="http://127.0.0.1:5500/Website/HTML/index.html">← Back to Astrobase</a>
+
+        <section class="admin-dashboard-section">
+
+            <p class="explore-label">
+                ADMINISTRATION
+            </p>
+
+            <h1>
+                Admin Dashboard
+            </h1>
+
+            <p class="admin-intro">
+                Manage Astrobase content, organisations and platform
+                activity.
+            </p>
+
+
+            <section class="admin-attention">
+
+                <h2>
+                    Needs Attention
+                </h2>
+
+                <div class="admin-stats">
+
+                    <div class="admin-stat">
+
+                        <span>
+                            Organisation Applications
+                        </span>
+
+                        <strong>
+                            {{ pending_organisations }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="admin-stat">
+
+                        <span>
+                            Pending Opportunities
+                        </span>
+
+                        <strong>
+                            {{ pending_opportunities }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="admin-stat">
+
+                        <span>
+                            Pending Resources
+                        </span>
+
+                        <strong>
+                            {{ pending_resources }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="admin-stat">
+
+                        <span>
+                            Pending Universities
+                        </span>
+
+                        <strong>
+                            {{ pending_universities }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="admin-stat">
+
+                        <span>
+                            Reports
+                        </span>
+
+                        <strong>
+                            {{ pending_reports }}
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="admin-management">
+
+                <div class="admin-dashboard-card">
+
+                    <p class="explore-label">
+                        ORGANISATIONS
+                    </p>
+
+                    <h2>
+                        Organisation Management
+                    </h2>
+
+                    <p>
+                        Review applications, verify organisations and
+                        manage organisation accounts.
+                    </p>
+
+                    <a href="/admin/organisations">
+                        Manage Organisations
+                    </a>
+
+                </div>
+
+
+                <div class="admin-dashboard-card">
+
+                    <p class="explore-label">
+                        OPPORTUNITIES
+                    </p>
+
+                    <h2>
+                        Opportunity Management
+                    </h2>
+
+                    <p>
+                        Review submitted opportunities, manage
+                        published listings and access archived
+                        opportunities.
+                    </p>
+
+                    <a href="/admin/opportunities">
+                        Manage Opportunities
+                    </a>
+
+                </div>
+
+
+                <div class="admin-dashboard-card">
+
+                    <p class="explore-label">
+                        RESOURCES
+                    </p>
+
+                    <h2>
+                        Resource Management
+                    </h2>
+
+                    <p>
+                        Review submitted resources, manage published
+                        resources and control featured content.
+                    </p>
+
+                    <a href="/admin/resources">
+                        Manage Resources
+                    </a>
+
+                </div>
+
+
+                <div class="admin-dashboard-card">
+
+                    <p class="explore-label">
+                        UNIVERSITIES
+                    </p>
+
+                    <h2>
+                        University Management
+                    </h2>
+
+                    <p>
+                        Manage university and programme information
+                        within the Astrobase library.
+                    </p>
+
+                    <a href="/admin/universities">
+                        Manage Universities
+                    </a>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 Astrobase
+        </p>
+
+    </footer>
+
+
+    <script
+        src="{{ url_for('static', filename='script.js') }}"
+    ></script>
+
+</body>
+
+</html>

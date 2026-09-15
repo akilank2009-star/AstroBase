@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Astrobase</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+
+        <h2>Astrobase</h2>
+
+        <nav>
+
+            <a href="index.html">Home</a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/explore.html">Explore</a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/community.html">Community</a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/about.html">About</a>
+
+            <!-- Logged-out state -->
+            <a
+                href="http://127.0.0.1:5000/login"
+                id="loginLink"
+            >
+                Login
+            </a>
+
+            <!-- Logged-in state -->
+            <span
+                id="userMenu"
+                style="display: none;"
+            >
+
+                <a
+                    href="http://127.0.0.1:5000/myastrobase/profile"
+                    id="profileLink"
+                >
+                    <span id="usernameDisplay"></span>
+                </a>
+
+                <a
+                    href="http://127.0.0.1:5000/logout"
+                    id="logoutLink"
+                >
+                    Logout
+                </a>
+
+            </span>
+
+            <a href="join.html">
+                Join Astrobase
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- Intro Section -->
+        <section class="intro">
+
+
+            <!-- Hero Section -->
+            <section class="hero">
+
+                <h1>ASTROBASE</h1>
+
+                <h2>
+                    The universe is vast.<br>
+                    Your path is yours.
+                </h2>
+
+                <p>
+                    Discover opportunities, knowledge, universities and guidance
+                    for your journey into space science.
+                </p>
+
+                <a href="explore.html" class="hero-button">
+                    Begin Your Journey
+                </a>
+                
+            </section>
+
+
+            <!-- Personalized User Section -->
+            <section
+                class="personalized"
+                id="personalizedSection"
+                style="display: none;"
+            >
+
+
+                <!-- STUDENT HOME -->
+
+                <div id="studentHome">
+
+                    <p class="explore-label">
+                        MY ASTROBASE
+                    </p>
+
+                    <h2>
+                        Welcome back,
+                        <span id="welcomeUsername"></span>.
+                    </h2>
+
+                    <p>
+                        Your journey through Astrobase starts here.
+                    </p>
+
+
+                    <div class="personalized-info">
+
+                        <div>
+
+                            <span>Grade</span>
+
+                            <strong id="userGrade">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>Country</span>
+
+                            <strong id="userCountry">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>Interests</span>
+
+                            <strong id="userInterests">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>Career Goal</span>
+
+                            <strong id="userCareerGoal">
+                                -
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <a href="http://127.0.0.1:5000/myastrobase/profile">
+
+                        <button type="button">
+                            View Profile
+                        </button>
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- ORGANISATION HOME -->
+
+                <div
+                    id="organisationHome"
+                    style="display: none;"
+                >
+
+                    <p class="explore-label">
+                        ORGANISATION
+                    </p>
+
+                    <h2>
+                        Welcome,
+                        <span id="organisationName"></span>.
+                    </h2>
+
+                    <p>
+                        Manage your organisation and contribute to the Astrobase community.
+                    </p>
+
+
+                    <div class="personalized-info">
+
+                        <div>
+
+                            <span>Organisation Type</span>
+
+                            <strong id="organisationType">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>Status</span>
+
+                            <strong id="organisationStatus">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>Contact Email</span>
+
+                            <strong id="organisationEmail">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>Organisation ID</span>
+
+                            <strong id="organisationId">
+                                -
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <a href="http://127.0.0.1:5000/organisation/profile">
+
+                        <button type="button">
+                            View Organisation
+                        </button>
+
+                    </a>
+
+                </div>
+
+
+            </section>
+
+
+            <!-- What is Astrobase -->
+            <section class="about">
+
+                <h2>
+                    What is Astrobase?
+                </h2>
+
+                <p>
+                    Astrobase is a platform built to help students explore a future
+                    in space science.
+                </p>
+
+                <p>
+                    Discover opportunities, learn from valuable resources, explore
+                    universities and find a path that matches your interests and goals.
+                </p>
+
+            </section>
+
+        </section>
+
+
+        <!-- Explore Astrobase -->
+        <section class="explore">
+
+            <h2>
+                Explore Astrobase
+            </h2>
+
+
+            <a href="http://127.0.0.1:5000/opportunities" class="explore-card-link">
+
+            <div class="explore-card">
+
+                <div class="card-icon">
+
+                    <svg viewBox="0 0 24 24">
+
+                        <path d="M5 19L19 5"></path>
+
+                        <path d="M13 5H19V11"></path>
+
+                        <path d="M5 19L3 21"></path>
+
+                    </svg>
+
+                </div>
+
+                <h3>
+                    Opportunities
+                </h3>
+
+                <p>
+                    Discover competitions, internships, research programmes,
+                    scholarships and more.
+                </p>
+
+            </div>
+
+            </a>
+
+
+            <a href="http://127.0.0.1:5000/resources" class="explore-card-link">
+
+            <div class="explore-card">
+
+                <div class="card-icon">
+
+                    <svg viewBox="0 0 24 24">
+
+                        <path d="M4 5H9C11 5 12 6 12 8V20C12 18 11 17 9 17H4V5Z"></path>
+
+                        <path d="M20 5H15C13 5 12 6 12 8V20C12 18 13 17 15 17H20V5Z"></path>
+
+                    </svg>
+
+                </div>
+
+                <h3>
+                    Resources
+                </h3>
+
+                <p>
+                    Find books, articles, courses, research papers,
+                    videos and useful tools.
+                </p>
+
+            </div>
+
+            </a>
+
+
+            <a href="http://127.0.0.1:5000/universities" class="explore-card-link">
+
+            <div class="explore-card">
+
+                <div class="card-icon">
+
+                    <svg viewBox="0 0 24 24">
+
+                        <path d="M3 9L12 4L21 9L12 14L3 9Z"></path>
+
+                        <path d="M6 11V16"></path>
+
+                        <path d="M18 11V16"></path>
+
+                        <path d="M6 16C8 18 16 18 18 16"></path>
+
+                    </svg>
+
+                </div>
+
+                <h3>
+                    Universities
+                </h3>
+
+                <p>
+                    Explore universities and programmes related to physics,
+                    astronomy, astrophysics and space science.
+                </p>
+
+            </div>
+
+            </a>
+
+
+            <a href="http://127.0.0.1:5500/Website/HTML/astrobase_ai.html" class="explore-card-link">
+
+            <div class="explore-card">
+
+                <div class="card-icon">
+
+                    <svg viewBox="0 0 24 24">
+
+                        <path d="M12 3C8 3 5 6 5 10V14C5 18 8 21 12 21C16 21 19 18 19 14V10C19 6 16 3 12 3Z"></path>
+
+                        <path d="M9 10C10 9 11 9 12 10"></path>
+
+                        <path d="M12 10C13 9 14 9 15 10"></path>
+
+                        <path d="M9 15C11 17 13 17 15 15"></path>
+
+                    </svg>
+
+                </div>
+
+                <h3>
+                    Astrobase AI
+                </h3>
+
+                <p>
+                    Get intelligent guidance to help navigate your journey
+                    through space science.
+                </p>
+
+            </div>
+
+            </a>
+
+        </section>
+
+
+        <!-- Explorer Assessment -->
+        <section class="assessment">
+
+            <p class="assessment-label">
+                ASTROBASE EXPLORER ASSESSMENT
+            </p>
+
+            <h2>
+                Discover Your Path
+            </h2>
+
+            <p>
+                What if you could discover where your interests and strengths
+                could take you in space science?
+            </p>
+
+            <p>
+                The Astrobase Explorer Assessment is being built to help students
+                explore possible fields, pathways and opportunities that match
+                the way they think, learn and explore.
+            </p>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/assessment.html" class="assessment-button">
+                Discover Your Path
+            </a>
+
+        </section>
+
+
+        <!-- Final Call to Action -->
+        <section class="cta">
+
+            <h2>
+                Ready to explore?
+            </h2>
+
+            <p>
+                Discover opportunities, learn something new and find where
+                your journey into space science could take you.
+            </p>
+
+            <a href="explore.html" class="cta-button">
+                Explore Astrobase
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 Astrobase
+        </p>
+
+    </footer>
+
+
+    <!-- Astrobase AI -->
+    <button
+        class="ai-button"
+        id="aiButton"
+    >
+
+        AI
+
+    </button>
+
+
+    <div
+        class="ai-popup"
+        id="aiPopup"
+    >
+
+        <button
+            class="ai-close"
+            id="aiClose"
+        >
+
+            ×
+
+        </button>
+
+        <h2>
+            Astrobase AI
+        </h2>
+
+        <p>
+            Astrobase AI is currently under development.
+        </p>
+
+        <p>
+            Intelligent guidance for your journey through space science
+            is coming soon.
+        </p>
+
+    </div>
+
+
+    <!-- Explorer Assessment -->
+    <div
+        class="assessment-popup"
+        id="assessmentPopup"
+    >
+
+        <button
+            class="assessment-close"
+            id="assessmentClose"
+        >
+
+            ×
+
+        </button>
+
+        <h2>
+            Explorer Assessment
+        </h2>
+
+        <p>
+            The Astrobase Explorer Assessment is currently under development.
+        </p>
+
+        <p>
+            A new way to explore your interests, strengths and possible
+            paths in space science is coming soon.
+        </p>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="../script.js"></script>
+
+</body>
+
+</html>

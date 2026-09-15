@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Organisation Dashboard | Astrobase</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+    <header>
+
+        <h2>
+            Astrobase
+        </h2>
+
+
+        <nav>
+
+            <a
+                href="http://127.0.0.1:5500/Website/HTML/index.html"
+            >
+                Public Site
+            </a>
+
+
+            <a href="/organisation/dashboard">
+                Dashboard
+            </a>
+
+
+            <a href="/logout">
+                Logout
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <a
+            class="back-link"
+            href="http://127.0.0.1:5500/Website/HTML/index.html"
+        >
+            ← Back to Astrobase
+        </a>
+
+
+        <section class="organisation-dashboard-section">
+
+
+            <p class="explore-label">
+                ORGANISATION
+            </p>
+
+
+            <h1>
+                {{ organisation["organisation_name"] }}
+            </h1>
+
+
+            <p class="organisation-dashboard-intro">
+
+                Manage your organisation and its contributions to
+                Astrobase.
+
+            </p>
+
+
+            <div class="organisation-dashboard-grid">
+
+
+                <!-- Organisation Profile -->
+
+                <div class="organisation-dashboard-card">
+
+                    <h2>
+                        Organisation Profile
+                    </h2>
+
+
+                    <p>
+
+                        View and manage your organisation information.
+
+                    </p>
+
+
+                    <a href="/organisation/profile">
+                        View Profile
+                    </a>
+
+                </div>
+
+
+                <!-- Opportunities -->
+
+                <div class="organisation-dashboard-card">
+
+                    <h2>
+                        Opportunities
+                    </h2>
+
+
+                    <p>
+
+                        Submit and manage opportunities for the
+                        Astrobase community.
+
+                    </p>
+
+
+                    <div class="organisation-dashboard-actions">
+
+                        <a href="/organisation/opportunities/add">
+                            + Add Opportunity
+                        </a>
+
+
+                        <a href="/organisation/opportunities">
+                            View Added Opportunities
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Resources -->
+
+                <div class="organisation-dashboard-card">
+
+                    <h2>
+                        Resources
+                    </h2>
+
+
+                    <p>
+
+                        Contribute useful resources to students and
+                        researchers.
+
+                    </p>
+
+
+                    <div class="organisation-dashboard-actions">
+
+                        <a href="/organisation/resources/add">
+                            + Add Resource
+                        </a>
+
+
+                        <a href="/organisation/resources">
+                            View Added Resources
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Universities -->
+
+                <div class="organisation-dashboard-card">
+
+                    <h2>
+                        Universities
+                    </h2>
+
+                    <p>
+                        Manage university information associated with
+                        your organisation.
+                    </p>
+
+                    <div class="organisation-dashboard-actions">
+
+                        <a href="/organisation/universities/add">
+                            + Add University
+                        </a>
+
+                        <a href="/organisation/universities">
+                            View Added Universities
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 Astrobase
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

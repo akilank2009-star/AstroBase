@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Saved | Astrobase</title>
+
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- Navigation Bar -->
+
+    <header>
+
+        <h2>Astrobase</h2>
+
+        <nav>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/index.html">
+                Home
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/explore.html">
+                Explore
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/community.html">
+                Community
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/about.html">
+                About
+            </a>
+
+            <a href="http://127.0.0.1:5000/login">
+                Login
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/join.html">
+                Join Astrobase
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <a class="back-link" href="http://127.0.0.1:5500/Website/HTML/index.html">← Back to Astrobase</a>
+
+        <section class="saved-section">
+
+
+            <div class="saved-header">
+
+                <p class="explore-label">
+                    MY ASTROBASE
+                </p>
+
+                <h1>
+                    Saved
+                </h1>
+
+                <p>
+                    Universities, programmes, resources and opportunities
+                    you've saved for your academic journey.
+                </p>
+
+            </div>
+
+
+            <!-- Saved Universities -->
+
+            <section class="saved-content">
+
+
+                <div class="saved-section-heading">
+
+                    <p class="explore-label">
+                        UNIVERSITIES
+                    </p>
+
+                    <h2>
+                        Saved Universities
+                    </h2>
+
+                </div>
+
+
+                {% if saved_universities %}
+
+
+                    <div class="saved-grid">
+
+
+                        {% for university in saved_universities %}
+
+
+                            <article class="saved-card">
+
+
+                                <p class="saved-card-type">
+                                    {{ university.university_type }}
+                                </p>
+
+
+                                <h3>
+                                    {{ university.university_name }}
+                                </h3>
+
+
+                                <p class="saved-card-location">
+                                    {{ university.city }},
+                                    {{ university.country }}
+                                </p>
+
+
+                                <p class="saved-card-description">
+                                    {{ university.description }}
+                                </p>
+
+
+                                <a
+                                    class="saved-card-link"
+                                    href="/universities/{{ university.university_id }}"
+                                >
+                                    View University →
+                                </a>
+
+
+                            </article>
+
+
+                        {% endfor %}
+
+
+                    </div>
+
+
+                {% else %}
+
+
+                    <div class="saved-empty-state">
+
+                        <h3>
+                            No saved universities
+                        </h3>
+
+                        <p>
+                            Save universities while exploring
+                            Astrobase and they'll appear here.
+                        </p>
+
+                        <a href="/universities">
+                            Explore Universities →
+                        </a>
+
+                    </div>
+
+
+                {% endif %}
+
+
+            </section>
+
+
+            <!-- Saved Programmes -->
+
+            <section class="saved-content">
+
+
+                <div class="saved-section-heading">
+
+                    <p class="explore-label">
+                        PROGRAMMES
+                    </p>
+
+                    <h2>
+                        Saved Programmes
+                    </h2>
+
+                </div>
+
+
+                {% if saved_programmes %}
+
+
+                    <div class="saved-grid">
+
+
+                        {% for programme in saved_programmes %}
+
+
+                            <article class="saved-card">
+
+
+                                <p class="saved-card-type">
+                                    {{ programme.degree_level }}
+                                </p>
+
+
+                                <h3>
+                                    {{ programme.programme_name }}
+                                </h3>
+
+
+                                <p class="saved-card-university">
+                                    {{ programme.university_name }}
+                                </p>
+
+
+                                {% if programme.field %}
+
+                                    <p class="saved-card-field">
+                                        {{ programme.field }}
+                                    </p>
+
+                                {% endif %}
+
+
+                                {% if programme.description %}
+
+                                    <p class="saved-card-description">
+                                        {{ programme.description }}
+                                    </p>
+
+                                {% endif %}
+
+
+                                <a
+                                    class="saved-card-link"
+                                    href="/universities/{{ programme.university_id }}/programmes/{{ programme.programme_id }}"
+                                >
+                                    View Programme →
+                                </a>
+
+
+                            </article>
+
+
+                        {% endfor %}
+
+
+                    </div>
+
+
+                {% else %}
+
+
+                    <div class="saved-empty-state">
+
+                        <h3>
+                            No saved programmes
+                        </h3>
+
+                        <p>
+                            Save programmes while exploring
+                            universities and they'll appear here.
+                        </p>
+
+                        <a href="/universities">
+                            Explore Universities →
+                        </a>
+
+                    </div>
+
+
+                {% endif %}
+
+
+            </section>
+
+
+            <!-- Saved Resources -->
+
+            <section class="saved-content">
+
+
+                <div class="saved-section-heading">
+
+                    <p class="explore-label">
+                        RESOURCES
+                    </p>
+
+                    <h2>
+                        Saved Resources
+                    </h2>
+
+                </div>
+
+
+                {% if saved_resources %}
+
+
+                    <div class="saved-grid">
+
+
+                        {% for resource in saved_resources %}
+
+
+                            <article class="saved-card">
+
+
+                                <p class="saved-card-type">
+                                    {{ resource.resource_type }}
+                                </p>
+
+
+                                <h3>
+                                    {{ resource.resource_name }}
+                                </h3>
+
+
+                                {% if resource.organisation_name %}
+
+                                    <p class="saved-card-university">
+                                        {{ resource.organisation_name }}
+                                    </p>
+
+                                {% endif %}
+
+
+                                {% if resource.description %}
+
+                                    <p class="saved-card-description">
+                                        {{ resource.description }}
+                                    </p>
+
+                                {% endif %}
+
+
+                                {% if resource.recommended_for %}
+
+                                    <p class="saved-card-field">
+
+                                        <strong>
+                                            Recommended for:
+                                        </strong>
+
+                                        {{ resource.recommended_for }}
+
+                                    </p>
+
+                                {% endif %}
+
+
+                                <div class="saved-card-actions">
+
+
+                                    {% if resource.official_website %}
+
+                                        <a
+                                            class="saved-card-link"
+                                            href="{{ resource.official_website }}"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            Visit Resource →
+                                        </a>
+
+                                    {% else %}
+
+                                        <span class="saved-card-link">
+                                            Official website unavailable
+                                        </span>
+
+                                    {% endif %}
+
+
+                                </div>
+
+
+                            </article>
+
+
+                        {% endfor %}
+
+
+                    </div>
+
+
+                {% else %}
+
+
+                    <div class="saved-empty-state">
+
+                        <h3>
+                            No saved resources
+                        </h3>
+
+                        <p>
+                            Save useful resources while exploring
+                            the Astrobase resource library and they'll
+                            appear here.
+                        </p>
+
+                        <a href="/resources">
+                            Explore Resources →
+                        </a>
+
+                    </div>
+
+
+                {% endif %}
+
+
+            </section>
+
+
+            <!-- Saved Opportunities -->
+
+            <section class="saved-content">
+
+
+                <div class="saved-section-heading">
+
+                    <p class="explore-label">
+                        OPPORTUNITIES
+                    </p>
+
+                    <h2>
+                        Saved Opportunities
+                    </h2>
+
+                </div>
+
+
+                {% if saved_opportunities %}
+
+
+                    <div class="saved-grid">
+
+
+                        {% for opportunity in saved_opportunities %}
+
+
+                            <article class="saved-card">
+
+
+                                <p class="saved-card-type">
+                                    {{ opportunity.category }}
+                                </p>
+
+
+                                <h3>
+                                    {{ opportunity.opportunity_name }}
+                                </h3>
+
+
+                                {% if opportunity.organisation_name %}
+
+                                    <p class="saved-card-university">
+                                        {{ opportunity.organisation_name }}
+                                    </p>
+
+                                {% endif %}
+
+
+                                {% if opportunity.description %}
+
+                                    <p class="saved-card-description">
+                                        {{ opportunity.description }}
+                                    </p>
+
+                                {% endif %}
+
+
+                                {% if opportunity.eligibility %}
+
+                                    <p class="saved-card-field">
+
+                                        <strong>
+                                            Eligibility:
+                                        </strong>
+
+                                        {{ opportunity.eligibility }}
+
+                                    </p>
+
+                                {% endif %}
+
+
+                                {% if opportunity.deadline %}
+
+                                    <p class="saved-card-field">
+
+                                        <strong>
+                                            Deadline:
+                                        </strong>
+
+                                        {{ opportunity.deadline }}
+
+                                    </p>
+
+                                {% endif %}
+
+
+                                <div class="saved-card-actions">
+
+
+                                    {% if opportunity.official_website %}
+
+                                        <a
+                                            class="saved-card-link"
+                                            href="{{ opportunity.official_website }}"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            View Opportunity →
+                                        </a>
+
+                                    {% else %}
+
+                                        <span class="saved-card-link">
+                                            Official website unavailable
+                                        </span>
+
+                                    {% endif %}
+
+
+                                </div>
+
+
+                            </article>
+
+
+                        {% endfor %}
+
+
+                    </div>
+
+
+                {% else %}
+
+
+                    <div class="saved-empty-state">
+
+                        <h3>
+                            No saved opportunities
+                        </h3>
+
+                        <p>
+                            Save competitions, internships, research
+                            programmes and other opportunities to keep
+                            track of them here.
+                        </p>
+
+                        <a href="/opportunities">
+                            Explore Opportunities →
+                        </a>
+
+                    </div>
+
+
+                {% endif %}
+
+
+            </section>
+
+
+        </section>
+
+
+    </main>
+
+
+    <footer class="site-footer">
+
+        <p>
+            © Astrobase
+        </p>
+
+    </footer>
+
+
+    <script
+        src="{{ url_for('static', filename='script.js') }}"
+    ></script>
+
+
+</body>
+
+</html>

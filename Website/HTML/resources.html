@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Resources | Astrobase</title>
+
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- Navigation Bar -->
+
+    <header>
+
+        <h2>
+            Astrobase
+        </h2>
+
+
+        <nav>
+
+            <a
+                href="http://127.0.0.1:5500/Website/HTML/index.html"
+            >
+                Home
+            </a>
+
+
+            <a
+                href="http://127.0.0.1:5500/Website/HTML/explore.html"
+            >
+                Explore
+            </a>
+
+
+            <a
+                href="http://127.0.0.1:5500/Website/HTML/community.html"
+            >
+                Community
+            </a>
+
+
+            <a
+                href="http://127.0.0.1:5500/Website/HTML/about.html"
+            >
+                About
+            </a>
+
+
+            <a href="http://127.0.0.1:5000/login">
+                Login
+            </a>
+
+
+            <a
+                href="http://127.0.0.1:5500/Website/HTML/join.html"
+            >
+                Join Astrobase
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+
+        {% if resource_type %}
+
+            <a class="back-link" href="/resources">
+                ← Back to Resources
+            </a>
+
+        {% else %}
+
+            <a
+            class="back-link"href="http://127.0.0.1:5500/Website/HTML/explore.html">
+                ← Back to Explore
+            </a>
+
+        {% endif %}
+
+
+        <!-- Resources Header -->
+
+        <section class="explore-header">
+
+
+            <h1>
+                Resources
+            </h1>
+
+
+            <p>
+
+                Discover resources to help you learn, explore
+                and go beyond the classroom.
+
+            </p>
+
+
+        </section>
+
+
+        <!-- Resource Library -->
+
+        <section class="resource-library">
+
+
+            <div class="resource-intro">
+
+
+                <p class="explore-label">
+                    RESOURCE LIBRARY
+                </p>
+
+
+                <h2>
+                    Learn Beyond the Classroom
+                </h2>
+
+
+                <p>
+
+                    Explore books, courses, research papers, websites,
+                    videos and tools to deepen your understanding of
+                    space science.
+
+                </p>
+
+
+            </div>
+
+            {% if role == "Organisation" %}
+
+                <div class="resource-management">
+
+                    <a href="/organisation/resources/add">
+                        + Add Resource
+                    </a>
+
+                </div>
+
+            {% endif %}
+
+
+            <!-- Search -->
+
+            <div class="resource-search">
+
+
+                <input
+                    type="text"
+                    id="resourceSearch"
+                    placeholder="Search resources..."
+                >
+
+
+                <button
+                    type="button"
+                    id="searchResourceButton"
+                >
+                    Search
+                </button>
+
+
+            </div>
+
+
+            {% if not resource_type %}
+
+                <!-- Resource Categories -->
+
+                <div class="resource-categories">
+
+                    <a href="/resources?type=Books">
+
+                        <h3>
+                            Books
+                        </h3>
+
+
+                        <p>
+
+                            Books covering astronomy, astrophysics,
+                            physics and space science.
+
+                        </p>
+
+                    </a>
+
+
+                    <a href="/resources?type=Courses">
+
+                        <h3>
+                            Courses
+                        </h3>
+
+
+                        <p>
+
+                            Online courses and learning programmes
+                            for different levels of study.
+
+                        </p>
+
+                    </a>
+
+
+                    <a href="/resources?type=Research%20Papers">
+
+                        <h3>
+                            Research Papers
+                        </h3>
+
+
+                        <p>
+
+                            Research literature and papers for
+                            exploring topics in greater depth.
+
+                        </p>
+
+                    </a>
+
+
+                    <a href="/resources?type=Websites">
+
+                        <h3>
+                            Websites
+                        </h3>
+
+
+                        <p>
+
+                            Useful websites and online platforms
+                            for space science learning.
+
+                        </p>
+
+                    </a>
+
+
+                    <a href="/resources?type=Videos">
+
+                        <h3>
+                            Videos
+                        </h3>
+
+
+                        <p>
+
+                            Lectures, documentaries and educational
+                            videos about space and science.
+
+                        </p>
+
+                    </a>
+
+
+                    <a href="/resources?type=Tools">
+
+                        <h3>
+                            Tools
+                        </h3>
+
+
+                        <p>
+
+                            Software, simulations and other tools
+                            useful for exploring space science.
+
+                        </p>
+
+                    </a>
+
+
+                    <a href="/resources?type=Articles">
+
+                        <h3>
+                            Articles
+                        </h3>
+
+
+                        <p>
+
+                            Accessible articles and written explainers
+                            covering astronomy, astrophysics, physics
+                            and space science.
+
+                        </p>
+
+                    </a>
+
+
+                    <a href="/resources?type=Podcasts">
+
+                        <h3>
+                            Podcasts
+                        </h3>
+
+
+                        <p>
+
+                            Conversations, discussions and stories
+                            exploring astronomy, space and science.
+
+                        </p>
+
+                    </a>
+
+
+                    <a href="/resources?type=Notes">
+
+                        <h3>
+                            Notes
+                        </h3>
+
+
+                        <p>
+
+                            Concise study notes and summaries to help
+                            understand important space science concepts.
+
+                        </p>
+
+                    </a>
+
+
+                </div>
+
+            {% endif %}
+
+            <!-- Featured Resources -->
+
+            <section class="featured-resources">
+
+
+                <div class="featured-resources-header">
+
+
+                    {% if resource_type %}
+
+                        <p class="explore-label">
+                            RESOURCE CATEGORY
+                        </p>
+
+
+                        <h2>
+                            {{ resource_type }}
+                        </h2>
+
+
+                        <p>
+                            Explore published {{ resource_type | lower }}
+                            available in the Astrobase resource library.
+                        </p>
+
+                    {% else %}
+
+                        <p class="explore-label">
+                            FEATURED RESOURCES
+                        </p>
+
+
+                        <h2>
+                            Worth Exploring
+                        </h2>
+
+
+                        <p>
+                            A selection of useful, notable and timely
+                            resources curated for the Astrobase community.
+                        </p>
+
+                    {% endif %}
+
+
+                </div>
+
+
+                <div class="resource-results">
+
+
+                    {% if featured_resources %}
+
+
+                        {% for resource in featured_resources %}
+
+
+                            <article
+                                class="resource-card"
+                                data-type="{{ resource['resource_type'] }}"
+                                data-name="{{ resource['resource_name'] | lower }}"
+                            >
+
+
+                                <p class="resource-type">
+
+                                    {{ resource['resource_type'] }}
+
+                                </p>
+
+
+                                <h3>
+
+                                    {{ resource['resource_name'] }}
+
+                                </h3>
+
+
+                                <p>
+
+                                    {{ resource['description'] }}
+
+                                </p>
+
+
+                                {% if resource['recommended_for'] %}
+
+                                    <p class="resource-recommended">
+
+                                        <strong>
+                                            Recommended for:
+                                        </strong>
+
+                                        {{ resource['recommended_for'] }}
+
+                                    </p>
+
+                                {% endif %}
+
+
+                                {% if resource['organisation_name'] %}
+
+                                    <p class="resource-provider">
+
+                                        Provided by:
+
+                                        <strong>
+                                            {{ resource['organisation_name'] }}
+                                        </strong>
+
+                                    </p>
+
+                                {% endif %}
+
+
+                                <div class="resource-actions">
+
+                                    {% if resource['official_website'] %}
+
+                                        <a
+                                            href="{{ resource['official_website'] }}"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            Visit Resource →
+                                        </a>
+
+                                    {% else %}
+
+                                        <span>
+                                            Official website unavailable
+                                        </span>
+
+                                    {% endif %}
+
+
+                                    {% if role == "Student" %}
+
+                                        {% if resource['is_saved'] %}
+
+                                            <form
+                                                method="POST"
+                                                action="/resources/{{ resource['resource_id'] }}/unsave"
+                                            >
+
+                                                <button
+                                                    type="submit"
+                                                    class="saved-resource-button"
+                                                >
+                                                    ✓ Saved
+                                                </button>
+
+                                            </form>
+
+                                        {% else %}
+
+                                            <form
+                                                method="POST"
+                                                action="/resources/{{ resource['resource_id'] }}/save"
+                                            >
+
+                                                <button
+                                                    type="submit"
+                                                    class="save-resource-button"
+                                                >
+                                                    ☆ Save
+                                                </button>
+
+                                            </form>
+
+                                        {% endif %}
+
+                                    {% endif %}
+
+                                </div>
+
+
+                            </article>
+
+
+                        {% endfor %}
+
+
+                    {% else %}
+
+
+                        <div class="no-resources">
+
+
+                            <h3>
+                                Featured Resources Coming Soon
+                            </h3>
+
+
+                            <p>
+                                Astrobase will feature useful resources
+                                here as the library grows.
+                            </p>
+
+
+                        </div>
+
+
+                    {% endif %}
+
+
+                </div>
+
+
+            </section>
+
+            {% if role == "Organisation" and organisation_resources %}
+
+                <section class="organisation-resources-section">
+
+                    <div class="organisation-resources-header">
+
+                        <p class="explore-label">
+                            YOUR RESOURCES
+                        </p>
+
+                        <h2>
+                            Submitted by Your Organisation
+                        </h2>
+
+                        <p>
+                            Manage your resources and track their review status.
+                        </p>
+
+                    </div>
+
+                    <div class="resource-grid">
+
+                        {% for resource in organisation_resources %}
+
+                            <article class="resource-card">
+
+                                <p class="resource-type">
+                                    {{ resource['resource_type'] }}
+                                </p>
+
+                                <h3>
+                                    {{ resource['resource_name'] }}
+                                </h3>
+
+                                <p>
+                                    {{ resource['description'] }}
+                                </p>
+
+                                {% if resource['recommended_for'] %}
+
+                                    <p>
+                                        <strong>
+                                            Recommended for:
+                                        </strong>
+                                        {{ resource['recommended_for'] }}
+                                    </p>
+
+                                {% endif %}
+
+                                <p>
+                                    <strong>
+                                        Status:
+                                    </strong>
+
+                                    {{ resource['status'] }}
+
+                                </p>
+
+                                <div class="resource-card-actions">
+
+                                    <a
+                                        href="/organisation/resources/{{ resource['resource_id'] }}/edit"
+                                    >
+                                        Edit
+                                    </a>
+
+                                    {% if resource['status'] == 'Draft' %}
+
+                                        <form
+                                            method="POST"
+                                            action="/organisation/resources/{{ resource['resource_id'] }}/submit"
+                                        >
+
+                                            <button type="submit">
+                                                Submit for Review
+                                            </button>
+
+                                        </form>
+
+                                    {% endif %}
+
+                                    {% if resource['official_website'] %}
+
+                                        <a
+                                            href="{{ resource['official_website'] }}"
+                                            target="_blank"
+                                        >
+                                            Visit Resource →
+                                        </a>
+
+                                    {% endif %}
+
+                                    {% if resource['status'] == 'Draft'
+                                        or resource['status'] == 'Rejected' %}
+
+                                        <form
+                                            method="POST"
+                                            action="/organisation/resources/{{ resource['resource_id'] }}/delete"
+                                            onsubmit="return confirm('Are you sure you want to delete this resource?');"
+                                        >
+
+                                            <button
+                                                type="submit"
+                                                class="delete-resource-button"
+                                            >
+                                                Delete
+                                            </button>
+
+                                        </form>
+
+                                    {% endif %}
+
+                                </div>
+
+                            </article>
+
+                        {% endfor %}
+
+                    </div>
+
+                </section>
+
+            {% endif %}
+
+        </section>
+
+
+    </main>
+
+
+    <footer>
+
+
+        <p>
+            © 2026 Astrobase
+        </p>
+
+
+    </footer>
+
+
+    <!-- Main Astrobase JavaScript -->
+
+    <script
+        src="{{ url_for('static', filename='script.js') }}"
+    ></script>
+
+
+    <!-- Resource Search -->
+
+    <script>
+
+
+        const resourceSearch =
+            document.getElementById(
+                "resourceSearch"
+            );
+
+
+        const searchResourceButton =
+            document.getElementById(
+                "searchResourceButton"
+            );
+
+
+        const resourceCards =
+            document.querySelectorAll(
+                ".resource-card"
+            );
+
+
+        function filterResources() {
+
+
+            const searchTerm =
+                resourceSearch.value
+                    .toLowerCase()
+                    .trim();
+
+
+            resourceCards.forEach(card => {
+
+
+                const name =
+                    card.dataset.name || "";
+
+
+                const type =
+                    card.dataset.type || "";
+
+
+                const matchesSearch =
+                    name.includes(searchTerm) ||
+                    type.toLowerCase().includes(searchTerm);
+
+
+                if (matchesSearch) {
+
+
+                    card.style.display = "";
+
+
+                } else {
+
+
+                    card.style.display = "none";
+
+
+                }
+
+
+            });
+
+
+        }
+
+
+        searchResourceButton.addEventListener(
+            "click",
+            filterResources
+        );
+
+
+        resourceSearch.addEventListener(
+            "input",
+            filterResources
+        );
+
+
+    </script>
+
+
+</body>
+
+
+</html>

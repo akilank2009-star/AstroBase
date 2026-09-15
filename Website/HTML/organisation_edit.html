@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Edit Organisation Profile | Astrobase</title>
+
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- Navigation Bar -->
+
+    <header>
+
+        <h2>Astrobase</h2>
+
+        <nav>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/index.html">
+                Home
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/explore.html">
+                Explore
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/community.html">
+                Community
+            </a>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/about.html">
+                About
+            </a>
+
+            <a href="http://127.0.0.1:5000/opportunities">
+                Opportunities
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+
+        <a
+            class="back-link"
+            href="/organisation/profile"
+        >
+            ← Back to Profile
+        </a>
+
+
+        <!-- Page Header -->
+
+        <section class="explore-header">
+
+            <h1>
+                Edit Organisation Profile
+            </h1>
+
+            <p>
+                Update your organisation's public information.
+            </p>
+
+        </section>
+
+
+        <!-- Edit Form -->
+
+        <section class="organisation-edit-section">
+
+
+            <div class="organisation-edit-intro">
+
+                <p class="explore-label">
+                    ORGANISATION PROFILE
+                </p>
+
+                <h2>
+                    Update Information
+                </h2>
+
+                <p>
+                    Changes to your organisation profile will be
+                    reflected across Astrobase.
+                </p>
+
+            </div>
+
+
+            {% if error %}
+
+                <div class="form-error">
+
+                    {{ error }}
+
+                </div>
+
+            {% endif %}
+
+
+            <form
+                class="organisation-edit-form"
+                method="POST"
+                action="/organisation/profile/edit"
+            >
+
+
+                <!-- Organisation Name -->
+
+                <div class="form-group">
+
+                    <label for="organisation_name">
+                        Organisation Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="organisation_name"
+                        name="organisation_name"
+                        value="{{ form_data['organisation_name'] if form_data else organisation['organisation_name'] }}"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Organisation Type -->
+
+                <div class="form-group">
+
+                    <label for="organisation_type">
+                        Organisation Type
+                    </label>
+
+                    <input
+                        type="text"
+                        id="organisation_type"
+                        name="organisation_type"
+                        value="{{ form_data['organisation_type'] if form_data else organisation['organisation_type'] or '' }}"
+                        placeholder="e.g. Research Organisation, Education, Non-profit"
+                    >
+
+                </div>
+
+
+                <!-- Description -->
+
+                <div class="form-group">
+
+                    <label for="description">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="description"
+                        name="description"
+                        rows="7"
+                        placeholder="Tell the Astrobase community about your organisation..."
+                    >{{ form_data['description'] if form_data else organisation['description'] or '' }}</textarea>
+
+                </div>
+
+
+                <!-- Website -->
+
+                <div class="form-group">
+
+                    <label for="website">
+                        Website
+                    </label>
+
+                    <input
+                        type="url"
+                        id="website"
+                        name="website"
+                        placeholder="https://example.com"
+                        value="{{ form_data['website'] if form_data else organisation['website'] or '' }}"
+                    >
+
+                </div>
+
+
+                <!-- Contact Email -->
+
+                <div class="form-group">
+
+                    <label for="contact_email">
+                        Contact Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="contact_email"
+                        name="contact_email"
+                        value="{{ form_data['contact_email'] if form_data else organisation['contact_email'] }}"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Status -->
+
+                <div class="form-group">
+
+                    <label>
+                        Verification Status
+                    </label>
+
+                    <p>
+                        {{ organisation['status'] }}
+                    </p>
+
+                </div>
+
+
+                <!-- Actions -->
+
+                <div class="organisation-edit-actions">
+
+                    <button
+                        type="submit"
+                    >
+                        Save Changes
+                    </button>
+
+
+                    <a href="/organisation/profile">
+                        Cancel
+                    </a>
+
+                </div>
+
+
+            </form>
+
+
+        </section>
+
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 Astrobase
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

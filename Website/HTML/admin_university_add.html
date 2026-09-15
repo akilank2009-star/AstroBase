@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Add University | Astrobase</title>
+
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+    <header>
+
+        <h2>
+            Astrobase
+        </h2>
+
+
+        <nav>
+
+            <a href="http://127.0.0.1:5500/Website/HTML/index.html">
+                Home
+            </a>
+
+            <a href="/universities">
+                Universities
+            </a>
+
+            <a href="/admin/dashboard">
+                Admin Dashboard
+            </a>
+
+            <a href="/logout">
+                Logout
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+
+        <a
+            class="back-link"
+            href="/admin/universities"
+        >
+            ← Back to Universities
+        </a>
+
+
+        <section class="feature-page-header">
+
+            <p class="feature-page-label">
+                ADMINISTRATION
+            </p>
+
+
+            <h1>
+                Add University
+            </h1>
+
+
+            <p>
+                Create a university and assign it to an Astrobase
+                organisation or contributor.
+            </p>
+
+        </section>
+
+
+        <section class="admin-form-section">
+
+
+            <form
+                method="POST"
+                class="admin-form"
+            >
+
+
+                <!-- Organisation -->
+
+                <div class="form-group">
+
+                    <label for="organisation_id">
+                        Organisation
+                    </label>
+
+
+                    <select
+                        id="organisation_id"
+                        name="organisation_id"
+                    >
+
+                        <option value="">
+                            Astrobase
+                        </option>
+
+
+                        {% for organisation in organisations %}
+
+                            <option
+                                value="{{ organisation['organisation_id'] }}"
+                            >
+                                {{ organisation['organisation_name'] }}
+                            </option>
+
+                        {% endfor %}
+
+                    </select>
+
+                </div>
+
+
+                <!-- University Name -->
+
+                <div class="form-group">
+
+                    <label for="university_name">
+                        University Name
+                    </label>
+
+
+                    <input
+                        type="text"
+                        id="university_name"
+                        name="university_name"
+                        placeholder="University name"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Country -->
+
+                <div class="form-group">
+
+                    <label for="country">
+                        Country
+                    </label>
+
+
+                    <input
+                        type="text"
+                        id="country"
+                        name="country"
+                        placeholder="Country"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- City -->
+
+                <div class="form-group">
+
+                    <label for="city">
+                        City
+                    </label>
+
+
+                    <input
+                        type="text"
+                        id="city"
+                        name="city"
+                        placeholder="City"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- University Type -->
+
+                <div class="form-group">
+
+                    <label for="university_type">
+                        University Type
+                    </label>
+
+
+                    <input
+                        type="text"
+                        id="university_type"
+                        name="university_type"
+                        placeholder="e.g. Public Research University"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Description -->
+
+                <div class="form-group">
+
+                    <label for="description">
+                        Description
+                    </label>
+
+
+                    <textarea
+                        id="description"
+                        name="description"
+                        placeholder="Describe the university..."
+                        rows="6"
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <!-- Official Website -->
+
+                <div class="form-group">
+
+                    <label for="official_website">
+                        Official Website
+                    </label>
+
+
+                    <input
+                        type="url"
+                        id="official_website"
+                        name="official_website"
+                        placeholder="https://..."
+                    >
+
+                </div>
+
+
+                <!-- Admissions Website -->
+
+                <div class="form-group">
+
+                    <label for="admissions_website">
+                        Admissions Website
+                    </label>
+
+
+                    <input
+                        type="url"
+                        id="admissions_website"
+                        name="admissions_website"
+                        placeholder="https://..."
+                    >
+
+                </div>
+
+
+                <!-- International Students -->
+
+                <div class="form-group">
+
+                    <label for="international_students_info">
+                        International Students Information
+                    </label>
+
+
+                    <textarea
+                        id="international_students_info"
+                        name="international_students_info"
+                        placeholder="Information useful to international students..."
+                        rows="5"
+                    ></textarea>
+
+                </div>
+
+
+                <!-- Additional Notes -->
+
+                <div class="form-group">
+
+                    <label for="additional_notes">
+                        Additional Notes
+                    </label>
+
+
+                    <textarea
+                        id="additional_notes"
+                        name="additional_notes"
+                        placeholder="Additional information..."
+                        rows="5"
+                    ></textarea>
+
+                </div>
+
+
+                <!-- Status -->
+
+                <div class="form-group">
+
+                    <label for="status">
+                        Status
+                    </label>
+
+
+                    <select
+                        id="status"
+                        name="status"
+                    >
+
+                        <option value="Draft">
+                            Draft
+                        </option>
+
+                        <option value="Pending">
+                            Pending
+                        </option>
+
+                        <option value="Published">
+                            Published
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Actions -->
+
+                <div class="admin-form-actions">
+
+                    <button
+                        type="submit"
+                        class="admin-create-button"
+                    >
+                        Create University
+                    </button>
+
+
+                    <a
+                        href="/admin/universities"
+                        class="admin-cancel-button"
+                    >
+                        Cancel
+                    </a>
+
+                </div>
+
+
+            </form>
+
+
+        </section>
+
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 Astrobase
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

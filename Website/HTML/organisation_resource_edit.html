@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+
+    <title>
+        Edit Resource | Astrobase
+    </title>
+
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- Navigation Bar -->
+
+    <header>
+
+        <h2>
+            Astrobase
+        </h2>
+
+
+        <nav>
+
+            <a href="/organisation/dashboard">
+                Dashboard
+            </a>
+
+
+            <a href="/organisation/profile">
+                Organisation
+            </a>
+
+
+            <a href="/resources">
+                Resources
+            </a>
+
+
+            <a href="/opportunities">
+                Opportunities
+            </a>
+
+
+            <a href="/logout">
+                Logout
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+
+        <a
+            class="back-link"
+            href="/resources"
+        >
+            ← Back to Resources
+        </a>
+
+
+        <!-- Edit Resource -->
+
+        <section class="organisation-resource-edit-section">
+
+
+            <div class="organisation-resource-edit-header">
+
+                <p class="explore-label">
+                    ORGANISATION
+                </p>
+
+
+                <h1>
+                    Edit Resource
+                </h1>
+
+
+                <p>
+                    Update your resource information before saving
+                    or submitting it for review.
+                </p>
+
+            </div>
+
+
+            {% if error %}
+
+                <div class="form-error">
+
+                    {{ error }}
+
+                </div>
+
+            {% endif %}
+
+
+            <form
+                class="organisation-resource-edit-form"
+                method="POST"
+            >
+
+
+                <!-- Resource Name -->
+
+                <label>
+
+                    <span>
+                        Resource Name
+                    </span>
+
+
+                    <input
+                        type="text"
+                        name="resource_name"
+                        value="{{ resource['resource_name'] }}"
+                        required
+                    >
+
+                </label>
+
+
+                <!-- Resource Type -->
+
+                <label>
+
+                    <span>
+                        Resource Type
+                    </span>
+
+
+                    <select
+                        name="resource_type"
+                        required
+                    >
+
+                        <option
+                            value="Books"
+                            {% if resource['resource_type'] == 'Books' %}
+                                selected
+                            {% endif %}
+                        >
+                            Books
+                        </option>
+
+
+                        <option
+                            value="Courses"
+                            {% if resource['resource_type'] == 'Courses' %}
+                                selected
+                            {% endif %}
+                        >
+                            Courses
+                        </option>
+
+
+                        <option
+                            value="Research Papers"
+                            {% if resource['resource_type'] == 'Research Papers' %}
+                                selected
+                            {% endif %}
+                        >
+                            Research Papers
+                        </option>
+
+
+                        <option
+                            value="Websites"
+                            {% if resource['resource_type'] == 'Websites' %}
+                                selected
+                            {% endif %}
+                        >
+                            Websites
+                        </option>
+
+
+                        <option
+                            value="Videos"
+                            {% if resource['resource_type'] == 'Videos' %}
+                                selected
+                            {% endif %}
+                        >
+                            Videos
+                        </option>
+
+
+                        <option
+                            value="Tools"
+                            {% if resource['resource_type'] == 'Tools' %}
+                                selected
+                            {% endif %}
+                        >
+                            Tools
+                        </option>
+
+
+                        <option
+                            value="Articles"
+                            {% if resource['resource_type'] == 'Articles' %}
+                                selected
+                            {% endif %}
+                        >
+                            Articles
+                        </option>
+
+
+                        <option
+                            value="Podcasts"
+                            {% if resource['resource_type'] == 'Podcasts' %}
+                                selected
+                            {% endif %}
+                        >
+                            Podcasts
+                        </option>
+
+
+                        <option
+                            value="Notes"
+                            {% if resource['resource_type'] == 'Notes' %}
+                                selected
+                            {% endif %}
+                        >
+                            Notes
+                        </option>
+
+                    </select>
+
+                </label>
+
+
+                <!-- Description -->
+
+                <label>
+
+                    <span>
+                        Description
+                    </span>
+
+
+                    <textarea
+                        name="description"
+                        required
+                    >{{ resource['description'] }}</textarea>
+
+                </label>
+
+
+                <!-- Recommended For -->
+
+                <label>
+
+                    <span>
+                        Recommended For
+                    </span>
+
+
+                    <textarea
+                        name="recommended_for"
+                    >{{ resource['recommended_for'] or '' }}</textarea>
+
+                </label>
+
+
+                <!-- Official Website -->
+
+                <label>
+
+                    <span>
+                        Official Website
+                    </span>
+
+
+                    <input
+                        type="url"
+                        name="official_website"
+                        value="{{ resource['official_website'] or '' }}"
+                    >
+
+                </label>
+
+
+                <!-- Actions -->
+
+                <div class="organisation-resource-edit-actions">
+
+
+                    <button
+                        type="submit"
+                        name="action"
+                        value="save"
+                    >
+                        Save Changes
+                    </button>
+
+
+                    {% if resource['status'] == 'Draft'
+                        or resource['status'] == 'Rejected' %}
+
+                        <button
+                            type="submit"
+                            name="action"
+                            value="submit"
+                        >
+                            Submit for Review
+                        </button>
+
+                    {% endif %}
+
+
+                    <a href="/resources">
+                        Cancel
+                    </a>
+
+
+                </div>
+
+
+            </form>
+
+
+        </section>
+
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 Astrobase
+        </p>
+
+    </footer>
+
+
+    <!-- Main Astrobase JavaScript -->
+
+    <script
+        src="{{ url_for('static', filename='script.js') }}"
+    ></script>
+
+
+</body>
+
+
+</html>
