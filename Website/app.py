@@ -2,16 +2,27 @@ from flask import Flask, render_template, request, redirect, session, jsonify
 import mysql.connector
 import hashlib
 import os
+
+from flask import Flask
 from dotenv import load_dotenv
 from flask_cors import CORS
+
 
 load_dotenv()
 
 
+BASE_DIR = os.path.dirname(
+    os.path.abspath(__file__)
+)
+
+
 app = Flask(
     __name__,
-    template_folder="Website/HTML",
-    static_folder="Website",
+    template_folder=os.path.join(
+        BASE_DIR,
+        "HTML"
+    ),
+    static_folder=BASE_DIR,
     static_url_path="/static"
 )
 
@@ -155,7 +166,7 @@ def login():
 
         # Return to Flask homepage
 
-        return redirect("http://127.0.0.1:5500/Website/HTML/index.html")
+        return redirect("/")
 
     # Login failed
 
@@ -347,7 +358,7 @@ def delete_profile():
 
 
     # Return to public Astrobase
-    return redirect("http://127.0.0.1:5500/Website/HTML/index.html")
+    return redirect("/")
 
 
 # -------------------------
@@ -1364,7 +1375,7 @@ def withdraw_organisation_application(organisation_id):
     db.close()
 
 
-    return redirect("http://127.0.0.1:5500/Website/HTML/index.html")
+    return redirect("/")
 
 # -------------------------
 # ORGANISATION ACCOUNT
@@ -3592,14 +3603,14 @@ def organisation_delete():
 
 
     if session.get("role") != "Organisation":
-        return redirect("http://127.0.0.1:5500/Website/HTML/index.html")
+        return redirect("/")
 
 
     organisation_id = session.get("organisation_id")
 
 
     if not organisation_id:
-        return redirect("http://127.0.0.1:5500/Website/HTML/index.html")
+        return redirect("/")
 
 
     db = connect_db()
@@ -3633,7 +3644,7 @@ def organisation_delete():
 
         db.close()
 
-        return redirect("http://127.0.0.1:5500/Website/HTML/index.html")
+        return redirect("/")
 
 
     # =========================
@@ -3704,7 +3715,7 @@ def organisation_delete():
         db.close()
 
 
-        return redirect("http://127.0.0.1:5500/Website/HTML/index.html")
+        return redirect("/")
 
 
     except Exception as error:
@@ -4634,7 +4645,7 @@ def admin_archived_opportunities():
         return redirect("/login")
 
     if session.get("role") != "Admin":
-        return redirect("http://127.0.0.1:5500/Website/HTML/index.html")
+        return redirect("/")
 
     db = connect_db()
     cursor = db.cursor(dictionary=True)
@@ -5460,7 +5471,7 @@ def organisation_add_resource():
 
 
     if not organisation_id:
-        return redirect("http://127.0.0.1:5500/Website/HTML/index.html")
+        return redirect("/")
 
 
     db = connect_db()

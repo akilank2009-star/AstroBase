@@ -427,7 +427,7 @@ async function loadCurrentUser() {
 
 
                     aiNavLink.href =
-                        "astrobase_ai.html";
+                        "http://127.0.0.1:5500/Website/HTML/astrobase_ai.html";
 
 
                     aiNavLink.textContent =
@@ -467,7 +467,7 @@ async function loadCurrentUser() {
 
 
                     assessmentNavLink.href =
-                        "assessment.html";
+                        "http://127.0.0.1:5500/Website/HTML/assessment.html";
 
 
                     assessmentNavLink.textContent =
