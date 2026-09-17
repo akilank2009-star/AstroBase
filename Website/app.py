@@ -170,7 +170,7 @@ def login():
 
     # Login failed
 
-    return "Invalid email/username or password", 401
+    return render_template("login.html", error="Incorrect email/username or password.")
 
 
 # -------------------------
