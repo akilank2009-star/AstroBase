@@ -81,6 +81,13 @@
                 submissions.
             </p>
 
+            {% if error %}
+
+                <p class="login-error">
+                    {{ error }}
+                </p>
+
+            {% endif %}
 
             <form action="/admin/login" method="POST">
 

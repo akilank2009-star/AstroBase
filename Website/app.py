@@ -1,12 +1,11 @@
 from flask import Flask, render_template, request, redirect, session, jsonify
 import mysql.connector
-import hashlib
 import os
 
-from flask import Flask
+
 from dotenv import load_dotenv
 from flask_cors import CORS
-
+from werkzeug.security import (generate_password_hash,check_password_hash)
 
 load_dotenv()
 
@@ -118,11 +117,6 @@ def login():
     email_or_username = request.form["email"].strip()
     password = request.form["password"]
 
-    # Hash entered password
-    password_hash = hashlib.sha256(
-        password.encode()
-    ).hexdigest()
-
     # Connect to database
     db = connect_db()
     cursor = db.cursor(dictionary=True)
@@ -153,7 +147,13 @@ def login():
     db.close()
 
     # Verify account and password
-    if user and user["password_hash"] == password_hash:
+    if (
+        user
+        and check_password_hash(
+            user["password_hash"],
+            password
+        )
+    ):
 
         session["user_id"] = user["user_id"]
 
@@ -389,10 +389,10 @@ def register():
     if password != confirm_password:
         return "Passwords do not match", 400
 
-    # Hash password
-    password_hash = hashlib.sha256(
-        password.encode()
-    ).hexdigest()
+    # Hash password securely
+    password_hash = generate_password_hash(
+        password
+    )
 
     # Connect to database
     db = connect_db()
@@ -1515,9 +1515,9 @@ def organisation_register():
         return "This email is already associated with an account.", 400
 
 
-    password_hash = hashlib.sha256(
-        password.encode()
-    ).hexdigest()
+    password_hash = generate_password_hash(
+        password
+    )
 
 
     # Create Organisation account
@@ -2464,11 +2464,6 @@ def admin_login():
     password = request.form["password"]
 
 
-    password_hash = hashlib.sha256(
-        password.encode()
-    ).hexdigest()
-
-
     db = connect_db()
 
     cursor = db.cursor(dictionary=True)
@@ -2503,7 +2498,7 @@ def admin_login():
     db.close()
 
 
-    if admin and admin["password_hash"] == password_hash:
+    if (admin and check_password_hash(admin["password_hash"], password)):
 
         session["user_id"] = admin["user_id"]
 
@@ -2514,7 +2509,10 @@ def admin_login():
         return redirect("/admin/dashboard")
 
 
-    return "Invalid admin credentials", 401
+    return render_template(
+    "admin_login.html",
+    error="Incorrect email/username or password."
+)
 
 
 
