@@ -12756,15 +12756,40 @@ header nav a:hover {
 }
 
 
+.login-error {
+
+    grid-column: 1 / -1;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    margin-bottom: 5px;
+
+    padding: 15px 18px;
+
+    border: 1px solid rgba(239, 68, 68, 0.4);
+
+    border-radius: 6px;
+
+    background: rgba(239, 68, 68, 0.06);
+
+    color: #FCA5A5;
+
+    line-height: 1.5;
+
+}
+
+
 .login-card {
 
-    padding: 45px 35px;
-
-    background: #0B1120;
+    padding: 45px;
 
     border: 1px solid #1E293B;
 
     border-radius: 8px;
+
+    background: #0B1120;
 
 }
 
@@ -12789,7 +12814,7 @@ header nav a:hover {
 }
 
 
-.login-card > p:not(.explore-label) {
+.login-card > p:not(.explore-label):not(.login-error) {
 
     color: #9CA3AF;
 
@@ -12915,6 +12940,7 @@ header nav a:hover {
     }
 
 }
+
 
 
 /* =========================================================
@@ -13312,24 +13338,5 @@ header nav a:hover {
     background: #22D3EE;
 
     color: #05070D;
-
-}
-
-
-.login-error {
-
-    margin-bottom: 20px;
-
-    padding: 12px 15px;
-
-    border: 1px solid rgba(239, 68, 68, 0.4);
-
-    border-radius: 6px;
-
-    background: rgba(239, 68, 68, 0.06);
-
-    color: #FCA5A5;
-
-    line-height: 1.5;
 
 }

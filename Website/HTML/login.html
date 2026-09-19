@@ -86,6 +86,14 @@
 
         <section class="login-page">
 
+            {% if error %}
+
+                <p class="login-error">
+                    {{ error }}
+                </p>
+
+            {% endif %}
+
 
             <div class="login-card">
 
@@ -103,14 +111,6 @@
                 <p>
                     Sign in to continue your journey through Astrobase.
                 </p>
-
-                {% if error %}
-
-                    <p class="login-error">
-                        {{ error }}
-                    </p>
-
-                {% endif %}
 
                 <form
                     action="/login"
