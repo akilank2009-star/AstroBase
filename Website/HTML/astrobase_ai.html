@@ -30,73 +30,73 @@
 <body>
 
 
-    <!-- Navigation Bar -->
-    <header>
+<!-- Navigation Bar -->
+<header>
 
-        <h2>Astrobase</h2>
+    <h2>Astrobase</h2>
 
-        <nav>
+    <nav>
 
-            <a href="/">
-                Home
-            </a>
+        <a href="/">
+            Home
+        </a>
 
-            <a href="/HTML/explore.html">
-                Explore
-            </a>
+        <a href="/HTML/explore.html">
+            Explore
+        </a>
 
-            <a href="/HTML/community.html">
-                Community
-            </a>
+        <a href="/HTML/community.html">
+            Community
+        </a>
 
-            <a href="/HTML/about.html">
-                About
-            </a>
+        <a href="/HTML/about.html">
+            About
+        </a>
 
 
-            <!-- Logged-out state -->
+        <!-- Logged-out state -->
+        <a
+            href="/login"
+            id="loginLink"
+        >
+            Login
+        </a>
+
+
+        <!-- Logged-in state -->
+        <span
+            id="userMenu"
+            style="display: none;"
+        >
+
             <a
-                href="/login"
-                id="loginLink"
+                href="/myastrobase/profile"
+                id="profileLink"
             >
-                Login
+                <span id="usernameDisplay"></span>
             </a>
 
-
-            <!-- Logged-in state -->
-            <span
-                id="userMenu"
-                style="display: none;"
-            >
-
-                <a
-                    href="/myastrobase/profile"
-                    id="profileLink"
-                >
-                    <span id="usernameDisplay"></span>
-                </a>
-
-                <a href="/myastrobase/saved">
-                    Saved
-                </a>
-
-                <a
-                    href="/logout"
-                    id="logoutLink"
-                >
-                    Logout
-                </a>
-
-            </span>
-
-
-            <a href="/HTML/join.html">
-                Join Astrobase
+            <a href="/myastrobase/saved">
+                Saved
             </a>
 
-        </nav>
+            <a
+                href="/logout"
+                id="logoutLink"
+            >
+                Logout
+            </a>
 
-    </header>
+        </span>
+
+
+        <a href="/HTML/join.html">
+            Join Astrobase
+        </a>
+
+    </nav>
+
+</header>
 
 
 

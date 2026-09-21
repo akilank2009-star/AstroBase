@@ -42,48 +42,73 @@
 <body>
 
 
-    <!-- Navigation Bar -->
+<!-- Navigation Bar -->
+<header>
 
-    <header>
+    <h2>Astrobase</h2>
 
-        <h2>
-            Astrobase
-        </h2>
+    <nav>
+
+        <a href="/">
+            Home
+        </a>
+
+        <a href="/HTML/explore.html">
+            Explore
+        </a>
+
+        <a href="/HTML/community.html">
+            Community
+        </a>
+
+        <a href="/HTML/about.html">
+            About
+        </a>
 
 
-        <nav>
+        <!-- Logged-out state -->
+        <a
+            href="/login"
+            id="loginLink"
+        >
+            Login
+        </a>
+
+
+        <!-- Logged-in state -->
+        <span
+            id="userMenu"
+            style="display: none;"
+        >
 
             <a
-                href="/"
+                href="/myastrobase/profile"
+                id="profileLink"
             >
-                Home
+                <span id="usernameDisplay"></span>
             </a>
 
+            <a href="/myastrobase/saved">
+                Saved
+            </a>
 
             <a
-                href="/HTML/explore.html"
+                href="/logout"
+                id="logoutLink"
             >
-                Explore
+                Logout
             </a>
 
-
-            <a
-                href="/HTML/community.html"
-            >
-                Community
-            </a>
+        </span>
 
 
-            <a
-                href="/HTML/about.html"
-            >
-                About
-            </a>
+        <a href="/HTML/join.html">
+            Join Astrobase
+        </a>
 
-        </nav>
+    </nav>
 
-    </header>
-
+</header>
 
     <main>
 
