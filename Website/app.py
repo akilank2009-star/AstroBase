@@ -8296,32 +8296,36 @@ def report():
 # PUBLIC PAGES
 # -------------------------
 
-@app.route("/about")
+# -------------------------
+# PUBLIC PAGES
+# -------------------------
+
+@app.route("/HTML/about.html")
 def about():
     return render_template("about.html")
 
 
-@app.route("/astrobase-ai")
+@app.route("/HTML/astrobase_ai.html")
 def astrobase_ai():
     return render_template("astrobase_ai.html")
 
 
-@app.route("/assessment")
+@app.route("/HTML/assessment.html")
 def assessment():
     return render_template("assessment.html")
 
 
-@app.route("/community")
+@app.route("/HTML/community.html")
 def community():
     return render_template("community.html")
 
 
-@app.route("/explore")
+@app.route("/HTML/explore.html")
 def explore():
     return render_template("explore.html")
 
 
-@app.route("/join")
+@app.route("/HTML/join.html")
 def join():
     return render_template("join.html")
 
