@@ -22,28 +22,90 @@
 
 <body>
 
-    <!-- Navigation Bar -->
-    <header>
+<!-- Navigation Bar -->
+<header>
 
-        <h2>Astrobase</h2>
+    <h2>Astrobase</h2>
 
-        <nav>
+    <nav>
 
-            <a href="/"">Home</a>
-            <a href="explore.html">Explore</a>
-            <a href="community.html">Community</a>
-            <a href="about.html">About</a>
-            <a href="/login">Login</a>
-            <a href="join.html">Join Astrobase</a>
+        <a href="/">
+            Home
+        </a>
 
-        </nav>
+        <a href="/HTML/astrobase_ai.html">
+            Astrobase AI
+        </a>
 
-    </header>
+        <a href="/HTML/assessment.html">
+            Assessment
+        </a>
+
+        <a href="/report">
+            Report
+        </a>
+
+        <a href="/HTML/explore.html">
+            Explore
+        </a>
+
+        <a href="/HTML/community.html">
+            Community
+        </a>
+
+        <a href="/HTML/about.html">
+            About
+        </a>
+
+
+        <!-- Logged-out state -->
+        <a
+            href="/login"
+            id="loginLink"
+        >
+            Login
+        </a>
+
+
+        <!-- Logged-in state -->
+        <span
+            id="userMenu"
+            style="display: none;"
+        >
+
+            <a
+                href="/myastrobase/profile"
+                id="profileLink"
+            >
+                <span id="usernameDisplay"></span>
+            </a>
+
+            <a href="/myastrobase/saved">
+                Saved
+            </a>
+
+            <a
+                href="/logout"
+                id="logoutLink"
+            >
+                Logout
+            </a>
+
+        </span>
+
+
+        <a href="/HTML/join.html">
+            Join Astrobase
+        </a>
+
+    </nav>
+
+</header>
 
 
     <main>
 
-        <a class="back-link" href="index.html">← Back to Astrobase</a>
+        <a class="back-link" href="/">← Back to Astrobase</a>
 
         <!-- Explore Header -->
         <section class="explore-header">

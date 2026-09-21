@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -13,13 +14,21 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet"
+    >
 
-    <link rel="stylesheet" href="/static/style.css">
+    <link
+        rel="stylesheet"
+        href="/static/style.css"
+    >
 
 </head>
 
+
 <body>
+
 
     <!-- Navigation Bar -->
     <header>
@@ -28,14 +37,36 @@
 
         <nav>
 
-            <a href="/"">Home</a>
+            <a href="/">
+                Home
+            </a>
 
-            <a href="explore.html">Explore</a>
+            <a href="/HTML/astrobase_ai.html">
+                Astrobase AI
+            </a>
 
-            <a href="community.html">Community</a>
+            <a href="/HTML/assessment.html">
+                Assessment
+            </a>
 
-            <a href="about.html">About</a>
+            <a href="/report">
+                Report
+            </a>
 
+            <a href="/HTML/explore.html">
+                Explore
+            </a>
+
+            <a href="/HTML/community.html">
+                Community
+            </a>
+
+            <a href="/HTML/about.html">
+                About
+            </a>
+
+
+            <!-- Logged-out state -->
             <a
                 href="/login"
                 id="loginLink"
@@ -43,6 +74,8 @@
                 Login
             </a>
 
+
+            <!-- Logged-in state -->
             <span
                 id="userMenu"
                 style="display: none;"
@@ -52,8 +85,16 @@
                     href="/myastrobase/profile"
                     id="profileLink"
                 >
+
                     <span id="usernameDisplay"></span>
+
                 </a>
+
+
+                <a href="/myastrobase/saved">
+                    Saved
+                </a>
+
 
                 <a
                     href="/logout"
@@ -64,28 +105,35 @@
 
             </span>
 
-            <a href="join.html">
-                Join Astrobase
-            </a>
-
         </nav>
 
     </header>
 
 
+
     <main>
 
-        <a class="back-link" href="index.html">← Back to Astrobase</a>
-        
+
+        <a
+            class="back-link"
+            href="/"
+        >
+            ← Back to Astrobase
+        </a>
+
+
+
         <section class="feature-page-header">
 
             <p class="feature-page-label">
                 ASTROBASE AI
             </p>
 
+
             <h1>
                 Guidance for your journey through space science.
             </h1>
+
 
             <p>
                 Astrobase AI is being developed as a personalised guidance system
@@ -96,13 +144,16 @@
         </section>
 
 
+
         <section class="feature-grid">
+
 
             <article class="feature-card">
 
                 <h2>
                     Personalised Guidance
                 </h2>
+
 
                 <p>
                     Future versions will use your Astrobase profile, saved items
@@ -113,11 +164,13 @@
             </article>
 
 
+
             <article class="feature-card">
 
                 <h2>
                     Explore Possibilities
                 </h2>
+
 
                 <p>
                     Ask questions about fields, learning pathways, opportunities
@@ -127,11 +180,13 @@
             </article>
 
 
+
             <article class="feature-card">
 
                 <h2>
                     Built Around Astrobase
                 </h2>
+
 
                 <p>
                     Astrobase AI will work with the platform's own opportunities,
@@ -144,11 +199,13 @@
         </section>
 
 
+
         <section class="feature-status">
 
             <strong>
                 CURRENTLY UNDER DEVELOPMENT
             </strong>
+
 
             <p>
                 The AI system is not active yet. This page is its dedicated home
@@ -159,15 +216,20 @@
         </section>
 
 
+
         <div class="feature-page-actions">
 
-            <a href="explore.html" class="feature-page-link">
+            <a
+                href="/HTML/explore.html"
+                class="feature-page-link"
+            >
                 Explore Astrobase
             </a>
 
         </div>
 
     </main>
+
 
 
     <footer>
@@ -179,7 +241,9 @@
     </footer>
 
 
-    <script src="../script.js"></script>
+
+    <script src="/static/script.js"></script>
+
 
 </body>
 

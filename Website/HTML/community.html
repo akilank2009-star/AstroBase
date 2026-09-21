@@ -1,26 +1,46 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Community | Astrobase</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
 
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
-    <link rel="stylesheet" href="/static/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="/static/style.css"
+    >
 
 </head>
 
 
 <body>
+
 
     <!-- Navigation Bar -->
     <header>
@@ -29,26 +49,103 @@
 
         <nav>
 
-            <a href="/"">Home</a>
-            <a href="explore.html">Explore</a>
-            <a href="community.html">Community</a>
-            <a href="about.html">About</a>
-            <a href="/login">Login</a>
-            <a href="join.html">Join Astrobase</a>
+            <a href="/">
+                Home
+            </a>
+
+            <a href="/HTML/astrobase_ai.html">
+                Astrobase AI
+            </a>
+
+            <a href="/HTML/assessment.html">
+                Assessment
+            </a>
+
+            <a href="/report">
+                Report
+            </a>
+
+            <a href="/HTML/explore.html">
+                Explore
+            </a>
+
+            <a href="/HTML/community.html">
+                Community
+            </a>
+
+            <a href="/HTML/about.html">
+                About
+            </a>
+
+
+            <!-- Logged-out state -->
+            <a
+                href="/login"
+                id="loginLink"
+            >
+                Login
+            </a>
+
+
+            <!-- Logged-in state -->
+            <span
+                id="userMenu"
+                style="display: none;"
+            >
+
+                <a
+                    href="/myastrobase/profile"
+                    id="profileLink"
+                >
+
+                    <span id="usernameDisplay"></span>
+
+                </a>
+
+
+                <a href="/myastrobase/saved">
+                    Saved
+                </a>
+
+
+                <a
+                    href="/logout"
+                    id="logoutLink"
+                >
+                    Logout
+                </a>
+
+            </span>
+
+
+            <a href="/HTML/join.html">
+                Join Astrobase
+            </a>
 
         </nav>
 
     </header>
 
 
+
     <main>
 
-        <a class="back-link" href="index.html">← Back to Astrobase</a>
+
+        <a
+            class="back-link"
+            href="/"
+        >
+            ← Back to Astrobase
+        </a>
+
 
 
         <section class="explore-header">
 
-            <h1>Astrobase Community</h1>
+            <h1>
+                Astrobase Community
+            </h1>
+
 
             <p>
                 A space for students, researchers and space science
@@ -58,19 +155,25 @@
         </section>
 
 
+
         <section class="content">
 
-            <h2>Coming in the Future</h2>
+            <h2>
+                Coming in the Future
+            </h2>
+
 
             <p>
                 The Astrobase Community is planned as a dedicated space
                 for discussion, collaboration and knowledge sharing.
             </p>
 
+
             <p>
                 It will eventually include focused areas for studies,
                 research, projects, communication and more.
             </p>
+
 
             <p>
                 This part of Astrobase is still to be built.
@@ -81,14 +184,19 @@
     </main>
 
 
+
     <footer>
 
-        <p>© 2026 Astrobase</p>
+        <p>
+            © 2026 Astrobase
+        </p>
 
     </footer>
 
 
-    <script src="../script.js"></script>
+
+    <script src="/static/script.js"></script>
+
 
 </body>
 
