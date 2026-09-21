@@ -1,9 +1,5 @@
 .env
 
-
-
-.env
-
 __pycache__/
 *.pyc
 
@@ -11,3 +7,5 @@ __pycache__/
 venv/
 
 .vscode/
+
+astrobase_backup.sql

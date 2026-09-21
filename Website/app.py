@@ -39,11 +39,13 @@ app.secret_key = os.getenv("FLASK_SECRET_KEY")
 # -------------------------
 
 def connect_db():
+
     return mysql.connector.connect(
-        host="localhost",
-        user="root",
+        host=os.getenv("MYSQL_HOST", "localhost"),
+        port=int(os.getenv("MYSQL_PORT", "3306")),
+        user=os.getenv("MYSQL_USER", "root"),
         password=os.getenv("MYSQL_PASSWORD"),
-        database="astrobase_web"
+        database=os.getenv("MYSQL_DATABASE", "astrobase_web")
     )
 
 
@@ -467,7 +469,7 @@ def register():
     db.close()
 
     # Account created
-    return redirect("http://127.0.0.1:5000/login")
+    return redirect("/login")
 
 
 # -------------------------
