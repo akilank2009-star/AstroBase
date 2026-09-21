@@ -38,7 +38,6 @@
 
 
     <!-- Navigation Bar -->
-
     <header>
 
         <h2>Astrobase</h2>
@@ -47,18 +46,6 @@
 
             <a href="/">
                 Home
-            </a>
-
-            <a href="/HTML/astrobase_ai.html">
-                Astrobase AI
-            </a>
-
-            <a href="/HTML/assessment.html">
-                Assessment
-            </a>
-
-            <a href="/report">
-                Report
             </a>
 
             <a href="/HTML/explore.html">
@@ -73,16 +60,45 @@
                 About
             </a>
 
-            <a href="/myastrobase/profile">
-                akil
+
+            <!-- Logged-out state -->
+            <a
+                href="/login"
+                id="loginLink"
+            >
+                Login
             </a>
 
-            <a href="/myastrobase/saved">
-                Saved
-            </a>
 
-            <a href="/logout">
-                Logout
+            <!-- Logged-in state -->
+            <span
+                id="userMenu"
+                style="display: none;"
+            >
+
+                <a
+                    href="/myastrobase/profile"
+                    id="profileLink"
+                >
+                    <span id="usernameDisplay"></span>
+                </a>
+
+                <a href="/myastrobase/saved">
+                    Saved
+                </a>
+
+                <a
+                    href="/logout"
+                    id="logoutLink"
+                >
+                    Logout
+                </a>
+
+            </span>
+
+
+            <a href="/HTML/join.html">
+                Join Astrobase
             </a>
 
         </nav>
