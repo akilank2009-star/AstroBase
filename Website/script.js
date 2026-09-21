@@ -83,7 +83,7 @@ async function loadCurrentUser() {
 
         const response =
             await fetch(
-                "http://127.0.0.1:5000/api/me",
+                "/api/me",
                 {
                     credentials: "include"
                 }
@@ -157,14 +157,14 @@ async function loadCurrentUser() {
         if (role === "organisation") {
 
             profileLink =
-                "http://127.0.0.1:5000/organisation/profile";
+                "/organisation/profile";
 
         }
 
         else if (role === "student") {
 
             profileLink =
-                "http://127.0.0.1:5000/myastrobase/profile";
+                "/myastrobase/profile";
 
         }
 
@@ -331,7 +331,7 @@ async function loadCurrentUser() {
 
 
                 dashboardLink.href =
-                    "http://127.0.0.1:5000/admin/dashboard";
+                    "/admin/dashboard";
 
 
                 dashboardLink.textContent =
@@ -427,7 +427,7 @@ async function loadCurrentUser() {
 
 
                     aiNavLink.href =
-                        "http://127.0.0.1:5500/Website/HTML/astrobase_ai.html";
+                        "/HTML/astrobase_ai.html";
 
 
                     aiNavLink.textContent =
@@ -467,7 +467,7 @@ async function loadCurrentUser() {
 
 
                     assessmentNavLink.href =
-                        "http://127.0.0.1:5500/Website/HTML/assessment.html";
+                       "/HTML/assessment.html";
 
 
                     assessmentNavLink.textContent =
@@ -507,7 +507,7 @@ async function loadCurrentUser() {
 
 
                     reportNavLink.href =
-                        "http://127.0.0.1:5000/report";
+                        "/report";
 
 
                     reportNavLink.textContent =
@@ -547,7 +547,7 @@ async function loadCurrentUser() {
 
 
                     savedLink.href =
-                        "http://127.0.0.1:5000/myastrobase/saved";
+                        "/myastrobase/saved";
 
 
                     savedLink.textContent =
@@ -580,7 +580,7 @@ async function loadCurrentUser() {
 
 
                     dashboardLink.href =
-                        "http://127.0.0.1:5000/organisation/dashboard";
+                        "/organisation/dashboard";
 
 
                     dashboardLink.textContent =
@@ -611,7 +611,7 @@ async function loadCurrentUser() {
 
 
             logoutLink.href =
-                "http://127.0.0.1:5000/logout";
+                "/logout";
 
 
             logoutLink.textContent =

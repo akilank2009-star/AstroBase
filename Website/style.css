@@ -45,7 +45,7 @@ main {
     background-image: linear-gradient(
         rgba(5, 7, 13, 0.45),
         rgba(5, 7, 13, 0.80)
-    ), url("images/Stars.png");
+    ), url("Images/Stars.png");
 
     background-size: cover;
 
