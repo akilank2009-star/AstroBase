@@ -8293,6 +8293,40 @@ def report():
 
 
 # -------------------------
+# PUBLIC PAGES
+# -------------------------
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+
+@app.route("/astrobase-ai")
+def astrobase_ai():
+    return render_template("astrobase_ai.html")
+
+
+@app.route("/assessment")
+def assessment():
+    return render_template("assessment.html")
+
+
+@app.route("/community")
+def community():
+    return render_template("community.html")
+
+
+@app.route("/explore")
+def explore():
+    return render_template("explore.html")
+
+
+@app.route("/join")
+def join():
+    return render_template("join.html")
+
+
+# -------------------------
 # START FLASK
 # -------------------------
 
