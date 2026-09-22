@@ -75,6 +75,13 @@
                 through space science.
             </p>
 
+            {% if error %}
+
+                <p class="login-error">
+                    {{ error }}
+                </p>
+
+            {% endif %}
 
             <form
                 action="/register"

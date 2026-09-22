@@ -389,7 +389,11 @@ def register():
 
     # Check passwords
     if password != confirm_password:
-        return "Passwords do not match", 400
+
+        return render_template(
+            "register.html",
+            error="Passwords do not match."
+        )
 
     # Hash password securely
     password_hash = generate_password_hash(

@@ -96,6 +96,146 @@
 
         </section>
 
+        <!-- Featured Opportunities -->
+
+        <section class="featured-opportunities">
+
+            <div class="featured-opportunities-intro">
+
+                <p class="explore-label">
+                    FEATURED OPPORTUNITIES
+                </p>
+
+                <h2>
+                    Worth Exploring
+                </h2>
+
+                <p>
+
+                    A selection of notable and timely opportunities
+                    curated for the Astrobase community.
+
+                </p>
+
+            </div>
+
+
+            <div class="featured-opportunity-grid">
+
+
+                {% if featured_opportunities %}
+
+
+                    {% for opportunity in featured_opportunities %}
+
+
+                        <article class="featured-opportunity-card">
+
+
+                            <p class="opportunity-type">
+
+                                {{ opportunity['category'] }}
+
+                            </p>
+
+
+                            <h3>
+
+                                {{ opportunity['opportunity_name'] }}
+
+                            </h3>
+
+
+                            <p>
+
+                                {{ opportunity['description'] }}
+
+                            </p>
+
+
+                            <div class="opportunity-details">
+
+
+                                {% if opportunity['eligibility'] %}
+
+                                    <span>
+
+                                        {{ opportunity['eligibility'] }}
+
+                                    </span>
+
+                                {% endif %}
+
+
+                                {% if opportunity['deadline'] %}
+
+                                    <span>
+
+                                        Deadline:
+                                        {{ opportunity['deadline'] }}
+
+                                    </span>
+
+                                {% endif %}
+
+
+                            </div>
+
+
+                            {% if opportunity['organisation_name'] %}
+
+                                <p class="opportunity-organisation">
+
+                                    Provided by:
+
+                                    <strong>
+                                        {{ opportunity['organisation_name'] }}
+                                    </strong>
+
+                                </p>
+
+                            {% endif %}
+
+
+                            <div class="featured-opportunity-actions">
+
+                                {% if opportunity['official_website'] %}
+
+                                    <a
+                                        href="{{ opportunity['official_website'] }}"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        View Opportunity →
+                                    </a>
+
+                                {% endif %}
+
+                            </div>
+
+
+                        </article>
+
+
+                    {% endfor %}
+
+
+                {% else %}
+
+
+                    <p class="featured-opportunities-empty">
+
+                        No featured opportunities at the moment.
+
+                    </p>
+
+
+                {% endif %}
+
+
+            </div>
+
+        </section>
 
         <!-- Opportunity Library -->
 
