@@ -96,7 +96,132 @@
 
         </section>
 
-        <!-- Featured Opportunities -->
+        <!-- Opportunity Library -->
+
+        <section class="opportunity-library">
+
+
+            <div class="opportunity-intro">
+
+                <p class="explore-label">
+                    OPPORTUNITY LIBRARY
+                </p>
+
+                <h2>
+                    Find Your Next Opportunity
+                </h2>
+
+                <p>
+
+                    Explore opportunities for students interested in
+                    astronomy, astrophysics, physics and space science.
+
+                </p>
+
+            </div>
+
+
+            <!-- Organisation / Admin Add Button -->
+
+            {% if role == "Organisation" %}
+
+                <div class="opportunity-create">
+
+                    <a href="/organisation/opportunities/add">
+                        <button type="button">
+                            + Add Opportunity
+                        </button>
+                    </a>
+
+                </div>
+
+            {% endif %}
+
+
+            <!-- Search -->
+
+            <div class="opportunity-search">
+
+                <input
+                    type="text"
+                    id="opportunitySearch"
+                    placeholder="Search opportunities..."
+                >
+
+                <button
+                    type="button"
+                    id="searchOpportunityButton"
+                >
+                    Search
+                </button>
+
+            </div>
+
+
+            <!-- Categories -->
+
+            <div class="opportunity-categories">
+
+                <button
+                    type="button"
+                    class="active"
+                    data-category="All"
+                >
+                    All
+                </button>
+
+                <button
+                    type="button"
+                    data-category="Competition"
+                >
+                    Competitions
+                </button>
+
+                <button
+                    type="button"
+                    data-category="Internship"
+                >
+                    Internships
+                </button>
+
+                <button
+                    type="button"
+                    data-category="Research Program"
+                >
+                    Research Programmes
+                </button>
+
+                <button
+                    type="button"
+                    data-category="Scholarship"
+                >
+                    Scholarships
+                </button>
+
+                <button
+                    type="button"
+                    data-category="Summer Program"
+                >
+                    Summer Programmes
+                </button>
+
+                <button
+                    type="button"
+                    data-category="Workshop"
+                >
+                    Workshops
+                </button>
+
+                <button
+                    type="button"
+                    data-category="Citizen Science"
+                >
+                    Citizen Science
+                </button>
+
+            </div>
+
+                    <!-- Featured Opportunities -->
 
         <section class="featured-opportunities">
 
@@ -236,132 +361,6 @@
             </div>
 
         </section>
-
-        <!-- Opportunity Library -->
-
-        <section class="opportunity-library">
-
-
-            <div class="opportunity-intro">
-
-                <p class="explore-label">
-                    OPPORTUNITY LIBRARY
-                </p>
-
-                <h2>
-                    Find Your Next Opportunity
-                </h2>
-
-                <p>
-
-                    Explore opportunities for students interested in
-                    astronomy, astrophysics, physics and space science.
-
-                </p>
-
-            </div>
-
-
-            <!-- Organisation / Admin Add Button -->
-
-            {% if role == "Organisation" %}
-
-                <div class="opportunity-create">
-
-                    <a href="/organisation/opportunities/add">
-                        <button type="button">
-                            + Add Opportunity
-                        </button>
-                    </a>
-
-                </div>
-
-            {% endif %}
-
-
-            <!-- Search -->
-
-            <div class="opportunity-search">
-
-                <input
-                    type="text"
-                    id="opportunitySearch"
-                    placeholder="Search opportunities..."
-                >
-
-                <button
-                    type="button"
-                    id="searchOpportunityButton"
-                >
-                    Search
-                </button>
-
-            </div>
-
-
-            <!-- Categories -->
-
-            <div class="opportunity-categories">
-
-                <button
-                    type="button"
-                    class="active"
-                    data-category="All"
-                >
-                    All
-                </button>
-
-                <button
-                    type="button"
-                    data-category="Competition"
-                >
-                    Competitions
-                </button>
-
-                <button
-                    type="button"
-                    data-category="Internship"
-                >
-                    Internships
-                </button>
-
-                <button
-                    type="button"
-                    data-category="Research Program"
-                >
-                    Research Programmes
-                </button>
-
-                <button
-                    type="button"
-                    data-category="Scholarship"
-                >
-                    Scholarships
-                </button>
-
-                <button
-                    type="button"
-                    data-category="Summer Program"
-                >
-                    Summer Programmes
-                </button>
-
-                <button
-                    type="button"
-                    data-category="Workshop"
-                >
-                    Workshops
-                </button>
-
-                <button
-                    type="button"
-                    data-category="Citizen Science"
-                >
-                    Citizen Science
-                </button>
-
-            </div>
-
 
             <!-- Opportunity Cards -->
 
