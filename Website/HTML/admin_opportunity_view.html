@@ -133,6 +133,17 @@
                     </strong>
                 </p>
 
+                <p>
+                    Featured:
+                    <strong>
+                        {% if opportunity['is_featured'] %}
+                            Yes
+                        {% else %}
+                            No
+                        {% endif %}
+                    </strong>
+                </p>
+
             </div>
 
 
@@ -289,6 +300,32 @@
                     Edit Opportunity
                 </a>
 
+                {% if opportunity['status'] == 'Published' %}
+
+                    <form
+                        method="POST"
+                        action="/admin/opportunities/{{ opportunity['opportunity_id'] }}/feature"
+                    >
+
+                        <button
+                            type="submit"
+                        >
+
+                            {% if opportunity['is_featured'] %}
+
+                                Unfeature Opportunity
+
+                            {% else %}
+
+                                Feature Opportunity
+
+                            {% endif %}
+
+                        </button>
+
+                    </form>
+
+                {% endif %}
 
                 {% if opportunity['status'] == 'Pending' %}
 

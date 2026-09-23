@@ -164,208 +164,7 @@
 
                 </p>
 
-
             </div>
-
-            {% if role == "Organisation" %}
-
-                <div class="resource-management">
-
-                    <a href="/organisation/resources/add">
-                        + Add Resource
-                    </a>
-
-                </div>
-
-            {% endif %}
-
-
-            <!-- Search -->
-
-            <div class="resource-search">
-
-
-                <input
-                    type="text"
-                    id="resourceSearch"
-                    placeholder="Search resources..."
-                >
-
-
-                <button
-                    type="button"
-                    id="searchResourceButton"
-                >
-                    Search
-                </button>
-
-
-            </div>
-
-
-            {% if not resource_type %}
-
-                <!-- Resource Categories -->
-
-                <div class="resource-categories">
-
-                    <a href="/resources?type=Books">
-
-                        <h3>
-                            Books
-                        </h3>
-
-
-                        <p>
-
-                            Books covering astronomy, astrophysics,
-                            physics and space science.
-
-                        </p>
-
-                    </a>
-
-
-                    <a href="/resources?type=Courses">
-
-                        <h3>
-                            Courses
-                        </h3>
-
-
-                        <p>
-
-                            Online courses and learning programmes
-                            for different levels of study.
-
-                        </p>
-
-                    </a>
-
-
-                    <a href="/resources?type=Research%20Papers">
-
-                        <h3>
-                            Research Papers
-                        </h3>
-
-
-                        <p>
-
-                            Research literature and papers for
-                            exploring topics in greater depth.
-
-                        </p>
-
-                    </a>
-
-
-                    <a href="/resources?type=Websites">
-
-                        <h3>
-                            Websites
-                        </h3>
-
-
-                        <p>
-
-                            Useful websites and online platforms
-                            for space science learning.
-
-                        </p>
-
-                    </a>
-
-
-                    <a href="/resources?type=Videos">
-
-                        <h3>
-                            Videos
-                        </h3>
-
-
-                        <p>
-
-                            Lectures, documentaries and educational
-                            videos about space and science.
-
-                        </p>
-
-                    </a>
-
-
-                    <a href="/resources?type=Tools">
-
-                        <h3>
-                            Tools
-                        </h3>
-
-
-                        <p>
-
-                            Software, simulations and other tools
-                            useful for exploring space science.
-
-                        </p>
-
-                    </a>
-
-
-                    <a href="/resources?type=Articles">
-
-                        <h3>
-                            Articles
-                        </h3>
-
-
-                        <p>
-
-                            Accessible articles and written explainers
-                            covering astronomy, astrophysics, physics
-                            and space science.
-
-                        </p>
-
-                    </a>
-
-
-                    <a href="/resources?type=Podcasts">
-
-                        <h3>
-                            Podcasts
-                        </h3>
-
-
-                        <p>
-
-                            Conversations, discussions and stories
-                            exploring astronomy, space and science.
-
-                        </p>
-
-                    </a>
-
-
-                    <a href="/resources?type=Notes">
-
-                        <h3>
-                            Notes
-                        </h3>
-
-
-                        <p>
-
-                            Concise study notes and summaries to help
-                            understand important space science concepts.
-
-                        </p>
-
-                    </a>
-
-
-                </div>
-
-            {% endif %}
 
             <!-- Featured Resources -->
 
@@ -577,6 +376,206 @@
 
 
             </section>
+
+            {% if role == "Organisation" %}
+
+                <div class="resource-management">
+
+                    <a href="/organisation/resources/add">
+                        + Add Resource
+                    </a>
+
+                </div>
+
+            {% endif %}
+
+
+            <!-- Search -->
+
+            <div class="resource-search">
+
+
+                <input
+                    type="text"
+                    id="resourceSearch"
+                    placeholder="Search resources..."
+                >
+
+
+                <button
+                    type="button"
+                    id="searchResourceButton"
+                >
+                    Search
+                </button>
+
+
+            </div>
+
+
+            {% if not resource_type %}
+
+                <!-- Resource Categories -->
+
+                <div class="resource-categories">
+
+                    <a href="/resources?type=Books">
+
+                        <h3>
+                            Books
+                        </h3>
+
+
+                        <p>
+
+                            Books covering astronomy, astrophysics,
+                            physics and space science.
+
+                        </p>
+
+                    </a>
+
+
+                    <a href="/resources?type=Courses">
+
+                        <h3>
+                            Courses
+                        </h3>
+
+
+                        <p>
+
+                            Online courses and learning programmes
+                            for different levels of study.
+
+                        </p>
+
+                    </a>
+
+
+                    <a href="/resources?type=Research%20Papers">
+
+                        <h3>
+                            Research Papers
+                        </h3>
+
+
+                        <p>
+
+                            Research literature and papers for
+                            exploring topics in greater depth.
+
+                        </p>
+
+                    </a>
+
+
+                    <a href="/resources?type=Websites">
+
+                        <h3>
+                            Websites
+                        </h3>
+
+
+                        <p>
+
+                            Useful websites and online platforms
+                            for space science learning.
+
+                        </p>
+
+                    </a>
+
+
+                    <a href="/resources?type=Videos">
+
+                        <h3>
+                            Videos
+                        </h3>
+
+
+                        <p>
+
+                            Lectures, documentaries and educational
+                            videos about space and science.
+
+                        </p>
+
+                    </a>
+
+
+                    <a href="/resources?type=Tools">
+
+                        <h3>
+                            Tools
+                        </h3>
+
+
+                        <p>
+
+                            Software, simulations and other tools
+                            useful for exploring space science.
+
+                        </p>
+
+                    </a>
+
+
+                    <a href="/resources?type=Articles">
+
+                        <h3>
+                            Articles
+                        </h3>
+
+
+                        <p>
+
+                            Accessible articles and written explainers
+                            covering astronomy, astrophysics, physics
+                            and space science.
+
+                        </p>
+
+                    </a>
+
+
+                    <a href="/resources?type=Podcasts">
+
+                        <h3>
+                            Podcasts
+                        </h3>
+
+
+                        <p>
+
+                            Conversations, discussions and stories
+                            exploring astronomy, space and science.
+
+                        </p>
+
+                    </a>
+
+
+                    <a href="/resources?type=Notes">
+
+                        <h3>
+                            Notes
+                        </h3>
+
+
+                        <p>
+
+                            Concise study notes and summaries to help
+                            understand important space science concepts.
+
+                        </p>
+
+                    </a>
+
+
+                </div>
+
+            {% endif %}
 
             {% if role == "Organisation" and organisation_resources %}
 

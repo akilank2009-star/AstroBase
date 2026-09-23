@@ -2827,6 +2827,7 @@ def opportunities():
                 o.official_website,
                 o.status,
                 o.organisation_id,
+                o.is_featured,
                 org.organisation_name
             FROM opportunities o
             LEFT JOIN organisations org
@@ -3776,6 +3777,7 @@ def admin_opportunity_view(opportunity_id):
             o.deadline,
             o.official_website,
             o.status,
+            o.is_featured,
             o.organisation_id,
             o.review_reason,
             org.organisation_name
@@ -4493,13 +4495,15 @@ def reject_opportunity(opportunity_id):
 
 
     query = """
-        SELECT
-            opportunity_id,
-            status
-        FROM opportunities
+        UPDATE opportunities
+        SET
+            status = 'Rejected',
+            is_featured = FALSE,
+            reviewed_at = CURRENT_TIMESTAMP,
+            reviewed_by = %s,
+            review_reason = %s
         WHERE opportunity_id = %s
     """
-
 
     cursor.execute(
         query,
@@ -4532,6 +4536,7 @@ def reject_opportunity(opportunity_id):
         UPDATE opportunities
         SET
             status = 'Rejected',
+            is_featured = FALSE,
             reviewed_at = CURRENT_TIMESTAMP,
             reviewed_by = %s,
             review_reason = %s
@@ -4584,10 +4589,13 @@ def archive_opportunity(opportunity_id):
 
 
     query = """
-        SELECT
-            opportunity_id,
-            status
-        FROM opportunities
+        UPDATE opportunities
+        SET
+            status = 'Archived',
+            is_featured = FALSE,
+            reviewed_at = CURRENT_TIMESTAMP,
+            reviewed_by = %s,
+            review_reason = %s
         WHERE opportunity_id = %s
     """
 
@@ -4675,6 +4683,98 @@ def admin_archived_opportunities():
     return render_template(
         "admin_opportunities_archived.html",
         opportunities=opportunities
+    )
+
+
+# -------------------------
+# FEATURE / UNFEATURE OPPORTUNITY
+# -------------------------
+
+@app.route(
+    "/admin/opportunities/<int:opportunity_id>/feature",
+    methods=["POST"]
+)
+def toggle_opportunity_feature(opportunity_id):
+
+    if (
+        "user_id" not in session
+        or session.get("role") != "Admin"
+    ):
+
+        return redirect("/admin/login")
+
+
+    db = connect_db()
+
+    cursor = db.cursor(dictionary=True)
+
+
+    query = """
+        SELECT
+            opportunity_id,
+            status,
+            is_featured
+        FROM opportunities
+        WHERE opportunity_id = %s
+    """
+
+    cursor.execute(
+        query,
+        (opportunity_id,)
+    )
+
+
+    opportunity = cursor.fetchone()
+
+
+    if not opportunity:
+
+        cursor.close()
+        db.close()
+
+        return "Opportunity not found.", 404
+
+
+    if opportunity["status"] != "Published":
+
+        cursor.close()
+        db.close()
+
+        return "Only published opportunities can be featured.", 400
+
+
+    new_featured_status = not opportunity["is_featured"]
+
+
+    query = """
+        UPDATE opportunities
+
+        SET
+            is_featured = %s
+
+        WHERE
+            opportunity_id = %s
+            AND status = 'Published'
+    """
+
+    cursor.execute(
+        query,
+        (
+            new_featured_status,
+            opportunity_id
+        )
+    )
+
+
+    db.commit()
+
+
+    cursor.close()
+    db.close()
+
+
+    return redirect(
+        "/admin/opportunities"
     )
 
 

@@ -13340,3 +13340,14 @@ header nav a:hover {
     color: #05070D;
 
 }
+
+
+.featured-opportunities {
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 70px 40px 0;
+
+}
