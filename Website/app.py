@@ -3865,6 +3865,7 @@ def admin_opportunities():
             o.official_website,
             o.status,
             o.organisation_id,
+            o.is_featured,
             org.organisation_name
         FROM opportunities o
         LEFT JOIN organisations org
