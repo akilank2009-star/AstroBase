@@ -2809,6 +2809,36 @@ def opportunities():
         "organisation_id"
     )
 
+    # -------------------------
+    # FEATURED OPPORTUNITIES
+    # -------------------------
+
+    query = """
+        SELECT
+            o.opportunity_id,
+            o.opportunity_name,
+            o.category,
+            o.description,
+            o.eligibility,
+            o.deadline,
+            o.official_website,
+            o.status,
+            o.organisation_id,
+            o.is_featured,
+            org.organisation_name
+        FROM opportunities o
+        LEFT JOIN organisations org
+            ON o.organisation_id = org.organisation_id
+        WHERE
+            o.status = 'Published'
+            AND o.is_featured = TRUE
+        ORDER BY o.created_at DESC
+    """
+
+    cursor.execute(query)
+
+    featured_opportunities = cursor.fetchall()
+
 
     # -------------------------
     # PUBLIC / STUDENT
@@ -2923,6 +2953,7 @@ def opportunities():
     return render_template(
         "opportunities.html",
         opportunities=opportunities,
+        featured_opportunities=featured_opportunities,
         role=role,
         organisation_id=organisation_id
     )
