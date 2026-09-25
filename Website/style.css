@@ -13475,16 +13475,6 @@ header nav a:hover {
 }
 
 
-/* =========================================================
-   OPPORTUNITIES SPACING
-   ========================================================= */
-
-.featured-opportunities {
-
-    margin-top: 0;
-
-}
-
 
 /* =========================================================
    FEATURED OPPORTUNITY LINKS
@@ -13529,5 +13519,25 @@ header nav a:hover {
     border-color: #22D3EE;
 
     color: #67E8F9;
+
+}
+
+
+/* =========================================================
+   FEATURED OPPORTUNITIES ALIGNMENT
+   ========================================================= */
+
+.featured-opportunities {
+
+    width: 100%;
+
+    margin: 0;
+
+}
+
+
+.featured-opportunities .explore-label {
+
+    color: #F9FAFB;
 
 }
