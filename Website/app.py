@@ -45,7 +45,10 @@ def connect_db():
         port=int(os.getenv("MYSQL_PORT", "3306")),
         user=os.getenv("MYSQL_USER", "root"),
         password=os.getenv("MYSQL_PASSWORD"),
-        database=os.getenv("MYSQL_DATABASE", "astrobase_web")
+        database=os.getenv("MYSQL_DATABASE", "astrobase_web"),
+        ssl_ca=os.getenv("MYSQL_SSL_CA"),
+        ssl_verify_cert=True,
+        ssl_verify_identity=True
     )
 
 
