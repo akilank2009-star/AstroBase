@@ -23,7 +23,7 @@
         rel="stylesheet"
     >
 
-    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
 </head>
 
@@ -326,7 +326,8 @@
 
     </footer>
 
-    <script src="../script.js"></script>
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 
 </body>
 
