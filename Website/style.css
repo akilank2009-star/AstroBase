@@ -13543,8 +13543,17 @@ header nav a:hover {
 }
 
 
+/* Match the opportunity page width to the resource page */
+.opportunity-library {
+    width: min(830px, calc(100% - 40px)) !important;
+    max-width: 830px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box;
+}
 
-/* Add breathing room between the featured opportunity and search bar */
-.featured-opportunities {
-    margin-bottom: 32px !important;
+@media (max-width: 600px) {
+    .opportunity-library {
+        width: calc(100% - 32px) !important;
+    }
 }
