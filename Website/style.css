@@ -13541,3 +13541,10 @@ header nav a:hover {
     color: #F9FAFB;
 
 }
+
+
+
+/* Add breathing room between the featured opportunity and search bar */
+.featured-opportunities {
+    margin-bottom: 32px !important;
+}
