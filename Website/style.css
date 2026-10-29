@@ -15220,6 +15220,293 @@ header nav a:hover {
 
 
 
+/* =========================================
+   ADMIN FEEDBACK PAGE - ASTROBASE THEME
+========================================= */
+
+
+/* NAVIGATION BAR */
+
+body > header
+{
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 24px;
+
+    width: 100%;
+
+    padding: 18px 3%;
+
+    background: #172554;
+
+    border-bottom: 1px solid #243b70;
+
+    box-sizing: border-box;
+}
+
+
+body > header h2
+{
+    margin: 0;
+
+    color: #F9FAFB;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 1.25rem;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+body > header nav
+{
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+}
+
+
+body > header nav a
+{
+    color: #F9FAFB;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.95rem;
+
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+
+body > header nav a:hover
+{
+    color: #22D3EE;
+}
+
+
+/* MAIN PAGE LAYOUT */
+
+.admin-feedback-page
+{
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: 32px 28px 90px;
+
+    color: #F9FAFB;
+
+    box-sizing: border-box;
+}
+
+
+/* BACK LINK */
+
+.admin-feedback-page > .back-link
+{
+    display: inline-block;
+
+    margin: 12px 0 48px;
+
+    color: #9CA3AF;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.9rem;
+
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+
+.admin-feedback-page > .back-link:hover
+{
+    color: #22D3EE;
+}
+
+
+/* PAGE HEADER */
+
+.admin-feedback-page .feedback-page-header
+{
+    display: block;
+
+    margin: 0 0 56px;
+
+    padding: 0;
+
+    color: #F9FAFB;
+
+    background: transparent;
+
+    border: none;
+
+    border-radius: 0;
+
+    text-align: left;
+}
+
+
+.admin-feedback-page .feedback-page-header .explore-label
+{
+    margin-bottom: 16px;
+
+    color: #22D3EE;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.8rem;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+.admin-feedback-page .feedback-page-header h1
+{
+    margin: 0 0 20px;
+
+    color: #F9FAFB;
+
+    font-family: "Times New Roman", serif;
+
+    font-size: clamp(2.5rem, 5vw, 3.4rem);
+
+    font-weight: 400;
+
+    line-height: 1.15;
+
+    letter-spacing: normal;
+}
+
+
+.admin-feedback-page .feedback-page-header .admin-intro
+{
+    max-width: 700px;
+
+    margin: 0;
+
+    color: #9CA3AF;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 1rem;
+
+    line-height: 1.8;
+}
+
+
+/* SUMMARY CARDS */
+
+.admin-feedback-page .summary-grid
+{
+    gap: 20px;
+
+    margin-bottom: 64px;
+}
+
+
+.admin-feedback-page .summary-card
+{
+    background: #0B1120;
+
+    border: 1px solid #1E293B;
+
+    border-radius: 4px;
+}
+
+
+.admin-feedback-page .summary-card:hover
+{
+    border-color: #334155;
+
+    transform: translateY(-2px);
+}
+
+
+/* REPORTS SECTION */
+
+.admin-feedback-page .section-heading h2
+{
+    color: #F9FAFB;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 1.6rem;
+
+    font-weight: 600;
+}
+
+
+.admin-feedback-page .eyebrow
+{
+    color: #22D3EE;
+
+    font-family: "Space Grotesk", sans-serif;
+}
+
+
+/* RESPONSIVE NAVIGATION AND CONTENT */
+
+@media (max-width: 650px)
+{
+    body > header
+    {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 16px;
+
+        padding: 18px 20px;
+    }
+
+
+    body > header nav
+    {
+        flex-wrap: wrap;
+
+        gap: 18px;
+    }
+
+
+    .admin-feedback-page
+    {
+        padding: 24px 18px 60px;
+    }
+
+
+    .admin-feedback-page > .back-link
+    {
+        margin-bottom: 36px;
+    }
+
+
+    .admin-feedback-page .feedback-page-header
+    {
+        margin-bottom: 42px;
+    }
+}
+
+
+
 
 /* Match opportunity library alignment to the resource library */
 .opportunity-library {
