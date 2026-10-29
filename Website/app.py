@@ -4614,16 +4614,31 @@ def archive_opportunity(opportunity_id):
         "user_id" not in session
         or session.get("role") != "Admin"
     ):
-
         return redirect("/admin/login")
 
-
     db = connect_db()
-
     cursor = db.cursor(dictionary=True)
 
+    # Check that the opportunity exists
+    cursor.execute(
+        """
+        SELECT opportunity_id
+        FROM opportunities
+        WHERE opportunity_id = %s
+        """,
+        (opportunity_id,)
+    )
 
-    query = """
+    opportunity = cursor.fetchone()
+
+    if not opportunity:
+        cursor.close()
+        db.close()
+        return "Opportunity not found.", 404
+
+    # Archive it and remove it from featured opportunities
+    cursor.execute(
+        """
         UPDATE opportunities
         SET
             status = 'Archived',
@@ -4632,40 +4647,7 @@ def archive_opportunity(opportunity_id):
             reviewed_by = %s,
             review_reason = %s
         WHERE opportunity_id = %s
-    """
-
-
-    cursor.execute(
-        query,
-        (opportunity_id,)
-    )
-
-
-    opportunity = cursor.fetchone()
-
-
-    if not opportunity:
-
-        cursor.close()
-
-        db.close()
-
-        return "Opportunity not found.", 404
-
-
-    query = """
-        UPDATE opportunities
-        SET
-            status = 'Archived',
-            reviewed_at = CURRENT_TIMESTAMP,
-            reviewed_by = %s,
-            review_reason = %s
-        WHERE opportunity_id = %s
-    """
-
-
-    cursor.execute(
-        query,
+        """,
         (
             session["user_id"],
             "Opportunity archived.",
@@ -4673,14 +4655,9 @@ def archive_opportunity(opportunity_id):
         )
     )
 
-
     db.commit()
-
-
     cursor.close()
-
     db.close()
-
 
     return redirect("/admin/opportunities")
 
