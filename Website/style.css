@@ -13968,20 +13968,20 @@ header nav a:hover {
    ADMIN FEEDBACK MANAGEMENT
 ========================================= */
 
+
 .admin-feedback-page
 {
-
     width: 100%;
 
-    max-width: 1250px;
+    max-width: 1060px;
 
     margin: 0 auto;
 
-    padding: 55px 28px 90px;
+    padding: 32px 28px 90px;
 
     color: #f1f5f9;
-
 }
+
 
 
 /* =========================================
@@ -15187,16 +15187,24 @@ header nav a:hover {
 
 /* FEEDBACK PAGE HEADER */
 
+
 .admin-feedback-page .feedback-page-header
 {
     margin-top: 3rem;
+
     margin-bottom: 3rem;
+
     padding: 0;
+
     background: transparent;
+
     border: none;
+
     border-radius: 0;
+
     text-align: left;
 }
+
 
 .admin-feedback-page .feedback-page-header h1
 {
