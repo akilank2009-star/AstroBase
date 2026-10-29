@@ -5,33 +5,51 @@ console.log("Astrobase website loaded!");
 // AI POPUP
 // =========================
 
-const aiButton =
-    document.getElementById("aiButton");
+function setupAiWidget() {
+    // Add the widget if this page doesn't already have it
+    if (!document.getElementById("aiButton")) {
+        document.body.insertAdjacentHTML(
+            "beforeend",
+            `
+            <button class="ai-button" id="aiButton" type="button">
+                AI
+            </button>
 
-const aiPopup =
-    document.getElementById("aiPopup");
+            <div class="ai-popup" id="aiPopup">
+                <button class="ai-close" id="aiClose" type="button" aria-label="Close">
+                    ×
+                </button>
 
-const aiClose =
-    document.getElementById("aiClose");
+                <h2>Astrobase AI</h2>
+                <p>Astrobase AI is currently under development.</p>
+                <p>
+                    Intelligent guidance for your journey through space science
+                    is coming soon.
+                </p>
+            </div>
+            `
+        );
+    }
 
+    const aiButton = document.getElementById("aiButton");
+    const aiPopup = document.getElementById("aiPopup");
+    const aiClose = document.getElementById("aiClose");
 
-if (aiButton && aiPopup && aiClose) {
+    if (aiButton && aiPopup && aiClose) {
+        aiButton.addEventListener("click", function () {
+            aiPopup.style.display = "block";
+        });
 
-    aiButton.addEventListener("click", function() {
+        aiClose.addEventListener("click", function () {
+            aiPopup.style.display = "none";
+        });
+    }
+}
 
-        aiPopup.style.display =
-            "block";
-
-    });
-
-
-    aiClose.addEventListener("click", function() {
-
-        aiPopup.style.display =
-            "none";
-
-    });
-
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", setupAiWidget);
+} else {
+    setupAiWidget();
 }
 
 
