@@ -4506,6 +4506,11 @@ def approve_opportunity(opportunity_id):
     return redirect("/admin/opportunities")
 
 
+
+# -------------------------
+# REJECT OPPORTUNITY
+# -------------------------
+
 @app.route(
     "/admin/opportunities/<int:opportunity_id>/reject",
     methods=["POST"]
@@ -4521,7 +4526,7 @@ def reject_opportunity(opportunity_id):
     db = connect_db()
     cursor = db.cursor(dictionary=True)
 
-    # Check that the opportunity exists and is pending
+    # Check whether the opportunity exists
     cursor.execute(
         """
         SELECT opportunity_id, status
@@ -4538,6 +4543,7 @@ def reject_opportunity(opportunity_id):
         db.close()
         return "Opportunity not found.", 404
 
+    # Only pending opportunities can be rejected
     if opportunity["status"] != "Pending":
         cursor.close()
         db.close()
@@ -4589,7 +4595,7 @@ def archive_opportunity(opportunity_id):
     db = connect_db()
     cursor = db.cursor(dictionary=True)
 
-    # Check that the opportunity exists
+    # First, check whether the opportunity exists
     cursor.execute(
         """
         SELECT opportunity_id
@@ -4606,7 +4612,7 @@ def archive_opportunity(opportunity_id):
         db.close()
         return "Opportunity not found.", 404
 
-    # Archive it and remove it from featured opportunities
+    # Archive the opportunity
     cursor.execute(
         """
         UPDATE opportunities
