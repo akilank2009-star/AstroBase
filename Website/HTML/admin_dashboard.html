@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -22,7 +23,7 @@
 
     <link
         rel="preconnect"
-        href="https://fonts.googleapis.com"
+        href="https://fonts.gstatic.com"
         crossorigin
     >
 
@@ -39,6 +40,8 @@
 </head>
 
 <body>
+
+    <!-- NAVIGATION BAR -->
 
     <header>
 
@@ -61,11 +64,21 @@
     </header>
 
 
+    <!-- MAIN CONTENT -->
+
     <main>
 
-        <a class="back-link" href="/">← Back to Astrobase</a>
+        <a
+            class="back-link"
+            href="/"
+        >
+            ← Back to Astrobase
+        </a>
+
 
         <section class="admin-dashboard-section">
+
+            <!-- PAGE HEADER -->
 
             <p class="explore-label">
                 ADMINISTRATION
@@ -80,6 +93,8 @@
                 activity.
             </p>
 
+
+            <!-- NEEDS ATTENTION -->
 
             <section class="admin-attention">
 
@@ -141,15 +156,21 @@
                     </div>
 
 
+                    <!-- FEEDBACK SUMMARY -->
+
                     <div class="admin-stat">
 
                         <span>
-                            Reports
+                            Pending Reports
                         </span>
 
                         <strong>
                             {{ pending_reports }}
                         </strong>
+
+                        <a href="/admin/feedback">
+                            Review Reports →
+                        </a>
 
                     </div>
 
@@ -157,7 +178,13 @@
 
             </section>
 
+
+            <!-- MANAGEMENT SECTIONS -->
+
             <section class="admin-management">
+
+
+                <!-- ORGANISATIONS -->
 
                 <div class="admin-dashboard-card">
 
@@ -180,6 +207,8 @@
 
                 </div>
 
+
+                <!-- OPPORTUNITIES -->
 
                 <div class="admin-dashboard-card">
 
@@ -204,6 +233,8 @@
                 </div>
 
 
+                <!-- RESOURCES -->
+
                 <div class="admin-dashboard-card">
 
                     <p class="explore-label">
@@ -226,6 +257,8 @@
                 </div>
 
 
+                <!-- UNIVERSITIES -->
+
                 <div class="admin-dashboard-card">
 
                     <p class="explore-label">
@@ -247,12 +280,40 @@
 
                 </div>
 
+
+                <!-- FEEDBACK MANAGEMENT -->
+
+                <div class="admin-dashboard-card">
+
+                    <p class="explore-label">
+                        COMMUNITY FEEDBACK
+                    </p>
+
+                    <h2>
+                        Feedback Management
+                    </h2>
+
+                    <p>
+                        Review reports, identify website issues,
+                        evaluate suggestions and track their
+                        resolution status.
+                    </p>
+
+                    <a href="/admin/feedback">
+                        Manage Feedback
+                    </a>
+
+                </div>
+
+
             </section>
 
         </section>
 
     </main>
 
+
+    <!-- FOOTER -->
 
     <footer>
 
@@ -262,6 +323,8 @@
 
     </footer>
 
+
+    <!-- ASTROBASE JAVASCRIPT -->
 
     <script
         src="{{ url_for('static', filename='script.js') }}"
