@@ -13543,17 +13543,28 @@ header nav a:hover {
 }
 
 
-/* Match the opportunity page width to the resource page */
+/* Match opportunity library alignment to the resource library */
 .opportunity-library {
-    width: min(830px, calc(100% - 40px)) !important;
-    max-width: 830px !important;
+    width: 100% !important;
+    max-width: 1100px !important;
     margin-left: auto !important;
     margin-right: auto !important;
+    padding-left: 40px !important;
+    padding-right: 40px !important;
     box-sizing: border-box;
+}
+
+/* Remove the extra side padding inside the featured section */
+.opportunity-library .featured-opportunities {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 70px 0 55px !important;
+    padding: 0 !important;
 }
 
 @media (max-width: 600px) {
     .opportunity-library {
-        width: calc(100% - 32px) !important;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
     }
 }
