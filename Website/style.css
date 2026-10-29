@@ -15561,3 +15561,25 @@ body > header nav a:hover
         padding-right: 16px !important;
     }
 }
+
+
+.admin-feedback-page .feedback-page-header {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    text-align: center !important;
+}
+
+.admin-feedback-page .feedback-page-header > * {
+    text-align: center !important;
+}
+
+.admin-feedback-page .feedback-page-header .admin-intro {
+    width: min(800px, 100%);
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.admin-feedback-page .feedback-page-header .explore-label {
+    color: #FFFFFF !important;
+}
