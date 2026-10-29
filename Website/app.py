@@ -4506,10 +4506,6 @@ def approve_opportunity(opportunity_id):
     return redirect("/admin/opportunities")
 
 
-# -------------------------
-# REJECT OPPORTUNITY
-# -------------------------
-
 @app.route(
     "/admin/opportunities/<int:opportunity_id>/reject",
     methods=["POST"]
@@ -4520,54 +4516,36 @@ def reject_opportunity(opportunity_id):
         "user_id" not in session
         or session.get("role") != "Admin"
     ):
-
         return redirect("/admin/login")
 
-
     db = connect_db()
-
     cursor = db.cursor(dictionary=True)
 
-
-    query = """
-        UPDATE opportunities
-        SET
-            status = 'Rejected',
-            is_featured = FALSE,
-            reviewed_at = CURRENT_TIMESTAMP,
-            reviewed_by = %s,
-            review_reason = %s
-        WHERE opportunity_id = %s
-    """
-
+    # Check that the opportunity exists and is pending
     cursor.execute(
-        query,
+        """
+        SELECT opportunity_id, status
+        FROM opportunities
+        WHERE opportunity_id = %s
+        """,
         (opportunity_id,)
     )
 
-
     opportunity = cursor.fetchone()
 
-
     if not opportunity:
-
         cursor.close()
-
         db.close()
-
         return "Opportunity not found.", 404
 
-
     if opportunity["status"] != "Pending":
-
         cursor.close()
-
         db.close()
-
         return "This opportunity has already been reviewed.", 400
 
-
-    query = """
+    # Reject the opportunity
+    cursor.execute(
+        """
         UPDATE opportunities
         SET
             status = 'Rejected',
@@ -4576,11 +4554,8 @@ def reject_opportunity(opportunity_id):
             reviewed_by = %s,
             review_reason = %s
         WHERE opportunity_id = %s
-    """
-
-
-    cursor.execute(
-        query,
+          AND status = 'Pending'
+        """,
         (
             session["user_id"],
             "Opportunity rejected.",
@@ -4588,14 +4563,9 @@ def reject_opportunity(opportunity_id):
         )
     )
 
-
     db.commit()
-
-
     cursor.close()
-
     db.close()
-
 
     return redirect("/admin/opportunities")
 
