@@ -181,4 +181,15 @@ By bringing opportunities, educational resources, universities, and future guida
 
 ---
 
+### 🔐 Admin Dashboard Access
+
+The Astrobase Admin Dashboard provides administrative tools for managing platform content and reviewing user feedback.
+
+Admin access is restricted and is not available through public registration. If you would like to explore the Admin Dashboard or test its functionality, please contact me to arrange access to a demo account.
+
+- **Email:** [akilank2009@gmail.com]  
+- **Hack Club Slack:** Find me as **astrobase** on Hack Club Slack.
+
+For security reasons, administrator credentials are not published in this repository.
+
 *Developed by Akil, with AI assistance from ChatGPT.*
