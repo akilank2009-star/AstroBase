@@ -8384,9 +8384,121 @@ def report():
     )
 
 
+
 # -------------------------
-# PUBLIC PAGES
+# ADMIN FEEDBACK MANAGEMENT
 # -------------------------
+
+@app.route("/admin/feedback")
+def admin_feedback():
+
+    if (
+        "user_id" not in session
+        or session.get("role") != "Admin"
+    ):
+        return redirect("/admin/login")
+
+    db = connect_db()
+    cursor = db.cursor(dictionary=True)
+
+    cursor.execute("""
+        SELECT
+            r.report_id,
+            r.user_id,
+            u.name AS reporter_name,
+            u.email AS reporter_email,
+            r.report_text,
+            r.status,
+            r.admin_notes,
+            r.reviewed_by,
+            r.reviewed_at,
+            r.created_at
+        FROM reports AS r
+        JOIN users AS u
+            ON r.user_id = u.user_id
+        ORDER BY r.created_at DESC
+    """)
+
+    reports = cursor.fetchall()
+
+    cursor.execute("""
+        SELECT
+            COUNT(*) AS total,
+            COALESCE(SUM(status = 'Pending'), 0) AS pending,
+            COALESCE(SUM(status = 'Checking'), 0) AS checking,
+            COALESCE(SUM(status = 'Resolved'), 0) AS resolved,
+            COALESCE(SUM(status = 'Dismissed'), 0) AS dismissed
+        FROM reports
+    """)
+
+    counts = cursor.fetchone()
+
+    cursor.close()
+    db.close()
+
+    return render_template(
+        "admin_report.html",
+        reports=reports,
+        total_reports=counts["total"],
+        new_reports=counts["pending"],
+        checking_reports=counts["checking"],
+        resolved_reports=counts["resolved"],
+        dismissed_reports=counts["dismissed"]
+    )
+
+
+@app.route(
+    "/admin/feedback/<int:report_id>/status",
+    methods=["POST"]
+)
+def update_feedback_status(report_id):
+
+    if (
+        "user_id" not in session
+        or session.get("role") != "Admin"
+    ):
+        return redirect("/admin/login")
+
+    status = request.form.get("status", "").strip()
+
+    allowed_statuses = {
+        "Pending",
+        "Checking",
+        "Resolved",
+        "Dismissed"
+    }
+
+    if status not in allowed_statuses:
+        return redirect("/admin/feedback")
+
+    db = connect_db()
+    cursor = db.cursor()
+
+    cursor.execute("""
+        UPDATE reports
+        SET
+            status = %s,
+            reviewed_by = %s,
+            reviewed_at = NOW()
+        WHERE report_id = %s
+    """, (
+        status,
+        session["user_id"],
+        report_id
+    ))
+
+    if cursor.rowcount == 0:
+        cursor.close()
+        db.close()
+        return redirect("/admin/feedback")
+
+    db.commit()
+
+    cursor.close()
+    db.close()
+
+    return redirect("/admin/feedback")
+
 
 # -------------------------
 # PUBLIC PAGES

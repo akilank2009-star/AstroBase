@@ -1,0 +1,493 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Feedback Management | AstroBase</title>
+
+    <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}"
+>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <a href="/" class="logo">Astrobase</a>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/admin">Admin Dashboard</a>
+            <a href="/logout">Logout</a>
+        </div>
+
+    </nav>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="admin-feedback-page">
+
+        <!-- PAGE HEADER -->
+
+        <header class="page-header">
+
+            <a href="/admin" class="back-link">
+                &larr; Back to Admin Dashboard
+            </a>
+
+            <p class="eyebrow">ASTROBASE ADMINISTRATION</p>
+
+            <h1>Feedback Management</h1>
+
+            <p class="page-description">
+                Review reports, track issues, and manage suggestions
+                submitted by the AstroBase community.
+            </p>
+
+        </header>
+
+
+        <!-- SUMMARY CARDS -->
+
+        <section class="summary-grid">
+
+            <article class="summary-card">
+                <p class="summary-label">Total Reports</p>
+                <h2>{{ total_reports }}</h2>
+                <p class="summary-description">
+                    All submissions received
+                </p>
+            </article>
+
+            {{ report.report_text }}<article class="summary-card status-pending">
+                <p class="summary-label">Pending</p>
+                <h2>{{ new_reports }}</h2>
+                <p class="summary-description">
+                    Awaiting review
+                </p>
+            </article>
+
+            <article class="summary-card status-checking">
+                <p class="summary-label">Checking</p>
+                <h2>{{ checking_reports }}</h2>
+                <p class="summary-description">
+                    Currently under review
+                </p>
+            </article>
+
+            <article class="summary-card status-resolved">
+                <p class="summary-label">Resolved</p>
+                <h2>{{ resolved_reports }}</h2>
+                <p class="summary-description">
+                    Addressed by the admin
+                </p>
+            </article>
+
+        </section>
+
+
+        <!-- REPORTS SECTION -->
+
+        <section class="reports-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="eyebrow">COMMUNITY FEEDBACK</p>
+                    <h2>Submitted Reports</h2>
+                </div>
+
+                <span class="report-count">
+                    {{ total_reports }} reports
+                </span>
+
+            </div>
+
+
+            <!-- SEARCH AND FILTER -->
+
+            <div class="report-controls">
+
+                <div class="search-box">
+                    <label for="reportSearch" class="visually-hidden">
+                        Search reports
+                    </label>
+
+                    <input
+                        type="search"
+                        id="reportSearch"
+                        placeholder="Search reports or users..."
+                    >
+                </div>
+
+                <div class="filter-box">
+
+                    <label for="statusFilter">
+                        Status
+                    </label>
+
+                    <select id="statusFilter">
+
+                        <option value="all">All Reports</option>
+                        <option value="pending">Pending</option>
+                        <option value="checking">Checking</option>
+                        <option value="resolved">Resolved</option>
+                        <option value="dismissed">Dismissed</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- REPORT TABLE -->
+
+            <div class="table-container">
+
+                <table class="reports-table">
+
+                    <thead>
+
+                        <tr>
+                            <th>Report</th>
+                            <th>Submitted By</th>
+                            <th>Submission</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="reportsTableBody">
+
+                        {% for report in reports %}
+
+                        <tr class="report-row">
+
+                            <td class="report-id">
+                                #{{ report.report_id }}
+                            </td>
+
+                            <td class="reporter-cell">
+
+                                <span class="reporter-name">
+                                    {{ report.reporter_name }}
+                                </span>
+
+                                <span class="reporter-email">
+                                    {{ report.reporter_email }}
+                                </span>
+
+                            </td>
+
+                            <td class="submission-cell">
+
+                                <p class="submission-text">
+                                    {{ report.report_text }}
+                                </p>
+
+                                <button
+                                    type="button"
+                                    class="text-button view-report"
+                                    data-message="{{ report.message | e }}"
+                                >
+                                    View full report
+                                </button>
+
+                            </td>
+
+                            <td class="date-cell">
+                                {{ report.created_at }}
+                            </td>
+
+                            <td>
+
+                                <span
+                                    class="status-badge status-{{ report.status | lower }}"
+                                >
+                                    {{ report.status }}
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <button
+                                    type="button"
+                                    class="action-button"
+                                    data-report-id="{{ report.report_id }}"
+                                >
+                                    Manage
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+                        {% else %}
+
+                        <tr>
+                            <td colspan="6" class="empty-state">
+
+                                <div class="empty-icon">✦</div>
+
+                                <h3>No feedback yet</h3>
+
+                                <p>
+                                    User reports and suggestions will
+                                    appear here when submitted.
+                                </p>
+
+                            </td>
+                        </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- REPORT DETAILS MODAL -->
+
+    <dialog id="reportModal" class="report-modal">
+
+        <div class="modal-header">
+
+            <div>
+                <p class="eyebrow">SUBMISSION DETAILS</p>
+                <h2>Report Details</h2>
+            </div>
+
+            <button
+                type="button"
+                class="close-modal"
+                id="closeModal"
+                aria-label="Close report details"
+            >
+                &times;
+            </button>
+
+        </div>
+
+        <div class="modal-body">
+
+            <p class="modal-label">Full submission</p>
+
+            <p id="fullReportMessage" class="full-report-message"></p>
+
+        </div>
+
+        <div class="modal-footer">
+
+            <button
+                type="button"
+                class="secondary-button"
+                id="closeModalFooter"
+            >
+                Close
+            </button>
+
+        </div>
+
+    </dialog>
+
+
+    <!-- STATUS MANAGEMENT MODAL -->
+
+    <dialog id="statusModal" class="report-modal">
+
+        <form id="statusForm" method="POST" action="/admin/feedback/0/status">
+
+            <div class="modal-header">
+
+                <div>
+                    <p class="eyebrow">ADMINISTRATION</p>
+                    <h2>Update Report Status</h2>
+                </div>
+
+                <button
+                    type="button"
+                    class="close-modal"
+                    id="closeStatusModal"
+                    aria-label="Close status editor"
+                >
+                    &times;
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <input
+                    type="hidden"
+                    name="report_id"
+                    id="statusReportId"
+                >
+
+                <label for="reportStatus">
+                    Current report status
+                </label>
+
+                <select id="reportStatus" name="status" required>
+
+                    <option value="Pending">Pending</option>
+                    <option value="Checking">Checking</option>
+                    <option value="Resolved">Resolved</option>
+                    <option value="Dismissed">Dismissed</option>
+
+                </select>
+
+                <p class="form-hint">
+                    Update the status to reflect the progress of
+                    this report. No reply to the user is required.
+                </p>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    id="cancelStatus"
+                >
+                    Cancel
+                </button>
+
+                <button type="submit" class="primary-button">
+                    Save Status
+                </button>
+
+            </div>
+
+        </form>
+
+    </dialog>
+
+
+    <!-- FRONTEND INTERACTIONS -->
+
+    <script>
+
+        const searchInput = document.getElementById("reportSearch");
+        const statusFilter = document.getElementById("statusFilter");
+        const reportRows = document.querySelectorAll(".report-row");
+
+        function filterReports() {
+
+            const searchTerm = searchInput.value.toLowerCase();
+            const selectedStatus = statusFilter.value.toLowerCase();
+
+            reportRows.forEach(row => {
+
+                const rowText = row.textContent.toLowerCase();
+                const badge = row.querySelector(".status-badge");
+
+                const rowStatus = badge
+                    ? badge.textContent.trim().toLowerCase()
+                    : "";
+
+                const matchesSearch = rowText.includes(searchTerm);
+
+                const matchesStatus =
+                    selectedStatus === "all" ||
+                    rowStatus === selectedStatus;
+
+                row.style.display =
+                    matchesSearch && matchesStatus ? "" : "none";
+
+            });
+
+        }
+
+        searchInput.addEventListener("input", filterReports);
+        statusFilter.addEventListener("change", filterReports);
+
+
+        // View full report
+
+        const reportModal = document.getElementById("reportModal");
+        const fullReportMessage = document.getElementById("fullReportMessage");
+
+        document.querySelectorAll(".view-report").forEach(button => {
+
+            button.addEventListener("click", () => {
+
+                fullReportMessage.textContent = button.dataset.message;
+                reportModal.showModal();
+
+            });
+
+        });
+
+        document.getElementById("closeModal").addEventListener("click", () => {
+            reportModal.close();
+        });
+
+        document.getElementById("closeModalFooter").addEventListener("click", () => {
+            reportModal.close();
+        });
+
+
+        // Open status editor
+
+        const statusModal = document.getElementById("statusModal");
+        const statusReportId = document.getElementById("statusReportId");
+        const reportStatus = document.getElementById("reportStatus");
+        const statusForm = document.getElementById("statusForm");
+
+        document.querySelectorAll(".action-button").forEach(button => {
+
+            button.addEventListener("click", () => {
+
+                const row = button.closest("tr");
+                const badge = row.querySelector(".status-badge");
+
+                statusReportId.value = button.dataset.reportId;
+
+                statusForm.action = `/admin/feedback/${statusReportId.value}/status`;
+
+                const currentStatus = badge.textContent.trim();
+
+                reportStatus.value =
+                    ["Pending", "Checking", "Resolved", "Dismissed"]
+                    .includes(currentStatus)
+                        ? currentStatus
+                        : "Pending";
+
+                statusModal.showModal();
+
+            });
+
+        });
+
+        document.getElementById("closeStatusModal").addEventListener("click", () => {
+            statusModal.close();
+        });
+
+        document.getElementById("cancelStatus").addEventListener("click", () => {
+            statusModal.close();
+        });
+
+    </script>
+
+</body>
+
+</html>
