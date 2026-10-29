@@ -15185,6 +15185,32 @@ header nav a:hover {
 }
 
 
+/* FEEDBACK PAGE HEADER */
+
+.admin-feedback-page .feedback-page-header
+{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    text-align: left;
+}
+
+.admin-feedback-page .feedback-page-header h1
+{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.admin-feedback-page .feedback-page-header .admin-intro
+{
+    max-width: 700px;
+    margin-top: 1rem;
+}
+
+
 
 
 /* Match opportunity library alignment to the resource library */
