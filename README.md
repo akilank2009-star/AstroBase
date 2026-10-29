@@ -1,136 +1,184 @@
-# Astrobase
+# 🌌 Astrobase
 
-Astrobase is a platform designed to help students explore opportunities, resources, universities and pathways related to astronomy, astrophysics, physics and space science.
+**Your gateway to opportunities, resources, and pathways in astronomy, astrophysics, physics, and space science.**
 
-The goal of Astrobase is to bring useful information for students interested in space science into one place, making it easier to discover opportunities, learn through resources, explore universities and understand different pathways into the field.
+Astrobase is a student-focused platform designed to bring educational resources, opportunities, and university information related to space science into one place.
 
-## Why Astrobase?
+The project aims to make it easier for students to discover competitions, research programmes, scholarships, educational material, and potential academic pathways without having to search across countless separate websites.
 
-Students interested in astronomy and space science often have to search across many different websites to find competitions, research programmes, internships, educational resources and university programmes.
+> *The universe is vast. Your path is yours.*
 
-Astrobase aims to make this process simpler by bringing these different types of information together into a single platform.
+---
 
-The universe is vast. There isn't just one path through it.
+## 🎯 Why Astrobase?
 
-## Features
+Students interested in astronomy and space science often struggle to find reliable, relevant information about opportunities and educational pathways. Useful information is scattered across university websites, competition announcements, research organisations, and educational platforms.
 
-### Students
+Astrobase aims to simplify this process through a central platform where students can explore opportunities, discover learning resources, and investigate universities and programmes.
 
-- Student registration and authentication
-- Personal student profiles
-- Explore opportunities
-- Explore educational resources
-- Explore universities and programmes
-- Search and discovery features
-- Save relevant opportunities and resources
-- Personal reports and information
-- Access to community features
+The long-term vision is to develop Astrobase into a broader space-science discovery and guidance platform.
 
-### Organisations
+## ✨ Current Development
 
-- Organisation registration and application
-- Organisation verification workflow
-- Organisation profiles
-- Organisation dashboard
-- Submit resources
-- Submit opportunities
-- Manage submitted content
-- Contribute university information
-- Track organisation submissions
+Astrobase is under active development. The project currently includes website pages and administrative functionality, with further platform features planned for future development.
 
-### Admin
+### Implemented website and administration features
 
-- Admin authentication
-- Organisation verification
-- Review organisation applications
-- Review submitted opportunities
-- Review submitted resources
-- Manage university information
-- Edit submitted content
-- Approve or reject submissions
-- Archive content
-- Content moderation and management
+- A multi-page website with a consistent visual identity.
+- Dedicated sections for opportunities, resources, and universities.
+- An Explore section for discovering Astrobase's content.
+- Login and registration interface pages.
+- An administrative dashboard for managing platform content.
+- A Feedback Management page for reviewing user reports.
+- Report summary cards showing total reports and status counts.
+- Search and status filtering for submitted reports.
+- A full-report viewer.
+- Administrative controls for updating report statuses.
+- Responsive styling and a consistent dark-themed interface.
 
-## Content Workflows
+**Note:** The presence of a page or interface does not necessarily mean its complete backend workflow is finished. Database integration, authentication, and individual features are being developed and verified as the project progresses.
 
-Astrobase uses structured workflows to help keep contributed content organised.
-
-### Organisation Verification
-
-Organisation applications follow a verification process:
-
-`Application → Admin Review → Verified / Rejected`
-
-### Content Submission
-
-Content submitted by organisations can go through an approval process:
-
-`Draft → Pending → Published → Expired / Closed → Archived`
-
-This allows organisations to contribute information while keeping final publishing under administrative review.
-
-## Main Sections
+## 🧭 Main Sections
 
 ### Opportunities
 
-A collection of opportunities related to astronomy, astrophysics, physics and space science, including competitions, internships, programmes, scholarships, research opportunities and other activities.
+A dedicated section for discovering opportunities related to astronomy, astrophysics, physics, and space science, including competitions, internships, scholarships, research programmes, and workshops.
 
 ### Resources
 
-Educational material intended to help students learn and explore different areas of space science.
+A planned resource library covering books, courses, research papers, educational websites, videos, tools, articles, notes, and podcasts.
 
 ### Universities
 
-Information about universities and programmes relevant to students interested in physics, astronomy, astrophysics and related fields.
+A section intended to help students explore universities and academic programmes relevant to physics, astronomy, astrophysics, and related fields.
 
 ### Explore
 
-A broader discovery area designed to help students explore different pathways and areas of interest rather than following a single predefined route.
+A central discovery hub connecting the different sections of Astrobase and helping students investigate possible pathways into space science.
+
+### Feedback Management
+
+An administrative interface for viewing submitted reports, searching and filtering submissions, viewing full report details, and updating report statuses.
 
 ### Community
 
-A planned space for students and space enthusiasts to interact, share knowledge and build a wider community around space science.
+A future feature intended to provide a space for students, researchers, and space enthusiasts to exchange knowledge, discuss ideas, and collaborate.
 
-## User Roles
+---
 
-Astrobase currently uses three primary roles:
+## 🏗️ Planned Platform Architecture
 
-| Role | Purpose |
-| --- | --- |
-| Student | Explore opportunities, resources, universities and personal features |
+Astrobase is being designed around three primary account roles.
+
+| Role | Intended purpose |
+|---|---|
+| Student | Discover content and access personal features |
 | Organisation | Contribute and manage approved content |
-| Admin | Verify organisations and manage platform content |
+| Admin | Verify organisations, review submissions, and manage the platform |
 
-Each account has one primary role, with access controlled through role-based permissions.
+The intended platform will include organisation verification, content submission and approval workflows, student profiles, saved items, and role-based permissions.
 
-## Tech Stack
+### Content workflow
 
-- Python
-- Flask
-- MySQL
-- HTML
-- CSS
-- JavaScript
-- mysql-connector-python
-- python-dotenv
+The planned opportunity workflow is:
 
-## Project Structure
+`Draft → Pending → Published → Expired / Closed → Archived`
 
-```text
-AstroBase
-├── README.md
-├── requirements.txt
-└── Website
-    ├── app.py
-    ├── HTML
-    │   ├── index.html
-    │   ├── login.html
-    │   ├── register.html
-    │   ├── opportunities.html
-    │   ├── resources.html
-    │   ├── universities.html
-    │   └── ...
-    ├── Images
-    ├── script.js
-    ├── style.css
-    └── astrobase_schema.sql
+Organisation applications will follow a separate verification process:
+
+`Application → Admin Review → Verified / Rejected`
+
+These workflows are part of the platform's design and will be implemented progressively.
+
+## 🤖 Future AI Systems
+
+Astrobase's long-term roadmap includes three distinct AI systems:
+
+- **Astrobase AI:** Personalised guidance and discovery across the platform.
+- **Chatbot AI:** Quick answers about Astrobase and general science or space-related questions.
+- **University Advisor AI:** Guidance for exploring universities and academic programmes based on a student's interests and preferences.
+
+These systems are planned features and are not presented as completed functionality.
+
+## 🛠️ Technology Stack
+
+The project uses or is being developed around the following technologies:
+
+- **Python** for backend programming.
+- **Flask** for web application routing and backend functionality.
+- **MySQL** for structured data storage.
+- **HTML** for page structure.
+- **CSS** for styling and responsive layouts.
+- **JavaScript** for frontend interactions.
+- **mysql-connector-python** for Python–MySQL connectivity.
+- **python-dotenv** for environment-based configuration.
+
+The frontend, backend, and database are intended to work together as the platform develops.
+
+## 👨‍🚀 Development & Contributions
+
+Astrobase is a personal project developed by **Akil**, with AI assistance from ChatGPT.
+
+### My contributions
+
+I lead the project and make the decisions that shape Astrobase's direction and functionality. My work includes:
+
+- Defining the project's purpose, goals, and long-term vision.
+- Designing the platform's architecture, account roles, and content workflows.
+- Building and refining the website's HTML and CSS.
+- Working on the frontend interface and JavaScript interactions.
+- Developing the Python and Flask backend.
+- Planning database structures and MySQL integration.
+- Testing features, identifying issues, and refining the user experience.
+- Deciding which features to implement and prioritising future development.
+
+### AI assistance
+
+ChatGPT has assisted during development by:
+
+- Explaining programming concepts and technical decisions.
+- Suggesting and generating code for selected features.
+- Helping debug errors and troubleshoot implementation issues.
+- Recommending interface and CSS improvements.
+- Assisting with architecture planning and documentation.
+- Helping organise the project roadmap.
+
+AI-generated suggestions are reviewed and adapted as part of the development process. The project direction, feature decisions, testing, and final implementation choices remain under my responsibility.
+
+This distinction reflects the collaborative nature of the development process without presenting AI-assisted work as exclusively human-written.
+
+## 🚀 Development Roadmap
+
+The next stages of development include:
+
+- Completing and refining the MySQL database architecture.
+- Developing backend routes and database integration.
+- Implementing and strengthening authentication and role-based permissions.
+- Connecting website sections to real database records.
+- Developing student, organisation, and admin dashboards.
+- Expanding content moderation and management workflows.
+- Implementing notification and audit systems.
+- Developing the three planned AI systems.
+- Exploring community functionality in a future version.
+
+Planned features will be marked as such until they are implemented and tested.
+
+## 🔒 Configuration & Security
+
+Configuration and database credentials should be stored in environment variables rather than hardcoded into the source code.
+
+A local `.env` file should not be committed to the repository. A `.env.example` file can be provided with placeholder values to document the required configuration.
+
+Authentication, permissions, database security, and deployment practices will continue to be developed as Astrobase moves toward a more complete platform.
+
+## 🌠 Project Vision
+
+Astrobase is more than a directory of links. Its long-term goal is to help students navigate the many possible routes into astronomy, astrophysics, physics, and space science.
+
+By bringing opportunities, educational resources, universities, and future guidance tools together, Astrobase aims to make exploring these fields more accessible.
+
+**Built step by step, with curiosity, code, and a long-term vision for space science.**
+
+---
+
+*Developed by Akil, with AI assistance from ChatGPT.*
